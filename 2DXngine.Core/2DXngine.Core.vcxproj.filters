@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ComponentModel">
+      <UniqueIdentifier>{f6bb39c8-f26b-42b7-9366-b2d6d9d891c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AppImplementations">
+      <UniqueIdentifier>{3e26cc7b-b054-48bb-9e0c-5bc30ebdd84a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{8543d60f-f179-49ff-b1a2-56bc88b16c48}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ComponentModel\GameObject.h">
+      <Filter>ComponentModel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AppImplementations\App.h">
+      <Filter>AppImplementations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AppImplementations\WindowApp.h">
+      <Filter>AppImplementations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Timer.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\GameHandler.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ComponentModel\GameObject.cpp">
+      <Filter>ComponentModel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AppImplementations\App.cpp">
+      <Filter>AppImplementations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AppImplementations\WindowApp.cpp">
+      <Filter>AppImplementations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\Timer.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\GameHandler.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
