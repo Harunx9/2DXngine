@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\libs\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="..\libs\googletest\googletest\src\gtest-all.cc" />
+    <ClCompile Include="GameObjectBaseFunctionsTest.cc">
+      <Filter>GameObjectTest</Filter>
+    </ClCompile>
+    <ClCompile Include="TypeIdHelperTest.cc">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectComponentModelTest.cc">
+      <Filter>GameObjectTest</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="GameObjectTest">
+      <UniqueIdentifier>{c2a18723-7170-438e-9d78-69317c990eea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{8df00269-1e0d-47b8-84b0-02356491b0ca}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

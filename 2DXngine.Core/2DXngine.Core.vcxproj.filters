@@ -10,6 +10,9 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{8543d60f-f179-49ff-b1a2-56bc88b16c48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Services">
+      <UniqueIdentifier>{90ef8b2c-5f9c-4623-ba25-f7940465c1d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ComponentModel\GameObject.h">
@@ -25,6 +28,21 @@
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="src\Utils\GameHandler.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Services\ServiceLocator.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Services\Service.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentModel\Component.h">
+      <Filter>ComponentModel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentModel\GameObjectManager.h">
+      <Filter>ComponentModel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\TypeIdHelper.h">
       <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
@@ -43,6 +61,18 @@
     </ClCompile>
     <ClCompile Include="src\Utils\GameHandler.cpp">
       <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Services\ServiceLocator.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Services\Service.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ComponentModel\Component.cpp">
+      <Filter>ComponentModel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ComponentModel\GameObjectManager.cpp">
+      <Filter>ComponentModel</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

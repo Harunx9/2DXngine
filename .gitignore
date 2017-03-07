@@ -3,3 +3,5 @@
 *.sdf
 *.user
 [Dd]ebug/
+[Tt]est/
+[Rr]elease/

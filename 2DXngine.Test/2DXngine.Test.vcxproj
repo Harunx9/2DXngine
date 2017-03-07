@@ -27,7 +27,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="..\libs\googletest\googletest\src\gtest-all.cc" />
+    <ClCompile Include="..\libs\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="GameObjectBaseFunctionsTest.cc" />
+    <ClCompile Include="GameObjectComponentModelTest.cc" />
+    <ClCompile Include="TypeIdHelperTest.cc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\2DXngine.Core\2DXngine.Core.vcxproj">
@@ -35,9 +39,9 @@
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FA09EF66-E40A-45B1-8D1F-E640CB95C184}</ProjectGuid>
+    <ProjectGuid>{FFC71365-F476-4E93-8FA8-C13732131366}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My2DXngine</RootNamespace>
+    <RootNamespace>My2DXngineTest</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -93,6 +97,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -110,13 +115,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)2DXngine.Core\src;$(SolutionDir)libs\glm\glm;$(SolutionDir)libs\SDL2-2.0.5\include;$(SolutionDir)libs\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)2DXngine.Core\src;$(SolutionDir)libs\googletest\googletest\include;$(SolutionDir)libs\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\libs\SDL2-2.0.5\lib\x86;..\2DXngine.Core\Debug;..\libs\glew-2.0.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32s.lib;2DXngine.Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)2DXngine.Core\Debug;$(SolutionDir)libs\googletest\googletest\msvc\gtest\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
