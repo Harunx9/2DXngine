@@ -12,6 +12,9 @@
     <ClCompile Include="GameObjectComponentModelTest.cc">
       <Filter>GameObjectTest</Filter>
     </ClCompile>
+    <ClCompile Include="TestTypes.cpp">
+      <Filter>GameObjectTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObjectTest">
@@ -20,5 +23,10 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{8df00269-1e0d-47b8-84b0-02356491b0ca}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TestTypes.h">
+      <Filter>GameObjectTest</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

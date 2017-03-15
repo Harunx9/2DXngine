@@ -31,12 +31,16 @@
     <ClCompile Include="..\libs\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="GameObjectBaseFunctionsTest.cc" />
     <ClCompile Include="GameObjectComponentModelTest.cc" />
+    <ClCompile Include="TestTypes.cpp" />
     <ClCompile Include="TypeIdHelperTest.cc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\2DXngine.Core\2DXngine.Core.vcxproj">
       <Project>{62278505-2a49-40a1-89df-867a011e0876}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TestTypes.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FFC71365-F476-4E93-8FA8-C13732131366}</ProjectGuid>

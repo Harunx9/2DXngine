@@ -13,6 +13,9 @@
     <Filter Include="Services">
       <UniqueIdentifier>{90ef8b2c-5f9c-4623-ba25-f7940465c1d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TypeInformation">
+      <UniqueIdentifier>{62b58194-cdb6-4b39-8bd9-032e822385e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ComponentModel\GameObject.h">
@@ -42,8 +45,17 @@
     <ClInclude Include="src\ComponentModel\GameObjectManager.h">
       <Filter>ComponentModel</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utils\TypeIdHelper.h">
-      <Filter>Utils</Filter>
+    <ClInclude Include="src\TypeInformation\TypeCache.h">
+      <Filter>TypeInformation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TypeInformation\TypeIdHelper.h">
+      <Filter>TypeInformation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TypeInformation\TypeInfo.h">
+      <Filter>TypeInformation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TypeInformation\BaseTypesDefinitions.h">
+      <Filter>TypeInformation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +85,15 @@
     </ClCompile>
     <ClCompile Include="src\ComponentModel\GameObjectManager.cpp">
       <Filter>ComponentModel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TypeInformation\TypeCache.cpp">
+      <Filter>TypeInformation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TypeInformation\TypeInfo.cpp">
+      <Filter>TypeInformation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TypeInformation\BaseTypesDeclarations.cpp">
+      <Filter>TypeInformation</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

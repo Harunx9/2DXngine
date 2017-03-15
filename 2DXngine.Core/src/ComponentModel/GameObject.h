@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "Component.h"
+#include "../TypeInformation/TypeInfo.h"
 
 typedef std::vector<Component*> components_list;
 
@@ -13,10 +14,10 @@ public:
 
     void initialize();
     void terminate();
-    void addComponent(Component * component);
+    GameObject* addComponent(Component * component);
 
     template<typename TComponent>
-    TComponent* findComponent();
+    TComponent* findComponentByType();
 
     bool get_isActive() const;
     void activate();
@@ -27,6 +28,7 @@ public:
     void hide();
 
     bool get_isPersistant() const;
+    bool get_isEmpty() const;
 private:
     std::string _name;
     bool _isActive;
@@ -36,7 +38,15 @@ private:
 };
 
 template<typename TComponent>
-inline TComponent * GameObject::findComponent()
+inline TComponent * GameObject::findComponentByType()
 {
-    return NULL;
+    for (auto component : this->_components)
+    { 
+        auto T1 = TypeInfo::get<TComponent>();
+        auto T2 = TypeInfo::get((TComponent *)component);
+
+        if (T1 == T2)
+            return (TComponent *)component;
+    }
+    return nullptr;
 }

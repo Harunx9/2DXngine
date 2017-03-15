@@ -1,5 +1,4 @@
 #pragma once
-#include "..\Utils\TypeIdHelper.h"
 #include <string>
 
 class Component
@@ -13,15 +12,7 @@ public:
 
     std::string get_Name() const;
     bool get_isInitialized() const;
-
-    template<typename TImplementation>
-    TypeId GetTypeId()
-    {
-        return TypeIdInfo<Component>::GetTypeId<TImplementation>();
-    }
-
 protected:
     std::string _name;
     bool _isInitialized;
 };
-

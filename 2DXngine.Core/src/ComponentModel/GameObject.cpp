@@ -8,6 +8,7 @@ GameObject::GameObject(const char * name, bool isPersistant):
     _isActive(true),
     _isVisible(true)
 {
+    
 }
 
 
@@ -21,6 +22,12 @@ void GameObject::initialize()
 
 void GameObject::terminate()
 {
+}
+
+GameObject* GameObject::addComponent(Component * component)
+{
+    this->_components.push_back(component);
+    return this;
 }
 
 bool GameObject::get_isActive() const
@@ -56,4 +63,9 @@ void GameObject::hide()
 bool GameObject::get_isPersistant() const
 {
     return this->_isPersistant;
+}
+
+bool GameObject::get_isEmpty() const
+{
+    return _components.empty();
 }
