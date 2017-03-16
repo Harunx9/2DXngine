@@ -57,6 +57,9 @@
     <ClInclude Include="src\TypeInformation\BaseTypesDefinitions.h">
       <Filter>TypeInformation</Filter>
     </ClInclude>
+    <ClInclude Include="src\TypeInformation\TypeMetaInfo.h">
+      <Filter>TypeInformation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">

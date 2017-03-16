@@ -1,9 +1,11 @@
 #pragma once
 #include <ComponentModel\GameObject.h>
-
+#include <TypeInformation\TypeMetaInfo.h>
 class TestComponent : public Component
 {
 public:
+    ADD_TYPE_META_INFO()
+
     TestComponent(const char* name) : Component(name)
     {
 
@@ -21,6 +23,8 @@ public:
 class TestComponent2 : public Component
 {
 public:
+    ADD_TYPE_META_INFO()
+
     TestComponent2(const char* name) : Component(name)
     {
 

@@ -17,7 +17,8 @@ public:
     GameObject* addComponent(Component * component);
 
     template<typename TComponent>
-    TComponent* findComponentByType();
+    TComponent* findFirstComponentOfType(bool exactType = true);
+
 
     bool get_isActive() const;
     void activate();
@@ -38,15 +39,23 @@ private:
 };
 
 template<typename TComponent>
-inline TComponent * GameObject::findComponentByType()
+inline TComponent * GameObject::findFirstComponentOfType(bool exactType)
 {
-    for (auto component : this->_components)
-    { 
-        auto T1 = TypeInfo::get<TComponent>();
-        auto T2 = TypeInfo::get((TComponent *)component);
-
-        if (T1 == T2)
-            return (TComponent *)component;
+    if (exactType)
+    {
+        for (auto component : this->_components)
+        {
+            if (TypeInfo::get<TComponent>() == component->getType())
+                return (TComponent *)component;
+        }
+    }
+    else
+    {
+        for (auto component : this->_components)
+        {
+            if(component->getType().get_hasBaseTypeOf(TypeInfo::get<TComponent>()))
+                return (TComponent *)component;
+        }
     }
     return nullptr;
 }

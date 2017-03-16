@@ -28,8 +28,6 @@ static TypeInfo getTypeInfoFromInstance(const T*)
     return TypeIdInfo<T>::getType();
 }
 
-
-
 TypeInfo getOrRegisterTypeInChache(const char* name, const char* parentTypeName);
 #define CAT_IMPL(a, b) a##b
 #define CAT(a, b) CAT_IMPL(a, b)

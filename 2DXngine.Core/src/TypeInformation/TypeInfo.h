@@ -1,10 +1,13 @@
 #pragma once
 #include <string>
+#include <vector>
 
 
 class TypeInfo
 {
 public:
+    typedef std::vector<TypeInfo> type_list;
+    typedef std::vector<TypeInfo*> type_refs_list;
     TypeInfo();
     TypeInfo(const char* name, int id, int paretnId = -1);
     ~TypeInfo();
@@ -33,6 +36,8 @@ public:
 
     bool get_hasBaseType() const;
     TypeInfo* get_BaseType() const;
+    type_refs_list get_baseTypes();
+    bool get_hasBaseTypeOf(TypeInfo type);
     int get_Id() const;
     const char* get_Name();
 

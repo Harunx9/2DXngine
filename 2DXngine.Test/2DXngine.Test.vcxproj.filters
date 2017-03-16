@@ -15,6 +15,9 @@
     <ClCompile Include="TestTypes.cpp">
       <Filter>GameObjectTest</Filter>
     </ClCompile>
+    <ClCompile Include="TestTypesHierarhy.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObjectTest">
@@ -27,6 +30,9 @@
   <ItemGroup>
     <ClInclude Include="TestTypes.h">
       <Filter>GameObjectTest</Filter>
+    </ClInclude>
+    <ClInclude Include="TestTypesHierarhy.h">
+      <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

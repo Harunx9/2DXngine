@@ -38,6 +38,7 @@
     <ClInclude Include="src\TypeInformation\TypeCache.h" />
     <ClInclude Include="src\TypeInformation\TypeIdHelper.h" />
     <ClInclude Include="src\TypeInformation\TypeInfo.h" />
+    <ClInclude Include="src\TypeInformation\TypeMetaInfo.h" />
     <ClInclude Include="src\Utils\GameHandler.h" />
     <ClInclude Include="src\Utils\Timer.h" />
   </ItemGroup>

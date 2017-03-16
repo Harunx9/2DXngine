@@ -2,7 +2,7 @@
 #include "TypeInfo.h"
 #include <string>
 
-int TypeCache::currentId = -1;
+int TypeCache::currentId = 0;
 
 TypeCache * TypeCache::get_Instance()
 {

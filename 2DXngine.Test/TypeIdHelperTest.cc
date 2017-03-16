@@ -1,22 +1,72 @@
 #include <gtest\gtest.h>
-//#include <Utils\TypeIdHelper.h>
-//
-//struct T {};
-//
-//TEST(TypeIdInfo, DifferentTypesHaveDifferentTypeId)
-//{
-//    auto intId = TypeIdInfo<T>::GetTypeId<int>();
-//    auto boolId = TypeIdInfo<T>::GetTypeId<bool>();
-//    ASSERT_GT(boolId, intId);
-//    ASSERT_EQ(0, intId);
-//    ASSERT_EQ(1, boolId);
-//}
-//
-//TEST(TypeIdInfo, SameTypesHaveSameTypeId)
-//{
-//    auto intId = TypeIdInfo<T>::GetTypeId<int>();
-//    auto inttId = TypeIdInfo<T>::GetTypeId<int>();
-//    ASSERT_EQ(inttId, intId);
-//    ASSERT_EQ(0, intId);
-//    ASSERT_EQ(0, inttId);
-//}
+#include "TestTypesHierarhy.h"
+
+TEST(TypeSystem, BaseTapyHasNoBaseTypes)
+{
+    //Arrange
+    auto instance = new BaseType();
+
+    //Act
+    bool result = instance->getType().get_hasBaseType();
+
+    //Assert
+    ASSERT_FALSE(result);
+}
+
+TEST(TypeSystem, FirstDerriveTypeHasOnlyOneBaseType)
+{
+    //Arrange
+    auto instance = new TestType1();
+
+    //Act
+    bool result = instance->getType().get_hasBaseType();
+    auto baseTypes = instance->getType().get_baseTypes();
+
+    //Assert
+    ASSERT_TRUE(result);
+    ASSERT_EQ(baseTypes.size(), 1);
+}
+
+
+TEST(TypeSystem, SecondDerriveTypeHasTwoBaseTypes)
+{
+    //Arrange
+    auto instance = new TestType2();
+
+    //Act
+    bool result = instance->getType().get_hasBaseType();
+    auto baseTypes = instance->getType().get_baseTypes();
+
+    //Assert
+    ASSERT_TRUE(result);
+    ASSERT_EQ(baseTypes.size(), 2);
+}
+
+
+TEST(TypeSystem, ThirdDerriveTypeHasThreeBaseTypes)
+{
+    //Arrange
+    auto instance = new TestType4();
+
+    //Act
+    bool result = instance->getType().get_hasBaseType();
+    auto baseTypes = instance->getType().get_baseTypes();
+
+    //Assert
+    ASSERT_TRUE(result);
+    ASSERT_EQ(baseTypes.size(), 3);
+}
+
+TEST(TypeSystem, OtherFirstDerriveHasOnlyOneBaseType)
+{
+    //Arrange
+    auto instance = new TestType3();
+
+    //Act
+    bool result = instance->getType().get_hasBaseType();
+    auto baseTypes = instance->getType().get_baseTypes();
+
+    //Assert
+    ASSERT_TRUE(result);
+    ASSERT_EQ(baseTypes.size(), 1);
+}

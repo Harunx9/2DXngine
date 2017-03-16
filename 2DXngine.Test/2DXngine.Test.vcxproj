@@ -32,6 +32,7 @@
     <ClCompile Include="GameObjectBaseFunctionsTest.cc" />
     <ClCompile Include="GameObjectComponentModelTest.cc" />
     <ClCompile Include="TestTypes.cpp" />
+    <ClCompile Include="TestTypesHierarhy.cpp" />
     <ClCompile Include="TypeIdHelperTest.cc" />
   </ItemGroup>
   <ItemGroup>
@@ -41,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestTypes.h" />
+    <ClInclude Include="TestTypesHierarhy.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FFC71365-F476-4E93-8FA8-C13732131366}</ProjectGuid>

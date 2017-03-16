@@ -34,7 +34,40 @@ bool TypeInfo::get_hasBaseType() const
 
 TypeInfo * TypeInfo::get_BaseType() const
 {
+    if (_baseTypeId != -1)
+    {
+        auto typeCache = TypeCache::get_Instance();
+        return typeCache->get_TypeByRef(_baseTypeId);
+    }
     return nullptr;
+}
+
+TypeInfo::type_refs_list TypeInfo::get_baseTypes()
+{
+    type_refs_list list;
+    auto baseType = get_BaseType();
+    if (baseType)
+    {
+        list.push_back(baseType);
+        while (baseType->get_hasBaseType())
+        {
+            list.push_back(baseType);
+            baseType = baseType->get_BaseType();
+        }
+    }
+    return list;
+}
+
+bool TypeInfo::get_hasBaseTypeOf(TypeInfo type)
+{
+    auto baseTypes = get_baseTypes();
+    for (auto& t : baseTypes)
+    {
+        if (t->get_Id() == type.get_Id()) 
+            return true;
+    }
+
+    return false;
 }
 
 int TypeInfo::get_Id() const
