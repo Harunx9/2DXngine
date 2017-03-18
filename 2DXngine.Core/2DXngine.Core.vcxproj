@@ -30,8 +30,11 @@
     <ClInclude Include="src\AppImplementations\App.h" />
     <ClInclude Include="src\AppImplementations\WindowApp.h" />
     <ClInclude Include="src\ComponentModel\Component.h" />
+    <ClInclude Include="src\ComponentModel\DrawableComponent.h" />
     <ClInclude Include="src\ComponentModel\GameObject.h" />
     <ClInclude Include="src\ComponentModel\GameObjectManager.h" />
+    <ClInclude Include="src\ComponentModel\UpdateableComponent.h" />
+    <ClInclude Include="src\Graphics\Renderer.h" />
     <ClInclude Include="src\Services\Service.h" />
     <ClInclude Include="src\Services\ServiceLocator.h" />
     <ClInclude Include="src\TypeInformation\BaseTypesDefinitions.h" />
@@ -46,8 +49,11 @@
     <ClCompile Include="src\AppImplementations\App.cpp" />
     <ClCompile Include="src\AppImplementations\WindowApp.cpp" />
     <ClCompile Include="src\ComponentModel\Component.cpp" />
+    <ClCompile Include="src\ComponentModel\DrawableComponent.cpp" />
     <ClCompile Include="src\ComponentModel\GameObject.cpp" />
     <ClCompile Include="src\ComponentModel\GameObjectManager.cpp" />
+    <ClCompile Include="src\ComponentModel\UpdateableComponent.cpp" />
+    <ClCompile Include="src\Graphics\Renderer.cpp" />
     <ClCompile Include="src\Services\Service.cpp" />
     <ClCompile Include="src\Services\ServiceLocator.cpp" />
     <ClCompile Include="src\TypeInformation\BaseTypesDeclarations.cpp" />

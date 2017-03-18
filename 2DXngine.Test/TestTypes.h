@@ -11,13 +11,9 @@ public:
 
     }
 
-    // Inherited via Component
-    virtual void initialize() override
-    {
-    }
-    virtual void terminate() override
-    {
-    }
+    virtual void initialize() override{}
+    virtual void terminate() override{}
+    virtual void resolveDependencies() override {}
 };
 
 class TestComponent2 : public Component
@@ -30,13 +26,9 @@ public:
 
     }
 
-    // Inherited via Component
-    virtual void initialize() override
-    {
-    }
-    virtual void terminate() override
-    {
-    }
+    virtual void initialize() override{}
+    virtual void terminate() override{}
+    virtual void resolveDependencies() override {}
 };
 
 DECLARE_TYPE_INFO_VARIANTS(Component, "")

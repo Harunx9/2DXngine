@@ -19,7 +19,6 @@ public:
     template<typename TComponent>
     TComponent* findFirstComponentOfType(bool exactType = true);
 
-
     bool get_isActive() const;
     void activate();
     void deactivate();

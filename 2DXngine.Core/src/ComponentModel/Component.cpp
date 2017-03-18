@@ -19,3 +19,23 @@ bool Component::get_isInitialized() const
 {
     return this->_isInitialized;
 }
+
+void Component::add_owner(GameObject * owner)
+{
+    this->_owner = owner;
+}
+
+void Component::remove_owner()
+{
+    this->_owner = nullptr;
+}
+
+GameObject * Component::get_owner()
+{
+    return this->_owner;
+}
+
+bool Component::has_onwer()
+{
+    return (this->_owner == nullptr) == false;
+}

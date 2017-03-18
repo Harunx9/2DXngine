@@ -16,6 +16,9 @@
     <Filter Include="TypeInformation">
       <UniqueIdentifier>{62b58194-cdb6-4b39-8bd9-032e822385e6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{09fbc4de-4ee6-4e1f-b127-8b08057e1ae6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ComponentModel\GameObject.h">
@@ -60,6 +63,15 @@
     <ClInclude Include="src\TypeInformation\TypeMetaInfo.h">
       <Filter>TypeInformation</Filter>
     </ClInclude>
+    <ClInclude Include="src\ComponentModel\UpdateableComponent.h">
+      <Filter>ComponentModel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Renderer.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentModel\DrawableComponent.h">
+      <Filter>ComponentModel</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -97,6 +109,15 @@
     </ClCompile>
     <ClCompile Include="src\TypeInformation\BaseTypesDeclarations.cpp">
       <Filter>TypeInformation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ComponentModel\UpdateableComponent.cpp">
+      <Filter>ComponentModel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Renderer.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ComponentModel\DrawableComponent.cpp">
+      <Filter>ComponentModel</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
