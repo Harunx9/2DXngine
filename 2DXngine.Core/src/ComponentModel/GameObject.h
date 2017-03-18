@@ -19,6 +19,9 @@ public:
     template<typename TComponent>
     TComponent* findFirstComponentOfType(bool exactType = true);
 
+    template<typename TComponent>
+    std::vector<TComponent*> findAllComponentsOfType(bool exactType = true);
+
     bool get_isActive() const;
     void activate();
     void deactivate();
@@ -56,5 +59,31 @@ inline TComponent * GameObject::findFirstComponentOfType(bool exactType)
                 return (TComponent *)component;
         }
     }
+
     return nullptr;
+}
+
+template<typename TComponent>
+inline std::vector<TComponent*> GameObject::findAllComponentsOfType(bool exactType)
+{
+    std::vector<TComponent*> matchedComponentList;
+
+    if (exactType)
+    {
+        for (auto component : this->_components)
+        {
+            if (TypeInfo::get<TComponent>() == component->getType())
+                matchedComponentList.push_back((TComponent *)component);
+        }
+    }
+    else
+    {
+        for (auto component : this->_components)
+        {
+            if (component->getType().get_hasBaseTypeOf(TypeInfo::get<TComponent>()))
+                matchedComponentList.push_back((TComponent *)component);
+        }
+    }
+
+    return matchedComponentList;
 }
