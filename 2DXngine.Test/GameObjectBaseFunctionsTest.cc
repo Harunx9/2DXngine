@@ -2,7 +2,7 @@
 #include <ComponentModel\GameObject.h>
 #include "gtest\gtest.h"
 
-TEST(GameObject, AferCreationGameObjectIsNotInitializedVislibleAndActive)
+TEST(GameObject, afer_creation_GameObject_is_not_initialized_vislible_and_active)
 {
     auto go = new GameObject("Player");
     ASSERT_EQ(true, go->get_isActive());
@@ -10,14 +10,14 @@ TEST(GameObject, AferCreationGameObjectIsNotInitializedVislibleAndActive)
     ASSERT_EQ(false, go->get_isPersistant());
 }
 
-TEST(GameObject, GameObjectCanBeDeactivated)
+TEST(GameObject, GameObject_can_be_deactivated)
 {
     auto go = new GameObject("Player");
     go->deactivate();
     ASSERT_EQ(false, go->get_isActive());
 }
 
-TEST(GameObject, GameObjectCanBeActivated)
+TEST(GameObject, GameObject_can_be_activated)
 {
     auto go = new GameObject("Player");
     go->deactivate();
@@ -27,14 +27,14 @@ TEST(GameObject, GameObjectCanBeActivated)
     
 }
 
-TEST(GameObject, GameObjecCanBeHide)
+TEST(GameObject, GameObjec_can_be_hide)
 {
     auto go = new GameObject("Player");
     go->hide();
     ASSERT_EQ(false, go->get_isVisible());
 }
 
-TEST(GameObject, GameObjecCanBeShown)
+TEST(GameObject, GameObjec_can_be_shown)
 {
     auto go = new GameObject("Player");
     go->hide();

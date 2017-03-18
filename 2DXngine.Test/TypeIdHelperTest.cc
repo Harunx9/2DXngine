@@ -1,7 +1,7 @@
 #include <gtest\gtest.h>
 #include "TestTypesHierarhy.h"
 
-TEST(TypeSystem, BaseTapyHasNoBaseTypes)
+TEST(TypeSystem, base_type_has_no_base_type)
 {
     //Arrange
     auto instance = new BaseType();
@@ -13,7 +13,7 @@ TEST(TypeSystem, BaseTapyHasNoBaseTypes)
     ASSERT_FALSE(result);
 }
 
-TEST(TypeSystem, FirstDerriveTypeHasOnlyOneBaseType)
+TEST(TypeSystem, first_derrive_type_has_only_one_base_type)
 {
     //Arrange
     auto instance = new TestType1();
@@ -28,7 +28,7 @@ TEST(TypeSystem, FirstDerriveTypeHasOnlyOneBaseType)
 }
 
 
-TEST(TypeSystem, SecondDerriveTypeHasTwoBaseTypes)
+TEST(TypeSystem, second_derrive_type_has_two_base_types)
 {
     //Arrange
     auto instance = new TestType2();
@@ -43,7 +43,7 @@ TEST(TypeSystem, SecondDerriveTypeHasTwoBaseTypes)
 }
 
 
-TEST(TypeSystem, ThirdDerriveTypeHasThreeBaseTypes)
+TEST(TypeSystem, third_derrive_type_has_three_base_types)
 {
     //Arrange
     auto instance = new TestType4();
@@ -57,7 +57,7 @@ TEST(TypeSystem, ThirdDerriveTypeHasThreeBaseTypes)
     ASSERT_EQ(baseTypes.size(), 3);
 }
 
-TEST(TypeSystem, OtherFirstDerriveHasOnlyOneBaseType)
+TEST(TypeSystem, other_first_derrive_has_only_one_base_type)
 {
     //Arrange
     auto instance = new TestType3();

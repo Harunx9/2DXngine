@@ -2,7 +2,7 @@
 #include "TestTypes.h"
 
 
-TEST(GameObject, ComponentCanBeAddedToGameObject)
+TEST(GameObject, Component_can_be_added_to_GameObject)
 {
     //Arrange
     auto go = new GameObject("Player");
@@ -15,7 +15,7 @@ TEST(GameObject, ComponentCanBeAddedToGameObject)
     ASSERT_EQ(false, go->get_isEmpty());
 }
 
-TEST(GameObject, ComponentCanBeFoundInGameObjectOFExactType)
+TEST(GameObject, Component_can_be_found_in_GameObject_of_exact_type)
 {
     auto go = new GameObject("Player");
     auto component = new TestComponent("Test");
@@ -28,7 +28,7 @@ TEST(GameObject, ComponentCanBeFoundInGameObjectOFExactType)
     ASSERT_EQ("Test2", cmp->get_Name());
 }
 
-TEST(GameObject, ComponentCanBeFoundInGameObjectOfBaseType)
+TEST(GameObject, Component_can_be_found_in_GameObject_of_base_type)
 {
     auto go = new GameObject("Player");
     auto component = new TestComponent("Test");
@@ -41,7 +41,7 @@ TEST(GameObject, ComponentCanBeFoundInGameObjectOfBaseType)
     ASSERT_EQ("Test", cmp->get_Name());
 }
 
-TEST(GameObject, AllComponentOfCertinTypeCanBeFoundInGameOnbject)
+TEST(GameObject, all_Components_of_certin_type_can_be_found_in_GameObject)
 {
     auto go = new GameObject("Player");
     auto component = new TestComponent("Test");
