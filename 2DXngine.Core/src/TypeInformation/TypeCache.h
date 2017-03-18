@@ -8,19 +8,19 @@ typedef std::map<int, TypeInfo> types_map;
 class TypeCache
 {
 public:
-    static TypeCache * get_Instance();
+    static TypeCache * get_instance();
     
-    bool get_TypeAlreadyExist(int id);
-    bool get_TypeAlreadyExist(const char* name);
+    bool get_typeAlreadyExist(int id);
+    bool get_typeAlreadyExist(const char* name);
     
     void addType(TypeInfo type);
-    TypeInfo* get_TypeByRef(int typeId);
-    TypeInfo* get_TypeByRef(const char* name);
-    TypeInfo get_TypeByValue(int typeId);
-    TypeInfo get_TypeByValue(const char* name);
+    TypeInfo* get_typeByRef(int typeId);
+    TypeInfo* get_typeByRef(const char* name);
+    TypeInfo get_typeByValue(int typeId);
+    TypeInfo get_typeByValue(const char* name);
 
     
-    inline static int get_NextId()
+    inline static int get_nextId()
     {
         return currentId++;
     }

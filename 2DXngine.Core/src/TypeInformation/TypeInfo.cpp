@@ -32,12 +32,12 @@ bool TypeInfo::get_hasBaseType() const
     return this->_baseTypeId > BASE_OBJECT;
 }
 
-TypeInfo * TypeInfo::get_BaseType() const
+TypeInfo * TypeInfo::get_baseType() const
 {
     if (_baseTypeId != -1)
     {
-        auto typeCache = TypeCache::get_Instance();
-        return typeCache->get_TypeByRef(_baseTypeId);
+        auto typeCache = TypeCache::get_instance();
+        return typeCache->get_typeByRef(_baseTypeId);
     }
     return nullptr;
 }
@@ -45,14 +45,14 @@ TypeInfo * TypeInfo::get_BaseType() const
 TypeInfo::type_refs_list TypeInfo::get_baseTypes()
 {
     type_refs_list list;
-    auto baseType = get_BaseType();
+    auto baseType = get_baseType();
     if (baseType)
     {
         list.push_back(baseType);
         while (baseType->get_hasBaseType())
         {
             list.push_back(baseType);
-            baseType = baseType->get_BaseType();
+            baseType = baseType->get_baseType();
         }
     }
     return list;
@@ -63,19 +63,19 @@ bool TypeInfo::get_hasBaseTypeOf(TypeInfo type)
     auto baseTypes = get_baseTypes();
     for (auto& t : baseTypes)
     {
-        if (t->get_Id() == type.get_Id()) 
+        if (t->get_id() == type.get_id()) 
             return true;
     }
 
     return false;
 }
 
-int TypeInfo::get_Id() const
+int TypeInfo::get_id() const
 {
     return this->_id;
 }
 
-const char * TypeInfo::get_Name()
+const char * TypeInfo::get_name()
 {
     return this->_name.c_str();
 }
@@ -86,19 +86,19 @@ TypeInfo getOrRegisterTypeInChache(const char * name, const char * parentTypeNam
 {
     TypeInfo type;
 
-    auto typeCache = TypeCache::get_Instance();
+    auto typeCache = TypeCache::get_instance();
 
-    if (typeCache->get_TypeAlreadyExist(name) == false)
+    if (typeCache->get_typeAlreadyExist(name) == false)
     {
-        int id = TypeCache::get_NextId();
+        int id = TypeCache::get_nextId();
         int paretnId = -1;
         if (strcmp("", parentTypeName) != 0)
         {
-            TypeInfo* parentType = typeCache->get_TypeByRef(parentTypeName);
+            TypeInfo* parentType = typeCache->get_typeByRef(parentTypeName);
 
             if (parentType)
             {
-                paretnId = parentType->get_Id();
+                paretnId = parentType->get_id();
             }
         }
 
@@ -107,7 +107,7 @@ TypeInfo getOrRegisterTypeInChache(const char * name, const char * parentTypeNam
     }
     else
     {
-        type = typeCache->get_TypeByValue(name);
+        type = typeCache->get_typeByValue(name);
     }
 
     return type;

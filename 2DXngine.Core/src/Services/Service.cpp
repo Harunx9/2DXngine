@@ -10,7 +10,7 @@ Service::~Service()
 {
 }
 
-std::string Service::get_Name() const
+std::string Service::get_name() const
 {
     return this->_name;
 }

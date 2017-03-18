@@ -35,11 +35,11 @@ public:
     bool get_isEmpty();
 
     bool get_hasBaseType() const;
-    TypeInfo* get_BaseType() const;
+    TypeInfo* get_baseType() const;
     type_refs_list get_baseTypes();
     bool get_hasBaseTypeOf(TypeInfo type);
-    int get_Id() const;
-    const char* get_Name();
+    int get_id() const;
+    const char* get_name();
 
     template<typename T>
     static TypeInfo get();

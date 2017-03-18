@@ -14,7 +14,7 @@ public:
     virtual void terminate() = 0;
     virtual void resolveDependencies() = 0;
 
-    std::string get_Name() const;
+    std::string get_name() const;
     bool get_isInitialized() const;
 
     void add_owner(GameObject* owner);

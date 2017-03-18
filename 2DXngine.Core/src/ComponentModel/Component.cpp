@@ -10,7 +10,7 @@ Component::~Component()
 {
 }
 
-std::string Component::get_Name() const
+std::string Component::get_name() const
 {
     return this->_name;
 }

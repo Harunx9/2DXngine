@@ -10,7 +10,7 @@ public:
 
     virtual void initialize() = 0;
     virtual void terminate() = 0;
-    std::string get_Name() const;
+    std::string get_name() const;
 protected:
     std::string _name;
 };
