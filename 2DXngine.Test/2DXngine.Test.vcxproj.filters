@@ -18,6 +18,9 @@
     <ClCompile Include="TestTypesHierarhy.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="GamObjectGraphTest.cc">
+      <Filter>GameObjectTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObjectTest">
