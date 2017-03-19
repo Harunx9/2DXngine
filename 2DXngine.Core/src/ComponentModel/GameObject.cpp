@@ -17,6 +17,21 @@ GameObject::GameObject(const char * name, bool isPersistant) :
 
 GameObject::~GameObject()
 {
+    for (auto& component : this->_components)
+    {
+        if (component->get_isTerminated())
+        {
+            delete component;
+        }
+    }
+
+    for (auto& child : this->_childern)
+    {
+        if (child->get_isTerminated())
+        {
+            delete child;
+        }
+    }
 }
 
 void GameObject::initialize(bool force)
@@ -136,6 +151,16 @@ const char * GameObject::get_name()
 GameObject * GameObject::get_parent()
 {
     return this->_parent;
+}
+
+components_list * GameObject::get_components()
+{
+    return &this->_components;
+}
+
+gameobject_list * GameObject::get_childern()
+{
+    return &this->_childern;
 }
 
 void GameObject::resolveComponentsDependencies(bool force)

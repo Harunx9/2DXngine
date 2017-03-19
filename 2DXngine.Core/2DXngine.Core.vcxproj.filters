@@ -19,6 +19,9 @@
     <Filter Include="Graphics">
       <UniqueIdentifier>{09fbc4de-4ee6-4e1f-b127-8b08057e1ae6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{93d97387-e984-442e-afe3-5bfa31c53ed3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ComponentModel\GameObject.h">
@@ -72,6 +75,9 @@
     <ClInclude Include="src\ComponentModel\DrawableComponent.h">
       <Filter>ComponentModel</Filter>
     </ClInclude>
+    <ClInclude Include="src\Scenes\Scene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -118,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="src\ComponentModel\DrawableComponent.cpp">
       <Filter>ComponentModel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\Scene.cpp">
+      <Filter>Scenes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

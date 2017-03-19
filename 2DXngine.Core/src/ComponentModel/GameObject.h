@@ -44,6 +44,9 @@ public:
     const char* get_name();
 
     GameObject* get_parent();
+
+    components_list* get_components();
+    gameobject_list* get_childern();
 private:
     void resolveComponentsDependencies(bool force = false);
     void initializeComponents(bool force = false);

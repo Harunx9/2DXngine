@@ -35,6 +35,7 @@
     <ClInclude Include="src\ComponentModel\GameObjectManager.h" />
     <ClInclude Include="src\ComponentModel\UpdateableComponent.h" />
     <ClInclude Include="src\Graphics\Renderer.h" />
+    <ClInclude Include="src\Scenes\Scene.h" />
     <ClInclude Include="src\Services\Service.h" />
     <ClInclude Include="src\Services\ServiceLocator.h" />
     <ClInclude Include="src\TypeInformation\BaseTypesDefinitions.h" />
@@ -54,6 +55,7 @@
     <ClCompile Include="src\ComponentModel\GameObjectManager.cpp" />
     <ClCompile Include="src\ComponentModel\UpdateableComponent.cpp" />
     <ClCompile Include="src\Graphics\Renderer.cpp" />
+    <ClCompile Include="src\Scenes\Scene.cpp" />
     <ClCompile Include="src\Services\Service.cpp" />
     <ClCompile Include="src\Services\ServiceLocator.cpp" />
     <ClCompile Include="src\TypeInformation\BaseTypesDeclarations.cpp" />
