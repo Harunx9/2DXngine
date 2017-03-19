@@ -50,3 +50,18 @@ TEST(GameObject, child_object_can_be_removed_from_parent_GameObject)
     //Assert
     ASSERT_TRUE(go_parent->findChild("SwordTest") == nullptr);
 }
+
+TEST(GameObject, child_object_can_be_removed_from_parent_GameObject_when_partn_have_more_children)
+{
+    //Arrange
+    auto go_parent = new GameObject("PlayerTest");
+    auto go_sword = new GameObject("SwordTest");
+    auto go_bow = new GameObject("BowTest");
+    go_parent->addChild(go_sword);
+    go_parent->addChild(go_bow);
+    //Act
+    go_parent->removeChild("SwordTest");
+    //Assert
+    ASSERT_TRUE(go_parent->findChild("SwordTest") == nullptr);
+    ASSERT_TRUE(go_parent->findChild("BowTest") != nullptr);
+}

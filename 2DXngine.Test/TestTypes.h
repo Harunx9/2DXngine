@@ -7,14 +7,14 @@ class TestComponent : public Component
 public:
     ADD_TYPE_META_INFO()
 
-    TestComponent(const char* name) : Component(name)
+        TestComponent(const char* name) : Component(name)
     {
 
     }
 
-    virtual void initialize() override{}
-    virtual void terminate() override{}
-    virtual void resolveDependencies() override {}
+    virtual void initialize(bool force = false) override { this->_isInitialized = true; }
+    virtual void terminate() override {}
+    virtual void resolveDependencies(bool force = false) override { this->_isDependenciesResovled = true; }
 };
 
 class TestComponent2 : public Component
@@ -22,14 +22,14 @@ class TestComponent2 : public Component
 public:
     ADD_TYPE_META_INFO()
 
-    TestComponent2(const char* name) : Component(name)
+        TestComponent2(const char* name) : Component(name)
     {
 
     }
 
-    virtual void initialize() override{}
-    virtual void terminate() override{}
-    virtual void resolveDependencies() override {}
+    virtual void initialize(bool force = false) override { this->_isInitialized = true; }
+    virtual void terminate() override {}
+    virtual void resolveDependencies(bool force = false) override { this->_isDependenciesResovled = true; }
 };
 
 class TestDrawableComponent1 : public DrawableComponent
@@ -37,15 +37,15 @@ class TestDrawableComponent1 : public DrawableComponent
 public:
     ADD_TYPE_META_INFO()
 
-    TestDrawableComponent1(const char* name) : DrawableComponent(name)
+        TestDrawableComponent1(const char* name) : DrawableComponent(name)
     {
 
     }
 
-    virtual void initialize() override {}
+    virtual void initialize(bool force = false) override { this->_isInitialized = true; }
     virtual void terminate() override {}
     virtual void draw(Renderer* renderer, float deltaTime) override {}
-    virtual void resolveDependencies() override {}
+    virtual void resolveDependencies(bool force = false) override { this->_isDependenciesResovled = true; }
 };
 
 class  TestDrawableComponent2 : public DrawableComponent
@@ -53,15 +53,15 @@ class  TestDrawableComponent2 : public DrawableComponent
 public:
     ADD_TYPE_META_INFO()
 
-    TestDrawableComponent2(const char* name) : DrawableComponent(name)
+        TestDrawableComponent2(const char* name) : DrawableComponent(name)
     {
 
     }
 
-    virtual void initialize() override {}
+    virtual void initialize(bool force = false) override { this->_isInitialized = true; }
     virtual void terminate() override {}
     virtual void draw(Renderer* renderer, float deltaTime) override {}
-    virtual void resolveDependencies() override {}
+    virtual void resolveDependencies(bool force = false) override { this->_isDependenciesResovled = true; }
 };
 
 DECLARE_TYPE_INFO_VARIANTS(Component, "")

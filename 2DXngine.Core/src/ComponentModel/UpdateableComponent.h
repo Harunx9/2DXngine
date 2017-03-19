@@ -13,7 +13,7 @@ public:
 
     void deactivate();
     void activate();
-    bool get_isActive();
+    bool get_isActive() const;
 
 protected:
     bool _isActive;

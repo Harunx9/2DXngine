@@ -8,6 +8,7 @@ GameObject::GameObject(const char * name, bool isPersistant) :
     _isPersistant(isPersistant),
     _isActive(true),
     _isVisible(true),
+    _isInitiaized(false),
     _parent(nullptr)
 {
  
@@ -17,12 +18,18 @@ GameObject::~GameObject()
 {
 }
 
-void GameObject::initialize()
+void GameObject::initialize(bool force)
 {
+    this->resolveComponentsDependencies(force);
+    this->initializeComponents(force);
+    this->initializeChildren(force);
+    this->_isInitiaized = true;
 }
 
 void GameObject::terminate()
 {
+    this->terminateComponents();
+    this->terminateChildren();
 }
 
 GameObject* GameObject::addComponent(Component * component)
@@ -31,13 +38,15 @@ GameObject* GameObject::addComponent(Component * component)
     return this;
 }
 
-void GameObject::addChild(GameObject * child)
+GameObject* GameObject::addChild(GameObject * child)
 {
     if (hasChild(child->get_name()) == false)
     {
         this->_childern.push_back(child);
         child->_parent = this;
     }
+
+    return this;
 }
 
 void GameObject::removeChild(const char * name)
@@ -57,7 +66,7 @@ GameObject* GameObject::findChild(const char * name)
 {
     if (this->_childern.empty() == false)
     {
-        for (auto child : this->_childern)
+        for (auto& child : this->_childern)
         {
             if (strcmp(name, child->get_name()) == 0)
                 return child;
@@ -106,6 +115,11 @@ bool GameObject::get_isEmpty() const
     return _components.empty();
 }
 
+bool GameObject::get_isInitialized() const
+{
+    return this->_isInitiaized;
+}
+
 const char * GameObject::get_name()
 {
     return this->_name.c_str();
@@ -114,6 +128,49 @@ const char * GameObject::get_name()
 GameObject * GameObject::get_parent()
 {
     return this->_parent;
+}
+
+void GameObject::resolveComponentsDependencies(bool force)
+{
+    for (auto& component : this->_components)
+    {
+        if (component->get_isDependenciesResovled() == false || force)
+            component->resolveDependencies(force);
+    }
+}
+
+void GameObject::initializeComponents(bool force)
+{
+    for (auto& component : this->_components)
+    {
+        if (component->get_isInitialized() == false || force)
+            component->initialize(force);
+    }
+}
+
+void GameObject::initializeChildren(bool force)
+{
+    for (auto& child : this->_childern)
+    {
+        if (child->get_isInitialized() == false || force)
+            child->initialize(force);
+    }
+}
+
+void GameObject::terminateComponents()
+{
+    for (auto& component : this->_components)
+    {
+        component->terminate();
+    }
+}
+
+void GameObject::terminateChildren()
+{
+    for (auto& child : this->_childern)
+    {
+        child->terminate();
+    }
 }
 
 bool GameObject::hasChild(const char * name)

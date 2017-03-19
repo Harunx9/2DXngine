@@ -23,7 +23,7 @@ void UpdateableComponent::activate()
     this->_isActive = true;
 }
 
-bool UpdateableComponent::get_isActive()
+bool UpdateableComponent::get_isActive() const
 {
     return this->_isActive;
 }

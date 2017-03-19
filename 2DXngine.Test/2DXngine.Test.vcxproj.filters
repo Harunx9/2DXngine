@@ -21,6 +21,9 @@
     <ClCompile Include="GamObjectGraphTest.cc">
       <Filter>GameObjectTest</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjectLifetimeTest.cc">
+      <Filter>GameObjectTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObjectTest">

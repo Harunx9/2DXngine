@@ -15,7 +15,7 @@ public:
 
     void hide();
     void show();
-    bool get_isVisible();
+    bool get_isVisible() const;
 protected:
     bool _isVisible;
 };

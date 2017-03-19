@@ -14,7 +14,7 @@ public:
     GameObject(const char * name, bool isPersistant = false);
     ~GameObject();
 
-    void initialize();
+    void initialize(bool force = false);
     void terminate();
     GameObject* addComponent(Component * component);
 
@@ -24,7 +24,7 @@ public:
     template<typename TComponent>
     std::vector<TComponent*> findAllComponentsOfType(bool exactType = true);
 
-    void addChild(GameObject* child);
+    GameObject* addChild(GameObject* child);
     void removeChild(const char* name);
     GameObject* findChild(const char* name);
 
@@ -38,18 +38,30 @@ public:
 
     bool get_isPersistant() const;
     bool get_isEmpty() const;
+    bool get_isInitialized() const;
 
     const char* get_name();
 
     GameObject* get_parent();
-
 private:
+    void resolveComponentsDependencies(bool force = false);
+    void initializeComponents(bool force = false);
+    void initializeChildren(bool force = false);
+
+    void terminateComponents();
+    void terminateChildren();
+    
     bool hasChild(const char* name);
+    
     GameObject* _parent;
+    
     std::string _name;
+    
     bool _isActive;
     bool _isVisible;
     bool _isPersistant;
+    bool _isInitiaized;
+    
     components_list _components;
     gameobject_list _childern;
 };

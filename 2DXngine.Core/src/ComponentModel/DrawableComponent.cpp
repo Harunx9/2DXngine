@@ -24,7 +24,7 @@ void DrawableComponent::show()
     this->_isVisible = true;
 }
 
-bool DrawableComponent::get_isVisible()
+bool DrawableComponent::get_isVisible() const
 {
     return this->_isVisible;
 }

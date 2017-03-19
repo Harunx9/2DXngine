@@ -2,7 +2,9 @@
 
 Component::Component(const char* name): 
     _name(name),
-    _isInitialized(false)
+    _isInitialized(false),
+    _isDependenciesResovled(false),
+    _owner(nullptr)
 {
 }
 
@@ -30,7 +32,7 @@ void Component::remove_owner()
     this->_owner = nullptr;
 }
 
-GameObject * Component::get_owner()
+GameObject * Component::get_owner() const
 {
     return this->_owner;
 }
@@ -38,4 +40,9 @@ GameObject * Component::get_owner()
 bool Component::has_onwer()
 {
     return (this->_owner == nullptr) == false;
+}
+
+bool Component::get_isDependenciesResovled() const
+{
+    return this->_isDependenciesResovled;
 }
