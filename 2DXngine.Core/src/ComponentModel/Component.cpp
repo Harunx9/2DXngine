@@ -4,12 +4,31 @@ Component::Component(const char* name):
     _name(name),
     _isInitialized(false),
     _isDependenciesResovled(false),
+    _isTerminated(false),
     _owner(nullptr)
 {
 }
 
 Component::~Component()
 {
+}
+
+void Component::baseInitialize(bool force)
+{
+    this->initialize();
+    this->_isInitialized = true;
+}
+
+void Component::baseTerminate()
+{
+    this->terminate();
+    this->_isTerminated = true;
+}
+
+void Component::baseResolveDependencies(bool force)
+{
+    this->resolveDependencies(force);
+    this->_isDependenciesResovled = true;
 }
 
 std::string Component::get_name() const
@@ -20,6 +39,11 @@ std::string Component::get_name() const
 bool Component::get_isInitialized() const
 {
     return this->_isInitialized;
+}
+
+bool Component::get_isTerminated() const
+{
+    return false;
 }
 
 void Component::add_owner(GameObject * owner)

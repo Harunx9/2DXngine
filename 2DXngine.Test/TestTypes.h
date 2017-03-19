@@ -12,9 +12,9 @@ public:
 
     }
 
-    virtual void initialize(bool force = false) override { this->_isInitialized = true; }
+    virtual void initialize(bool force = false) override {  }
     virtual void terminate() override {}
-    virtual void resolveDependencies(bool force = false) override { this->_isDependenciesResovled = true; }
+    virtual void resolveDependencies(bool force = false) override {  }
 };
 
 class TestComponent2 : public Component
@@ -27,9 +27,9 @@ public:
 
     }
 
-    virtual void initialize(bool force = false) override { this->_isInitialized = true; }
+    virtual void initialize(bool force = false) override { }
     virtual void terminate() override {}
-    virtual void resolveDependencies(bool force = false) override { this->_isDependenciesResovled = true; }
+    virtual void resolveDependencies(bool force = false) override {  }
 };
 
 class TestDrawableComponent1 : public DrawableComponent
@@ -42,10 +42,10 @@ public:
 
     }
 
-    virtual void initialize(bool force = false) override { this->_isInitialized = true; }
+    virtual void initialize(bool force = false) override {  }
     virtual void terminate() override {}
     virtual void draw(Renderer* renderer, float deltaTime) override {}
-    virtual void resolveDependencies(bool force = false) override { this->_isDependenciesResovled = true; }
+    virtual void resolveDependencies(bool force = false) override { }
 };
 
 class  TestDrawableComponent2 : public DrawableComponent
@@ -58,10 +58,10 @@ public:
 
     }
 
-    virtual void initialize(bool force = false) override { this->_isInitialized = true; }
+    virtual void initialize(bool force = false) override {  }
     virtual void terminate() override {}
     virtual void draw(Renderer* renderer, float deltaTime) override {}
-    virtual void resolveDependencies(bool force = false) override { this->_isDependenciesResovled = true; }
+    virtual void resolveDependencies(bool force = false) override {  }
 };
 
 DECLARE_TYPE_INFO_VARIANTS(Component, "")

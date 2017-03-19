@@ -9,6 +9,7 @@ GameObject::GameObject(const char * name, bool isPersistant) :
     _isActive(true),
     _isVisible(true),
     _isInitiaized(false),
+    _isTerminated(true),
     _parent(nullptr)
 {
  
@@ -30,11 +31,13 @@ void GameObject::terminate()
 {
     this->terminateComponents();
     this->terminateChildren();
+    this->_isTerminated = true;
 }
 
 GameObject* GameObject::addComponent(Component * component)
 {
     this->_components.push_back(component);
+    component->add_owner(this);
     return this;
 }
 
@@ -120,6 +123,11 @@ bool GameObject::get_isInitialized() const
     return this->_isInitiaized;
 }
 
+bool GameObject::get_isTerminated() const
+{
+    return this->_isTerminated;
+}
+
 const char * GameObject::get_name()
 {
     return this->_name.c_str();
@@ -135,7 +143,7 @@ void GameObject::resolveComponentsDependencies(bool force)
     for (auto& component : this->_components)
     {
         if (component->get_isDependenciesResovled() == false || force)
-            component->resolveDependencies(force);
+            component->baseResolveDependencies(force);
     }
 }
 
@@ -144,7 +152,7 @@ void GameObject::initializeComponents(bool force)
     for (auto& component : this->_components)
     {
         if (component->get_isInitialized() == false || force)
-            component->initialize(force);
+            component->baseInitialize(force);
     }
 }
 
@@ -161,7 +169,7 @@ void GameObject::terminateComponents()
 {
     for (auto& component : this->_components)
     {
-        component->terminate();
+        component->baseTerminate();
     }
 }
 

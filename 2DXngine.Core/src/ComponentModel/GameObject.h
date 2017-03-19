@@ -39,6 +39,7 @@ public:
     bool get_isPersistant() const;
     bool get_isEmpty() const;
     bool get_isInitialized() const;
+    bool get_isTerminated() const;
 
     const char* get_name();
 
@@ -61,6 +62,7 @@ private:
     bool _isVisible;
     bool _isPersistant;
     bool _isInitiaized;
+    bool _isTerminated;
     
     components_list _components;
     gameobject_list _childern;
