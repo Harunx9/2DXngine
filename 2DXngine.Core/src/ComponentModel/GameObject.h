@@ -45,6 +45,9 @@ public:
 
     GameObject* get_parent();
 
+    void set_tag(const char* tag);
+    const char * get_tag() const;
+
     components_list* get_components();
     gameobject_list* get_childern();
 private:
@@ -60,6 +63,7 @@ private:
     GameObject* _parent;
     
     std::string _name;
+    std::string _tag;
     
     bool _isActive;
     bool _isVisible;

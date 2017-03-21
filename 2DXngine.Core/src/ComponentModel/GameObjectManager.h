@@ -1,6 +1,7 @@
 #pragma once
-#include "../Scenes/Scene.h"
 #include "GameObject.h"
+
+class Scene;
 
 class GameObjectManager
 {
@@ -26,9 +27,12 @@ public:
     TComponent* findFistComponent(bool exactType = true);
 
 private:
+    bool gameObjectExist(const char* name);
     void cacheAllComponents();
+    void cacheAllGameObjects();
     Scene* _scene;
     gameobject_list _gameObjects;
+    gameobject_list _flatGameObjectCache;
     components_list _componentsCache;
 };
 

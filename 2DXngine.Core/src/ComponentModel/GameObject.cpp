@@ -153,6 +153,16 @@ GameObject * GameObject::get_parent()
     return this->_parent;
 }
 
+void GameObject::set_tag(const char * tag)
+{
+    this->_tag = tag;
+}
+
+const char * GameObject::get_tag() const
+{
+    return this->_tag.c_str();
+}
+
 components_list * GameObject::get_components()
 {
     return &this->_components;

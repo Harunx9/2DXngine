@@ -78,6 +78,9 @@
     <ClInclude Include="src\Scenes\Scene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="src\Scenes\SceneManager.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -126,6 +129,9 @@
       <Filter>ComponentModel</Filter>
     </ClCompile>
     <ClCompile Include="src\Scenes\Scene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\SceneManager.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
   </ItemGroup>
