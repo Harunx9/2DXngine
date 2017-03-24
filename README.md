@@ -1,6 +1,7 @@
 # 2DXngine
 
-Hello friend stay a while and read this!
+#### Hello friend stay a while and read this!
+
 This is my hobby project which I create for "Get Noticed!" competition. I hope in future this will be fully featured game engine, but for now it not suitable for any real development. 
 
 If you want to run this you need Visual Studio 2015. All dependencies are in the repository right now. In order to run on your machine use:
