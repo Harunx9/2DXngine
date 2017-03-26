@@ -1,13 +1,12 @@
 #include "GameObjectManager.h"
 #include <assert.h>
-
+#include <algorithm>
 
 GameObjectManager::GameObjectManager(Scene* scene) :
     _scene(scene)
 {
 
 }
-
 
 GameObjectManager::~GameObjectManager()
 {
@@ -20,10 +19,19 @@ Scene * GameObjectManager::get_scene() const
 
 void GameObjectManager::initialize()
 {
+    for (auto& gameObject : this->_gameObjects)
+    {
+        gameObject->initialize();
+    }
 }
 
 void GameObjectManager::terminate()
 {
+    _componentsCache.clear();
+    for (auto& gameObject : this->_gameObjects)
+    {
+        gameObject->terminate();
+    }
 }
 
 void GameObjectManager::addGameObject(GameObject * gameObject)
@@ -63,6 +71,19 @@ gameobject_list GameObjectManager::findGameObjecsByTag(const char * tag)
 
 void GameObjectManager::removeGameObject(const char * name)
 {
+    this->_componentsCache.erase(
+        std::remove_if(
+            this->_componentsCache.begin(),
+            this->_componentsCache.end(),
+            [name](Component* c) { return std::strcmp(c->get_owner()->get_name(), name) == 0; }), 
+        this->_componentsCache.end());
+
+    this->_gameObjects.erase(
+        std::remove_if(
+            this->_gameObjects.begin(),
+            this->_gameObjects.end(),
+            [name](GameObject* go) { return std::strcmp(go->get_name(), name) == 0; }),
+        this->_gameObjects.end());
 }
 
 bool GameObjectManager::gameObjectExist(const char* name)
@@ -75,25 +96,4 @@ bool GameObjectManager::gameObjectExist(const char* name)
         }
     }
     return false;
-}
-
-void GameObjectManager::cacheAllComponents()
-{
-    if (this->_componentsCache.empty() == false)
-    {
-        this->_componentsCache.clear();
-    }
-
-    for (auto& gameObject : this->_gameObjects)
-    {
-        this->_componentsCache.insert(
-            this->_componentsCache.end(),
-            gameObject->get_components()->begin(),
-            gameObject->get_components()->end());
-    }
-}
-
-void GameObjectManager::cacheAllGameObjects()
-{
-
 }

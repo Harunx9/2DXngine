@@ -65,8 +65,8 @@ public:
 };
 
 DECLARE_TYPE_INFO_VARIANTS(Component, "")
+DECLARE_TYPE_INFO_VARIANTS(DrawableComponent, Component)
 DECLARE_TYPE_INFO_VARIANTS(TestComponent, Component)
 DECLARE_TYPE_INFO_VARIANTS(TestComponent2, Component)
-DECLARE_TYPE_INFO_VARIANTS(DrawableComponent, Component)
 DECLARE_TYPE_INFO_VARIANTS(TestDrawableComponent1, DrawableComponent)
 DECLARE_TYPE_INFO_VARIANTS(TestDrawableComponent2, DrawableComponent)

@@ -32,7 +32,9 @@
     <ClCompile Include="GameObjectBaseFunctionsTest.cc" />
     <ClCompile Include="GameObjectComponentModelTest.cc" />
     <ClCompile Include="GameObjectLifetimeTest.cc" />
+    <ClCompile Include="GameObjectManagerTest.cpp" />
     <ClCompile Include="GamObjectGraphTest.cc" />
+    <ClCompile Include="TestComponents.cpp" />
     <ClCompile Include="TestTypes.cpp" />
     <ClCompile Include="TestTypesHierarhy.cpp" />
     <ClCompile Include="TypeIdHelperTest.cc" />
@@ -43,6 +45,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="TestComponents.h" />
+    <ClInclude Include="TestScene.h" />
     <ClInclude Include="TestTypes.h" />
     <ClInclude Include="TestTypesHierarhy.h" />
   </ItemGroup>

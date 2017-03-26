@@ -48,8 +48,8 @@ public:
     void set_tag(const char* tag);
     const char * get_tag() const;
 
-    components_list* get_components();
-    gameobject_list* get_childern();
+    components_list& get_components();
+    gameobject_list& get_childern();
 private:
     void resolveComponentsDependencies(bool force = false);
     void initializeComponents(bool force = false);

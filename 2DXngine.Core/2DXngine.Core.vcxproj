@@ -32,6 +32,7 @@
     <ClInclude Include="src\ComponentModel\Component.h" />
     <ClInclude Include="src\ComponentModel\DrawableComponent.h" />
     <ClInclude Include="src\ComponentModel\GameObject.h" />
+    <ClInclude Include="src\ComponentModel\GameObjectFilterFunctions.h" />
     <ClInclude Include="src\ComponentModel\GameObjectManager.h" />
     <ClInclude Include="src\ComponentModel\UpdateableComponent.h" />
     <ClInclude Include="src\Graphics\Renderer.h" />

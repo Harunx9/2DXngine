@@ -12,7 +12,7 @@ GameObject::GameObject(const char * name, bool isPersistant) :
     _isTerminated(true),
     _parent(nullptr)
 {
- 
+
 }
 
 GameObject::~GameObject()
@@ -44,9 +44,12 @@ void GameObject::initialize(bool force)
 
 void GameObject::terminate()
 {
-    this->terminateComponents();
-    this->terminateChildren();
-    this->_isTerminated = true;
+    if (this->_isPersistant == false)
+    {
+        this->terminateComponents();
+        this->terminateChildren();
+        this->_isTerminated = true;
+    }
 }
 
 GameObject* GameObject::addComponent(Component * component)
@@ -71,7 +74,7 @@ void GameObject::removeChild(const char * name)
 {
     if (hasChild(name))
     {
-        
+
         this->_childern.erase(
             std::remove_if(
                 this->_childern.begin(),
@@ -163,14 +166,14 @@ const char * GameObject::get_tag() const
     return this->_tag.c_str();
 }
 
-components_list * GameObject::get_components()
+components_list& GameObject::get_components()
 {
-    return &this->_components;
+    return this->_components;
 }
 
-gameobject_list * GameObject::get_childern()
+gameobject_list& GameObject::get_childern()
 {
-    return &this->_childern;
+    return this->_childern;
 }
 
 void GameObject::resolveComponentsDependencies(bool force)

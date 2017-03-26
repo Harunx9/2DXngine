@@ -31,6 +31,7 @@ static TypeInfo getTypeInfoFromInstance(const T*)
 TypeInfo getOrRegisterTypeInChache(const char* name, const char* parentTypeName);
 #define CAT_IMPL(a, b) a##b
 #define CAT(a, b) CAT_IMPL(a, b)
+
 //in .h files
 #define DECLARE_TYPE_INFO(Type, BaseType)                                            \
                                                                                      \
@@ -45,20 +46,20 @@ struct TypeIdInfo<Type>                                                         
 };                                                                                   \
 
 #define DECLARE_TYPE_INFO_VARIANTS(Type, BaseType) DECLARE_TYPE_INFO(Type, BaseType)\
-                                           DECLARE_TYPE_INFO(Type*, BaseType)\
-                                           DECLARE_TYPE_INFO(const Type*, BaseType)
+                                                   DECLARE_TYPE_INFO(Type*, BaseType)\
+                                                   DECLARE_TYPE_INFO(const Type*, BaseType)
 
 //in .cpp files
-#define DEFINE_TYPE_INFO(Type)      \
-                                    \
-template<>                          \
-struct RegisterType<Type>           \
-{                                   \
-    RegisterType()                  \
-    {                               \
-       TypeIdInfo<Type>::getType(); \
-    }                               \
-};                                  \
+#define DEFINE_TYPE_INFO(Type)                                \
+                                                              \
+template<>                                                    \
+struct RegisterType<Type>                                     \
+{                                                             \
+    RegisterType()                                            \
+    {                                                         \
+       TypeIdInfo<Type>::getType();                           \
+    }                                                         \
+};                                                            \
 static const RegisterType<Type> CAT(registerType, __COUNTER__);
 
 #define DEFINE_TYPE_INFO_VARIANTS(Type) DEFINE_TYPE_INFO(Type)\

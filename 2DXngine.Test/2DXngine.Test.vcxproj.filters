@@ -24,6 +24,12 @@
     <ClCompile Include="GameObjectLifetimeTest.cc">
       <Filter>GameObjectTest</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjectManagerTest.cpp">
+      <Filter>GameObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TestComponents.cpp">
+      <Filter>GameObjectManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObjectTest">
@@ -32,6 +38,9 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{8df00269-1e0d-47b8-84b0-02356491b0ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjectManager">
+      <UniqueIdentifier>{92f7097c-c9c3-4529-b15e-26acfa710df2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestTypes.h">
@@ -39,6 +48,12 @@
     </ClInclude>
     <ClInclude Include="TestTypesHierarhy.h">
       <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="TestComponents.h">
+      <Filter>GameObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <Filter>GameObjectManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
