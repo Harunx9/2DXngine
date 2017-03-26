@@ -30,6 +30,9 @@
     <ClCompile Include="TestComponents.cpp">
       <Filter>GameObjectManager</Filter>
     </ClCompile>
+    <ClCompile Include="EventHandlingTest.cc">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObjectTest">
@@ -54,6 +57,9 @@
     </ClInclude>
     <ClInclude Include="TestScene.h">
       <Filter>GameObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="EventTestData.h">
+      <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

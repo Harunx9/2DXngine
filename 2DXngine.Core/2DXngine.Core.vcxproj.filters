@@ -22,6 +22,9 @@
     <Filter Include="Scenes">
       <UniqueIdentifier>{93d97387-e984-442e-afe3-5bfa31c53ed3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utils\Events">
+      <UniqueIdentifier>{2a005ed5-4b17-4826-b003-c92c6ec79402}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ComponentModel\GameObject.h">
@@ -84,6 +87,12 @@
     <ClInclude Include="src\ComponentModel\GameObjectFilterFunctions.h">
       <Filter>ComponentModel</Filter>
     </ClInclude>
+    <ClInclude Include="src\Utils\Events\EventHandler.h">
+      <Filter>Utils\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Events\EventArgs.h">
+      <Filter>Utils\Events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -136,6 +145,9 @@
     </ClCompile>
     <ClCompile Include="src\Scenes\SceneManager.cpp">
       <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\Events\EventHandler.cpp">
+      <Filter>Utils\Events</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

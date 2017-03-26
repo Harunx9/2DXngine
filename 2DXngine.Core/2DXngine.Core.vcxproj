@@ -45,6 +45,8 @@
     <ClInclude Include="src\TypeInformation\TypeIdHelper.h" />
     <ClInclude Include="src\TypeInformation\TypeInfo.h" />
     <ClInclude Include="src\TypeInformation\TypeMetaInfo.h" />
+    <ClInclude Include="src\Utils\Events\EventArgs.h" />
+    <ClInclude Include="src\Utils\Events\EventHandler.h" />
     <ClInclude Include="src\Utils\GameHandler.h" />
     <ClInclude Include="src\Utils\Timer.h" />
   </ItemGroup>
@@ -64,6 +66,7 @@
     <ClCompile Include="src\TypeInformation\BaseTypesDeclarations.cpp" />
     <ClCompile Include="src\TypeInformation\TypeCache.cpp" />
     <ClCompile Include="src\TypeInformation\TypeInfo.cpp" />
+    <ClCompile Include="src\Utils\Events\EventHandler.cpp" />
     <ClCompile Include="src\Utils\GameHandler.cpp" />
     <ClCompile Include="src\Utils\Timer.cpp" />
   </ItemGroup>

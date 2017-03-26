@@ -29,6 +29,7 @@
   <ItemGroup>
     <ClCompile Include="..\libs\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\libs\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="EventHandlingTest.cc" />
     <ClCompile Include="GameObjectBaseFunctionsTest.cc" />
     <ClCompile Include="GameObjectComponentModelTest.cc" />
     <ClCompile Include="GameObjectLifetimeTest.cc" />
@@ -45,6 +46,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EventTestData.h" />
     <ClInclude Include="TestComponents.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="TestTypes.h" />
