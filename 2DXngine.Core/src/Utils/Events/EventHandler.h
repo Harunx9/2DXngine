@@ -4,8 +4,6 @@
 #include <algorithm>
 #include "EventArgs.h"
 
-
-
 #define CREATE_BINDING(Id, Type, Handler) \
 Binding<EventArgs>(Id, std::bind(&Type::Handler, this, std::placeholders::_1));
 
@@ -33,13 +31,13 @@ private:
 class EventHandler
 {
 public:
-    EventHandler& operator+=(Binding<EventArgs> binding)
+    EventHandler& operator+=(Binding<EventArgs> &binding)
     {
         _subscribers[binding.get_code()] = binding.get_func();
         return *this;
     }
 
-    EventHandler& operator-=(Binding<EventArgs> binding)
+    EventHandler& operator-=(Binding<EventArgs> &binding)
     {
         _subscribers.erase(binding.get_code());
         return *this;
@@ -74,13 +72,13 @@ template<typename TEventArgs>
 class EventParameterHandler
 {
 public:
-    EventParameterHandler& operator+=(Binding<TEventArgs> binding)
+    EventParameterHandler& operator+=(Binding<TEventArgs> &binding)
     {
         _subscribers[binding.get_code()] = binding.get_func();
         return *this;
     }
 
-    EventParameterHandler& operator-=(Binding<TEventArgs> binding)
+    EventParameterHandler& operator-=(Binding<TEventArgs> &binding)
     {
         _subscribers.erase(binding.get_code());
         return *this;
