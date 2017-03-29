@@ -36,8 +36,14 @@
     <ClInclude Include="src\ComponentModel\GameObjectManager.h" />
     <ClInclude Include="src\ComponentModel\UpdateableComponent.h" />
     <ClInclude Include="src\Graphics\Renderer.h" />
+    <ClInclude Include="src\Graphics\RenderTarget.h" />
     <ClInclude Include="src\Scenes\Scene.h" />
+    <ClInclude Include="src\Scenes\SceneBehavior.h" />
+    <ClInclude Include="src\Scenes\SceneBehaviorManager.h" />
+    <ClInclude Include="src\Scenes\SceneLayer.h" />
     <ClInclude Include="src\Scenes\SceneManager.h" />
+    <ClInclude Include="src\Scenes\SceneRenderSystem.h" />
+    <ClInclude Include="src\Scenes\SceneUpdateSystem.h" />
     <ClInclude Include="src\Services\Service.h" />
     <ClInclude Include="src\Services\ServiceLocator.h" />
     <ClInclude Include="src\TypeInformation\BaseTypesDefinitions.h" />
@@ -59,8 +65,14 @@
     <ClCompile Include="src\ComponentModel\GameObjectManager.cpp" />
     <ClCompile Include="src\ComponentModel\UpdateableComponent.cpp" />
     <ClCompile Include="src\Graphics\Renderer.cpp" />
+    <ClCompile Include="src\Graphics\RenderTarget.cpp" />
     <ClCompile Include="src\Scenes\Scene.cpp" />
+    <ClCompile Include="src\Scenes\SceneBehavior.cpp" />
+    <ClCompile Include="src\Scenes\SceneBehaviorManager.cpp" />
+    <ClCompile Include="src\Scenes\SceneLayer.cpp" />
     <ClCompile Include="src\Scenes\SceneManager.cpp" />
+    <ClCompile Include="src\Scenes\SceneRenderSystem.cpp" />
+    <ClCompile Include="src\Scenes\SceneUpdateSystem.cpp" />
     <ClCompile Include="src\Services\Service.cpp" />
     <ClCompile Include="src\Services\ServiceLocator.cpp" />
     <ClCompile Include="src\TypeInformation\BaseTypesDeclarations.cpp" />
@@ -69,6 +81,9 @@
     <ClCompile Include="src\Utils\Events\EventHandler.cpp" />
     <ClCompile Include="src\Utils\GameHandler.cpp" />
     <ClCompile Include="src\Utils\Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{62278505-2A49-40A1-89DF-867A011E0876}</ProjectGuid>

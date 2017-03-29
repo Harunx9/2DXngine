@@ -93,6 +93,12 @@
     <ClInclude Include="src\Utils\Events\EventArgs.h">
       <Filter>Utils\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Scenes\SceneBehavior.h" />
+    <ClInclude Include="src\Scenes\SceneBehaviorManager.h" />
+    <ClInclude Include="src\Scenes\SceneRenderSystem.h" />
+    <ClInclude Include="src\Scenes\SceneUpdateSystem.h" />
+    <ClInclude Include="src\Scenes\SceneLayer.h" />
+    <ClInclude Include="src\Graphics\RenderTarget.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -149,5 +155,14 @@
     <ClCompile Include="src\Utils\Events\EventHandler.cpp">
       <Filter>Utils\Events</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scenes\SceneBehavior.cpp" />
+    <ClCompile Include="src\Scenes\SceneBehaviorManager.cpp" />
+    <ClCompile Include="src\Scenes\SceneRenderSystem.cpp" />
+    <ClCompile Include="src\Scenes\SceneUpdateSystem.cpp" />
+    <ClCompile Include="src\Scenes\SceneLayer.cpp" />
+    <ClCompile Include="src\Graphics\RenderTarget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

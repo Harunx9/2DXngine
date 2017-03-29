@@ -24,5 +24,4 @@ private:
     bool gameObjectExist(const char* name);
     Scene* _scene;
     gameobject_list _gameObjects;
-    components_list _componentsCache;
 };

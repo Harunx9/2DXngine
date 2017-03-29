@@ -27,7 +27,6 @@ void GameObjectManager::initialize()
 
 void GameObjectManager::terminate()
 {
-    _componentsCache.clear();
     for (auto& gameObject : this->_gameObjects)
     {
         gameObject->terminate();
@@ -71,13 +70,6 @@ gameobject_list GameObjectManager::findGameObjecsByTag(const char * tag)
 
 void GameObjectManager::removeGameObject(const char * name)
 {
-    this->_componentsCache.erase(
-        std::remove_if(
-            this->_componentsCache.begin(),
-            this->_componentsCache.end(),
-            [name](Component* c) { return std::strcmp(c->get_owner()->get_name(), name) == 0; }), 
-        this->_componentsCache.end());
-
     this->_gameObjects.erase(
         std::remove_if(
             this->_gameObjects.begin(),
