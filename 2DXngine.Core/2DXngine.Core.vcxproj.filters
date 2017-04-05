@@ -99,6 +99,9 @@
     <ClInclude Include="src\Scenes\SceneUpdateSystem.h" />
     <ClInclude Include="src\Scenes\SceneLayer.h" />
     <ClInclude Include="src\Graphics\RenderTarget.h" />
+    <ClInclude Include="src\Graphics\SpriteBatch.h" />
+    <ClInclude Include="src\ContentManagement\ContentManager.h" />
+    <ClInclude Include="src\ContentManagement\Asset.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -161,6 +164,9 @@
     <ClCompile Include="src\Scenes\SceneUpdateSystem.cpp" />
     <ClCompile Include="src\Scenes\SceneLayer.cpp" />
     <ClCompile Include="src\Graphics\RenderTarget.cpp" />
+    <ClCompile Include="src\Graphics\SpriteBatch.cpp" />
+    <ClCompile Include="src\ContentManagement\ContentManager.cpp" />
+    <ClCompile Include="src\ContentManagement\Asset.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

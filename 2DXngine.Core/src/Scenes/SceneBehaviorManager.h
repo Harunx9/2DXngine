@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "SceneBehavior.h"
+class SceneBehavior;
 
 enum UpdateOrder
 {

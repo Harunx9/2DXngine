@@ -146,6 +146,11 @@ bool GameObject::get_isTerminated() const
     return this->_isTerminated;
 }
 
+bool GameObject::haveChildern() const
+{
+    return this->_childern.empty() == false;
+}
+
 const char * GameObject::get_name()
 {
     return this->_name.c_str();

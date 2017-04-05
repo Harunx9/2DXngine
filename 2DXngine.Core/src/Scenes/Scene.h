@@ -1,16 +1,16 @@
 #pragma once
 #include <string>
+#include "SceneBehaviorManager.h"
 class Renderer;
 class GameObjectManager;
 class SceneManager;
-class SceneBehaviorManager;
 class SceneRenderSystem;
 class SceneUpdateSystem;
 
 class Scene
 {
 public:
-    Scene(const char * name="");
+    Scene(const char * name = "");
     Scene(const Scene* other);
     virtual ~Scene();
 
@@ -26,12 +26,14 @@ public:
     GameObjectManager * get_gameObjectManager() const;
     SceneManager * get_sceneManager() const;
     const char * get_name() const;
-protected: 
+
+protected:
     Renderer * _renderer;
     GameObjectManager * _gameObjectManager;
     SceneManager * _sceneManager;
     SceneRenderSystem * _renderSystem;
     SceneUpdateSystem * _updateSystem;
+    SceneBehaviorManager _sceneBehaviorManager;
     std::string _name;
 };
 

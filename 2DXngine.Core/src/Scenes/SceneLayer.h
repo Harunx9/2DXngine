@@ -1,9 +1,6 @@
 #pragma once
 #include <string>
 
-
-
-
 class SceneLayer
 {
 public:
@@ -18,7 +15,8 @@ private:
     std::string _name;
 };
 
-struct DefaultScenes
+struct DefaultLayers
 {
-
+    const SceneLayer * const GUI_LAYER = new SceneLayer("GUI", 0);
+    const SceneLayer * const GAMEPLAY_LAYER = new SceneLayer("GAMEPLAY", 0);
 };

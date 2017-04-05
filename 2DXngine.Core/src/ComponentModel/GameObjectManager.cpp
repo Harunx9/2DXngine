@@ -78,6 +78,11 @@ void GameObjectManager::removeGameObject(const char * name)
         this->_gameObjects.end());
 }
 
+gameobject_list GameObjectManager::get_gameObjects() const
+{
+    return this->_gameObjects;
+}
+
 bool GameObjectManager::gameObjectExist(const char* name)
 {
     for (auto& gameObject : this->_gameObjects)

@@ -40,6 +40,7 @@ public:
     bool get_isEmpty() const;
     bool get_isInitialized() const;
     bool get_isTerminated() const;
+    bool haveChildern() const;
 
     const char* get_name();
 

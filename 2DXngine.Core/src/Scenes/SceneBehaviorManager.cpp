@@ -1,4 +1,5 @@
 #include "SceneBehaviorManager.h"
+#include "SceneBehavior.h"
 
 SceneBehaviorManager::SceneBehaviorManager()
 {

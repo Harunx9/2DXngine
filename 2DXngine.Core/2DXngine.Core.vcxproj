@@ -27,6 +27,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ContentManagement\Asset.h" />
+    <ClInclude Include="src\ContentManagement\ContentManager.h" />
     <ClInclude Include="src\AppImplementations\App.h" />
     <ClInclude Include="src\AppImplementations\WindowApp.h" />
     <ClInclude Include="src\ComponentModel\Component.h" />
@@ -37,6 +39,7 @@
     <ClInclude Include="src\ComponentModel\UpdateableComponent.h" />
     <ClInclude Include="src\Graphics\Renderer.h" />
     <ClInclude Include="src\Graphics\RenderTarget.h" />
+    <ClInclude Include="src\Graphics\SpriteBatch.h" />
     <ClInclude Include="src\Scenes\Scene.h" />
     <ClInclude Include="src\Scenes\SceneBehavior.h" />
     <ClInclude Include="src\Scenes\SceneBehaviorManager.h" />
@@ -57,6 +60,8 @@
     <ClInclude Include="src\Utils\Timer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ContentManagement\Asset.cpp" />
+    <ClCompile Include="src\ContentManagement\ContentManager.cpp" />
     <ClCompile Include="src\AppImplementations\App.cpp" />
     <ClCompile Include="src\AppImplementations\WindowApp.cpp" />
     <ClCompile Include="src\ComponentModel\Component.cpp" />
@@ -66,6 +71,7 @@
     <ClCompile Include="src\ComponentModel\UpdateableComponent.cpp" />
     <ClCompile Include="src\Graphics\Renderer.cpp" />
     <ClCompile Include="src\Graphics\RenderTarget.cpp" />
+    <ClCompile Include="src\Graphics\SpriteBatch.cpp" />
     <ClCompile Include="src\Scenes\Scene.cpp" />
     <ClCompile Include="src\Scenes\SceneBehavior.cpp" />
     <ClCompile Include="src\Scenes\SceneBehaviorManager.cpp" />

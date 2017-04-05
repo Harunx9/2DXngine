@@ -3,6 +3,10 @@
 #include <ComponentModel\GameObjectManager.h>
 #include "TestComponents.h"
 #include "TestScene.h"
+#include <Services\ServiceLocator.h>
+#include <Scenes\SceneManager.h>
+
+
 
 class GameObjectMananagerTestFixture : public testing::Test
 {
@@ -23,6 +27,7 @@ protected:
         sword
             ->addComponent(swordController)
             ->addComponent(swordDrawable);
+        ServiceLocator::registerService(new SceneManager());
     }
 
     virtual void TearDown()
