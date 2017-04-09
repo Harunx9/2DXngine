@@ -27,6 +27,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ContentManagement\AssetTypes.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\ShaderProgram.h" />
     <ClInclude Include="src\ContentManagement\Asset.h" />
     <ClInclude Include="src\ContentManagement\ContentManager.h" />
     <ClInclude Include="src\AppImplementations\App.h" />
@@ -58,8 +60,11 @@
     <ClInclude Include="src\Utils\Events\EventHandler.h" />
     <ClInclude Include="src\Utils\GameHandler.h" />
     <ClInclude Include="src\Utils\Timer.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\Texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ContentManagement\AssetTypes.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\ShaderProgram.cpp" />
     <ClCompile Include="src\ContentManagement\Asset.cpp" />
     <ClCompile Include="src\ContentManagement\ContentManager.cpp" />
     <ClCompile Include="src\AppImplementations\App.cpp" />
@@ -87,6 +92,7 @@
     <ClCompile Include="src\Utils\Events\EventHandler.cpp" />
     <ClCompile Include="src\Utils\GameHandler.cpp" />
     <ClCompile Include="src\Utils\Timer.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -158,7 +164,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\libs\glm\glm;..\libs\SDL2-2.0.5\include;..\libs\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\gllibs;$(SolutionDir)libs\SDL2-2.0.5\include;$(SolutionDir)libs\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

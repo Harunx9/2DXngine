@@ -2,7 +2,7 @@
 
 
 
-SceneManager::SceneManager(): Service("ServiceManager")
+SceneManager::SceneManager(): Service("SceneManager")
 {
 }
 
@@ -16,5 +16,9 @@ void SceneManager::initialize()
 }
 
 void SceneManager::terminate()
+{
+}
+
+void SceneManager::To(Scene * nextScene)
 {
 }

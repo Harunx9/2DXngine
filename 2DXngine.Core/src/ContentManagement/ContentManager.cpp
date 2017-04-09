@@ -1,11 +1,10 @@
 #include "ContentManager.h"
 
 
-
-ContentManager::ContentManager(const char* name): Service(name)
+ContentManager::ContentManager(const char * name, std::string contentFolder) : Service(name),
+_contentFolder(contentFolder)
 {
 }
-
 
 ContentManager::~ContentManager()
 {
@@ -21,6 +20,9 @@ void ContentManager::terminate()
 
 bool ContentManager::unload(std::string assetName)
 {
+    if (this->_cachedAssets.empty()) return true;
+
+
     return false;
 }
 
@@ -38,3 +40,4 @@ void ContentManager::set_contentFolder(std::string contentFolder)
 {
     this->_contentFolder = contentFolder;
 }
+

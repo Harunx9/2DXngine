@@ -1,21 +1,19 @@
 #include "Asset.h"
 
-
-Asset::Asset(std::string _path)
+Asset::Asset(std::string _path, const AssetType * assetType)
 {
-
 }
 
 Asset::~Asset()
 {
 }
 
-AssetType::AssetType(const char * name, int gropuId):
-    _name(name),
-    _gropuId(gropuId)
+bool Asset::ofType(AssetType * type) const
 {
+    return this->_type == type;
 }
 
-AssetType::~AssetType()
+std::string Asset::get_path() const
 {
+    return this->_path;
 }
