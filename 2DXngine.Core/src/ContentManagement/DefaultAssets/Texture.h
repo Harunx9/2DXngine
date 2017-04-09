@@ -12,5 +12,6 @@ private:
     Texture(std::string path,const char * data);
 
     GLuint _textureId;
+    GLuint _width;
 };
 
