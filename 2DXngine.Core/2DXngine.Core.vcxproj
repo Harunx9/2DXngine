@@ -27,7 +27,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Utils\File.h" />
     <ClInclude Include="src\ContentManagement\AssetTypes.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\Shader.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\ShaderProgram.h" />
     <ClInclude Include="src\ContentManagement\Asset.h" />
     <ClInclude Include="src\ContentManagement\ContentManager.h" />
@@ -63,7 +65,9 @@
     <ClInclude Include="src\ContentManagement\DefaultAssets\Texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Utils\File.cpp" />
     <ClCompile Include="src\ContentManagement\AssetTypes.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\Shader.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\ShaderProgram.cpp" />
     <ClCompile Include="src\ContentManagement\Asset.cpp" />
     <ClCompile Include="src\ContentManagement\ContentManager.cpp" />
