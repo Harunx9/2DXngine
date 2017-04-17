@@ -33,6 +33,9 @@
     <ClCompile Include="EventHandlingTest.cc">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="ShaderTest.cc">
+      <Filter>AssetsTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObjectTest">
@@ -43,6 +46,9 @@
     </Filter>
     <Filter Include="GameObjectManager">
       <UniqueIdentifier>{92f7097c-c9c3-4529-b15e-26acfa710df2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AssetsTest">
+      <UniqueIdentifier>{caacaba1-ff0d-4dc9-ac64-bc441594b440}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

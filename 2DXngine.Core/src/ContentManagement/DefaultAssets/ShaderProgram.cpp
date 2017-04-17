@@ -5,43 +5,54 @@ GLuint ShaderProgram::get_programId() const
     return this->_programId;
 }
 
+void ShaderProgram::loadShadersFromFile()
+{
+    this->_vertexShader = new Shader(this->_vertexPath.c_str(), ShaderType::VERTEX_SHADER);
+    this->_fragmentShader = new Shader(this->_fragmentPath.c_str(), ShaderType::FRAGMENT_SHADER);
+    this->_geometryShader = new Shader(this->_geometryPath.c_str(), ShaderType::GEOMERTY_SHADER);
+}
+
+void ShaderProgram::loadShadersFromSource(std::string vertexProgram, std::string fragmentProgram, std::string geometryProgram)
+{
+    this->_vertexShader = new Shader(vertexProgram, ShaderType::VERTEX_SHADER);
+    this->_fragmentShader = new Shader(fragmentProgram, ShaderType::FRAGMENT_SHADER);
+    this->_geometryShader = new Shader(geometryProgram, ShaderType::GEOMERTY_SHADER);
+}
+
 ProgramCompilationResult ShaderProgram::compile()
 {
-    auto vertexShader = new Shader(this->_vertexPath.c_str(), ShaderType::VERTEX_SHADER);
-    auto fragmetShader = new Shader(this->_fragmentPath.c_str(), ShaderType::FRAGMENT_SHADER);
-    auto geometryShader = new Shader(this->_geometryPath.c_str(), ShaderType::GEOMERTY_SHADER);
-    ShaderCompileResult vertexCompileResult, fragmentCompileResult, geometryCompileResult;
+    ShaderCompileResult vertexCompileResult, fragmentCompileResult, geometryCompileResult = ShaderCompileResult::COMPILATION_ERROR;
 
-    if (vertexShader->tryLoad())
+    if (this->_vertexShader->tryLoad())
     {
-        vertexCompileResult = vertexShader->compile();
+        vertexCompileResult = this->_vertexShader->compile();
     }
 
-    if (fragmetShader->tryLoad())
+    if (this->_fragmentShader->tryLoad())
     {
-        fragmentCompileResult = fragmetShader->compile();
+        fragmentCompileResult = this->_fragmentShader->compile();
     }
 
-    if (geometryShader->tryLoad())
+    if (this->_geometryShader->tryLoad())
     {
-        geometryCompileResult = geometryShader->compile();
+        geometryCompileResult = this->_geometryShader->compile();
     }
 
     this->_programId = glCreateProgram();
 
     if (vertexCompileResult == ShaderCompileResult::COMPILATION_SUCESS)
     {
-        glAttachShader(this->_programId, vertexShader->get_shaderId());
+        glAttachShader(this->_programId, this->_vertexShader->get_shaderId());
     }
 
     if (fragmentCompileResult == ShaderCompileResult::COMPILATION_SUCESS)
     {
-        glAttachShader(this->_programId, fragmetShader->get_shaderId());
+        glAttachShader(this->_programId, this->_fragmentShader->get_shaderId());
     }
 
     if (geometryCompileResult == ShaderCompileResult::COMPILATION_SUCESS)
     {
-        glAttachShader(this->_programId, geometryShader->get_shaderId());
+        glAttachShader(this->_programId, this->_geometryShader->get_shaderId());
     }
 
     glLinkProgram(this->_programId);
@@ -49,9 +60,9 @@ ProgramCompilationResult ShaderProgram::compile()
     GLint success;
     glGetProgramiv(this->_programId, GL_LINK_STATUS, &success);
 
-    delete vertexShader;
-    delete fragmetShader;
-    delete geometryShader;
+    delete this->_vertexShader;
+    delete this->_fragmentShader;
+    delete this->_geometryShader;
 
     if (success == GL_FALSE)
         return ProgramCompilationResult::COMPILE_ERROR;
@@ -119,6 +130,12 @@ ShaderProgram::ShaderProgram(std::string programName) : Asset("Content/Shaders/"
     this->_vertexPath = this->get_path() + programName + "vertex.glsl";
     this->_fragmentPath = this->get_path() + programName + "fragment.glsl";
     this->_geometryPath = this->get_path() + programName + "geometry.glsl";
+    loadShadersFromFile();
+}
+
+ShaderProgram::ShaderProgram(std::string vertexProgram, std::string fragmentProgram, std::string geometryProgram) :Asset("Content/Shaders/", DefaultAssetType::SHADER_PROGRAM_TYPE)
+{
+    loadShadersFromSource(vertexProgram, fragmentProgram, geometryProgram);
 }
 
 ShaderProgram * ShaderProgram::load(std::string name)

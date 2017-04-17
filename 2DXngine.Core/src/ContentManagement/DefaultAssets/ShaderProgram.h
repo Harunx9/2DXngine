@@ -2,7 +2,10 @@
 #include "../Asset.h"
 #include <string>
 #include <GL\glew.h>
-#include <glm\glm.hpp>
+#include <glm\vec2.hpp>
+#include <glm\vec3.hpp>
+#include <glm\vec4.hpp>
+#include <glm\mat4x4.hpp>
 #include "Shader.h"
 
 enum ProgramCompilationResult
@@ -16,6 +19,7 @@ class ShaderProgram : public Asset
 public:
     static ShaderProgram* load(std::string name);
     ShaderProgram(std::string programName);
+    ShaderProgram(std::string vertexProgram, std::string fragmentProgram, std::string geometryProgram = "");
     ~ShaderProgram();
 
     ShaderProgram & use();
@@ -34,10 +38,15 @@ public:
 
     GLuint get_programId() const;
 private:
+    void loadShadersFromFile();
+    void loadShadersFromSource(std::string vertexProgram, std::string fragmentProgram, std::string geometryProgram);
     std::string _programName;
     GLuint _programId;
     std::string _vertexPath;
     std::string _fragmentPath;
     std::string _geometryPath;
+    Shader * _vertexShader;
+    Shader * _fragmentShader;
+    Shader * _geometryShader;
 };
 

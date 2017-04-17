@@ -41,7 +41,10 @@ Texture * Texture::load(std::string path)
 
 Texture::~Texture()
 {
-    SOIL_free_image_data(this->_data);
+    if (this->_data != nullptr)
+        SOIL_free_image_data(this->_data);
+
+    glDeleteTextures(1, &this->_textureId);
 }
 
 GLuint Texture::get_textureId() const

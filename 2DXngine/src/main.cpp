@@ -1,9 +1,8 @@
 #include <AppImplementations\WindowApp.h>
-
-
 int main(int argc, char* argv[])
 {
-    //TODO replace EmptyGameHandler with concrete game implementation
+    // TODO replace EmptyGameHandler with concrete game implementation
+
     App* app = new WindowApp(new EmptyGameHandler());
     app->initialize();
     if (app->getIsInitialized())
