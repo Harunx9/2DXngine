@@ -35,7 +35,9 @@
     <ClCompile Include="GameObjectLifetimeTest.cc" />
     <ClCompile Include="GameObjectManagerTest.cpp" />
     <ClCompile Include="GamObjectGraphTest.cc" />
-    <ClCompile Include="ShaderTest.cc" />
+    <ClCompile Include="RectangleTest.cc" />
+    <ClCompile Include="ShaderProgramTest.cc" />
+    <ClCompile Include="ShaderTest.cpp" />
     <ClCompile Include="TestComponents.cpp" />
     <ClCompile Include="TestTypes.cpp" />
     <ClCompile Include="TestTypesHierarhy.cpp" />

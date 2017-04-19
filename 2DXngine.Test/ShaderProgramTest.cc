@@ -2,7 +2,7 @@
 #include <ContentManagement\DefaultAssets\ShaderProgram.h>
 #include <SDL.h>
 
-class ShaderTestFixture : public ::testing::Test
+class ShaderProgramTestFixture : public ::testing::Test
 {
 protected:
     virtual void SetUp()
@@ -30,12 +30,7 @@ protected:
     {
         SDL_Quit();
     }
-};
 
-
-TEST_F(ShaderTestFixture, shader_can_be_load_from_inline_source)
-{
-    //ARRANGE
     const char *vertexSource =
         "#version 330 core\n"
         "layout (location = 0) in vec4 position;\n"
@@ -62,11 +57,40 @@ TEST_F(ShaderTestFixture, shader_can_be_load_from_inline_source)
         "color = vec4(tint.x, tint.y, tint.z, global_alpha * tint.w) * texture(tex, tex_pos);\n"
         "}";
 
-    auto shader = new ShaderProgram(vertexSource, fragmentSource);
+    const char *fragmentErrorSource =
+        "#version 330 core\n"
+        "in vec2 tex_pos;\n"
+        "in vec4 tint;\n"
+        "out vec4 color;\n"
+        "uniform sampler2D tex;\n"
+        "uniform float global_alpha;\n"
+        "void main(void)\n"
+        "{\n"
+        "color = vec4(tint.x, tint.y, tint.z, global_alpha * tint.w) * texture(t, tex_pos)\n"
+        "}";
+};
+
+
+TEST_F(ShaderProgramTestFixture, shader_can_be_load_from_inline_source)
+{
+    //ARRANGE
+    auto shader = new ShaderProgram(std::string(vertexSource), std::string(fragmentSource));
 
     //ACT
     auto result = shader->compile();
 
     //ASSERT
-    ASSERT_EQ(ShaderCompileResult::COMPILATION_SUCESS, result);
+    ASSERT_EQ(ProgramCompilationResult::COMPILE_SUCCESS, result);
+}
+
+TEST_F(ShaderProgramTestFixture, when_shader_have_error_in_source_program_dont_compile)
+{
+    //ARRANGE
+    auto shader = new ShaderProgram(std::string(vertexSource), std::string(fragmentErrorSource));
+
+    //ACT
+    auto result = shader->compile();
+
+    //ASSERT
+    ASSERT_EQ(ProgramCompilationResult::COMPILE_ERROR, result);
 }

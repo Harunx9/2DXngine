@@ -26,16 +26,22 @@ ProgramCompilationResult ShaderProgram::compile()
     if (this->_vertexShader->tryLoad())
     {
         vertexCompileResult = this->_vertexShader->compile();
+        if (vertexCompileResult == ShaderCompileResult::COMPILATION_ERROR)
+            return ProgramCompilationResult::COMPILE_ERROR;
     }
 
     if (this->_fragmentShader->tryLoad())
     {
         fragmentCompileResult = this->_fragmentShader->compile();
+        if (fragmentCompileResult == ShaderCompileResult::COMPILATION_ERROR)
+            return ProgramCompilationResult::COMPILE_ERROR;
     }
 
     if (this->_geometryShader->tryLoad())
     {
         geometryCompileResult = this->_geometryShader->compile();
+        if (geometryCompileResult == ShaderCompileResult::COMPILATION_ERROR) 
+            return ProgramCompilationResult::COMPILE_ERROR;
     }
 
     this->_programId = glCreateProgram();

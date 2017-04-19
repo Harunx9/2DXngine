@@ -33,7 +33,13 @@
     <ClCompile Include="EventHandlingTest.cc">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="ShaderTest.cc">
+    <ClCompile Include="RectangleTest.cc">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderProgramTest.cc">
+      <Filter>AssetsTest</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderTest.cpp">
       <Filter>AssetsTest</Filter>
     </ClCompile>
   </ItemGroup>

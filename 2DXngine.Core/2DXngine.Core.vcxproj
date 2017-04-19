@@ -61,6 +61,8 @@
     <ClInclude Include="src\Utils\Events\EventArgs.h" />
     <ClInclude Include="src\Utils\Events\EventHandler.h" />
     <ClInclude Include="src\Utils\GameHandler.h" />
+    <ClInclude Include="src\Utils\Math\Point.h" />
+    <ClInclude Include="src\Utils\Math\Rectangle.h" />
     <ClInclude Include="src\Utils\Timer.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Texture.h" />
   </ItemGroup>
@@ -95,6 +97,8 @@
     <ClCompile Include="src\TypeInformation\TypeInfo.cpp" />
     <ClCompile Include="src\Utils\Events\EventHandler.cpp" />
     <ClCompile Include="src\Utils\GameHandler.cpp" />
+    <ClCompile Include="src\Utils\Math\Point.cpp" />
+    <ClCompile Include="src\Utils\Math\Rectangle.cpp" />
     <ClCompile Include="src\Utils\Timer.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Texture.cpp" />
   </ItemGroup>

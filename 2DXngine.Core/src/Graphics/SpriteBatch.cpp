@@ -11,7 +11,29 @@ SpriteBatch::~SpriteBatch()
 {
 }
 
-void SpriteBatch::initializeDefaultShader()
+bool SpriteBatch::initialize()
+{
+    return false;
+}
+
+void SpriteBatch::set_renderTarget(const RenderTarget * target)
+{
+    _currentTarget = target;
+}
+
+void SpriteBatch::begin()
+{
+}
+
+void SpriteBatch::begin(ShaderProgram * shader, glm::vec2 scale, bool sort, glm::mat4 * viewport)
+{
+}
+
+void SpriteBatch::end()
+{
+}
+
+bool SpriteBatch::initializeDefaultShader()
 {
     const char *vertexSource =
         "#version 330 core\n"
@@ -27,7 +49,7 @@ void SpriteBatch::initializeDefaultShader()
         "tint = in_tint;\n"
         "}\n";
 
-    const char *fragmentSource=
+    const char *fragmentSource =
         "#version 330 core\n"
         "in vec2 tex_pos;\n"
         "in vec4 tint;\n"
@@ -40,5 +62,20 @@ void SpriteBatch::initializeDefaultShader()
         "}";
 
     this->_defaultShader = new ShaderProgram(vertexSource, fragmentSource);
-    this->_defaultShader->compile();
+    ProgramCompilationResult result = this->_defaultShader->compile();
+    if (result == ShaderCompileResult::COMPILATION_ERROR)
+    {
+        //TODO: log error
+        return false;
+    }
+
+    return true;
+}
+
+bool SpriteBatch::isRenderTargetSet()
+{
+    if (_currentTarget == nullptr)
+        return false;
+
+    return true;
 }

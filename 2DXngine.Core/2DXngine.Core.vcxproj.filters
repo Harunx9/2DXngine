@@ -107,6 +107,8 @@
     <ClInclude Include="src\ContentManagement\AssetTypes.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Shader.h" />
     <ClInclude Include="src\Utils\File.h" />
+    <ClInclude Include="src\Utils\Math\Rectangle.h" />
+    <ClInclude Include="src\Utils\Math\Point.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -177,6 +179,8 @@
     <ClCompile Include="src\ContentManagement\AssetTypes.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Shader.cpp" />
     <ClCompile Include="src\Utils\File.cpp" />
+    <ClCompile Include="src\Utils\Math\Rectangle.cpp" />
+    <ClCompile Include="src\Utils\Math\Point.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
