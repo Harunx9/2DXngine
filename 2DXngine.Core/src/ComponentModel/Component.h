@@ -3,6 +3,7 @@
 #include "../TypeInformation/TypeMetaInfo.h"
 class GameObject;
 
+
 class Component
 {
 public:
@@ -16,7 +17,7 @@ public:
 
     virtual void initialize(bool force = false) = 0;
     virtual void terminate() = 0;
-    virtual void resolveDependencies(bool force = false) = 0;
+    virtual void resolveDependencies(bool force = false) {}
 
     std::string get_name() const;
     bool get_isInitialized() const;

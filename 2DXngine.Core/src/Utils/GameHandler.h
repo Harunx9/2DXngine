@@ -1,4 +1,5 @@
 #pragma once
+#include <SDL.h>
 class GameHandler
 {
 public:
@@ -9,6 +10,14 @@ public:
     virtual void update(float deltaTime) = 0;
     virtual void draw(float deltaTime) = 0;
     virtual void handleInput() = 0;
+
+    inline void set_window(SDL_Window* window)
+    {
+        this->_window = window;
+    }
+
+protected:
+    SDL_Window* _window;
 };
 
 class EmptyGameHandler : public GameHandler

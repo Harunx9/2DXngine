@@ -28,11 +28,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\TestGameHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\2DXngine.Core\2DXngine.Core.vcxproj">
       <Project>{62278505-2a49-40a1-89df-867a011e0876}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\TestGameHandler.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FA09EF66-E40A-45B1-8D1F-E640CB95C184}</ProjectGuid>
@@ -115,8 +119,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\libs\SDL2-2.0.5\lib\x86;..\2DXngine.Core\Debug;..\libs\glew-2.0.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32.lib;2DXngine.Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)libs\SDL2-2.0.5\lib\x86;$(SolutionDir)2DXngine.Core\Debug;$(SolutionDir)libs\gllibs\soil\lib;$(SolutionDir)libs\glew-2.0.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;SOIL.lib;2DXngine.Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

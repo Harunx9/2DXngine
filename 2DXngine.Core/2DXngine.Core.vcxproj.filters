@@ -109,6 +109,13 @@
     <ClInclude Include="src\Utils\File.h" />
     <ClInclude Include="src\Utils\Math\Rectangle.h" />
     <ClInclude Include="src\Utils\Math\Point.h" />
+    <ClInclude Include="src\Utils\Math\RectangleF.h" />
+    <ClInclude Include="src\Components\Graphics\Transform.h" />
+    <ClInclude Include="src\Components\Graphics\Sprite.h" />
+    <ClInclude Include="src\Components\Graphics\SpriteDrawable.h" />
+    <ClInclude Include="src\Utils\Math\MathTypes.h" />
+    <ClInclude Include="src\Utils\Macros\PropertyMacro.h" />
+    <ClInclude Include="src\Graphics\SamplerState.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -181,6 +188,11 @@
     <ClCompile Include="src\Utils\File.cpp" />
     <ClCompile Include="src\Utils\Math\Rectangle.cpp" />
     <ClCompile Include="src\Utils\Math\Point.cpp" />
+    <ClCompile Include="src\Utils\Math\RectangleF.cpp" />
+    <ClCompile Include="src\Components\Graphics\Transform.cpp" />
+    <ClCompile Include="src\Components\Graphics\Sprite.cpp" />
+    <ClCompile Include="src\Components\Graphics\SpriteDrawable.cpp" />
+    <ClCompile Include="src\Graphics\SamplerState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

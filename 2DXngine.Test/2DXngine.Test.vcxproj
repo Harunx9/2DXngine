@@ -35,6 +35,8 @@
     <ClCompile Include="GameObjectLifetimeTest.cc" />
     <ClCompile Include="GameObjectManagerTest.cpp" />
     <ClCompile Include="GamObjectGraphTest.cc" />
+    <ClCompile Include="PropertyMacroTest.cc" />
+    <ClCompile Include="PropTestClass.cpp" />
     <ClCompile Include="RectangleTest.cc" />
     <ClCompile Include="ShaderProgramTest.cc" />
     <ClCompile Include="ShaderTest.cpp" />
@@ -50,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventTestData.h" />
+    <ClInclude Include="PropTestClass.h" />
     <ClInclude Include="TestComponents.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="TestTypes.h" />

@@ -42,6 +42,10 @@
     <ClCompile Include="ShaderTest.cpp">
       <Filter>AssetsTest</Filter>
     </ClCompile>
+    <ClCompile Include="PropTestClass.cpp" />
+    <ClCompile Include="PropertyMacroTest.cc">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObjectTest">
@@ -71,6 +75,9 @@
       <Filter>GameObjectManager</Filter>
     </ClInclude>
     <ClInclude Include="EventTestData.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="PropTestClass.h">
       <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>

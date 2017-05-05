@@ -27,6 +27,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Components\Graphics\Sprite.h" />
+    <ClInclude Include="src\Components\Graphics\SpriteDrawable.h" />
+    <ClInclude Include="src\Components\Graphics\Transform.h" />
+    <ClInclude Include="src\Graphics\SamplerState.h" />
     <ClInclude Include="src\Utils\File.h" />
     <ClInclude Include="src\ContentManagement\AssetTypes.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Shader.h" />
@@ -61,12 +65,19 @@
     <ClInclude Include="src\Utils\Events\EventArgs.h" />
     <ClInclude Include="src\Utils\Events\EventHandler.h" />
     <ClInclude Include="src\Utils\GameHandler.h" />
+    <ClInclude Include="src\Utils\Macros\PropertyMacro.h" />
+    <ClInclude Include="src\Utils\Math\MathTypes.h" />
     <ClInclude Include="src\Utils\Math\Point.h" />
     <ClInclude Include="src\Utils\Math\Rectangle.h" />
+    <ClInclude Include="src\Utils\Math\RectangleF.h" />
     <ClInclude Include="src\Utils\Timer.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Components\Graphics\Sprite.cpp" />
+    <ClCompile Include="src\Components\Graphics\SpriteDrawable.cpp" />
+    <ClCompile Include="src\Components\Graphics\Transform.cpp" />
+    <ClCompile Include="src\Graphics\SamplerState.cpp" />
     <ClCompile Include="src\Utils\File.cpp" />
     <ClCompile Include="src\ContentManagement\AssetTypes.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Shader.cpp" />
@@ -99,6 +110,7 @@
     <ClCompile Include="src\Utils\GameHandler.cpp" />
     <ClCompile Include="src\Utils\Math\Point.cpp" />
     <ClCompile Include="src\Utils\Math\Rectangle.cpp" />
+    <ClCompile Include="src\Utils\Math\RectangleF.cpp" />
     <ClCompile Include="src\Utils\Timer.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Texture.cpp" />
   </ItemGroup>

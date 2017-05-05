@@ -21,11 +21,6 @@ void WindowApp::initialize()
 
     SDL_Init(SDL_INIT_EVERYTHING);
 
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
-    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-
     this->_window = SDL_CreateWindow("Game Window",
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
         640,
@@ -33,6 +28,11 @@ void WindowApp::initialize()
         SDL_WINDOW_OPENGL);
 
     auto ctx = SDL_GL_CreateContext(_window);
+
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
     GLenum glewError = glewInit();
     if (glewError != GLEW_OK)
@@ -42,6 +42,8 @@ void WindowApp::initialize()
 
     if (this->_window && this->_game)
     {
+        this->_game->set_window(this->_window);
+        this->_game->initialize();
         this->_isInitialized = true;
         this->_isRunning = true;
     }
