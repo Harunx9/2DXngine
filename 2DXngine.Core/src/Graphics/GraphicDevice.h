@@ -34,14 +34,14 @@ public:
     GraphicDevice();
     ~GraphicDevice();
 
-    inline void initialize()
+    inline void initialize(int width, int height, const char * windowName)
     {
         SDL_Init(SDL_INIT_EVERYTHING);
 
-        this->_window = SDL_CreateWindow("Game Window",
+        this->_window = SDL_CreateWindow(windowName,
             SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-            640,
-            360,
+            width,
+            height,
             SDL_WINDOW_OPENGL);
 
         auto ctx = SDL_GL_CreateContext(_window);
@@ -56,6 +56,8 @@ public:
         {
             SDL_Quit();
         }
+
+
     }
 
     inline void clear(Color color)
@@ -69,6 +71,11 @@ public:
         GLint display[4];
         glGetIntegerv(GL_VIEWPORT, display);
         return Viewport(display);
+    }
+
+    inline void swapBuffers()
+    {
+        SDL_GL_SwapWindow(this->_window);
     }
 
     READONLY_PROPERTY(bool, isInitialized)
