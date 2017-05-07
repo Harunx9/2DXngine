@@ -44,7 +44,7 @@ GameObject * GameObjectManager::findObject(const char * name)
 {
     for (auto& gameObject : this->_gameObjects)
     {
-        if (std::strcmp(gameObject->get_name(), name) == 0)
+        if (gameObject->get_name() == name)
         {
             return gameObject;
         }
@@ -59,7 +59,7 @@ gameobject_list GameObjectManager::findGameObjecsByTag(const char * tag)
 
     for (auto& gameObject : this->_gameObjects)
     {
-        if (std::strcmp(gameObject->get_tag(), tag) == 0)
+        if (gameObject->get_tag() == tag)
         {
             list.push_back(gameObject);
         }
@@ -74,7 +74,7 @@ void GameObjectManager::removeGameObject(const char * name)
         std::remove_if(
             this->_gameObjects.begin(),
             this->_gameObjects.end(),
-            [name](GameObject* go) { return std::strcmp(go->get_name(), name) == 0; }),
+            [name](GameObject* go) { return go->get_name() == name; }),
         this->_gameObjects.end());
 }
 
@@ -83,11 +83,11 @@ gameobject_list GameObjectManager::get_gameObjects() const
     return this->_gameObjects;
 }
 
-bool GameObjectManager::gameObjectExist(const char* name)
+bool GameObjectManager::gameObjectExist(std::string& name)
 {
     for (auto& gameObject : this->_gameObjects)
     {
-        if (std::strcmp(gameObject->get_name(), name) == 0)
+        if (gameObject->get_name() == name)
         {
             return true;
         }

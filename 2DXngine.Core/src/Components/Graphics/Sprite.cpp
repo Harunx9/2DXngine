@@ -15,7 +15,7 @@ void Sprite::initialize(bool force)
     this->_manager = ServiceLocator::get<ContentManager>("ContentManager");
     if (this->_manager)
     {
-        this->_texture = this->_manager->load<Texture>(this->_path);
+        this->_texture = this->_manager->load<Texture>(AssetPath::create(this->_path));
     }
 }
 

@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <GL\glew.h>
+#include "../../Utils/Macros/PropertyMacro.h"
 
 enum ShaderType
 {
@@ -24,15 +25,11 @@ public:
     
     bool tryLoad();
     ShaderCompileResult compile();
-    GLuint get_shaderId() const;
-    ShaderType get_type() const;
-
-
+    READONLY_PROPERTY(GLuint, shaderId)
+    READONLY_PROPERTY(ShaderType, type)
 private:
     bool _compiled;
     std::string _source;
     std::string _path;
-    GLuint _shaderId;
-    ShaderType _type;
 };
 

@@ -1,9 +1,5 @@
 #include "ShaderProgram.h"
 #include <glm/gtc/type_ptr.hpp>
-GLuint ShaderProgram::get_programId() const
-{
-    return this->_programId;
-}
 
 void ShaderProgram::loadShadersFromFile()
 {
@@ -130,23 +126,25 @@ void ShaderProgram::setMatrix4Param(const char * paramName, const glm::mat4 & va
     glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
 }
 
-ShaderProgram::ShaderProgram(std::string programName) : Asset("Content/Shaders/", DefaultAssetType::SHADER_PROGRAM_TYPE)
+ShaderProgram::ShaderProgram(AssetPath assetPath) :
+    Asset(assetPath, DefaultAssetType::SHADER_PROGRAM_TYPE)
 {
     this->_programName;
-    this->_vertexPath = this->get_path() + programName + "vertex.glsl";
-    this->_fragmentPath = this->get_path() + programName + "fragment.glsl";
-    this->_geometryPath = this->get_path() + programName + "geometry.glsl";
+    this->_vertexPath = this->get_path().get_fullPath() + "vertex.glsl";
+    this->_fragmentPath = this->get_path().get_fullPath() + "fragment.glsl";
+    this->_geometryPath = this->get_path().get_fullPath() + "geometry.glsl";
     loadShadersFromFile();
 }
 
-ShaderProgram::ShaderProgram(std::string vertexProgram, std::string fragmentProgram, std::string geometryProgram) :Asset("Content/Shaders/", DefaultAssetType::SHADER_PROGRAM_TYPE)
+ShaderProgram::ShaderProgram(std::string vertexProgram, std::string fragmentProgram, std::string geometryProgram) :
+    Asset(AssetPath::create("", AssertLocation::INTERNAL), DefaultAssetType::SHADER_PROGRAM_TYPE)
 {
     loadShadersFromSource(vertexProgram, fragmentProgram, geometryProgram);
 }
 
-ShaderProgram * ShaderProgram::load(std::string name)
+ShaderProgram * ShaderProgram::load(AssetPath assetPath)
 {
-    auto program = new ShaderProgram(name);
+    auto program = new ShaderProgram(assetPath);
     auto compileResult = program->compile();
     if (compileResult == ProgramCompilationResult::COMPILE_SUCCESS)
     {

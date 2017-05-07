@@ -56,13 +56,3 @@ ShaderCompileResult Shader::compile()
 
     return ShaderCompileResult::COMPILATION_SUCESS;
 }
-
-GLuint Shader::get_shaderId() const
-{
-    return this->_shaderId;
-}
-
-ShaderType Shader::get_type() const
-{
-    return this->_type;
-}

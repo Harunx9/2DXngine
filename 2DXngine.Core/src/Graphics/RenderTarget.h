@@ -4,7 +4,7 @@
 class RenderTarget : public Texture
 {
 public:
-    RenderTarget(int width, int height, GLuint wrapS, GLuint wrapT, GLuint filterMin, GLuint filterMax);
+    RenderTarget(int width, int height);
     ~RenderTarget();
     virtual void generate() override;
     inline GLuint get_fbo() const

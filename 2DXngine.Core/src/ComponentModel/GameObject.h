@@ -3,6 +3,7 @@
 #include <vector>
 #include "Component.h"
 #include "../TypeInformation/TypeInfo.h"
+#include "../Utils/Macros/PropertyMacro.h"
 class GameObject;
 
 typedef std::vector<Component*> components_list;
@@ -28,26 +29,29 @@ public:
     void removeChild(const char* name);
     GameObject* findChild(const char* name);
 
-    bool get_isActive() const;
+    READONLY_PROPERTY(bool, isActive)
     void activate();
     void deactivate();
 
-    bool get_isVisible() const;
+    READONLY_PROPERTY(bool, isVisible)
     void show();
     void hide();
 
-    bool get_isPersistant() const;
-    bool get_isEmpty() const;
-    bool get_isInitialized() const;
-    bool get_isTerminated() const;
+    inline bool get_isEmpty() const
+    {
+        return this->_components.empty();
+    }
+
+    READONLY_PROPERTY(bool, isPersistant)
+    READONLY_PROPERTY(bool, isInitialized)
+    READONLY_PROPERTY(bool, isTerminated)
+
     bool haveChildern() const;
 
-    const char* get_name();
+    READONLY_PROPERTY(std::string, name)
+    READONLY_PROPERTY(GameObject*, parent)
 
-    GameObject* get_parent();
-
-    void set_tag(const char* tag);
-    const char * get_tag() const;
+    PROPERTY(std::string, tag)
 
     components_list& get_components();
     gameobject_list& get_childern();
@@ -58,20 +62,8 @@ private:
 
     void terminateComponents();
     void terminateChildren();
-    
-    bool hasChild(const char* name);
-    
-    GameObject* _parent;
-    
-    std::string _name;
-    std::string _tag;
-    
-    bool _isActive;
-    bool _isVisible;
-    bool _isPersistant;
-    bool _isInitiaized;
-    bool _isTerminated;
-    
+
+    bool hasChild(std::string name);
     components_list _components;
     gameobject_list _childern;
 };

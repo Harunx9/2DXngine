@@ -22,7 +22,7 @@ public:
     gameobject_list get_gameObjects() const;
 
 private:
-    bool gameObjectExist(const char* name);
+    bool gameObjectExist(std::string& name);
     Scene* _scene;
     gameobject_list _gameObjects;
 };

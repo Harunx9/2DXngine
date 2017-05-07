@@ -116,6 +116,10 @@
     <ClInclude Include="src\Utils\Math\MathTypes.h" />
     <ClInclude Include="src\Utils\Macros\PropertyMacro.h" />
     <ClInclude Include="src\Graphics\SamplerState.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\Bitmap.h" />
+    <ClInclude Include="src\ContentManagement\AssetPath.h" />
+    <ClInclude Include="src\Graphics\GraphicDevice.h" />
+    <ClInclude Include="src\Graphics\Color.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -193,6 +197,9 @@
     <ClCompile Include="src\Components\Graphics\Sprite.cpp" />
     <ClCompile Include="src\Components\Graphics\SpriteDrawable.cpp" />
     <ClCompile Include="src\Graphics\SamplerState.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp" />
+    <ClCompile Include="src\ContentManagement\AssetPath.cpp" />
+    <ClCompile Include="src\Graphics\GraphicDevice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

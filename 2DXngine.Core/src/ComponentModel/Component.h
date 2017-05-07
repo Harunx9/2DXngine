@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "../TypeInformation/TypeMetaInfo.h"
+#include "../Utils/Macros/PropertyMacro.h"
 class GameObject;
 
 
@@ -19,19 +20,15 @@ public:
     virtual void terminate() = 0;
     virtual void resolveDependencies(bool force = false) {}
 
-    std::string get_name() const;
-    bool get_isInitialized() const;
-    bool get_isTerminated() const;
+    READONLY_PROPERTY(std::string, name)
+    READONLY_PROPERTY(bool, isInitialized)
+    READONLY_PROPERTY(bool, isTerminated)
+    READONLY_PROPERTY(bool, isDependenciesResovled)
 
     void add_owner(GameObject* owner);
     void remove_owner();
     GameObject* get_owner() const;
     bool has_onwer();
-    bool get_isDependenciesResovled() const;
 protected:
-    std::string _name;
-    bool _isDependenciesResovled;
-    bool _isInitialized;
-    bool _isTerminated;
     GameObject* _owner;
 };

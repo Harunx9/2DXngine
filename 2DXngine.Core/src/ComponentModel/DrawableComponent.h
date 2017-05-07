@@ -7,7 +7,8 @@ class DrawableComponent :
 {
 public:
     ADD_TYPE_META_INFO()
-        DrawableComponent(const char* name = "Drawable");
+
+    DrawableComponent(const char* name = "Drawable");
     virtual ~DrawableComponent();
 
     virtual void drawDebug(Renderer * renderer, float deltaTime) {}
@@ -15,8 +16,6 @@ public:
 
     void hide();
     void show();
-    bool get_isVisible() const;
-protected:
-    bool _isVisible;
+    READONLY_PROPERTY(bool, isVisible)
 };
 

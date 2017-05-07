@@ -31,21 +31,6 @@ void Component::baseResolveDependencies(bool force)
     this->_isDependenciesResovled = true;
 }
 
-std::string Component::get_name() const
-{
-    return this->_name;
-}
-
-bool Component::get_isInitialized() const
-{
-    return this->_isInitialized;
-}
-
-bool Component::get_isTerminated() const
-{
-    return false;
-}
-
 void Component::add_owner(GameObject * owner)
 {
     this->_owner = owner;
@@ -64,9 +49,4 @@ GameObject * Component::get_owner() const
 bool Component::has_onwer()
 {
     return (this->_owner == nullptr) == false;
-}
-
-bool Component::get_isDependenciesResovled() const
-{
-    return this->_isDependenciesResovled;
 }

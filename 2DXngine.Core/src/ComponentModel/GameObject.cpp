@@ -8,7 +8,7 @@ GameObject::GameObject(const char * name, bool isPersistant) :
     _isPersistant(isPersistant),
     _isActive(true),
     _isVisible(true),
-    _isInitiaized(false),
+    _isInitialized(false),
     _isTerminated(true),
     _parent(nullptr)
 {
@@ -39,7 +39,7 @@ void GameObject::initialize(bool force)
     this->resolveComponentsDependencies(force);
     this->initializeComponents(force);
     this->initializeChildren(force);
-    this->_isInitiaized = true;
+    this->_isInitialized = true;
 }
 
 void GameObject::terminate()
@@ -79,7 +79,7 @@ void GameObject::removeChild(const char * name)
             std::remove_if(
                 this->_childern.begin(),
                 this->_childern.end(),
-                [name](GameObject* go) { return std::strcmp(go->get_name(), name) == 0; }));
+                [name](GameObject* go) { return go->get_name() == name; }));
     }
 }
 
@@ -89,16 +89,11 @@ GameObject* GameObject::findChild(const char * name)
     {
         for (auto& child : this->_childern)
         {
-            if (strcmp(name, child->get_name()) == 0)
+            if (name == child->get_name())
                 return child;
         }
     }
     return nullptr;
-}
-
-bool GameObject::get_isActive() const
-{
-    return this->_isActive;
 }
 
 void GameObject::activate()
@@ -111,11 +106,6 @@ void GameObject::deactivate()
     _isActive = false;
 }
 
-bool GameObject::get_isVisible() const
-{
-    return this->_isVisible;
-}
-
 void GameObject::show()
 {
     this->_isVisible = true;
@@ -126,49 +116,9 @@ void GameObject::hide()
     _isVisible = false;
 }
 
-bool GameObject::get_isPersistant() const
-{
-    return this->_isPersistant;
-}
-
-bool GameObject::get_isEmpty() const
-{
-    return _components.empty();
-}
-
-bool GameObject::get_isInitialized() const
-{
-    return this->_isInitiaized;
-}
-
-bool GameObject::get_isTerminated() const
-{
-    return this->_isTerminated;
-}
-
 bool GameObject::haveChildern() const
 {
     return this->_childern.empty() == false;
-}
-
-const char * GameObject::get_name()
-{
-    return this->_name.c_str();
-}
-
-GameObject * GameObject::get_parent()
-{
-    return this->_parent;
-}
-
-void GameObject::set_tag(const char * tag)
-{
-    this->_tag = tag;
-}
-
-const char * GameObject::get_tag() const
-{
-    return this->_tag.c_str();
 }
 
 components_list& GameObject::get_components()
@@ -203,7 +153,7 @@ void GameObject::initializeChildren(bool force)
 {
     for (auto& child : this->_childern)
     {
-        if (child->get_isInitialized() == false || force)
+        if (child->get_isInitialized()== false || force)
             child->initialize(force);
     }
 }
@@ -224,13 +174,13 @@ void GameObject::terminateChildren()
     }
 }
 
-bool GameObject::hasChild(const char * name)
+bool GameObject::hasChild(std::string name)
 {
     if (this->_childern.empty() == false)
     {
         for (auto& child : this->_childern)
         {
-            if (strcmp(name, child->get_name()) == 0)
+            if (name == child->get_name())
                 return true;
         }
     }

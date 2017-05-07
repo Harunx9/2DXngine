@@ -5,7 +5,6 @@ SpriteBatch::SpriteBatch()
 {
 }
 
-
 SpriteBatch::~SpriteBatch()
 {
     delete this->_defaultShader;
@@ -121,16 +120,16 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, glm::vec4 color, f
     //set positions
     batchItem->postions[0] = position;
     batchItem->postions[1] = glm::vec2(
-        position.x + texture->get_width(),
+        position.x + texture->get_bitmap()->get_width(),
         position.y);
 
     batchItem->postions[2] = glm::vec2(
         position.x,
-        position.y + texture->get_height());
+        position.y + texture->get_bitmap()->get_height());
 
     batchItem->postions[3] = glm::vec2(
-        position.x + texture->get_width(),
-        position.y + texture->get_height());
+        position.x + texture->get_bitmap()->get_width(),
+        position.y + texture->get_bitmap()->get_height());
 
     //set color
     batchItem->color = color;
@@ -201,16 +200,16 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, Rectangle * source
     batchItem->postions[0] = position;
 
     batchItem->postions[1] = glm::vec2(
-        position.x + texture->get_width(),
+        position.x + texture->get_bitmap()->get_width(),
         position.y);
 
     batchItem->postions[2] = glm::vec2(
         position.x,
-        position.y + texture->get_height());
+        position.y + texture->get_bitmap()->get_height());
 
     batchItem->postions[3] = glm::vec2(
-        position.x + texture->get_height(),
-        position.y + texture->get_width());
+        position.x + texture->get_bitmap()->get_height(),
+        position.y + texture->get_bitmap()->get_width());
 
     //set color
     batchItem->color = color;
@@ -227,20 +226,20 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, Rectangle * source
     if (sourceRectangle != nullptr)
     {
         batchItem->texcoords[0] = glm::vec2(
-            sourceRectangle->get_x() * texture->get_texelWidth(),
-            sourceRectangle->get_y() * texture->get_texelHeight());
+            sourceRectangle->get_x() * texture->get_bitmap()->get_texelWidth(),
+            sourceRectangle->get_y() * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[1] = glm::vec2(
-            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_texelWidth(),
-            sourceRectangle->get_y() * texture->get_texelHeight());
+            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_bitmap()->get_texelWidth(),
+            sourceRectangle->get_y() * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[2] = glm::vec2(
-            sourceRectangle->get_x() * texture->get_texelWidth(),
-            (sourceRectangle->get_y() + texture->get_height()) * texture->get_texelHeight());
+            sourceRectangle->get_x() * texture->get_bitmap()->get_texelWidth(),
+            (sourceRectangle->get_y() + texture->get_bitmap()->get_height()) * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[3] = glm::vec2(
-            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_texelWidth(),
-            (sourceRectangle->get_y() + texture->get_height()) * texture->get_texelHeight());
+            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_bitmap()->get_texelWidth(),
+            (sourceRectangle->get_y() + texture->get_bitmap()->get_height()) * texture->get_bitmap()->get_texelHeight());
     }
     else
     {
@@ -290,20 +289,20 @@ void SpriteBatch::draw(Texture * texture, Rectangle destinationRectangle, Rectan
     if (sourceRectangle != nullptr)
     {
         batchItem->texcoords[0] = glm::vec2(
-            sourceRectangle->get_x() * texture->get_texelWidth(),
-            sourceRectangle->get_y() * texture->get_texelHeight());
+            sourceRectangle->get_x() * texture->get_bitmap()->get_texelWidth(),
+            sourceRectangle->get_y() * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[1] = glm::vec2(
-            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_texelWidth(),
-            sourceRectangle->get_y() * texture->get_texelHeight());
+            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_bitmap()->get_texelWidth(),
+            sourceRectangle->get_y() * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[2] = glm::vec2(
-            sourceRectangle->get_x() * texture->get_texelWidth(),
-            (sourceRectangle->get_y() + texture->get_height()) * texture->get_texelHeight());
+            sourceRectangle->get_x() * texture->get_bitmap()->get_texelWidth(),
+            (sourceRectangle->get_y() + texture->get_bitmap()->get_height()) * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[3] = glm::vec2(
-            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_texelWidth(),
-            (sourceRectangle->get_y() + texture->get_height()) * texture->get_texelHeight());
+            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_bitmap()->get_texelWidth(),
+            (sourceRectangle->get_y() + texture->get_bitmap()->get_height()) * texture->get_bitmap()->get_texelHeight());
     }
     else
     {
@@ -325,30 +324,30 @@ void SpriteBatch::draw(Texture * texture, Rectangle destinationRectangle, Rectan
     if (sourceRectangle != nullptr)
     {
         batchItem->texcoords[0] = glm::vec2(
-            sourceRectangle->get_x() * texture->get_texelWidth(),
-            sourceRectangle->get_y() * texture->get_texelHeight());
+            sourceRectangle->get_x() * texture->get_bitmap()->get_texelWidth(),
+            sourceRectangle->get_y() * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[1] = glm::vec2(
-            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_texelWidth(),
-            sourceRectangle->get_y() * texture->get_texelHeight());
+            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_bitmap()->get_texelWidth(),
+            sourceRectangle->get_y() * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[2] = glm::vec2(
-            sourceRectangle->get_x() * texture->get_texelWidth(),
-            (sourceRectangle->get_y() + texture->get_height()) * texture->get_texelHeight());
+            sourceRectangle->get_x() * texture->get_bitmap()->get_texelWidth(),
+            (sourceRectangle->get_y() + texture->get_bitmap()->get_height()) * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[3] = glm::vec2(
-            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_texelWidth(),
-            (sourceRectangle->get_y() + texture->get_height()) * texture->get_texelHeight());
+            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_bitmap()->get_texelWidth(),
+            (sourceRectangle->get_y() + texture->get_bitmap()->get_height()) * texture->get_bitmap()->get_texelHeight());
 
         if (sourceRectangle->get_width() != 0)
             origin.x = origin.x * (float)destinationRectangle.get_width() / (float)sourceRectangle->get_width();
         else
-            origin.x = origin.x * (float)destinationRectangle.get_width() * texture->get_texelWidth();
+            origin.x = origin.x * (float)destinationRectangle.get_width() * texture->get_bitmap()->get_texelWidth();
 
         if (sourceRectangle->get_height() != 0)
             origin.y = origin.y * (float)destinationRectangle.get_height() / (float)sourceRectangle->get_height();
         else
-            origin.y = origin.y * (float)destinationRectangle.get_height() * texture->get_texelHeight();
+            origin.y = origin.y * (float)destinationRectangle.get_height() * texture->get_bitmap()->get_texelHeight();
     }
     else
     {
@@ -357,8 +356,8 @@ void SpriteBatch::draw(Texture * texture, Rectangle destinationRectangle, Rectan
         batchItem->texcoords[2] = glm::vec2(0.f, 1.f);
         batchItem->texcoords[3] = glm::vec2(1.f, 1.f);
 
-        origin.x = origin.x * (float)destinationRectangle.get_width() * texture->get_texelWidth();
-        origin.y = origin.y * (float)destinationRectangle.get_height() * texture->get_texelHeight();
+        origin.x = origin.x * (float)destinationRectangle.get_width() * texture->get_bitmap()->get_texelWidth();
+        origin.y = origin.y * (float)destinationRectangle.get_height() * texture->get_bitmap()->get_texelHeight();
     }
 
     if (rotation == 0.f)
@@ -446,7 +445,7 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, Rectangle * source
     if (batchItem == nullptr)
         return;
 
-    auto size = glm::vec2(texture->get_width(), texture->get_height()) * scale;
+    auto size = glm::vec2(texture->get_bitmap()->get_width(), texture->get_bitmap()->get_height()) * scale;
 
     batchItem->texture = texture;
 
@@ -505,20 +504,20 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, Rectangle * source
     if (sourceRectangle != nullptr)
     {
         batchItem->texcoords[0] = glm::vec2(
-            sourceRectangle->get_x() * texture->get_texelWidth(),
-            sourceRectangle->get_y() * texture->get_texelHeight());
+            sourceRectangle->get_x() * texture->get_bitmap()->get_texelWidth(),
+            sourceRectangle->get_y() * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[1] = glm::vec2(
-            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_texelWidth(),
-            sourceRectangle->get_y() * texture->get_texelHeight());
+            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_bitmap()->get_texelWidth(),
+            sourceRectangle->get_y() * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[2] = glm::vec2(
-            sourceRectangle->get_x() * texture->get_texelWidth(),
-            (sourceRectangle->get_y() + texture->get_height()) * texture->get_texelHeight());
+            sourceRectangle->get_x() * texture->get_bitmap()->get_texelWidth(),
+            (sourceRectangle->get_y() + texture->get_bitmap()->get_height()) * texture->get_bitmap()->get_texelHeight());
 
         batchItem->texcoords[3] = glm::vec2(
-            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_texelWidth(),
-            (sourceRectangle->get_y() + texture->get_height()) * texture->get_texelHeight());
+            (sourceRectangle->get_x() + sourceRectangle->get_width()) * texture->get_bitmap()->get_texelWidth(),
+            (sourceRectangle->get_y() + texture->get_bitmap()->get_height()) * texture->get_bitmap()->get_texelHeight());
     }
     else
     {
@@ -663,7 +662,7 @@ void SpriteBatch::drawBatch()
         glBufferSubData(GL_ARRAY_BUFFER, 0, fullSize* (32 * sizeof(GLfloat)),
             &this->_vertexBuffer[0]);
 
-        auto lastTex = this->_items[batchNumber* MAX_BATCH_ITEMS]->texture;
+        auto lastTex = this->_items[batchNumber * MAX_BATCH_ITEMS]->texture;
         int offset = 0;
 
         SpriteBatchItem* spriteItem;

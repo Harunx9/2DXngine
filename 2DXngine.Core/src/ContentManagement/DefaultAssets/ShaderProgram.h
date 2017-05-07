@@ -7,6 +7,7 @@
 #include <glm\vec4.hpp>
 #include <glm\mat4x4.hpp>
 #include "Shader.h"
+#include "../../Utils/Macros/PropertyMacro.h"
 
 enum ProgramCompilationResult
 {
@@ -17,8 +18,8 @@ enum ProgramCompilationResult
 class ShaderProgram : public Asset
 {
 public:
-    static ShaderProgram* load(std::string name);
-    ShaderProgram(std::string programName);
+    static ShaderProgram* load(AssetPath assetPath);
+    ShaderProgram(AssetPath assetPat);
     ShaderProgram(std::string vertexProgram, std::string fragmentProgram, std::string geometryProgram = "");
     ~ShaderProgram();
 
@@ -36,12 +37,12 @@ public:
     void setVec4fParam(const char* paramName, const glm::vec4 &value);
     void setMatrix4Param(const char* paramName, const glm::mat4 &value);
 
-    GLuint get_programId() const;
+   
+   READONLY_PROPERTY(GLuint, programId)
 private:
     void loadShadersFromFile();
     void loadShadersFromSource(std::string vertexProgram, std::string fragmentProgram, std::string geometryProgram);
     std::string _programName;
-    GLuint _programId;
     std::string _vertexPath;
     std::string _fragmentPath;
     std::string _geometryPath;

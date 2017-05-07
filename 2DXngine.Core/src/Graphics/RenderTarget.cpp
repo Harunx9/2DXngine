@@ -1,11 +1,14 @@
 #include "RenderTarget.h"
 
-RenderTarget::RenderTarget(int width, int height, GLuint wrapS, GLuint wrapT, GLuint filterMin, GLuint filterMax) : Texture("", 0, width, height, wrapS, wrapT, filterMin, filterMax)
+
+RenderTarget::RenderTarget(int width, int height) :
+    Texture(AssetPath::empty(), &Bitmap::empty(width, height))
 {
 }
 
 RenderTarget::~RenderTarget()
 {
+    glDeleteBuffers(1, &this->_fbo);
 }
 
 void RenderTarget::generate()
@@ -13,7 +16,7 @@ void RenderTarget::generate()
     glBindFramebuffer(GL_FRAMEBUFFER, this->_fbo);
     Texture::generate();
     this->bind();
-    glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, this->_textureId, 0);
+    glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, this->get_textureId(), 0);
     GLenum drawBuffers[1] = { GL_COLOR_ATTACHMENT0 };
     glDrawBuffers(1, drawBuffers);
 

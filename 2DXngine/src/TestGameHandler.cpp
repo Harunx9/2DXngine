@@ -14,7 +14,7 @@ void TestGameHandler::initialize()
 {
     batch = new SpriteBatch();
     batch->initialize();
-    texture = Texture::load("Content\\dot.png");
+    texture = Texture::load(AssetPath::create("Content\\dot.png"));
 }
 
 void TestGameHandler::update(float deltaTime)
