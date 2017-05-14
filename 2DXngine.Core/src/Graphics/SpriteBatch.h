@@ -9,6 +9,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <vector>
 #include "../Utils/Math/Rectangle.h"
+#include "GraphicDevice.h"
 #define MAX_BATCH_ITEMS 2048
 
 class ShaderProgram;
@@ -31,7 +32,7 @@ enum SortMode
 class SpriteBatch
 {
 public:
-    SpriteBatch();
+    SpriteBatch(GraphicDevice* device);
     ~SpriteBatch();
 
     bool initialize();
@@ -82,7 +83,7 @@ private:
     GLuint _vao;
     GLuint _vbo;
     GLuint _ebo;
-
+    GraphicDevice* _device;
     GLfloat _vertexBuffer[MAX_BATCH_ITEMS * 32];
 };
 

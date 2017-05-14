@@ -1,8 +1,10 @@
 #include "SpriteBatch.h"
 #include "../ContentManagement/DefaultAssets/ShaderProgram.h"
 
-SpriteBatch::SpriteBatch()
+SpriteBatch::SpriteBatch(GraphicDevice* device) :
+    _device(device)
 {
+    
 }
 
 SpriteBatch::~SpriteBatch()

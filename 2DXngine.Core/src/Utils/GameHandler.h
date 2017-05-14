@@ -1,5 +1,7 @@
 #pragma once
 #include <SDL.h>
+#include "../Graphics/GraphicDevice.h"
+
 class GameHandler
 {
 public:
@@ -11,13 +13,13 @@ public:
     virtual void draw(float deltaTime) = 0;
     virtual void handleInput() = 0;
 
-    inline void set_window(SDL_Window* window)
+    inline void set_device(GraphicDevice* device)
     {
-        this->_window = window;
+        this->_device = device;
     }
 
 protected:
-    SDL_Window* _window;
+    GraphicDevice* _device;
 };
 
 class EmptyGameHandler : public GameHandler

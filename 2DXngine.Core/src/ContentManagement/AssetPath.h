@@ -32,7 +32,6 @@ public:
             this->_fullPath == other.get_fullPath();
     }
 
-
     READONLY_PROPERTY(AssertLocation, location)
     PROPERTY(std::string, containerPath)
     PROPERTY(std::string, fullPath)

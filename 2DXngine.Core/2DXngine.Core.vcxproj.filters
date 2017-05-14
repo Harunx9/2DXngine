@@ -199,7 +199,6 @@
     <ClCompile Include="src\Graphics\SamplerState.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp" />
     <ClCompile Include="src\ContentManagement\AssetPath.cpp" />
-    <ClCompile Include="src\Graphics\GraphicDevice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

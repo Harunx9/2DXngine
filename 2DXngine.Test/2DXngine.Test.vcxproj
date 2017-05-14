@@ -36,13 +36,14 @@
     <ClCompile Include="GameObjectManagerTest.cpp" />
     <ClCompile Include="GamObjectGraphTest.cc" />
     <ClCompile Include="PropertyMacroTest.cc" />
-    <ClCompile Include="PropTestClass.cpp" />
     <ClCompile Include="RectangleTest.cc" />
+    <ClCompile Include="RenderTargetTest.cpp" />
     <ClCompile Include="ShaderProgramTest.cc" />
     <ClCompile Include="ShaderTest.cpp" />
     <ClCompile Include="TestComponents.cpp" />
     <ClCompile Include="TestTypes.cpp" />
     <ClCompile Include="TestTypesHierarhy.cpp" />
+    <ClCompile Include="TextureTest.cc" />
     <ClCompile Include="TypeIdHelperTest.cc" />
   </ItemGroup>
   <ItemGroup>
@@ -140,8 +141,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)libs\SDL2-2.0.5\lib\x86;$(SolutionDir)libs\glew-2.0.0\lib\Release\Win32;$(SolutionDir)2DXngine.Core\Debug;$(SolutionDir)libs\googletest\googletest\msvc\gtest\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)libs\SDL2-2.0.5\lib\x86;$(SolutionDir)libs\glew-2.0.0\lib\Release\Win32;$(SolutionDir)libs\gllibs\soil\lib;$(SolutionDir)2DXngine.Core\Debug;$(SolutionDir)libs\googletest\googletest\msvc\gtest\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

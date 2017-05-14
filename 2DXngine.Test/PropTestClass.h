@@ -4,8 +4,8 @@
 class PropTestClass
 {
 public:
-    PropTestClass();
-    ~PropTestClass();
+    PropTestClass() {}
+    ~PropTestClass() {}
     PROPERTY(int, number)
     PROPERTY(bool, logical)
     PROPERTY(double, floating)

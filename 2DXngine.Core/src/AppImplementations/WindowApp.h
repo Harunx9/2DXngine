@@ -2,6 +2,7 @@
 #include "App.h"
 #include "App.h"
 #include <SDL.h>
+#include "../Graphics/GraphicDevice.h"
 class WindowApp :
     public App
 {
@@ -13,7 +14,7 @@ public:
     virtual void run() override;
     virtual void exit() override;
 private:
-    SDL_Window * _window;
+    GraphicDevice* _device;
     Timer * _timer;
 };
 

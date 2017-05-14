@@ -42,9 +42,14 @@
     <ClCompile Include="ShaderTest.cpp">
       <Filter>AssetsTest</Filter>
     </ClCompile>
-    <ClCompile Include="PropTestClass.cpp" />
     <ClCompile Include="PropertyMacroTest.cc">
       <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureTest.cc">
+      <Filter>AssetsTest</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTargetTest.cpp">
+      <Filter>Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +64,9 @@
     </Filter>
     <Filter Include="AssetsTest">
       <UniqueIdentifier>{caacaba1-ff0d-4dc9-ac64-bc441594b440}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{eb1dfbf6-ca36-4dd7-af55-a2a21695063c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

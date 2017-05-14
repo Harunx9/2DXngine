@@ -83,7 +83,6 @@
     <ClCompile Include="src\Components\Graphics\Transform.cpp" />
     <ClCompile Include="src\ContentManagement\AssetPath.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp" />
-    <ClCompile Include="src\Graphics\GraphicDevice.cpp" />
     <ClCompile Include="src\Graphics\SamplerState.cpp" />
     <ClCompile Include="src\Utils\File.cpp" />
     <ClCompile Include="src\ContentManagement\AssetTypes.cpp" />

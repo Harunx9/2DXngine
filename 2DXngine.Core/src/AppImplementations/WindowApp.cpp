@@ -14,35 +14,16 @@ WindowApp::~WindowApp()
 
 void WindowApp::initialize()
 {
-
+    this->_device = new GraphicDevice();
     this->_isFixedTimeStep = true;
     this->_timeStep = 1.f / 30.f;
     this->_timer = new Timer();
 
-    SDL_Init(SDL_INIT_EVERYTHING);
+    this->_device->initialize(640, 360, "Game");
 
-    this->_window = SDL_CreateWindow("Game Window",
-        SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-        640,
-        360,
-        SDL_WINDOW_OPENGL);
-
-    auto ctx = SDL_GL_CreateContext(_window);
-
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
-    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-
-    GLenum glewError = glewInit();
-    if (glewError != GLEW_OK)
+    if (this->_device->get_isInitialized() && this->_game)
     {
-        SDL_Quit();
-    }
-
-    if (this->_window && this->_game)
-    {
-        this->_game->set_window(this->_window);
+        this->_game->set_device(this->_device);
         this->_game->initialize();
         this->_isInitialized = true;
         this->_isRunning = true;

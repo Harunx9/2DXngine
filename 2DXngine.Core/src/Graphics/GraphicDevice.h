@@ -13,6 +13,7 @@ struct Viewport
         this->width = width;
         this->height = height;
     }
+
     Viewport(GLint display[4])
     {
         this->x = display[0];
@@ -30,9 +31,16 @@ struct Viewport
 class GraphicDevice
 {
 public:
-    
-    GraphicDevice();
-    ~GraphicDevice();
+
+    GraphicDevice() :
+        _isInitialized(false)
+    {
+    }
+
+    ~GraphicDevice()
+    {
+        SDL_DestroyWindow(this->_window);
+    }
 
     inline void initialize(int width, int height, const char * windowName)
     {
@@ -57,7 +65,8 @@ public:
             SDL_Quit();
         }
 
-
+        if (this->_window)
+            this->_isInitialized = true;
     }
 
     inline void clear(Color color)

@@ -12,7 +12,7 @@ TestGameHandler::~TestGameHandler()
 
 void TestGameHandler::initialize()
 {
-    batch = new SpriteBatch();
+    batch = new SpriteBatch(this->_device);
     batch->initialize();
     texture = Texture::load(AssetPath::create("Content\\dot.png"));
 }
@@ -36,7 +36,7 @@ void TestGameHandler::draw(float deltaTime)
 
     batch->draw(texture, glm::vec2(300.f, 200.f), nullptr, glm::vec4(1.f, 1.f, 1.f, 1.f), 0, glm::vec2(0.f, 0.f), 3, FlipEffect::NONE_FLIP, 2);
     batch->end();
-    SDL_GL_SwapWindow(this->_window);
+    this->_device->swapBuffers();
 }
 
 void TestGameHandler::handleInput()
