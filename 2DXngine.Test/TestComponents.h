@@ -2,6 +2,7 @@
 #include <ComponentModel\UpdateableComponent.h>
 #include <ComponentModel\DrawableComponent.h>
 #include <TypeInformation\TypeMetaInfo.h>
+#include <Scenes\SceneLayer.h>
 
 class PlayerControllerComponentTest : public UpdateableComponent
 {
@@ -21,7 +22,7 @@ class PlayerDrawableComponentTest : public DrawableComponent
 {
 public:
     ADD_TYPE_META_INFO()
-    PlayerDrawableComponentTest() {}
+    PlayerDrawableComponentTest() : DrawableComponent(DefaultLayers::GAMEPLAY_LAYER, "drawable_gameplay") {}
     ~PlayerDrawableComponentTest() {}
 
     // Inherited via DrawableComponent
@@ -49,7 +50,7 @@ class SwordDrawableComponentTest : public DrawableComponent
 {
 public:
     ADD_TYPE_META_INFO()
-    SwordDrawableComponentTest() {}
+    SwordDrawableComponentTest() : DrawableComponent(DefaultLayers::GAMEPLAY_LAYER, "drawable_gameplay") {}
     ~SwordDrawableComponentTest() {}
 
     // Inherited via DrawableComponent

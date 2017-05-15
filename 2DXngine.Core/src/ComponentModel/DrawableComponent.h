@@ -2,13 +2,14 @@
 #include "Component.h"
 #include "../TypeInformation/TypeMetaInfo.h"
 #include "../Graphics/Renderer.h"
+#include "../Scenes/SceneLayer.h"
 class DrawableComponent :
     public Component
 {
 public:
     ADD_TYPE_META_INFO()
 
-    DrawableComponent(const char* name = "Drawable");
+    DrawableComponent(SceneLayer layer, const char* name = "Drawable");
     virtual ~DrawableComponent();
 
     virtual void drawDebug(Renderer * renderer, float deltaTime) {}
@@ -17,5 +18,6 @@ public:
     void hide();
     void show();
     READONLY_PROPERTY(bool, isVisible)
+    READONLY_PROPERTY(SceneLayer, layer)
 };
 

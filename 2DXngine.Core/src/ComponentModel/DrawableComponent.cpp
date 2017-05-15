@@ -2,9 +2,10 @@
 
 
 
-DrawableComponent::DrawableComponent(const char* name) :
+DrawableComponent::DrawableComponent(SceneLayer layer, const char* name) :
     Component(name),
-    _isVisible(true)
+    _isVisible(true),
+    _layer(layer)
 {
 }
 

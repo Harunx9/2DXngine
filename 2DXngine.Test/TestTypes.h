@@ -37,7 +37,7 @@ class TestDrawableComponent1 : public DrawableComponent
 public:
     ADD_TYPE_META_INFO()
 
-        TestDrawableComponent1(const char* name) : DrawableComponent(name)
+        TestDrawableComponent1(const char* name) : DrawableComponent(DefaultLayers::GAMEPLAY_LAYER,name)
     {
 
     }
@@ -53,7 +53,7 @@ class  TestDrawableComponent2 : public DrawableComponent
 public:
     ADD_TYPE_META_INFO()
 
-        TestDrawableComponent2(const char* name) : DrawableComponent(name)
+        TestDrawableComponent2(const char* name) : DrawableComponent(DefaultLayers::GAMEPLAY_LAYER, name)
     {
 
     }

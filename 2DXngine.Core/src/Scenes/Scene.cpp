@@ -6,10 +6,10 @@
 #include "SceneUpdateSystem.h"
 #include "../Services/ServiceLocator.h"
 
-Scene::Scene(const char * name):
+Scene::Scene(SpriteBatch * batch, std::string name) :
     _name(name)
 {
-    this->_renderer = new Renderer();
+    this->_renderer = new Renderer(batch);
     this->_gameObjectManager = new GameObjectManager(this);
     this->_sceneManager = ServiceLocator::get<SceneManager>("SceneManager");
     this->_renderSystem = new SceneRenderSystem(this);
@@ -64,22 +64,3 @@ void Scene::draw(float deltaTime)
     this->_renderSystem->drawGameObjects(deltaTime);
 }
 
-Renderer * Scene::get_renderer() const
-{
-    return this->_renderer;
-}
-
-GameObjectManager * Scene::get_gameObjectManager() const
-{
-    return this->_gameObjectManager;
-}
-
-SceneManager * Scene::get_sceneManager() const
-{
-    return this->_sceneManager;
-}
-
-const char * Scene::get_name() const
-{
-    return this->_name.c_str();
-}

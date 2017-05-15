@@ -17,6 +17,6 @@ private:
 
 struct DefaultLayers
 {
-    const SceneLayer * const GUI_LAYER = new SceneLayer("GUI", 0);
-    const SceneLayer * const GAMEPLAY_LAYER = new SceneLayer("GAMEPLAY", 0);
+    static SceneLayer GUI_LAYER;
+    static SceneLayer GAMEPLAY_LAYER;
 };

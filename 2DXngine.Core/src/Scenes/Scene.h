@@ -1,7 +1,9 @@
 #pragma once
 #include <string>
 #include "SceneBehaviorManager.h"
+#include "../Utils/Macros/PropertyMacro.h"
 class Renderer;
+class SpriteBatch;
 class GameObjectManager;
 class SceneManager;
 class SceneRenderSystem;
@@ -10,7 +12,7 @@ class SceneUpdateSystem;
 class Scene
 {
 public:
-    Scene(const char * name = "");
+    Scene(SpriteBatch* batch, std::string name = "");
     Scene(const Scene* other);
     virtual ~Scene();
 
@@ -22,18 +24,14 @@ public:
     void update(float deltaTime);
     void draw(float deltaTime);
 
-    Renderer* get_renderer() const;
-    GameObjectManager * get_gameObjectManager() const;
-    SceneManager * get_sceneManager() const;
-    const char * get_name() const;
+    READONLY_PROPERTY(Renderer *, renderer)
+    READONLY_PROPERTY(GameObjectManager *, gameObjectManager)
+    READONLY_PROPERTY(SceneManager *, sceneManager)
+    READONLY_PROPERTY(std::string, name)
 
 protected:
-    Renderer * _renderer;
-    GameObjectManager * _gameObjectManager;
-    SceneManager * _sceneManager;
     SceneRenderSystem * _renderSystem;
     SceneUpdateSystem * _updateSystem;
     SceneBehaviorManager _sceneBehaviorManager;
-    std::string _name;
 };
 

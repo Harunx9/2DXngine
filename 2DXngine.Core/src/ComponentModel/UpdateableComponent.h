@@ -7,7 +7,7 @@ class UpdateableComponent :
 {
 public:
     ADD_TYPE_META_INFO()
-        UpdateableComponent(const char* name = "Updateable");
+    UpdateableComponent(const char* name = "Updateable");
     virtual ~UpdateableComponent();
 
     virtual void update(float deltaTime) = 0;

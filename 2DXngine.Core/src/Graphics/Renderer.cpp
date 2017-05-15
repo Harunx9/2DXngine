@@ -1,12 +1,29 @@
 #include "Renderer.h"
 
 
+Renderer::Renderer(SpriteBatch * batch)
+{
+    this->_registerdLayer = std::vector<SceneLayer*>();
+}
 
-Renderer::Renderer()
+Renderer::~Renderer()
 {
 }
 
+void Renderer::registerLayer(SceneLayer * layer)
+{
+}
 
-Renderer::~Renderer()
+void Renderer::beginRendering()
+{
+    
+
+}
+
+void Renderer::drawAllTargets()
+{
+}
+
+void Renderer::applyEffectShader(ShaderProgram * program, SceneLayer * layer)
 {
 }

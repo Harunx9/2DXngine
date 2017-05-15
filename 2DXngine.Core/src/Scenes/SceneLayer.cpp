@@ -19,3 +19,6 @@ bool SceneLayer::eqals(SceneLayer * sceneLayer)
 {
     return false;
 }
+
+SceneLayer DefaultLayers::GUI_LAYER = SceneLayer("GUI", 0);
+SceneLayer DefaultLayers::GAMEPLAY_LAYER = SceneLayer("GAMEPLAY", 1);

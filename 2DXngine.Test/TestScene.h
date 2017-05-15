@@ -3,7 +3,7 @@
 class TestScene : public Scene
 {
 public:
-    TestScene() {}
+    TestScene() : Scene(new SpriteBatch(new GraphicDevice()), "Test") {}
     ~TestScene() {}
 
     virtual void createScene() override {}
