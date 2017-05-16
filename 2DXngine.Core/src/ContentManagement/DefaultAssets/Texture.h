@@ -14,10 +14,11 @@ public:
     Texture(AssetPath assetPath, Bitmap* bitmap);
     ~Texture();
 
-    virtual void generate();
     void bind() const;
 
     READONLY_PROPERTY(GLuint, textureId)
     READONLY_PROPERTY(Bitmap*, bitmap)
+protected:
+    virtual void generate();
 };
 
