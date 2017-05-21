@@ -1,7 +1,5 @@
-#include "Point.h"
-#include <glm/vec2.hpp>
 #pragma once
-
+#include <glm/vec2.hpp>
 
 class RectangleF
 {

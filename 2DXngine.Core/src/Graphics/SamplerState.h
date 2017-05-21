@@ -28,6 +28,5 @@ public:
     void changeWrap(TextureWrap wrap);
 public:
     GLuint _samplerId;
-
 };
 

@@ -1,10 +1,10 @@
-#include "Point.h"
 #pragma once
-
+#include "Point.h"
 
 class Rectangle
 {
 public:
+    Rectangle();
     Rectangle(int x, int y, int width, int height);
     ~Rectangle();
 

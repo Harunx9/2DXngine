@@ -7,13 +7,12 @@
 
 typedef std::vector<Asset*> cached_assets_list;
 
-class ContentManager : public Service
+class ContentManagerService : public Service
 {
 public:
-    ContentManager(const char* name = "ContentManager", std::string contentFolder = "Content");
-    ~ContentManager();
+    ContentManagerService(std::string contentFolder = "Content");
+    ~ContentManagerService();
 
-    // Inherited via Service
     virtual void initialize() override;
     virtual void terminate() override;
 
@@ -33,7 +32,7 @@ private:
 };
 
 template<typename TAsset>
-inline TAsset * ContentManager::load(AssetPath assetPath)
+inline TAsset * ContentManagerService::load(AssetPath assetPath)
 {
     TAsset * asset = this->tryGet<TAsset>(assetPath);
     if (!asset)
@@ -44,7 +43,7 @@ inline TAsset * ContentManager::load(AssetPath assetPath)
 }
 
 template<typename TAsset>
-inline TAsset * ContentManager::tryGet(AssetPath assetPath)
+inline TAsset * ContentManagerService::tryGet(AssetPath assetPath)
 {
     for (auto& asset : this->_cachedAssets)
     {

@@ -2,15 +2,12 @@
 
 
 Service::Service(const char * name): 
-    _name(name)
+    _name(name),
+    _isInitialized(false),
+    _isTerminated(false)
 {
 }
 
 Service::~Service()
 {
-}
-
-std::string Service::get_name() const
-{
-    return this->_name;
 }

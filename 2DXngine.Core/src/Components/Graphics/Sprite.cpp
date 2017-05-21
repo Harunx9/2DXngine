@@ -12,7 +12,7 @@ Sprite::~Sprite()
 
 void Sprite::initialize(bool force)
 {
-    this->_manager = ServiceLocator::get<ContentManager>("ContentManager");
+    this->_manager = ServiceLocator::get<ContentManagerService>("ContentManager");
     if (this->_manager)
     {
         this->_texture = this->_manager->load<Texture>(AssetPath::create(this->_path));

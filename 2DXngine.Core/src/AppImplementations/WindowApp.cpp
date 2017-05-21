@@ -1,6 +1,8 @@
 #include "WindowApp.h"
 #include <gl\glew.h>
-
+#include "../Services/ServiceLocator.h"
+#include "SDLEvents/SDLEventsMapperService.h"
+#include "../ContentManagement/ContentManagerService.h"
 
 WindowApp::WindowApp(GameHandler* handler): 
     App(handler)
@@ -58,4 +60,11 @@ void WindowApp::run()
 void WindowApp::exit()
 {
     SDL_Quit();
+}
+
+void WindowApp::buildServiceContrainer()
+{
+    ServiceLocator::registerService(new SDLEventsMapperService());
+    ServiceLocator::registerService(new ContentManagerService());
+
 }

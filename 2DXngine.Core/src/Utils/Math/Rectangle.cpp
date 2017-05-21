@@ -1,5 +1,13 @@
 #include "Rectangle.h"
 
+Rectangle::Rectangle():
+    _x(0),
+    _y(0),
+    _width(0),
+    _heihgt(0)
+{
+}
+
 Rectangle::Rectangle(int x, int y, int width, int height) :
     _x(x),
     _y(y),

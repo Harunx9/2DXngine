@@ -14,6 +14,7 @@ public:
     virtual void run() override;
     virtual void exit() override;
 private:
+    void buildServiceContrainer();
     GraphicDevice* _device;
     Timer * _timer;
 };

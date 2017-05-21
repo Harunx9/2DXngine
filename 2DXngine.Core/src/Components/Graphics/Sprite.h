@@ -1,7 +1,7 @@
 #pragma once
 #include "../../ComponentModel/Component.h"
 #include "../../ContentManagement/DefaultAssets/Texture.h"
-#include "../../ContentManagement/ContentManager.h"
+#include "../../ContentManagement/ContentManagerService.h"
 #include "../../Services/ServiceLocator.h"
 #include <string>
 
@@ -17,7 +17,7 @@ public:
     virtual void terminate() override;
 private:
     Texture * _texture;
-    ContentManager * _manager;
+    ContentManagerService * _manager;
     std::string _path;
 };
 

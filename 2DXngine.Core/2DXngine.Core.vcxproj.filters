@@ -100,7 +100,6 @@
     <ClInclude Include="src\Scenes\SceneLayer.h" />
     <ClInclude Include="src\Graphics\RenderTarget.h" />
     <ClInclude Include="src\Graphics\SpriteBatch.h" />
-    <ClInclude Include="src\ContentManagement\ContentManager.h" />
     <ClInclude Include="src\ContentManagement\Asset.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Texture.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\ShaderProgram.h" />
@@ -120,6 +119,13 @@
     <ClInclude Include="src\ContentManagement\AssetPath.h" />
     <ClInclude Include="src\Graphics\GraphicDevice.h" />
     <ClInclude Include="src\Graphics\Color.h" />
+    <ClInclude Include="src\AppImplementations\SDLEvents\SDLEventMapper.h" />
+    <ClInclude Include="src\AppImplementations\SDLEvents\SDLEventsMapperService.h" />
+    <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
+    <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.h" />
+    <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\WindowEventsMapper.h" />
+    <ClInclude Include="src\Utils\Errors\Result.h" />
+    <ClInclude Include="src\ContentManagement\ContentManagerService.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -183,7 +189,6 @@
     <ClCompile Include="src\Scenes\SceneLayer.cpp" />
     <ClCompile Include="src\Graphics\RenderTarget.cpp" />
     <ClCompile Include="src\Graphics\SpriteBatch.cpp" />
-    <ClCompile Include="src\ContentManagement\ContentManager.cpp" />
     <ClCompile Include="src\ContentManagement\Asset.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Texture.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\ShaderProgram.cpp" />
@@ -199,6 +204,14 @@
     <ClCompile Include="src\Graphics\SamplerState.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp" />
     <ClCompile Include="src\ContentManagement\AssetPath.cpp" />
+    <ClCompile Include="src\AppImplementations\SDLEvents\SDLEventMapper.cpp" />
+    <ClCompile Include="src\AppImplementations\SDLEvents\SDLEventsMapperService.cpp" />
+    <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.cpp" />
+    <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.cpp" />
+    <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\WindowEventsMapper.cpp" />
+    <ClCompile Include="src\Input\InputDefines.h" />
+    <ClCompile Include="src\Utils\Errors\Result.cpp" />
+    <ClCompile Include="src\ContentManagement\ContentManagerService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

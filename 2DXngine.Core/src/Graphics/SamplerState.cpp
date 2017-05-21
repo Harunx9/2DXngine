@@ -5,6 +5,7 @@ SamplerState::SamplerState(TextureWrap wrap, TextureFilter filter)
 {
     glGenSamplers(1, &this->_samplerId);
     this->changeWrap(wrap);
+    this->changeFilter(filter);
 }
 
 SamplerState::~SamplerState()
