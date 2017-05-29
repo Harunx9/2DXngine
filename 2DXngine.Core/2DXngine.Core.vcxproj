@@ -40,6 +40,10 @@
     <ClInclude Include="src\Graphics\Color.h" />
     <ClInclude Include="src\Graphics\GraphicDevice.h" />
     <ClInclude Include="src\Graphics\SamplerState.h" />
+    <ClInclude Include="src\Input\InputDefines.h" />
+    <ClInclude Include="src\Input\InputService.h" />
+    <ClInclude Include="src\Input\KeyboardStateHandler.h" />
+    <ClInclude Include="src\Input\MouseStateHandler.h" />
     <ClInclude Include="src\Utils\Errors\Result.h" />
     <ClInclude Include="src\Utils\File.h" />
     <ClInclude Include="src\ContentManagement\AssetTypes.h" />
@@ -75,6 +79,7 @@
     <ClInclude Include="src\Utils\Events\EventArgs.h" />
     <ClInclude Include="src\Utils\Events\EventHandler.h" />
     <ClInclude Include="src\Utils\GameHandler.h" />
+    <ClInclude Include="src\Utils\Log.h" />
     <ClInclude Include="src\Utils\Macros\PropertyMacro.h" />
     <ClInclude Include="src\Utils\Math\MathTypes.h" />
     <ClInclude Include="src\Utils\Math\Point.h" />
@@ -95,7 +100,9 @@
     <ClCompile Include="src\ContentManagement\AssetPath.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp" />
     <ClCompile Include="src\Graphics\SamplerState.cpp" />
-    <ClCompile Include="src\Input\InputDefines.h" />
+    <ClCompile Include="src\Input\InputService.cpp" />
+    <ClCompile Include="src\Input\KeyboardStateHandler.cpp" />
+    <ClCompile Include="src\Input\MouseStateHandler.cpp" />
     <ClCompile Include="src\Utils\Errors\Result.cpp" />
     <ClCompile Include="src\Utils\File.cpp" />
     <ClCompile Include="src\ContentManagement\AssetTypes.cpp" />

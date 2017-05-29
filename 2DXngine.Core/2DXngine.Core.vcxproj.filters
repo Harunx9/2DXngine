@@ -126,6 +126,11 @@
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\WindowEventsMapper.h" />
     <ClInclude Include="src\Utils\Errors\Result.h" />
     <ClInclude Include="src\ContentManagement\ContentManagerService.h" />
+    <ClInclude Include="src\Input\InputDefines.h" />
+    <ClInclude Include="src\Input\InputService.h" />
+    <ClInclude Include="src\Input\KeyboardStateHandler.h" />
+    <ClInclude Include="src\Input\MouseStateHandler.h" />
+    <ClInclude Include="src\Utils\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -209,9 +214,11 @@
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\WindowEventsMapper.cpp" />
-    <ClCompile Include="src\Input\InputDefines.h" />
     <ClCompile Include="src\Utils\Errors\Result.cpp" />
     <ClCompile Include="src\ContentManagement\ContentManagerService.cpp" />
+    <ClCompile Include="src\Input\InputService.cpp" />
+    <ClCompile Include="src\Input\KeyboardStateHandler.cpp" />
+    <ClCompile Include="src\Input\MouseStateHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

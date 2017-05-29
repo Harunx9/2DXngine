@@ -268,6 +268,6 @@ enum MouseButtons
 
 enum ButtonState
 {
-    RELEASED,
-    PRESSED
+    RELEASED = SDL_KEYUP,
+    PRESSED = SDL_KEYDOWN
 };

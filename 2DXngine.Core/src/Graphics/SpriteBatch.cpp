@@ -694,7 +694,7 @@ void SpriteBatch::drawBatch()
     glUseProgram(0);
 
     this->_isStarted = false;
-    this->_items.clear();
+    this->clearBatchItems();
 }
 
 void SpriteBatch::clearBatchItems()

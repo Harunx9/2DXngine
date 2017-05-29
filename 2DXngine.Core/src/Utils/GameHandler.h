@@ -12,6 +12,7 @@ public:
     virtual void update(float deltaTime) = 0;
     virtual void draw(float deltaTime) = 0;
     virtual void handleInput() = 0;
+    virtual void regiserUserServices() {}
 
     inline void set_device(GraphicDevice* device)
     {
