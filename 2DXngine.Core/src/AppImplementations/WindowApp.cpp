@@ -69,7 +69,6 @@ void WindowApp::run()
 
 void WindowApp::exit()
 {
-    ServiceLocator::terminate();
     SDL_Quit();
 }
 

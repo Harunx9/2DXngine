@@ -131,6 +131,7 @@
     <ClInclude Include="src\Input\KeyboardStateHandler.h" />
     <ClInclude Include="src\Input\MouseStateHandler.h" />
     <ClInclude Include="src\Utils\Log.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\Sound.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -219,6 +220,7 @@
     <ClCompile Include="src\Input\InputService.cpp" />
     <ClCompile Include="src\Input\KeyboardStateHandler.cpp" />
     <ClCompile Include="src\Input\MouseStateHandler.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

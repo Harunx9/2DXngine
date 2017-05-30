@@ -21,6 +21,7 @@ void Sprite::initialize(bool force)
 
 void Sprite::terminate()
 {
+    auto path = this->_texture->get_path();
     this->_texture = nullptr;
-    this->_manager->unload(this->_path);
+    this->_manager->unload(path);
 }

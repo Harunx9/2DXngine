@@ -9,7 +9,8 @@ public:
     MouseStateHandler(MouseEventsMapper * mapper);
     ~MouseStateHandler();
 
-    void updateState(MouseState state);
+    void updateButtonsState(MouseButtonsState state);
+    void updatePositionState(MousePositionState state);
 
     bool isButtonPressed(MouseButtons button);
     bool isButtonReleased(MouseButtons button);
@@ -17,7 +18,8 @@ public:
     READONLY_PROPERTY(Point, position)
 private:
     MouseEventsMapper * _mapper;
-    Binding<MouseState> _binding;
+    Binding<MouseButtonsState> _bindingButtons;
+    Binding<MousePositionState> _bindingPosition;
     bool _mouseKeysStates[MAX_MOUSE_BUTTONS];
 };
 

@@ -34,11 +34,12 @@ template<typename TAsset>
 inline TAsset * ContentManagerService::load(AssetPath assetPath)
 {
     TAsset * asset = this->tryGet<TAsset>(assetPath);
-    if (!asset)
+    if (asset == nullptr)
     {
         asset = TAsset::load(assetPath);
-            return (TAsset *)asset;
     }
+
+    return (TAsset *)asset;
 }
 
 template<typename TAsset>

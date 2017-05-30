@@ -12,8 +12,6 @@ public:
     ServiceLocator(const ServiceLocator * other) = delete;
     virtual ~ServiceLocator() = delete;
 
-    static void terminate();
-
     template<class TService>
     static TService* get(const char * name);
 

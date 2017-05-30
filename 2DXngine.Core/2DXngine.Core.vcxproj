@@ -37,6 +37,7 @@
     <ClInclude Include="src\Components\Graphics\Transform.h" />
     <ClInclude Include="src\ContentManagement\AssetPath.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Bitmap.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\Sound.h" />
     <ClInclude Include="src\Graphics\Color.h" />
     <ClInclude Include="src\Graphics\GraphicDevice.h" />
     <ClInclude Include="src\Graphics\SamplerState.h" />
@@ -99,6 +100,7 @@
     <ClCompile Include="src\Components\Graphics\Transform.cpp" />
     <ClCompile Include="src\ContentManagement\AssetPath.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\Sound.cpp" />
     <ClCompile Include="src\Graphics\SamplerState.cpp" />
     <ClCompile Include="src\Input\InputService.cpp" />
     <ClCompile Include="src\Input\KeyboardStateHandler.cpp" />
@@ -210,7 +212,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)libs\gllibs;$(SolutionDir)libs\SDL2-2.0.5\include;$(SolutionDir)libs\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\gllibs;$(SolutionDir)libs\SDL2-2.0.5\include;$(SolutionDir)libs\SDL2_mixer-2.0.1\include;$(SolutionDir)libs\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -119,8 +119,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)libs\SDL2-2.0.5\lib\x86;$(SolutionDir)2DXngine.Core\Debug;$(SolutionDir)libs\gllibs\soil\lib;$(SolutionDir)libs\glew-2.0.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;SOIL.lib;2DXngine.Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\szwan\Documents\Projects\2DXngine\libs\SDL2_mixer-2.0.1\lib\x86;$(SolutionDir)libs\SDL2-2.0.5\lib\x86;$(SolutionDir)2DXngine.Core\Debug;$(SolutionDir)libs\gllibs\soil\lib;$(SolutionDir)libs\glew-2.0.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;glew32.lib;SOIL.lib;2DXngine.Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
