@@ -19,8 +19,7 @@ public:
     template <typename TAsset>
     TAsset* load(AssetPath assetPath);
 
-    bool unload(std::string assetName);
-    bool unloadByType(AssetType* type);
+    bool unload(AssetPath assetPath);
 
     const char* get_contentFolder() const;
     void set_contentFolder(std::string contentFolder);

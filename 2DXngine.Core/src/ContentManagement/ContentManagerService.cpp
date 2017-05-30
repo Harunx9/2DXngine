@@ -1,33 +1,49 @@
 #include "ContentManagerService.h"
 
 
-ContentManagerService::ContentManagerService(std::string contentFolder) : Service("ContentManager"),
+ContentManagerService::ContentManagerService(std::string contentFolder) : Service("ContentManagerService"),
 _contentFolder(contentFolder)
 {
+    this->_cachedAssets = cached_assets_list();
 }
 
 ContentManagerService::~ContentManagerService()
 {
+
 }
 
 void ContentManagerService::initialize()
 {
+    if (this->_isInitialized) return;
+
+    this->_isInitialized = true;
 }
 
 void ContentManagerService::terminate()
 {
+    if (this->_isTerminated) return;
+
+    for (auto& asset : this->_cachedAssets)
+    {
+        delete asset;
+    }
+
+    this->_isTerminated = true;
 }
 
-bool ContentManagerService::unload(std::string assetName)
+bool ContentManagerService::unload(AssetPath assetPath)
 {
     if (this->_cachedAssets.empty()) return true;
 
+    for (auto& asset : this->_cachedAssets)
+    {
+        if (asset->get_path() == assetPath)
+        {
+            delete asset;
+            return true;
+        }
+    }
 
-    return false;
-}
-
-bool ContentManagerService::unloadByType(AssetType * type)
-{
     return false;
 }
 

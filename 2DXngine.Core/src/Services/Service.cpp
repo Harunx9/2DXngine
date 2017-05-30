@@ -10,4 +10,5 @@ Service::Service(const char * name):
 
 Service::~Service()
 {
+    this->terminate();
 }
