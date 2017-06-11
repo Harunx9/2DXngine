@@ -35,6 +35,7 @@
     <ClInclude Include="src\Components\Graphics\Sprite.h" />
     <ClInclude Include="src\Components\Graphics\SpriteDrawable.h" />
     <ClInclude Include="src\Components\Graphics\Transform.h" />
+    <ClInclude Include="src\Config\ConfigurationService.h" />
     <ClInclude Include="src\ContentManagement\AssetPath.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Bitmap.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Mp3Sound.h" />
@@ -103,6 +104,7 @@
     <ClCompile Include="src\Components\Graphics\Sprite.cpp" />
     <ClCompile Include="src\Components\Graphics\SpriteDrawable.cpp" />
     <ClCompile Include="src\Components\Graphics\Transform.cpp" />
+    <ClCompile Include="src\Config\ConfigurationService.cpp" />
     <ClCompile Include="src\ContentManagement\AssetPath.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Mp3Sound.cpp" />

@@ -7,7 +7,7 @@ class WavSound : public Sound
 public:
     static WavSound* load(AssetPath path);
     ~WavSound();
-    virtual void play(int channel, bool repeat = false) override;
+    virtual void play(bool repeat = false) override;
     virtual void pause() override;
     virtual void resume() override;
     virtual void stop() override;

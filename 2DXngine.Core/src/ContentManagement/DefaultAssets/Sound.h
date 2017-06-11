@@ -3,37 +3,33 @@
 #include "SDL_mixer.h"
 #include "../../Utils/Macros/PropertyMacro.h"
 
+enum SoundState {
+    STOPPED,
+    PLAYING,
+    PAUSED
+};
+
 class Sound : public Asset
 {
 protected:
-    enum SoundState {
-        STOPPED,
-        PLAYING,
-        PAUSED
-    };
-    SoundState _curretnState;
+    SoundState _currentState;
     Sound(AssetPath path, const AssetType* type) : Asset(path, type) {}
 public:
     virtual ~Sound() {}
-    virtual void play(int channel, bool repeat = false) = 0;
+    virtual void play(bool repeat = false) = 0;
     virtual void pause() = 0;
     virtual void resume() = 0;
     virtual void stop() = 0;
     SoundState get_soundState()
     {
-        return this->_curretnState;
+        return this->_currentState;
     }
 };
 
 class Music : public Asset
 {
 protected:
-    enum MusicState {
-        STOPPED,
-        PLAYING,
-        PAUSED
-    };
-    MusicState _curretnState;
+    SoundState _currentState;
     Music(AssetPath path, const AssetType* type) : Asset(path, type) {}
 public:
     virtual ~Music() {}
@@ -41,8 +37,8 @@ public:
     virtual void pause() = 0;
     virtual void resume() = 0;
     virtual void stop() = 0;
-    MusicState get_musicState()
+    SoundState get_musicState()
     {
-        return this->_curretnState;
+        return this->_currentState;
     }
 };

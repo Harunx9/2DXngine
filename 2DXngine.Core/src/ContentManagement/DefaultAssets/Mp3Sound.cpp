@@ -24,29 +24,29 @@ void Mp3Sound::play(bool repeat)
         loop = -1;
     }
 
-    if (Mix_PlayMusic(this->_musicData, loop) == -1)
+    if (Mix_PlayMusic(this->_musicData, loop) != -1)
     {
-        this->_curretnState = PLAYING;
+        this->_currentState = SoundState::PLAYING;
     }
 }
 
 void Mp3Sound::stop()
 {
     Mix_HaltMusic();
-    this->_curretnState = STOPPED;
+    this->_currentState = SoundState::STOPPED;
 }
 
 void Mp3Sound::pause()
 {
     Mix_PauseMusic();
-    this->_curretnState = PAUSED;
+    this->_currentState = SoundState::PAUSED;
 }
 
 void Mp3Sound::resume()
 {
-    if (this->_curretnState == PAUSED)
+    if (this->_currentState == SoundState::PAUSED)
         return;
 
     Mix_ResumeMusic();
-    this->_curretnState = PLAYING;
+    this->_currentState = SoundState::PLAYING;
 }

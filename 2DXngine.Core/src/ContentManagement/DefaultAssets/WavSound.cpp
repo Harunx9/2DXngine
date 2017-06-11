@@ -16,35 +16,40 @@ WavSound* WavSound::load(AssetPath path)
     return new WavSound(path);
 }
 
-void WavSound::play(int channel, bool repeat)
+void WavSound::play(bool repeat)
 {
     int loop = 1;
     if (repeat)
     {
         loop = -1;
     }
-    Mix_PlayChannel(channel, this->_soundData, loop);
-    this->_channel = channel;
-    this->_curretnState = PLAYING;
+
+    this->_channel = Mix_PlayChannel(-1, this->_soundData, loop);
+    
+    if (this->_channel != -1)
+    {
+        this->_currentState = SoundState::PLAYING;
+    }
 }
 
 void WavSound::pause()
 {
     Mix_Pause(this->_channel);
-    this->_curretnState = PAUSED;
+    this->_currentState = SoundState::PAUSED;
 }
 
 void WavSound::stop()
 {
     Mix_HaltChannel(this->_channel);
-    this->_curretnState = STOPPED;
+    this->_channel = -1;
+    this->_currentState = SoundState::STOPPED;
 }
 
 void WavSound::resume()
 {
-    if (this->get_soundState() == PAUSED)
+    if (this->get_soundState() == SoundState::PAUSED)
         return;
 
     Mix_Resume(this->_channel);
-    this->_curretnState = PLAYING;
+    this->_currentState = SoundState::PLAYING;
 }

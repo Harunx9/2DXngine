@@ -137,6 +137,7 @@
     <ClInclude Include="src\ContentManagement\DefaultAssets\Sound.h" />
     <ClInclude Include="src\Sound\MusicService.h" />
     <ClInclude Include="src\Sound\SoundService.h" />
+    <ClInclude Include="src\Config\ConfigurationService.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -230,6 +231,7 @@
     <ClCompile Include="src\ContentManagement\DefaultAssets\OggSound.cpp" />
     <ClCompile Include="src\Sound\MusicService.cpp" />
     <ClCompile Include="src\Sound\SoundService.cpp" />
+    <ClCompile Include="src\Config\ConfigurationService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
