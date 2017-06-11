@@ -131,7 +131,12 @@
     <ClInclude Include="src\Input\KeyboardStateHandler.h" />
     <ClInclude Include="src\Input\MouseStateHandler.h" />
     <ClInclude Include="src\Utils\Log.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\WavSound.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\Mp3Sound.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\OggSound.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Sound.h" />
+    <ClInclude Include="src\Sound\MusicService.h" />
+    <ClInclude Include="src\Sound\SoundService.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -220,7 +225,11 @@
     <ClCompile Include="src\Input\InputService.cpp" />
     <ClCompile Include="src\Input\KeyboardStateHandler.cpp" />
     <ClCompile Include="src\Input\MouseStateHandler.cpp" />
-    <ClCompile Include="src\ContentManagement\DefaultAssets\Sound.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\WavSound.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\Mp3Sound.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\OggSound.cpp" />
+    <ClCompile Include="src\Sound\MusicService.cpp" />
+    <ClCompile Include="src\Sound\SoundService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

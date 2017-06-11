@@ -18,6 +18,7 @@ public:
 
     READONLY_PROPERTY(SpriteBatch*, batch)
 private:
+
     std::vector<SceneLayer*> _registerdLayer;
     std::map<std::string, RenderTarget*> currentTargets;
 };

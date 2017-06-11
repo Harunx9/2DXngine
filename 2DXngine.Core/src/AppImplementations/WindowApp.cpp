@@ -4,6 +4,7 @@
 #include "SDLEvents/SDLEventsMapperService.h"
 #include "../ContentManagement/ContentManagerService.h"
 #include "../Input/InputService.h"
+#include <SDL_mixer.h>
 
 WindowApp::WindowApp(GameHandler* handler): 
     App(handler)
@@ -23,6 +24,9 @@ void WindowApp::initialize()
     this->_timer = new Timer();
 
     this->_device->initialize(640, 360, "Game");
+
+    if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
+        return;
 
     if (this->_device->get_isInitialized() && this->_game)
     {
@@ -69,6 +73,7 @@ void WindowApp::run()
 
 void WindowApp::exit()
 {
+    Mix_CloseAudio();
     SDL_Quit();
 }
 
