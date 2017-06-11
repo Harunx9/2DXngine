@@ -13,9 +13,9 @@ git clone --recursive
 Features in development:
 
 - [x] type information system,
-- [ ] component model game objects,
+- [x] component model game objects,
 - [ ] scene system,
-- [ ] 2d renderer,
+- [x] 2d renderer,
 - [ ] common components such as transform2d or sprite animation,
 - [ ] game services for music, asset loading and so on,
 - [ ] Box2d integration,
