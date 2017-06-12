@@ -27,15 +27,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
+    <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\WindowEventsMapper.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\SDLEventMapper.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\SDLEventsMapperService.h" />
+    <ClInclude Include="src\Audio\MusicService.h" />
+    <ClInclude Include="src\Audio\SoundService.h" />
     <ClInclude Include="src\Components\Graphics\Sprite.h" />
     <ClInclude Include="src\Components\Graphics\SpriteDrawable.h" />
     <ClInclude Include="src\Components\Graphics\Transform.h" />
+    <ClInclude Include="src\Config\AudioConfig.h" />
+    <ClInclude Include="src\Config\ConfigSection.h" />
     <ClInclude Include="src\Config\ConfigurationService.h" />
+    <ClInclude Include="src\Config\GraphicConfig.h" />
+    <ClInclude Include="src\Config\KeyboardConfig.h" />
+    <ClInclude Include="src\Config\MouseConfig.h" />
     <ClInclude Include="src\ContentManagement\AssetPath.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Bitmap.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Mp3Sound.h" />
@@ -49,8 +58,6 @@
     <ClInclude Include="src\Input\InputService.h" />
     <ClInclude Include="src\Input\KeyboardStateHandler.h" />
     <ClInclude Include="src\Input\MouseStateHandler.h" />
-    <ClInclude Include="src\Sound\MusicService.h" />
-    <ClInclude Include="src\Sound\SoundService.h" />
     <ClInclude Include="src\Utils\Errors\Result.h" />
     <ClInclude Include="src\Utils\File.h" />
     <ClInclude Include="src\ContentManagement\AssetTypes.h" />
@@ -96,15 +103,23 @@
     <ClInclude Include="src\ContentManagement\DefaultAssets\Texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\WindowEventsMapper.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\SDLEventMapper.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\SDLEventsMapperService.cpp" />
+    <ClCompile Include="src\Audio\MusicService.cpp" />
+    <ClCompile Include="src\Audio\SoundService.cpp" />
     <ClCompile Include="src\Components\Graphics\Sprite.cpp" />
     <ClCompile Include="src\Components\Graphics\SpriteDrawable.cpp" />
     <ClCompile Include="src\Components\Graphics\Transform.cpp" />
+    <ClCompile Include="src\Config\AudioConfig.cpp" />
+    <ClCompile Include="src\Config\ConfigSection.cpp" />
     <ClCompile Include="src\Config\ConfigurationService.cpp" />
+    <ClCompile Include="src\Config\GraphicConfig.cpp" />
+    <ClCompile Include="src\Config\KeyboardConfig.cpp" />
+    <ClCompile Include="src\Config\MouseConfig.cpp" />
     <ClCompile Include="src\ContentManagement\AssetPath.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Mp3Sound.cpp" />
@@ -114,8 +129,6 @@
     <ClCompile Include="src\Input\InputService.cpp" />
     <ClCompile Include="src\Input\KeyboardStateHandler.cpp" />
     <ClCompile Include="src\Input\MouseStateHandler.cpp" />
-    <ClCompile Include="src\Sound\MusicService.cpp" />
-    <ClCompile Include="src\Sound\SoundService.cpp" />
     <ClCompile Include="src\Utils\Errors\Result.cpp" />
     <ClCompile Include="src\Utils\File.cpp" />
     <ClCompile Include="src\ContentManagement\AssetTypes.cpp" />

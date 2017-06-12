@@ -4,8 +4,11 @@
 #include "SDLEvents/SDLEventsMapperService.h"
 #include "../ContentManagement/ContentManagerService.h"
 #include "../Input/InputService.h"
+#include "../Audio/MusicService.h"
+#include "../Audio/SoundService.h"
+#include "../Config/ConfigurationService.h"
 #include <SDL_mixer.h>
-
+#include <iostream>
 WindowApp::WindowApp(GameHandler* handler): 
     App(handler)
 {
@@ -48,6 +51,7 @@ void WindowApp::run()
     while (this->getIsRunning())
     {
         float deltaTime = this->_timer->getDeltaTime();
+        std::cout << deltaTime << std::endl;
         accumulator += deltaTime;
         while (SDL_PollEvent(&event))
         {
@@ -63,8 +67,10 @@ void WindowApp::run()
 
         while (accumulator >= this->_timeStep)
         {
+            
             this->_game->update(deltaTime);
-            accumulator -= deltaTime;
+            //std::cout << deltaTime << std::endl;
+            accumulator -= this->_timeStep;
         }
 
         this->_game->draw(deltaTime);
@@ -82,4 +88,7 @@ void WindowApp::buildServiceContrainer()
     ServiceLocator::registerService(new SDLEventsMapperService());
     ServiceLocator::registerService(new ContentManagerService());
     ServiceLocator::registerService(new InputService());
+    ServiceLocator::registerService(new SoundService());
+    ServiceLocator::registerService(new MusicService());
+    ServiceLocator::registerService(new ConfigurationService());
 }
