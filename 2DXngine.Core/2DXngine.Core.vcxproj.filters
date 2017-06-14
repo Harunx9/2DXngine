@@ -285,10 +285,7 @@
     <ClInclude Include="src\Config\GraphicConfig.h">
       <Filter>Config</Filter>
     </ClInclude>
-    <ClInclude Include="src\Config\KeyboardConfig.h">
-      <Filter>Config</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Config\MouseConfig.h">
+    <ClInclude Include="src\Config\ActionsConfig.h">
       <Filter>Config</Filter>
     </ClInclude>
   </ItemGroup>
@@ -473,10 +470,7 @@
     <ClCompile Include="src\Config\GraphicConfig.cpp">
       <Filter>Config</Filter>
     </ClCompile>
-    <ClCompile Include="src\Config\KeyboardConfig.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Config\MouseConfig.cpp">
+    <ClCompile Include="src\Config\ActionsConfig.cpp">
       <Filter>Config</Filter>
     </ClCompile>
   </ItemGroup>

@@ -13,7 +13,7 @@ MusicService::~MusicService()
 
 void MusicService::initialize()
 {
-    this->_currentMusic = nullptr;
+	this->_currentMusic = nullptr;
 }
 
 void MusicService::terminate()

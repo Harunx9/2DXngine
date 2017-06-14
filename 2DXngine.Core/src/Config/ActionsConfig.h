@@ -1,8 +1,8 @@
 #pragma once
-class KeyboardConfig
+class ActionsConfig
 {
 public:
-    KeyboardConfig();
-    ~KeyboardConfig();
+    ActionsConfig();
+    ~ActionsConfig();
 };
 
