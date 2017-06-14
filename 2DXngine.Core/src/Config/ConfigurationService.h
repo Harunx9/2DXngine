@@ -4,32 +4,32 @@
 #include <map>
 #include <string>
 #include "../../libs/simpleini/SimpleIni.h"
+#include "../Utils/Macros/PropertyMacro.h"
+#include "GraphicConfig.h"
+#include "AudioConfig.h"
+#include "../Utils/Events/EventHandler.h"
 
-#define CONFIG_FILE_NAME "cfg.ini"
-
-typedef std::map<ConfigurationSections, ConfigSection*> configurtaion;
+#define BASE_CONFIG_FILE_NAME "cfg.ini"
+#define USER_CONFIG_FILE_NAME "user_cfg.ini"
 
 class ConfigurationService :
     public Service
 {
 public:
-    ConfigurationService();
+    ConfigurationService(const char* appName, const char* companyName);
     ~ConfigurationService();
     virtual void initialize() override;
     virtual void terminate() override;
 
-    template<class TSection>
-    TSection* get_section(ConfigurationSections name);
-private:
-    configurtaion _cfg;
+    READONLY_PROPERTY(GraphicConfig*, graphics)
+    READONLY_PROPERTY(AudioConfig*, audio)
+private: 
+    void onSave(EventArgs args);
+    const char * getConfigFilePath(char* basePath, const char* fileName);
+    Binding<EventArgs> _binding;
+    inifile* _file;
+    const char* _baseConfigPath;
+    const char* _userConfigPath;
+    const char* _appName;
+    const char* _companyName;
 };
-
-template<class TSection>
-inline TSection * ConfigurationService::get_section(ConfigurationSections name)
-{
-    auto pair = this->_cfg.find(name);
-    if (pair == this->_cfg.end())
-        return nullptr;
-
-    return (TSection *) pair[name];
-}

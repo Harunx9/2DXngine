@@ -7,4 +7,7 @@
   <ItemGroup>
     <ClInclude Include="src\TestGameHandler.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="cfg.ini" />
+  </ItemGroup>
 </Project>

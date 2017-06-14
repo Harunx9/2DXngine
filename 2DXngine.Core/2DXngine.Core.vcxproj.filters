@@ -234,12 +234,6 @@
     <ClInclude Include="src\Scenes\SceneUpdateSystem.h">
       <Filter>Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="src\Audio\MusicService.h">
-      <Filter>Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Audio\SoundService.h">
-      <Filter>Audio</Filter>
-    </ClInclude>
     <ClInclude Include="src\Utils\File.h">
       <Filter>Utils</Filter>
     </ClInclude>
@@ -288,6 +282,8 @@
     <ClInclude Include="src\Config\ActionsConfig.h">
       <Filter>Config</Filter>
     </ClInclude>
+    <ClInclude Include="src\Audio\MusicService.h" />
+    <ClInclude Include="src\Audio\SoundService.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -428,12 +424,6 @@
     <ClCompile Include="src\Scenes\SceneBehavior.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="src\Audio\MusicService.cpp">
-      <Filter>Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Audio\SoundService.cpp">
-      <Filter>Audio</Filter>
-    </ClCompile>
     <ClCompile Include="src\Utils\File.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
@@ -473,6 +463,8 @@
     <ClCompile Include="src\Config\ActionsConfig.cpp">
       <Filter>Config</Filter>
     </ClCompile>
+    <ClCompile Include="src\Audio\MusicService.cpp" />
+    <ClCompile Include="src\Audio\SoundService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

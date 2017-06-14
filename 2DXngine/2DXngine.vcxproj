@@ -38,6 +38,9 @@
   <ItemGroup>
     <ClInclude Include="src\TestGameHandler.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="cfg.ini" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FA09EF66-E40A-45B1-8D1F-E640CB95C184}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

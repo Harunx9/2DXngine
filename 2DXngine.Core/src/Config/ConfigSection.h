@@ -23,7 +23,7 @@ public:
     virtual ~ConfigSection();
 
     template<class TSection>
-    static TSection load(inifile* ini);
+    static TSection* load(inifile* ini);
 
     READONLY_PROPERTY(ConfigurationSections, name)
 protected:
@@ -32,7 +32,7 @@ protected:
 };
 
 template<class TSection>
-inline TSection ConfigSection::load(inifile* ini)
+inline TSection* ConfigSection::load(inifile* ini)
 {
-    return TSection::loadInternal(ini);
+    return (TSection*) TSection::loadInternal(ini);
 }

@@ -4,12 +4,12 @@ int main(int argc, char* argv[])
 {
     // TODO replace EmptyGameHandler with concrete game implementation
 
-    App* app = new WindowApp(new TestGameHandler());
+    App* app = new WindowApp(new TestGameHandler(), "DD", "DDD");
     app->initialize();
-    if (app->getIsInitialized())
+    if (app->get_isInitialized())
     {
         app->run();
-        if (app->getIsRunning() == false)
+        if (app->get_isRunning() == false)
         {
             app->exit();
         }
