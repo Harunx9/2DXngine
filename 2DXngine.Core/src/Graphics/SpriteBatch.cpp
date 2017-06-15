@@ -23,7 +23,7 @@ bool SpriteBatch::initialize()
     if (result)
     {
         this->_defaultShader->use();
-        this->_sampler = new SamplerState(TextureWrap::REPEAT, TextureFilter::LINEAR);
+        this->_sampler = new SamplerState(TextureWrap::REPEAT, TextureFilter::LINEAR_FILTER);
         glGenVertexArrays(1, &_vao);
         glGenBuffers(1, &_vbo);
         glGenBuffers(1, &_ebo);
@@ -147,7 +147,7 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, glm::vec4 color, f
     batchItem->texcoords[3] = glm::vec2(1.f, 1.f);
 }
 
-void SpriteBatch::draw(Texture * texture, Rectangle destinationRectangle, glm::vec4 color, float drawOrder)
+void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, glm::vec4 color, float drawOrder)
 {
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
@@ -190,7 +190,7 @@ void SpriteBatch::draw(Texture * texture, Rectangle destinationRectangle, glm::v
     batchItem->texcoords[3] = glm::vec2(1.f, 1.f);
 }
 
-void SpriteBatch::draw(Texture * texture, glm::vec2 position, Rectangle * sourceRectangle, glm::vec4 color, float drawOrder)
+void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourceRectangle, glm::vec4 color, float drawOrder)
 {
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
@@ -252,7 +252,7 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, Rectangle * source
     }
 }
 
-void SpriteBatch::draw(Texture * texture, Rectangle destinationRectangle, Rectangle * sourceRectangle, glm::vec4 color, float drawOrder)
+void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, RectangleI * sourceRectangle, glm::vec4 color, float drawOrder)
 {
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
@@ -315,7 +315,7 @@ void SpriteBatch::draw(Texture * texture, Rectangle destinationRectangle, Rectan
     }
 }
 
-void SpriteBatch::draw(Texture * texture, Rectangle destinationRectangle, Rectangle * sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, FlipEffect flip, float drawOrder)
+void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, RectangleI * sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, FlipEffect flip, float drawOrder)
 {
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
@@ -441,7 +441,7 @@ void SpriteBatch::draw(Texture * texture, Rectangle destinationRectangle, Rectan
     }
 }
 
-void SpriteBatch::draw(Texture * texture, glm::vec2 position, Rectangle * sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, glm::vec2 scale, FlipEffect flip, float drawOrder)
+void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, glm::vec2 scale, FlipEffect flip, float drawOrder)
 {
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
@@ -554,7 +554,7 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, Rectangle * source
     }
 }
 
-void SpriteBatch::draw(Texture * texture, glm::vec2 position, Rectangle * sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, float scale, FlipEffect flip, float drawOrder)
+void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, float scale, FlipEffect flip, float drawOrder)
 {
     auto size = glm::vec2(scale);
     this->draw(texture, position, sourceRectangle, color, rotation, origin, size, flip, drawOrder);

@@ -1,12 +1,12 @@
 #pragma once
-#include "Point.h"
+#include "PointI.h"
 
-class Rectangle
+class RectangleI
 {
 public:
-    Rectangle();
-    Rectangle(int x, int y, int width, int height);
-    ~Rectangle();
+    RectangleI();
+    RectangleI(int x, int y, int width, int height);
+    ~RectangleI();
 
     int get_x() const;
     int get_y() const;
@@ -18,15 +18,15 @@ public:
     void set_width(int width);
     void set_height(int height);
 
-    Point get_position() const;
+    PointI get_position() const;
 
     int get_top() const;
     int get_bottom() const;
     int get_left() const;
     int get_right() const;
 
-    bool intersect(const Rectangle& other);
-    bool insersect(const Rectangle* other);
+    bool intersect(const RectangleI& other);
+    bool insersect(const RectangleI* other);
 private:
     int _x, _y;
     int _width, _heihgt;

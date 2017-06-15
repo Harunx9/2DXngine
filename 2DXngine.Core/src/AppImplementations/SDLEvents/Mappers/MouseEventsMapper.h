@@ -3,7 +3,7 @@
 #include "../../../Input/InputDefines.h"
 #include "../../../Utils/Events/EventArgs.h"
 #include "../../../Utils/Events/EventHandler.h"
-#include "../../../Utils/Math/Point.h"
+#include "../../../Utils/Math/PointI.h"
 struct MouseButtonsState
 {
     MouseButtons button;
@@ -12,7 +12,7 @@ struct MouseButtonsState
 
 struct MousePositionState
 {
-    Point position;
+    PointI position;
 };
 
 class MouseEventsMapper: public SDLEventMapper

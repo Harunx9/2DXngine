@@ -1,6 +1,7 @@
 #include "MusicService.h"
-
-
+#include "../Services/ServiceLocator.h"
+#include "../Config/ConfigurationService.h"
+#include "SDL_mixer.h"
 
 MusicService::MusicService() : Service("MusicService")
 {
@@ -13,7 +14,9 @@ MusicService::~MusicService()
 
 void MusicService::initialize()
 {
-	this->_currentMusic = nullptr;
+    this->_currentMusic = nullptr;
+    this->_cfg = ServiceLocator::get<ConfigurationService>("ConfigurationService")->get_audio();
+    this->changeVolume(this->_cfg->get_musicVolumeFactor() * this->_cfg->get_audioVolumeFactor());
 }
 
 void MusicService::terminate()
@@ -37,7 +40,6 @@ void MusicService::play(Music * music, bool repeat)
         this->_currentMusic = music;
         this->_currentMusic->play(repeat);
     }
-      
 }
 
 void MusicService::pause()
@@ -55,4 +57,9 @@ void MusicService::stop()
         this->_currentMusic->stop();
         this->_currentMusic = nullptr;
     }
+}
+
+void MusicService::changeVolume(float factor)
+{
+    Mix_VolumeMusic((int)(MIX_MAX_VOLUME * factor));
 }

@@ -15,7 +15,7 @@ public:
     bool isButtonPressed(MouseButtons button);
     bool isButtonReleased(MouseButtons button);
 
-    READONLY_PROPERTY(Point, position)
+    READONLY_PROPERTY(PointI, position)
 private:
     MouseEventsMapper * _mapper;
     Binding<MouseButtonsState> _bindingButtons;

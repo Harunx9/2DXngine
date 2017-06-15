@@ -41,9 +41,9 @@
     <ClInclude Include="src\Components\Graphics\Transform.h" />
     <ClInclude Include="src\Config\AudioConfig.h" />
     <ClInclude Include="src\Config\ConfigSection.h" />
+    <ClInclude Include="src\Config\ActionsConfig.h" />
     <ClInclude Include="src\Config\ConfigurationService.h" />
     <ClInclude Include="src\Config\GraphicConfig.h" />
-    <ClInclude Include="src\Config\ActionsConfig.h" />
     <ClInclude Include="src\ContentManagement\AssetPath.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Bitmap.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Mp3Sound.h" />
@@ -95,8 +95,8 @@
     <ClInclude Include="src\Utils\Log.h" />
     <ClInclude Include="src\Utils\Macros\PropertyMacro.h" />
     <ClInclude Include="src\Utils\Math\MathTypes.h" />
-    <ClInclude Include="src\Utils\Math\Point.h" />
-    <ClInclude Include="src\Utils\Math\Rectangle.h" />
+    <ClInclude Include="src\Utils\Math\PointI.h" />
+    <ClInclude Include="src\Utils\Math\RectangleI.h" />
     <ClInclude Include="src\Utils\Math\RectangleF.h" />
     <ClInclude Include="src\Utils\Timer.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Texture.h" />
@@ -115,9 +115,9 @@
     <ClCompile Include="src\Components\Graphics\Transform.cpp" />
     <ClCompile Include="src\Config\AudioConfig.cpp" />
     <ClCompile Include="src\Config\ConfigSection.cpp" />
+    <ClCompile Include="src\Config\ActionsConfig.cpp" />
     <ClCompile Include="src\Config\ConfigurationService.cpp" />
     <ClCompile Include="src\Config\GraphicConfig.cpp" />
-    <ClCompile Include="src\Config\ActionsConfig.cpp" />
     <ClCompile Include="src\ContentManagement\AssetPath.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Mp3Sound.cpp" />
@@ -158,8 +158,8 @@
     <ClCompile Include="src\TypeInformation\TypeInfo.cpp" />
     <ClCompile Include="src\Utils\Events\EventHandler.cpp" />
     <ClCompile Include="src\Utils\GameHandler.cpp" />
-    <ClCompile Include="src\Utils\Math\Point.cpp" />
-    <ClCompile Include="src\Utils\Math\Rectangle.cpp" />
+    <ClCompile Include="src\Utils\Math\PointI.cpp" />
+    <ClCompile Include="src\Utils\Math\RectangleI.cpp" />
     <ClCompile Include="src\Utils\Math\RectangleF.cpp" />
     <ClCompile Include="src\Utils\Timer.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Texture.cpp" />

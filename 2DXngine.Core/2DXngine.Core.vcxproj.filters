@@ -240,16 +240,10 @@
     <ClInclude Include="src\Utils\Log.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utils\Math\Point.h">
-      <Filter>Utils\Math</Filter>
-    </ClInclude>
     <ClInclude Include="src\Utils\Math\MathTypes.h">
       <Filter>Utils\Math</Filter>
     </ClInclude>
     <ClInclude Include="src\Utils\Math\RectangleF.h">
-      <Filter>Utils\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Math\Rectangle.h">
       <Filter>Utils\Math</Filter>
     </ClInclude>
     <ClInclude Include="src\Utils\Macros\PropertyMacro.h">
@@ -270,13 +264,7 @@
     <ClInclude Include="src\Config\ConfigSection.h">
       <Filter>Config</Filter>
     </ClInclude>
-    <ClInclude Include="src\Config\ConfigurationService.h">
-      <Filter>Config</Filter>
-    </ClInclude>
     <ClInclude Include="src\Config\AudioConfig.h">
-      <Filter>Config</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Config\GraphicConfig.h">
       <Filter>Config</Filter>
     </ClInclude>
     <ClInclude Include="src\Config\ActionsConfig.h">
@@ -284,6 +272,14 @@
     </ClInclude>
     <ClInclude Include="src\Audio\MusicService.h" />
     <ClInclude Include="src\Audio\SoundService.h" />
+    <ClInclude Include="src\Config\GraphicConfig.h" />
+    <ClInclude Include="src\Config\ConfigurationService.h" />
+    <ClInclude Include="src\Utils\Math\RectangleI.h">
+      <Filter>Utils\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\Math\PointI.h">
+      <Filter>Utils\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -427,12 +423,6 @@
     <ClCompile Include="src\Utils\File.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="src\Utils\Math\Point.cpp">
-      <Filter>Utils\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utils\Math\Rectangle.cpp">
-      <Filter>Utils\Math</Filter>
-    </ClCompile>
     <ClCompile Include="src\Utils\Math\RectangleF.cpp">
       <Filter>Utils\Math</Filter>
     </ClCompile>
@@ -451,13 +441,7 @@
     <ClCompile Include="src\Config\ConfigSection.cpp">
       <Filter>Config</Filter>
     </ClCompile>
-    <ClCompile Include="src\Config\ConfigurationService.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
     <ClCompile Include="src\Config\AudioConfig.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Config\GraphicConfig.cpp">
       <Filter>Config</Filter>
     </ClCompile>
     <ClCompile Include="src\Config\ActionsConfig.cpp">
@@ -465,6 +449,14 @@
     </ClCompile>
     <ClCompile Include="src\Audio\MusicService.cpp" />
     <ClCompile Include="src\Audio\SoundService.cpp" />
+    <ClCompile Include="src\Config\ConfigurationService.cpp" />
+    <ClCompile Include="src\Config\GraphicConfig.cpp" />
+    <ClCompile Include="src\Utils\Math\RectangleI.cpp">
+      <Filter>Utils\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\Math\PointI.cpp">
+      <Filter>Utils\Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

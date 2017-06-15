@@ -4,7 +4,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/matrix_decompose.hpp>
-#include "../../Utils/Math/Rectangle.h"
+#include "../../Utils/Math/RectangleI.h"
 #include "../../Utils/Events/EventHandler.h"
 
 class Transform : public Component
@@ -27,7 +27,6 @@ public:
 
     glm::vec2 get_position() const;
     void set_position(glm::vec2 position);
-
 
     glm::vec2 get_worldPosition() const;
     glm::vec2 get_worldScale() const;

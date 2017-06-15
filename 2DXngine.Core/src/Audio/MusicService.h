@@ -1,6 +1,8 @@
 #pragma once
 #include "..\Services\Service.h"
 #include "..\ContentManagement\DefaultAssets\Sound.h"
+class AudioConfig;
+
 class MusicService :
     public Service
 {
@@ -14,7 +16,9 @@ public:
     void pause();
     void stop();
 
+    void changeVolume(float factor);
 private:
     Music * _currentMusic;
+    AudioConfig* _cfg;
 };
 

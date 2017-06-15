@@ -2,14 +2,14 @@
 #include "../SDLEventMapper.h"
 #include "../../../Utils/Events/EventArgs.h"
 #include "../../../Utils/Events/EventHandler.h"
-#include "../../../Utils/Math/Rectangle.h"
-#include "../../../Utils/Math/Point.h"
+#include "../../../Utils/Math/RectangleI.h"
+#include "../../../Utils/Math/PointI.h"
 
 struct WindowState
 {
-    Point position;
-    Point dimentsion;
-    Rectangle rectangle;
+    PointI position;
+    PointI dimentsion;
+    RectangleI rectangle;
 };
 
 

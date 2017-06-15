@@ -3,6 +3,7 @@
 #include <gl\glew.h>
 #include <SDL.h>
 #include "../Utils/Macros/PropertyMacro.h"
+#include "../Config/GraphicConfig.h"
 
 struct Viewport
 {
@@ -42,22 +43,22 @@ public:
         SDL_DestroyWindow(this->_window);
     }
 
-    inline void initialize(int width, int height, const char * windowName)
+    inline void initialize(GraphicConfig * cfg, const char * windowName)
     {
         SDL_Init(SDL_INIT_EVERYTHING);
 
         this->_window = SDL_CreateWindow(windowName,
             SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-            width,
-            height,
+            cfg->get_windowWidth(),
+            cfg->get_windowHeight(),
             SDL_WINDOW_OPENGL);
 
         auto ctx = SDL_GL_CreateContext(_window);
 
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
-        SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, cfg->get_openGLMajorVerion());
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, cfg->get_openGLMinorVerion());
+        SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, cfg->get_doubleBufferToggle());
 
         GLenum glewError = glewInit();
         if (glewError != GLEW_OK)
@@ -88,7 +89,6 @@ public:
     }
 
     READONLY_PROPERTY(bool, isInitialized)
-
 private:
     SDL_Window * _window;
 };

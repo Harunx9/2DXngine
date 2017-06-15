@@ -31,7 +31,9 @@ void WindowApp::initialize()
     this->_timeStep = 1.f / 30.f;
     this->_timer = new Timer();
 
-    this->_device->initialize(640, 360, this->_appName);
+    this->_device->initialize(
+        this->_cfgService->get_graphics(),
+        this->_appName);
 
     if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
         return;
@@ -74,7 +76,6 @@ void WindowApp::run()
         {
             
             this->_game->update(deltaTime);
-            //std::cout << deltaTime << std::endl;
             accumulator -= this->_timeStep;
         }
 

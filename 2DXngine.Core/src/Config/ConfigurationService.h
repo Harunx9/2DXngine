@@ -25,11 +25,11 @@ public:
     READONLY_PROPERTY(AudioConfig*, audio)
 private: 
     void onSave(EventArgs args);
-    const char * getConfigFilePath(char* basePath, const char* fileName);
+    std::string getConfigFilePath(char* basePath, const char* fileName);
     Binding<EventArgs> _binding;
     inifile* _file;
-    const char* _baseConfigPath;
-    const char* _userConfigPath;
+    std::string _baseConfigPath;
+    std::string _userConfigPath;
     const char* _appName;
     const char* _companyName;
 };

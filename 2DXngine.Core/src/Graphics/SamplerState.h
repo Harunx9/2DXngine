@@ -12,8 +12,8 @@ enum TextureWrap
 
 enum TextureFilter
 {
-    POINT = GL_NEAREST,
-    LINEAR = GL_LINEAR
+    POINT_FILTER = GL_NEAREST,
+    LINEAR_FILTER = GL_LINEAR
 };
 
 class SamplerState

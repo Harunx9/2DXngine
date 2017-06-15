@@ -21,7 +21,7 @@ GraphicConfig * GraphicConfig::loadInternal(inifile * ini)
 {
     bool isFullScreen = ini->GetBoolValue("Graphics", "FullScreen");
     int windowWidth = (int)ini->GetLongValue("Graphics", "WindowWidth", 640);
-    int windowHeight = (int)ini->GetLongValue("Graphics", "WindowWidth", 360);
+    int windowHeight = (int)ini->GetLongValue("Graphics", "WindowHeight", 360);
     int openGLMinorVerion = (int)ini->GetLongValue("Graphics", "GLMinor", 3);
     int openGLMajorVerion = (int)ini->GetLongValue("Graphics", "GLMajor", 3);
     int doubleBufferToggle = (int)ini->GetLongValue("Graphics", "DoubleBuffer", 1);

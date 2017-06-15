@@ -1,11 +1,11 @@
 #include "gtest\gtest.h"
-#include <Utils\Math\Rectangle.h>
+#include <Utils\Math\RectangleI.h>
 #include <Utils\Math\RectangleF.h>
 
 TEST(Rectangle, rectangle_dimension_is_proper_when_new_rectangle_is_created)
 {
     //Arrange
-    auto rect = new Rectangle(1, 2, 10, 20);
+    auto rect = new RectangleI(1, 2, 10, 20);
 
     //Act
     auto  top = rect->get_top();
@@ -23,8 +23,8 @@ TEST(Rectangle, rectangle_dimension_is_proper_when_new_rectangle_is_created)
 TEST(Rectangle, rectnagle_can_intersect_with_other_rectangle)
 {
     //Arrange
-    auto rect1 = new Rectangle(1, 2, 10, 20);
-    auto rect2 = new Rectangle(5, 5, 10, 20);
+    auto rect1 = new RectangleI(1, 2, 10, 20);
+    auto rect2 = new RectangleI(5, 5, 10, 20);
     //Act
     auto intersectResult = rect1->insersect(rect2);
 
@@ -35,8 +35,8 @@ TEST(Rectangle, rectnagle_can_intersect_with_other_rectangle)
 TEST(Rectangle, rectnagle_can_intersect_with_other_rectangle_when_value_init)
 {
     //Arrange
-    auto rect1 = Rectangle(1, 2, 10, 20);
-    auto rect2 = Rectangle(5, 5, 10, 20);
+    auto rect1 = RectangleI(1, 2, 10, 20);
+    auto rect2 = RectangleI(5, 5, 10, 20);
     //Act
     auto intersectResult = rect1.insersect(&rect2);
 

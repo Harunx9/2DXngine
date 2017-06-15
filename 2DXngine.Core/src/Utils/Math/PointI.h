@@ -1,11 +1,11 @@
 #pragma once
 
-class Point
+class PointI
 {
 public:
-    Point();
-    Point(int x, int y);
-    ~Point();
+    PointI();
+    PointI(int x, int y);
+    ~PointI();
 
     int get_x() const;
     void set_x(int x);

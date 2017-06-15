@@ -17,32 +17,32 @@ public:
 
     static GraphicConfig * loadInternal(inifile* ini);
 
-    inline bool get_isFullScreen()const 
+    inline bool get_isFullScreen()const
     {
         return this->_isFullScreen;
     }
-    
-    inline int get_windowWidth()const 
+
+    inline int get_windowWidth()const
     {
         return this->_windowWidth;
     }
-    
-    inline int get_windowHeight()const 
+
+    inline int get_windowHeight()const
     {
         return this->_windowHeight;
     }
-    
-    inline int get_openGLMinorVerion()const 
+
+    inline int get_openGLMinorVerion()const
     {
         return this->_openGLMinorVerion;
     }
-    
-    inline int get_openGLMajorVerion()const 
+
+    inline int get_openGLMajorVerion()const
     {
         return this->_openGLMajorVerion;
     }
-    
-    inline int get_doubleBufferToggle()const 
+
+    inline int get_doubleBufferToggle()const
     {
         return this->_doubleBufferToggle;
     }
@@ -56,7 +56,7 @@ public:
             this->sectionUpdatedHandler();
         }
     }
-    
+
     inline void set_windowWidth(int windowWidth)
     {
         if (this->_windowWidth != windowWidth)
@@ -66,43 +66,13 @@ public:
             this->sectionUpdatedHandler();
         }
     }
-    
+
     inline void set_windowHeight(int windowHeight)
     {
         if (this->_windowHeight != windowHeight)
         {
             this->_windowHeight = windowHeight;
             this->_ini->SetLongValue("Graphics", "WindowHeight", (long)this->_windowHeight);
-            this->sectionUpdatedHandler();
-        }
-    }
-    
-    inline void set_openGLMinorVerion(int openGLMinorVerion)
-    {
-        if (this->_openGLMinorVerion != openGLMinorVerion)
-        {
-            this->_openGLMinorVerion = openGLMinorVerion;
-            this->_ini->SetLongValue("Graphics", "GLMinor", (long)this->_openGLMinorVerion);
-            this->sectionUpdatedHandler();
-        }
-    }
-    
-    inline void set_openGLMajorVerion(int openGLMajorVerion)
-    {
-        if (this->_openGLMajorVerion != openGLMajorVerion)
-        {
-            this->_openGLMajorVerion = openGLMajorVerion;
-            this->_ini->SetLongValue("Graphics", "GLMajor", (long)this->_openGLMajorVerion);
-            this->sectionUpdatedHandler();
-        }
-    }
-    
-    inline void set_doubleBufferToggle(int doubleBufferToggle)
-    {
-        if (this->_doubleBufferToggle != doubleBufferToggle)
-        {
-            this->_doubleBufferToggle = doubleBufferToggle;
-            this->_ini->SetLongValue("Graphics", "DoubleBuffer", (long)this->_doubleBufferToggle);
             this->sectionUpdatedHandler();
         }
     }

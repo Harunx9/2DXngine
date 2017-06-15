@@ -8,12 +8,10 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <vector>
-#include "../Utils/Math/Rectangle.h"
 #include "GraphicDevice.h"
+#include "../Utils/Math/RectangleI.h"
 #define MAX_BATCH_ITEMS 2048
-
 class ShaderProgram;
-
 
 enum FlipEffect
 {
@@ -44,12 +42,12 @@ public:
     void end();
 
     void draw(Texture* texture, glm::vec2 position, glm::vec4 color, float drawOrder);
-    void draw(Texture* texture, Rectangle destinationRectangle, glm::vec4 color, float drawOrder);
-    void draw(Texture* texture, glm::vec2 position, Rectangle* sourceRectangle, glm::vec4 color, float drawOrder);
-    void draw(Texture* texture, Rectangle destinationRectangle, Rectangle* sourceRectangle, glm::vec4 color, float drawOrder);
-    void draw(Texture* texture, Rectangle destinationRectangle, Rectangle* sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, FlipEffect flip, float drawOrder);
-    void draw(Texture* texture, glm::vec2 position, Rectangle* sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, glm::vec2 scale, FlipEffect flip, float drawOrder);
-    void draw(Texture* texture, glm::vec2 position, Rectangle* sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, float scale, FlipEffect flip, float drawOrder);
+    void draw(Texture* texture, RectangleI destinationRectangle, glm::vec4 color, float drawOrder);
+    void draw(Texture* texture, glm::vec2 position, RectangleI* sourceRectangle, glm::vec4 color, float drawOrder);
+    void draw(Texture* texture, RectangleI destinationRectangle, RectangleI* sourceRectangle, glm::vec4 color, float drawOrder);
+    void draw(Texture* texture, RectangleI destinationRectangle, RectangleI* sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, FlipEffect flip, float drawOrder);
+    void draw(Texture* texture, glm::vec2 position, RectangleI* sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, glm::vec2 scale, FlipEffect flip, float drawOrder);
+    void draw(Texture* texture, glm::vec2 position, RectangleI* sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, float scale, FlipEffect flip, float drawOrder);
 
 private:
     struct SpriteBatchItem

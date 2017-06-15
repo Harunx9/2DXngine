@@ -1,6 +1,6 @@
-#include "Rectangle.h"
+#include "RectangleI.h"
 
-Rectangle::Rectangle():
+RectangleI::RectangleI():
     _x(0),
     _y(0),
     _width(0),
@@ -8,7 +8,7 @@ Rectangle::Rectangle():
 {
 }
 
-Rectangle::Rectangle(int x, int y, int width, int height) :
+RectangleI::RectangleI(int x, int y, int width, int height) :
     _x(x),
     _y(y),
     _width(width),
@@ -16,76 +16,76 @@ Rectangle::Rectangle(int x, int y, int width, int height) :
 {
 }
 
-Rectangle::~Rectangle()
+RectangleI::~RectangleI()
 {
 }
 
-int Rectangle::get_x() const
+int RectangleI::get_x() const
 {
     return this->_x;
 }
 
-int Rectangle::get_y() const
+int RectangleI::get_y() const
 {
     return this->_y;
 }
 
-void Rectangle::set_x(int x)
+void RectangleI::set_x(int x)
 {
     this->_x = x;
 }
 
-void Rectangle::set_y(int y)
+void RectangleI::set_y(int y)
 {
     this->_y = y;
 }
 
-int Rectangle::get_width() const
+int RectangleI::get_width() const
 {
     return this->_width;
 }
 
-int Rectangle::get_height() const
+int RectangleI::get_height() const
 {
     return this->_heihgt;
 }
 
-void Rectangle::set_width(int width)
+void RectangleI::set_width(int width)
 {
     this->_width = width;
 }
 
-void Rectangle::set_height(int height)
+void RectangleI::set_height(int height)
 {
     this->_heihgt = height;
 }
 
-Point Rectangle::get_position() const
+PointI RectangleI::get_position() const
 {
-    return Point(this->_x, this->_y);
+    return PointI(this->_x, this->_y);
 }
 
-int Rectangle::get_top() const
+int RectangleI::get_top() const
 {
     return this->_y;
 }
 
-int Rectangle::get_bottom() const
+int RectangleI::get_bottom() const
 {
     return this->_y + this->_heihgt;
 }
 
-int Rectangle::get_left() const
+int RectangleI::get_left() const
 {
     return this->_x;
 }
 
-int Rectangle::get_right() const
+int RectangleI::get_right() const
 {
     return this->_x + this->_width;
 }
 
-bool Rectangle::intersect(const Rectangle & other)
+bool RectangleI::intersect(const RectangleI & other)
 {
     return (other.get_left() <= this->get_right()) ||
         (other.get_right() >= this->get_right()) ||
@@ -93,7 +93,7 @@ bool Rectangle::intersect(const Rectangle & other)
         (other.get_bottom() >= this->get_top());
 }
 
-bool Rectangle::insersect(const Rectangle * other)
+bool RectangleI::insersect(const RectangleI * other)
 {
     return (other->get_left() <= this->get_right()) ||
         (other->get_right() >= this->get_right()) ||

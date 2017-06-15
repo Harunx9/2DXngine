@@ -27,7 +27,7 @@ void ConfigurationService::initialize()
     this->_userConfigPath = this->_baseConfigPath;
 #endif
 
-    auto prefsFilePath = File::exist(std::string(this->_userConfigPath)) ? this->_userConfigPath : this->_baseConfigPath;
+    auto prefsFilePath = File::exist(std::string(this->_userConfigPath)) ? this->_userConfigPath.c_str() : this->_baseConfigPath.c_str();
     this->_file = new inifile();
     this->_file->LoadFile(prefsFilePath);
 
@@ -45,17 +45,17 @@ void ConfigurationService::terminate()
     delete _audio;
 }
 
-const char * ConfigurationService::getConfigFilePath(char * basePath, const char * fileName)
+std::string ConfigurationService::getConfigFilePath(char * basePath, const char * fileName)
 {
     std::string bPath = std::string(basePath);
     bPath.append(fileName);
-    return bPath.c_str();
+    return bPath;
 }
 
 void ConfigurationService::onSave(EventArgs args)
 {
     if (this->_file != nullptr)
     {
-        this->_file->SaveFile(this->_userConfigPath);
+        this->_file->SaveFile(this->_userConfigPath.c_str());
     }
 }

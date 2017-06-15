@@ -1,5 +1,6 @@
 #include "SoundService.h"
-
+#include "../Services/ServiceLocator.h"
+#include "../Config/ConfigurationService.h"
 
 
 SoundService::SoundService() : Service("SoundService")
@@ -13,10 +14,11 @@ SoundService::~SoundService()
 
 void SoundService::initialize()
 {
+    this->_cfg = ServiceLocator::get<ConfigurationService>("ConfigurationService")->get_audio();
     //TODO move channels number to config file
-    Mix_AllocateChannels(256);
+    Mix_AllocateChannels(this->_cfg->get_channelsNumber());
     //TODO implement sound volume change in config file 
-    Mix_Volume(-1, (int)(MIX_MAX_VOLUME * 0.5f));
+    this->changeVolume(this->_cfg->get_soundVolumeFactor() * this->_cfg->get_audioVolumeFactor());
 }
 
 void SoundService::play(Sound * sound, bool repeat)
@@ -36,6 +38,11 @@ void SoundService::stop(Sound * sound)
 void SoundService::pause(Sound * sound)
 {
     sound->pause();
+}
+
+void SoundService::changeVolume(float factor)
+{
+    Mix_Volume(-1, (int)(MIX_MAX_VOLUME * factor));
 }
 
 void SoundService::terminate()
