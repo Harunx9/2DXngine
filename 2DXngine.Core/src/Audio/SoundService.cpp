@@ -7,18 +7,21 @@ SoundService::SoundService() : Service("SoundService")
 {
 }
 
-
 SoundService::~SoundService()
 {
 }
 
 void SoundService::initialize()
 {
+    if (this->_isInitialized) return;
+
     this->_cfg = ServiceLocator::get<ConfigurationService>("ConfigurationService")->get_audio();
     //TODO move channels number to config file
     Mix_AllocateChannels(this->_cfg->get_channelsNumber());
-    //TODO implement sound volume change in config file 
+    ////TODO implement sound volume change in config file 
     this->changeVolume(this->_cfg->get_soundVolumeFactor() * this->_cfg->get_audioVolumeFactor());
+
+    this->_isInitialized = true;
 }
 
 void SoundService::play(Sound * sound, bool repeat)
@@ -47,7 +50,11 @@ void SoundService::changeVolume(float factor)
 
 void SoundService::terminate()
 {
+    if (this->_isTerminated) return;
+
     Mix_AllocateChannels(0);
+
+    this->_isTerminated = true;
 }
 
 

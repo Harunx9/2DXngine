@@ -14,14 +14,24 @@ MusicService::~MusicService()
 
 void MusicService::initialize()
 {
+    if (this->_isInitialized) return;
+
     this->_currentMusic = nullptr;
-    this->_cfg = ServiceLocator::get<ConfigurationService>("ConfigurationService")->get_audio();
+    this->_cfg = ServiceLocator::get<ConfigurationService>("ConfigurationService")
+        ->get_audio();
+
     this->changeVolume(this->_cfg->get_musicVolumeFactor() * this->_cfg->get_audioVolumeFactor());
+
+    this->_isInitialized = true;
 }
 
 void MusicService::terminate()
 {
+    if (this->_isTerminated) return;
+
     this->_currentMusic = nullptr;
+
+    this->_isTerminated = true;
 }
 
 void MusicService::play(Music * music, bool repeat)

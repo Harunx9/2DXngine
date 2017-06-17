@@ -41,9 +41,10 @@ void WindowApp::initialize()
     if (this->_device->get_isInitialized() && this->_game)
     {
         this->_game->set_device(this->_device);
+        buildServiceContrainer();
         this->_game->regiserUserServices();
         this->_game->initialize();
-        buildServiceContrainer();
+        ServiceLocator::initialize();
         this->_isInitialized = true;
         this->_isRunning = true;
     }
@@ -109,5 +110,6 @@ void WindowApp::buildServiceContrainer()
 void WindowApp::initAndRegiserConfig()
 {
     this->_cfgService = new ConfigurationService(this->_appName, this->_companyName);
+    this->_cfgService->initialize();
     ServiceLocator::registerService(this->_cfgService);
 }

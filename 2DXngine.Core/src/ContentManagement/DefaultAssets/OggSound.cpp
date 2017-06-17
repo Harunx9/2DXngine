@@ -2,8 +2,10 @@
 
 OggSound::OggSound(AssetPath path) : Music(path, DefaultAssetType::OGG_TYPE)
 {
-    const char* soundPath = path.get_fullPath().c_str();
+    std::string fPathStr = path.get_fullPath();
+    const char* soundPath = fPathStr.c_str();
     this->_musicData = Mix_LoadMUS(soundPath);
+    this->_currentState = SoundState::STOPPED;
 }
 
 OggSound * OggSound::load(AssetPath path)

@@ -2,6 +2,10 @@
 #include <Utils\GameHandler.h>
 #include <Graphics\SpriteBatch.h>
 #include <Graphics\Camera.h>
+#include <ContentManagement\DefaultAssets\WavSound.h>
+#include <ContentManagement\DefaultAssets\Mp3Sound.h>
+#include <Audio\MusicService.h>
+#include <Audio\SoundService.h>
 
 class TestGameHandler : public GameHandler
 {
@@ -20,5 +24,9 @@ private:
     Texture* texture;
     Camera* cam;
     float _camRot;
+    Mp3Sound * _mp3;
+    WavSound * _wav;
+    MusicService * music;
+    SoundService* sound;
 };
 

@@ -2,8 +2,10 @@
 
 Mp3Sound::Mp3Sound(AssetPath path) : Music(path, DefaultAssetType::MP3_TYPE)
 {
-    const char* soundPath = path.get_fullPath().c_str();
+    std::string fPathStr = path.get_fullPath();
+    const char* soundPath = fPathStr.c_str();
     this->_musicData = Mix_LoadMUS(soundPath);
+    this->_currentState = SoundState::STOPPED;
 }
 
 Mp3Sound * Mp3Sound::load(AssetPath path)

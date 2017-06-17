@@ -12,6 +12,8 @@ public:
     ServiceLocator(const ServiceLocator * other) = delete;
     virtual ~ServiceLocator() = delete;
 
+    static void initialize();
+
     template<class TService>
     static TService* get(const char * name);
 
@@ -32,6 +34,6 @@ template<class TService>
 static inline void ServiceLocator::registerService(const TService * service)
 {
     Service* tmp = (Service*)service;
-    tmp->initialize();
+    //tmp->initialize();
     _services[tmp->get_name()] = tmp;
 }

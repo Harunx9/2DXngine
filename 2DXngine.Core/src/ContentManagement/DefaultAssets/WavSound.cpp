@@ -2,7 +2,9 @@
 
 WavSound::WavSound(AssetPath path) : Sound(path, DefaultAssetType::WAV_TYPE)
 {
-    const char* soundPath = path.get_fullPath().c_str();
+    std::string fPathStr = path.get_fullPath();
+    const char* soundPath = fPathStr.c_str();
+    this->_currentState = SoundState::STOPPED;
     this->_soundData = Mix_LoadWAV(soundPath);
 }
 
