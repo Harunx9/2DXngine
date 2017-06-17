@@ -606,8 +606,9 @@ void SpriteBatch::drawBatch()
         this->_defaultShader->use();
         currentProgram = this->_defaultShader->get_programId();
     }
-    glm::mat4  vp =  this->_viewport * this->_viewportTransform;
-    auto viewport = glm::value_ptr(vp);
+    
+    glm::mat4  full_viewProj =  this->_viewport * this->_viewportTransform;
+    auto viewport = glm::value_ptr(full_viewProj);
     glUniformMatrix4fv(glGetUniformLocation(currentProgram, "projection"), 1, GL_FALSE, viewport);
 
     glBindVertexArray(this->_vao);
