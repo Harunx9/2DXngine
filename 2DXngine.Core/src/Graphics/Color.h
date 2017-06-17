@@ -21,3 +21,13 @@ struct Color
 
     GLfloat r, g, b, a;
 };
+
+namespace Colors
+{
+    const Color white = Color(1.f, 1.f, 1.f, 1.f);
+    const Color black = Color(0.f, 0.f, 0.f, 1.f);
+    const Color red = Color(1.f, 0.f, 0.f, 1.f);
+    const Color green = Color(0.f, 1.f, 0.f, 1.f);
+    const Color blue = Color(0.f, 0.f, 1.f, 1.f);
+    const Color yellow = Color(1.f, 1.f, 0.f, 1.f);
+}

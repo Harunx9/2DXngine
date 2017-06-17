@@ -19,5 +19,6 @@ private:
     SpriteBatch* batch;
     Texture* texture;
     Camera* cam;
+    float _camRot;
 };
 

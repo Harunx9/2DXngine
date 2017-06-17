@@ -124,7 +124,7 @@ void SpriteBatch::end()
     }
 }
 
-void SpriteBatch::draw(Texture * texture, glm::vec2 position, glm::vec4 color, float drawOrder)
+void SpriteBatch::draw(Texture * texture, glm::vec2 position, Color color, float drawOrder)
 {
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
@@ -146,7 +146,10 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, glm::vec4 color, f
         position.y + texture->get_bitmap()->get_height());
 
     //set color
-    batchItem->color = color;
+    batchItem->color.x = color.r;
+    batchItem->color.y = color.g;
+    batchItem->color.z = color.b;
+    batchItem->color.w = color.a;
 
     batchItem->drawOrder = drawOrder;
 
@@ -159,7 +162,7 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, glm::vec4 color, f
     batchItem->texcoords[3] = glm::vec2(1.f, 1.f);
 }
 
-void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, glm::vec4 color, float drawOrder)
+void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Color color, float drawOrder)
 {
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
@@ -185,7 +188,10 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, glm::
         destinationRectangle.get_y() + destinationRectangle.get_height());
 
     //set color
-    batchItem->color = color;
+    batchItem->color.x = color.r;
+    batchItem->color.y = color.g;
+    batchItem->color.z = color.b;
+    batchItem->color.w = color.a;
 
     //origin
     batchItem->origin = glm::vec2(0.f, 0.f);
@@ -202,7 +208,7 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, glm::
     batchItem->texcoords[3] = glm::vec2(1.f, 1.f);
 }
 
-void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourceRectangle, glm::vec4 color, float drawOrder)
+void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourceRectangle, Color color, float drawOrder)
 {
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
@@ -226,7 +232,10 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
         position.y + texture->get_bitmap()->get_width());
 
     //set color
-    batchItem->color = color;
+    batchItem->color.x = color.r;
+    batchItem->color.y = color.g;
+    batchItem->color.z = color.b;
+    batchItem->color.w = color.a;
 
     //origin
     batchItem->origin = glm::vec2(0.f, 0.f);
@@ -264,7 +273,7 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
     }
 }
 
-void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, RectangleI * sourceRectangle, glm::vec4 color, float drawOrder)
+void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, RectangleI * sourceRectangle, Color color, float drawOrder)
 {
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
@@ -289,7 +298,10 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Recta
         destinationRectangle.get_y() + destinationRectangle.get_height());
 
     //set color
-    batchItem->color = color;
+    batchItem->color.x = color.r;
+    batchItem->color.y = color.g;
+    batchItem->color.z = color.b;
+    batchItem->color.w = color.a;
 
     //origin
     batchItem->origin = glm::vec2(0.f, 0.f);
@@ -327,7 +339,7 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Recta
     }
 }
 
-void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, RectangleI * sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, FlipEffect flip, float drawOrder)
+void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, RectangleI * sourceRectangle, Color color, float rotation, glm::vec2 origin, FlipEffect flip, float drawOrder)
 {
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
@@ -415,7 +427,10 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Recta
     }
 
     //set color
-    batchItem->color = color;
+    batchItem->color.x = color.r;
+    batchItem->color.y = color.g;
+    batchItem->color.z = color.b;
+    batchItem->color.w = color.a;
 
     //origin
     batchItem->origin = glm::vec2(0.f, 0.f);
@@ -453,7 +468,7 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Recta
     }
 }
 
-void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, glm::vec2 scale, FlipEffect flip, float drawOrder)
+void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourceRectangle, Color color, float rotation, glm::vec2 origin, glm::vec2 scale, FlipEffect flip, float drawOrder)
 {
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
@@ -504,7 +519,10 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
     }
 
     //set color
-    batchItem->color = color;
+    batchItem->color.x = color.r;
+    batchItem->color.y = color.g;
+    batchItem->color.z = color.b;
+    batchItem->color.w = color.a;
 
     //origin
     batchItem->origin = glm::vec2(0.f, 0.f);
@@ -566,7 +584,7 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
     }
 }
 
-void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourceRectangle, glm::vec4 color, float rotation, glm::vec2 origin, float scale, FlipEffect flip, float drawOrder)
+void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourceRectangle, Color color, float rotation, glm::vec2 origin, float scale, FlipEffect flip, float drawOrder)
 {
     auto size = glm::vec2(scale);
     this->draw(texture, position, sourceRectangle, color, rotation, origin, size, flip, drawOrder);
