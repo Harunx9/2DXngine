@@ -2,9 +2,10 @@
 #include "../ContentManagement/DefaultAssets/ShaderProgram.h"
 
 SpriteBatch::SpriteBatch(GraphicDevice* device) :
-    _device(device)
+    _device(device),
+    _customShader(nullptr)
 {
-    
+
 }
 
 SpriteBatch::~SpriteBatch()
@@ -69,29 +70,40 @@ void SpriteBatch::set_renderTarget(RenderTarget * target)
 
 void SpriteBatch::begin()
 {
-    if (this->_isInitialized && this->_isStarted) return;
+    if (this->_isInitialized == false && this->_isStarted) return;
 
     this->_isStarted = true;
-    this->_viewport = glm::mat4();
-
+    this->_viewport = glm::ortho(0.f,
+        static_cast<GLfloat>(this->_device->get_viewport().width),
+        static_cast<GLfloat>(this->_device->get_viewport().height),
+        0.f, -1.f, 1.f);
+    this->_viewportTransform = glm::mat4();
 }
 
 void SpriteBatch::begin(TextureWrap wrap, TextureFilter filter)
 {
-    if (this->_isInitialized && this->_isStarted) return;
+    if (this->_isInitialized == false && this->_isStarted) return;
 
     this->_isStarted = true;
-    this->_viewport = glm::mat4();
+    this->_viewport = glm::ortho(0.f,
+        static_cast<GLfloat>(this->_device->get_viewport().width),
+        static_cast<GLfloat>(this->_device->get_viewport().height),
+        0.f, -1.f, 1.f);
+    this->_viewportTransform = glm::mat4();
     this->_sampler->changeFilter(filter);
     this->_sampler->changeWrap(wrap);
 }
 
-void SpriteBatch::begin(ShaderProgram * shader, TextureWrap wrap, TextureFilter filter, glm::mat4 viewport)
+void SpriteBatch::begin(ShaderProgram * shader, TextureWrap wrap, TextureFilter filter, glm::mat4 viewportTransform)
 {
-    if (this->_isInitialized && this->_isStarted) return;
+    if (this->_isInitialized == false && this->_isStarted) return;
 
     this->_customShader = shader;
-    this->_viewport = viewport;
+    this->_viewport = glm::ortho(0.f,
+        static_cast<GLfloat>(this->_device->get_viewport().width),
+        static_cast<GLfloat>(this->_device->get_viewport().height),
+        0.f, -1.f, 1.f);
+    this->_viewportTransform = viewportTransform;
     this->_isStarted = true;
     this->_sampler->changeFilter(filter);
     this->_sampler->changeWrap(wrap);
@@ -584,7 +596,7 @@ void SpriteBatch::drawBatch()
     }
 
     GLuint currentProgram;
-    if (this->_customShader == nullptr)
+    if (this->_customShader != nullptr)
     {
         this->_customShader->use();
         currentProgram = this->_customShader->get_programId();
@@ -594,8 +606,9 @@ void SpriteBatch::drawBatch()
         this->_defaultShader->use();
         currentProgram = this->_defaultShader->get_programId();
     }
-
-    glUniformMatrix4fv(glGetUniformLocation(currentProgram, "projection"), 1, GL_FALSE, glm::value_ptr(this->_viewport));
+    glm::mat4  vp =  this->_viewport * this->_viewportTransform;
+    auto viewport = glm::value_ptr(vp);
+    glUniformMatrix4fv(glGetUniformLocation(currentProgram, "projection"), 1, GL_FALSE, viewport);
 
     glBindVertexArray(this->_vao);
 

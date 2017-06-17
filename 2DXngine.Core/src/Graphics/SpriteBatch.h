@@ -38,7 +38,7 @@ public:
     void set_renderTarget(RenderTarget* target);
     void begin();
     void begin(TextureWrap wrap, TextureFilter filter);
-    void begin(ShaderProgram * shader, TextureWrap wrap, TextureFilter filter, glm::mat4 viewport);
+    void begin(ShaderProgram * shader, TextureWrap wrap, TextureFilter filter, glm::mat4 viewportTransform);
     void end();
 
     void draw(Texture* texture, glm::vec2 position, glm::vec4 color, float drawOrder);
@@ -67,6 +67,7 @@ private:
     SpriteBatchItem * createNewItem();
 
     glm::mat4 _viewport;
+    glm::mat4 _viewportTransform;
     bool initializeDefaultShader();
     bool isRenderTargetSet();
     size_t _currentSpriteCount;

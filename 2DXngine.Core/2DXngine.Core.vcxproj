@@ -50,6 +50,7 @@
     <ClInclude Include="src\ContentManagement\DefaultAssets\OggSound.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Sound.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\WavSound.h" />
+    <ClInclude Include="src\Graphics\Camera.h" />
     <ClInclude Include="src\Graphics\Color.h" />
     <ClInclude Include="src\Graphics\GraphicDevice.h" />
     <ClInclude Include="src\Graphics\SamplerState.h" />
@@ -123,6 +124,7 @@
     <ClCompile Include="src\ContentManagement\DefaultAssets\Mp3Sound.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\OggSound.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\WavSound.cpp" />
+    <ClCompile Include="src\Graphics\Camera.cpp" />
     <ClCompile Include="src\Graphics\SamplerState.cpp" />
     <ClCompile Include="src\Input\InputService.cpp" />
     <ClCompile Include="src\Input\KeyboardStateHandler.cpp" />

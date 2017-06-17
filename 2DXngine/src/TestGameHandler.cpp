@@ -15,6 +15,10 @@ void TestGameHandler::initialize()
     batch = new SpriteBatch(this->_device);
     batch->initialize();
     texture = Texture::load(AssetPath::create("Content\\dot.png"));
+    auto vp = this->_device->get_viewport();
+    cam = new Camera(vp.width, vp.height);
+    cam->set_position(glm::vec2(-50.f, -50.f));
+    cam->set_rotation(-0.25f);
 }
 
 void TestGameHandler::update(float deltaTime)
@@ -26,6 +30,7 @@ void TestGameHandler::draw(float deltaTime)
 {
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
+    //batch->begin(nullptr, TextureWrap::REPEAT, TextureFilter::POINT_FILTER, cam->get_viewMatrix());
     batch->begin(TextureWrap::REPEAT, TextureFilter::POINT_FILTER);
     batch->draw(texture, glm::vec2(0.f, 0.f), glm::vec4(1.f, 1.f, 1.f, 1.f), 1);
     batch->draw(texture, glm::vec2(100.f, 100.f), glm::vec4(1.f, 1.f, 1.f, 1.f), 1);

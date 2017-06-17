@@ -280,6 +280,7 @@
     <ClInclude Include="src\Utils\Math\PointI.h">
       <Filter>Utils\Math</Filter>
     </ClInclude>
+    <ClInclude Include="src\Graphics\Camera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -457,6 +458,7 @@
     <ClCompile Include="src\Utils\Math\PointI.cpp">
       <Filter>Utils\Math</Filter>
     </ClCompile>
+    <ClCompile Include="src\Graphics\Camera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

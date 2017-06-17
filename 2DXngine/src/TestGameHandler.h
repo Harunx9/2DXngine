@@ -1,6 +1,8 @@
 #pragma once
 #include <Utils\GameHandler.h>
 #include <Graphics\SpriteBatch.h>
+#include <Graphics\Camera.h>
+
 class TestGameHandler : public GameHandler
 {
 public:
@@ -16,5 +18,6 @@ public:
 private:
     SpriteBatch* batch;
     Texture* texture;
+    Camera* cam;
 };
 
