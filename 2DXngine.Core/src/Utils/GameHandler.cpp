@@ -30,7 +30,3 @@ void EmptyGameHandler::update(float deltaTime)
 void EmptyGameHandler::draw(float deltaTime)
 {
 }
-
-void EmptyGameHandler::handleInput()
-{
-}

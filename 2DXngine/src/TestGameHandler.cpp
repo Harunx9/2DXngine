@@ -41,8 +41,7 @@ void TestGameHandler::update(float deltaTime)
 
 void TestGameHandler::draw(float deltaTime)
 {
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    this->_device->clear(Colors::black);
     batch->begin(nullptr, TextureWrap::REPEAT, TextureFilter::POINT_FILTER, cam->get_viewMatrix());
     //batch->begin(TextureWrap::REPEAT, TextureFilter::POINT_FILTER);
     batch->draw(texture, glm::vec2(0.f, 0.f), Colors::white, 1);
@@ -55,9 +54,4 @@ void TestGameHandler::draw(float deltaTime)
     batch->draw(texture, glm::vec2(300.f, 200.f), nullptr, Colors::white, 0, glm::vec2(0.f, 0.f), 3, FlipEffect::NONE_FLIP, 2);
     batch->end();
     this->_device->swapBuffers();
-}
-
-void TestGameHandler::handleInput()
-{
-
 }
