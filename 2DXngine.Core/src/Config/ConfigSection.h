@@ -11,7 +11,8 @@ enum ConfigurationSections
     GRAPHICS,
     AUDIO,
     KEYBOARD,
-    MOUSE
+    MOUSE,
+    LANGUAGE
 };
 
 class ConfigSection

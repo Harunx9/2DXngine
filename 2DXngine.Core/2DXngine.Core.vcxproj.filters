@@ -281,6 +281,11 @@
       <Filter>Utils\Math</Filter>
     </ClInclude>
     <ClInclude Include="src\Graphics\Camera.h" />
+    <ClInclude Include="src\Translations\TFunction.h" />
+    <ClInclude Include="src\Translations\TranslationService.h" />
+    <ClInclude Include="src\Config\LanguageConfig.h" />
+    <ClInclude Include="src\Utils\SimpleCSV.h" />
+    <ClInclude Include="src\Utils\StringUtils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -459,6 +464,10 @@
       <Filter>Utils\Math</Filter>
     </ClCompile>
     <ClCompile Include="src\Graphics\Camera.cpp" />
+    <ClCompile Include="src\Config\LanguageConfig.cpp" />
+    <ClCompile Include="src\Translations\TranslationService.cpp" />
+    <ClCompile Include="src\Utils\SimpleCSV.cpp" />
+    <ClCompile Include="src\Utils\StringUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

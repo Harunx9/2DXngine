@@ -30,9 +30,6 @@
     <ClCompile Include="TestComponents.cpp">
       <Filter>GameObjectManager</Filter>
     </ClCompile>
-    <ClCompile Include="EventHandlingTest.cc">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="RectangleTest.cc">
       <Filter>Utils</Filter>
     </ClCompile>
@@ -50,6 +47,12 @@
     </ClCompile>
     <ClCompile Include="RenderTargetTest.cpp">
       <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleCsvTest.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandlingTest.cc">
+      <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,5 +91,8 @@
     <ClInclude Include="PropTestClass.h">
       <Filter>Utils</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\Content\test.csv" />
   </ItemGroup>
 </Project>

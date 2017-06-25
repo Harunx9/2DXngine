@@ -23,6 +23,7 @@ public:
 
     READONLY_PROPERTY(GraphicConfig*, graphics)
     READONLY_PROPERTY(AudioConfig*, audio)
+
 private: 
     void onSave(EventArgs args);
     std::string getConfigFilePath(char* basePath, const char* fileName);

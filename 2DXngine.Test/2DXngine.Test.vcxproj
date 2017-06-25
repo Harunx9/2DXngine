@@ -40,6 +40,7 @@
     <ClCompile Include="RenderTargetTest.cpp" />
     <ClCompile Include="ShaderProgramTest.cc" />
     <ClCompile Include="ShaderTest.cpp" />
+    <ClCompile Include="SimpleCsvTest.cpp" />
     <ClCompile Include="TestComponents.cpp" />
     <ClCompile Include="TestTypes.cpp" />
     <ClCompile Include="TestTypesHierarhy.cpp" />
@@ -58,6 +59,9 @@
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="TestTypes.h" />
     <ClInclude Include="TestTypesHierarhy.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\Content\test.csv" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FFC71365-F476-4E93-8FA8-C13732131366}</ProjectGuid>
@@ -140,7 +144,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)libs\SDL2-2.0.5\lib\x86;$(SolutionDir)libs\glew-2.0.0\lib\Release\Win32;$(SolutionDir)libs\gllibs\soil\lib;$(SolutionDir)2DXngine.Core\Debug;$(SolutionDir)libs\googletest\googletest\msvc\gtest\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
