@@ -5,5 +5,7 @@
 
 inline std::string T(std::string key)
 {
-    return ServiceLocator::get<TranslationService>("TranslationService")->getTranslation(key);
+    return ServiceLocator
+        ::get<TranslationService>("TranslationService")
+        ->getTranslation(key);
 }

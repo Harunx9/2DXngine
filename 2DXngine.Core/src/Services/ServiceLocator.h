@@ -34,6 +34,5 @@ template<class TService>
 static inline void ServiceLocator::registerService(const TService * service)
 {
     Service* tmp = (Service*)service;
-    //tmp->initialize();
     _services[tmp->get_name()] = tmp;
 }

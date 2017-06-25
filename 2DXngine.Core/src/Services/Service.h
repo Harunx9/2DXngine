@@ -10,6 +10,10 @@ public:
 
     virtual void initialize() = 0;
     virtual void terminate() = 0;
+
+    void baseInitialize();
+    void baseTerminate();
+
     std::string get_name() const
     {
         return this->_name;

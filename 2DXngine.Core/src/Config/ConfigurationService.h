@@ -7,6 +7,7 @@
 #include "../Utils/Macros/PropertyMacro.h"
 #include "GraphicConfig.h"
 #include "AudioConfig.h"
+#include "LanguageConfig.h"
 #include "../Utils/Events/EventHandler.h"
 
 #define BASE_CONFIG_FILE_NAME "cfg.ini"
@@ -23,7 +24,7 @@ public:
 
     READONLY_PROPERTY(GraphicConfig*, graphics)
     READONLY_PROPERTY(AudioConfig*, audio)
-
+    READONLY_PROPERTY(LanguageConfig*, language)
 private: 
     void onSave(EventArgs args);
     std::string getConfigFilePath(char* basePath, const char* fileName);

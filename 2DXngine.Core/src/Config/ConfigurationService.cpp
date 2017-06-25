@@ -17,8 +17,6 @@ ConfigurationService::~ConfigurationService()
 
 void ConfigurationService::initialize()
 {
-    if (this->_isInitialized) return;
-
     this->_baseConfigPath = getConfigFilePath(SDL_GetBasePath(), BASE_CONFIG_FILE_NAME);
     if (File::exist(std::string(this->_baseConfigPath)) == false)
         return;
@@ -35,10 +33,12 @@ void ConfigurationService::initialize()
 
     this->_graphics = GraphicConfig::load<GraphicConfig>(this->_file);
     this->_graphics->sectionUpdated += _binding;
+
     this->_audio = AudioConfig::load<AudioConfig>(this->_file);
     this->_audio->sectionUpdated += _binding;
 
-    this->_isInitialized = true;
+    this->_language = LanguageConfig::load<LanguageConfig>(this->_file);
+    this->_language->sectionUpdated += _binding;
 }
 
 void ConfigurationService::terminate()
