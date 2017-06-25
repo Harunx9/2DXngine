@@ -14,21 +14,14 @@ ContentManagerService::~ContentManagerService()
 
 void ContentManagerService::initialize()
 {
-    if (this->_isInitialized) return;
-
-    this->_isInitialized = true;
 }
 
 void ContentManagerService::terminate()
 {
-    if (this->_isTerminated) return;
-
     for (auto& asset : this->_cachedAssets)
     {
         delete asset;
     }
-
-    this->_isTerminated = true;
 }
 
 bool ContentManagerService::unload(AssetPath assetPath)

@@ -43,15 +43,11 @@ void ConfigurationService::initialize()
 
 void ConfigurationService::terminate()
 {
-    if (this->_isTerminated) return;
-
     this->_graphics->sectionUpdated -= _binding;
     this->_audio->sectionUpdated -= _binding;
     delete _graphics;
     delete _audio;
     delete _file;
-
-    this->_isTerminated = true;
 }
 
 std::string ConfigurationService::getConfigFilePath(char * basePath, const char * fileName)

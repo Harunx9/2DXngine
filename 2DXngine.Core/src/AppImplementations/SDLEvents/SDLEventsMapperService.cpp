@@ -37,26 +37,18 @@ void SDLEventsMapperService::map(SDL_Event * sdlEvent)
 
 void SDLEventsMapperService::initialize()
 {
-    if (this->_isInitialized) return;
     //Todo register nessesry mappers
-
     this->registerMapper(new KeyboardEventMapper());
     this->registerMapper(new MouseEventsMapper());
     this->registerMapper(new WindowEventsMapper());
-
-    this->_isInitialized = true;
 }
 
 void SDLEventsMapperService::terminate()
 {
-    if (this->_isTerminated) return;
-
     for (size_t mapper = 0; mapper <  this->_mappers.size(); ++mapper)
     {
         delete this->_mappers[mapper];
     }
 
     this->_mappers.clear();
-
-    this->_isTerminated = true;
 }

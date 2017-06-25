@@ -17,23 +17,13 @@ InputService::~InputService()
 
 void InputService::initialize()
 {
-    if (this->_isInitialized)
-        return;
-
     auto mappersService = ServiceLocator::get<SDLEventsMapperService>("SDLEventsMapperService");
     this->_keyboard = new KeyboardStateHandler(mappersService->getMapper<KeyboardEventMapper>(MapperType::KeyboardEvent));
     this->_mouse = new MouseStateHandler(mappersService->getMapper<MouseEventsMapper>(MapperType::MouseEvent));
-
-    this->_isInitialized = true;
 }
 
 void InputService::terminate()
 {
-    if (this->_isTerminated)
-        return;
-
     delete _keyboard;
     delete _mouse;
-
-    this->_isTerminated = true;
 }

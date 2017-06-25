@@ -110,6 +110,6 @@ void WindowApp::buildServiceContrainer()
 void WindowApp::initAndRegiserConfig()
 {
     this->_cfgService = new ConfigurationService(this->_appName, this->_companyName);
-    this->_cfgService->initialize();
+    this->_cfgService->baseInitialize();
     ServiceLocator::registerService(this->_cfgService);
 }
