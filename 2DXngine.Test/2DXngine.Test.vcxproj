@@ -140,13 +140,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)libs\SDL2-2.0.5\include;$(SolutionDir)libs\gllibs;$(SolutionDir)libs\glew-2.0.0\include;$(SolutionDir)2DXngine.Core\src;$(SolutionDir)libs\googletest\googletest\include;$(SolutionDir)libs\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\freetype-2.3.5-1\include;$(SolutionDir)libs\SDL2-2.0.5\include;$(SolutionDir)libs\gllibs;$(SolutionDir)libs\glew-2.0.0\include;$(SolutionDir)2DXngine.Core\src;$(SolutionDir)libs\googletest\googletest\include;$(SolutionDir)libs\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)libs\SDL2-2.0.5\lib\x86;$(SolutionDir)libs\glew-2.0.0\lib\Release\Win32;$(SolutionDir)libs\gllibs\soil\lib;$(SolutionDir)2DXngine.Core\Debug;$(SolutionDir)libs\googletest\googletest\msvc\gtest\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)libs\freetype-2.3.5-1\lib;$(SolutionDir)libs\SDL2-2.0.5\lib\x86;$(SolutionDir)libs\glew-2.0.0\lib\Release\Win32;$(SolutionDir)libs\gllibs\soil\lib;$(SolutionDir)2DXngine.Core\Debug;$(SolutionDir)libs\googletest\googletest\msvc\gtest\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freetype.lib;opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

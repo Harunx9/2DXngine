@@ -11,6 +11,7 @@
 #include "GraphicDevice.h"
 #include "../Utils/Math/RectangleI.h"
 #include "Color.h"
+#include "../ContentManagement/DefaultAssets/TTFont.h"
 #define MAX_BATCH_ITEMS 2048
 class ShaderProgram;
 
@@ -50,10 +51,12 @@ public:
     void draw(Texture* texture, glm::vec2 position, RectangleI* sourceRectangle, Color color, float rotation, glm::vec2 origin, glm::vec2 scale, FlipEffect flip, float drawOrder);
     void draw(Texture* texture, glm::vec2 position, RectangleI* sourceRectangle, Color color, float rotation, glm::vec2 origin, float scale, FlipEffect flip, float drawOrder);
 
+    void drawText(std::string text, TTFont font, glm::vec2 position, float scale, Color color, float drawOrder);
+
 private:
     struct SpriteBatchItem
     {
-        Texture * texture;
+        GLuint texture;
         glm::vec2 postions[4];
         glm::vec2 texcoords[4];
         glm::vec4 color;

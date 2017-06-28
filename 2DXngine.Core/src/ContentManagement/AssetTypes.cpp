@@ -17,3 +17,4 @@ const AssetType * DefaultAssetType::WAV_TYPE = new AssetType("WAV", DefinedAsset
 const AssetType * DefaultAssetType::MP3_TYPE = new AssetType("MP3", DefinedAssets::MP3);
 const AssetType * DefaultAssetType::OGG_TYPE = new AssetType("OGG", DefinedAssets::OGG);
 const AssetType * DefaultAssetType::SHADER_PROGRAM_TYPE = new AssetType("SHADER_PROGRAM", DefinedAssets::SHADER_PROGRAM);
+const AssetType * DefaultAssetType::TTF_TYPE = new AssetType("TTF", DefinedAssets::TTF);

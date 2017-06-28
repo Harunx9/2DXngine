@@ -33,7 +33,8 @@ struct DefaultAssetType
         WAV,
         MP3,
         OGG,
-        SHADER_PROGRAM
+        SHADER_PROGRAM,
+        TTF,
     };
 
     static const AssetType * XML_TYPE;
@@ -44,4 +45,5 @@ struct DefaultAssetType
     static const AssetType * MP3_TYPE;
     static const AssetType * OGG_TYPE;
     static const AssetType * SHADER_PROGRAM_TYPE;
+    static const AssetType * TTF_TYPE;
 };

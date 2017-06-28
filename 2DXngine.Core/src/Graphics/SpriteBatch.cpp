@@ -1,5 +1,6 @@
 #include "SpriteBatch.h"
 #include "../ContentManagement/DefaultAssets/ShaderProgram.h"
+#include "Shaders\StandartTextureShader.h"
 
 SpriteBatch::SpriteBatch(GraphicDevice* device) :
     _device(device),
@@ -130,7 +131,7 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, Color color, float
     if (batchItem == nullptr)
         return;
 
-    batchItem->texture = texture;
+    batchItem->texture = texture->get_textureId();
     //set positions
     batchItem->postions[0] = position;
     batchItem->postions[1] = glm::vec2(
@@ -168,7 +169,7 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Color
     if (batchItem == nullptr)
         return;
 
-    batchItem->texture = texture;
+    batchItem->texture = texture->get_textureId();
 
     //set positions
     batchItem->postions[0] = glm::vec2(
@@ -214,7 +215,7 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
     if (batchItem == nullptr)
         return;
 
-    batchItem->texture = texture;
+    batchItem->texture = texture->get_textureId();
 
     //set positions
     batchItem->postions[0] = position;
@@ -279,7 +280,7 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Recta
     if (batchItem == nullptr)
         return;
 
-    batchItem->texture = texture;
+    batchItem->texture = texture->get_textureId();
 
     batchItem->postions[0] = glm::vec2(
         destinationRectangle.get_x(),
@@ -345,7 +346,7 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Recta
     if (batchItem == nullptr)
         return;
 
-    batchItem->texture = texture;
+    batchItem->texture = texture->get_textureId();
 
     if (sourceRectangle != nullptr)
     {
@@ -476,7 +477,7 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
 
     auto size = glm::vec2(texture->get_bitmap()->get_width(), texture->get_bitmap()->get_height()) * scale;
 
-    batchItem->texture = texture;
+    batchItem->texture = texture->get_textureId();
 
     if (rotation == 0.f)
     {
@@ -588,6 +589,11 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
 {
     auto size = glm::vec2(scale);
     this->draw(texture, position, sourceRectangle, color, rotation, origin, size, flip, drawOrder);
+}
+
+void SpriteBatch::drawText(std::string text, TTFont font, glm::vec2 position, float scale, Color color, float drawOrder)
+{
+
 }
 
 void SpriteBatch::drawBatch()
@@ -703,9 +709,9 @@ void SpriteBatch::drawBatch()
         for (size_t i = 0; i < spriteNumber; ++i)
         {
             spriteItem = this->_items[batchNumber * MAX_BATCH_ITEMS + i];
-            if (spriteItem->texture->get_textureId() != lastTex->get_textureId())
+            if (spriteItem->texture != lastTex)
             {
-                lastTex->bind();
+                glBindTexture(GL_TEXTURE_2D, lastTex);
                 glDrawElements(GL_TRIANGLES, (i - offset) * 6,
                     GL_UNSIGNED_INT, (GLvoid*)(offset * 6 * sizeof(GLuint)));
                 offset = i;
@@ -713,7 +719,7 @@ void SpriteBatch::drawBatch()
             }
         }
 
-        lastTex->bind();
+        glBindTexture(GL_TEXTURE_2D, lastTex);
         glDrawElements(GL_TRIANGLES, (spriteNumber - offset) * 6,
             GL_UNSIGNED_INT, (GLvoid*)(offset * 6 * sizeof(GLuint)));
     }
@@ -753,33 +759,7 @@ SpriteBatch::SpriteBatchItem * SpriteBatch::createNewItem()
 
 bool SpriteBatch::initializeDefaultShader()
 {
-    const char *vertexSource =
-        "#version 330 core\n"
-        "layout (location = 0) in vec4 vertexPos;\n"
-        "layout (location = 1) in vec4 vertexColor;\n"
-        "out vec2 fragmentTexCoord;\n"
-        "out vec4 fragmentColor;\n"
-        "uniform mat4 projection;\n"
-        "void main(void)\n"
-        "{\n"
-        "gl_Position = projection * vec4(vertexPos.x, vertexPos.y, 0.0f, 1.0f);\n"
-        "fragmentTexCoord = vec2(vertexPos.w, vertexPos.z);\n"
-        "fragmentColor = vertexColor;\n"
-        "}\n";
-
-    const char *fragmentSource =
-        "#version 330 core\n"
-        "layout (location = 0) out vec4 color;\n"
-        "in vec2 fragmentTexCoord;\n"
-        "in vec4 fragmentColor;\n"
-        "uniform sampler2D tex;\n"
-        "uniform float global_alpha;\n"
-        "void main(void)\n"
-        "{\n"
-        "color = vec4(fragmentColor.x, fragmentColor.y, fragmentColor.z, global_alpha * fragmentColor.w) * texture(tex, fragmentTexCoord);\n"
-        "}";
-
-    this->_defaultShader = new ShaderProgram(vertexSource, fragmentSource);
+    this->_defaultShader = new ShaderProgram(StdTexShader::vertexSource, StdTexShader::fragmentSource);
     ProgramCompilationResult result = this->_defaultShader->compile();
     if (result == ShaderCompileResult::COMPILATION_ERROR)
     {

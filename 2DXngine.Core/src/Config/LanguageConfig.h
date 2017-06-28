@@ -29,4 +29,3 @@ private:
     inifile * _file;
     std::string _text;
 };
-
