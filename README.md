@@ -16,6 +16,7 @@ Features in development:
 - [x] component model game objects,
 - [ ] scene system,
 - [x] 2d renderer,
+- [x] True Type Font rendering,
 - [ ] common components such as transform2d or sprite animation,
 - [ ] game services for music, asset loading and so on,
 - [ ] Box2d integration,
