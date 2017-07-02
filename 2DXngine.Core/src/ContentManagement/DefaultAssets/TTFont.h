@@ -1,28 +1,32 @@
 #pragma once
-#include "..\Asset.h"
 #include <gl\glew.h>
 #include <glm\glm.hpp>
 #include <map>
+#include "Texture.h"
+#include "..\Asset.h"
 
+// implementation inspiration
 //https://learnopengl.com/#!In-Practice/Text-Rendering
+
+class SpriteBatch;
+struct Color;
+class ShaderProgram;
 
 enum GlyphState { EMPTY_GLYPH, FILL_GLYPH };
 
 struct Glyph
 {
-    GLuint textureId;
-    glm::ivec2 size;
+    Texture* tex;
     glm::ivec2 bearing;
-    GLuint advance;
+    glm::ivec2 advance;
     GlyphState state;
-
+    
     static Glyph empty() 
     {
         Glyph glyph = {
-            0,
+            nullptr,
             glm::ivec2(0,0),
             glm::ivec2(0,0),
-            0,
             EMPTY_GLYPH
         };
 
@@ -48,8 +52,12 @@ public:
         }
         return this->_characterMap[index];
     }
-    
+
+    void draw(SpriteBatch* batch, std::string text, glm::vec2 position, Color color, glm::mat4 camera);
+    void draw(SpriteBatch* batch, std::string text, glm::vec2 position, float scale, Color color, glm::mat4 camera);
+    void draw(SpriteBatch* batch, std::string text, glm::vec2 position, glm::vec2 scale, Color color, glm::mat4 camera);
+
 private:
     std::map<GLchar, Glyph> _characterMap;
+    ShaderProgram* _fontShader;
 };
-

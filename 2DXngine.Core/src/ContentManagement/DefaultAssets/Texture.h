@@ -12,6 +12,8 @@ public:
     static Texture * load(AssetPath assetPath);
 
     Texture(AssetPath assetPath, Bitmap* bitmap);
+    Texture(AssetPath assetPath, Bitmap* bitmap, GLint format);
+    Texture(AssetPath assetPath, Bitmap* bitmap, GLint format, GLint internalFormat);
     ~Texture();
 
     void bind() const;
@@ -20,5 +22,7 @@ public:
     READONLY_PROPERTY(Bitmap*, bitmap)
 protected:
     virtual void generate();
+    GLint _format;
+    GLint _internalFormat;
 };
 

@@ -1,6 +1,6 @@
 #include "Shader.h"
 #include "../../Utils/File.h"
-
+#include <vector>
 
 Shader::Shader(const char * path, ShaderType type) :
     _path(path),

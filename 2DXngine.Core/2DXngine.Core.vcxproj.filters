@@ -287,8 +287,7 @@
     <ClInclude Include="src\Utils\SimpleCSV.h" />
     <ClInclude Include="src\Utils\StringUtils.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\TTFont.h" />
-    <ClInclude Include="src\Graphics\Shaders\StandartTextureShader.h" />
-    <ClInclude Include="src\Graphics\Shaders\StandartFontShader.h" />
+    <ClInclude Include="src\Graphics\Shaders\StandardTextureShader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -472,6 +471,7 @@
     <ClCompile Include="src\Utils\SimpleCSV.cpp" />
     <ClCompile Include="src\Utils\StringUtils.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\TTFont.cpp" />
+    <ClCompile Include="src\Graphics\Shaders\StandardFontShader.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

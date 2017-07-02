@@ -10,8 +10,8 @@
 #include <vector>
 #include "GraphicDevice.h"
 #include "../Utils/Math/RectangleI.h"
+#include "../Utils/Macros/PropertyMacro.h"
 #include "Color.h"
-#include "../ContentManagement/DefaultAssets/TTFont.h"
 #define MAX_BATCH_ITEMS 2048
 class ShaderProgram;
 
@@ -51,8 +51,13 @@ public:
     void draw(Texture* texture, glm::vec2 position, RectangleI* sourceRectangle, Color color, float rotation, glm::vec2 origin, glm::vec2 scale, FlipEffect flip, float drawOrder);
     void draw(Texture* texture, glm::vec2 position, RectangleI* sourceRectangle, Color color, float rotation, glm::vec2 origin, float scale, FlipEffect flip, float drawOrder);
 
-    void drawText(std::string text, TTFont font, glm::vec2 position, float scale, Color color, float drawOrder);
+    bool get_batchingStarted() const
+    {
+        return this->_items.empty() == false;
+    }
 
+    READONLY_PROPERTY(bool, isStarted)
+    READONLY_PROPERTY(ShaderProgram *, customShader)
 private:
     struct SpriteBatchItem
     {
@@ -78,9 +83,7 @@ private:
     std::vector<SpriteBatchItem*>  _items;
     RenderTarget * _currentTarget;
     ShaderProgram * _defaultShader;
-    ShaderProgram * _customShader;
     bool _isInitialized;
-    bool _isStarted;
     SortMode _sortMode;
     SamplerState* _sampler;
     GLuint _vao;

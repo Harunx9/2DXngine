@@ -30,8 +30,7 @@
     <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
     <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\TTFont.h" />
-    <ClInclude Include="src\Graphics\Shaders\StandartFontShader.h" />
-    <ClInclude Include="src\Graphics\Shaders\StandartTextureShader.h" />
+    <ClInclude Include="src\Graphics\Shaders\StandardTextureShader.h" />
     <ClInclude Include="src\Utils\SimpleCSV.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.h" />
@@ -113,6 +112,7 @@
   <ItemGroup>
     <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\TTFont.cpp" />
+    <ClCompile Include="src\Graphics\Shaders\StandardFontShader.h" />
     <ClCompile Include="src\Utils\SimpleCSV.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.cpp" />

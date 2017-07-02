@@ -4,7 +4,25 @@
 
 
 Texture::Texture(AssetPath assetPath, Bitmap* bitmap) : Asset(assetPath, DefaultAssetType::TEXTURE_TYPE),
-    _bitmap(bitmap)
+    _bitmap(bitmap),
+    _format(GL_RGBA),
+    _internalFormat(GL_RGBA)
+{
+    this->generate();
+}
+
+Texture::Texture(AssetPath assetPath, Bitmap * bitmap, GLint format) : Asset(assetPath, DefaultAssetType::TEXTURE_TYPE),
+    _bitmap(bitmap),
+    _format(format),
+    _internalFormat(format)
+{
+    this->generate();
+}
+
+Texture::Texture(AssetPath assetPath, Bitmap * bitmap, GLint format, GLint internalFormat) : Asset(assetPath, DefaultAssetType::TEXTURE_TYPE),
+    _bitmap(bitmap),
+    _format(format),
+    _internalFormat(internalFormat)
 {
     this->generate();
 }
@@ -25,7 +43,15 @@ void Texture::generate()
     glGenTextures(1, &this->_textureId);
     glBindTexture(GL_TEXTURE_2D, this->_textureId);
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, this->_bitmap->get_width(), this->_bitmap->get_height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, this->_bitmap->get_data());
+    glTexImage2D(GL_TEXTURE_2D,
+        0,
+        this->_internalFormat,
+        this->_bitmap->get_width(),
+        this->_bitmap->get_height(),
+        0,
+        this->_format,
+        GL_UNSIGNED_BYTE,
+        this->_bitmap->get_data());
 
     glBindTexture(GL_TEXTURE_2D, 0);
 }

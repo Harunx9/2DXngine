@@ -10,9 +10,9 @@ namespace StdTexShader {
         "uniform mat4 projection;\n"
         "void main(void)\n"
         "{\n"
-        "gl_Position = projection * vec4(vertexPos.x, vertexPos.y, 0.0f, 1.0f);\n"
-        "fragmentTexCoord = vec2(vertexPos.w, vertexPos.z);\n"
-        "fragmentColor = vertexColor;\n"
+        "   gl_Position = projection * vec4(vertexPos.x, vertexPos.y, 0.0f, 1.0f);\n"
+        "   fragmentTexCoord = vec2(vertexPos.z, vertexPos.w);\n"
+        "   fragmentColor = vertexColor;\n"
         "}\n";
 
     const char *fragmentSource =
@@ -24,6 +24,6 @@ namespace StdTexShader {
         "uniform float global_alpha;\n"
         "void main(void)\n"
         "{\n"
-        "color = vec4(fragmentColor.x, fragmentColor.y, fragmentColor.z, global_alpha * fragmentColor.w) * texture(tex, fragmentTexCoord);\n"
+        "   color = vec4(fragmentColor.x, fragmentColor.y, fragmentColor.z, fragmentColor.w) * texture(tex, fragmentTexCoord);\n"
         "}";
 }

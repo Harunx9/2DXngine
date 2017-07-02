@@ -29,6 +29,30 @@ struct Viewport
     GLint height;
 };
 
+enum BlendFunc
+{
+    ZERO = GL_ZERO,
+    ONE = GL_ONE,
+    SRC_COLOR = GL_SRC_COLOR,
+    ONE_MINUS_SRC_COLOR = GL_ONE_MINUS_SRC_COLOR,
+    DST_COLOR = GL_DST_COLOR,
+    ONE_MINUS_DST_COLOR = GL_ONE_MINUS_DST_COLOR,
+    SRC_ALPHA = GL_SRC_ALPHA,
+    ONE_MINUS_SRC_ALPHA = GL_ONE_MINUS_SRC_ALPHA,
+    DST_ALPHA = GL_DST_ALPHA,
+    ONE_MINUS_DST_ALPHA = GL_ONE_MINUS_DST_ALPHA,
+    CONSTANT_COLOR = GL_CONSTANT_COLOR,
+    ONE_MINUS_CONSTANT_COLOR = GL_ONE_MINUS_CONSTANT_COLOR,
+    CONSTANT_ALPHA = GL_CONSTANT_ALPHA,
+    ONE_MINUS_CONSTANT_ALPHA = GL_ONE_MINUS_CONSTANT_ALPHA,
+    SRC_ALPHA_SATURATE = GL_SRC_ALPHA_SATURATE,
+    SRC1_COLOR = GL_SRC1_COLOR,
+    ONE_MINUS_SRC1_COLOR = GL_ONE_MINUS_SRC1_COLOR,
+    SRC1_ALPHA = GL_SRC1_ALPHA,
+    ONE_MINUS_SRC1_ALPHA = GL_ONE_MINUS_SRC1_ALPHA
+};
+
+
 class GraphicDevice
 {
 public:
@@ -59,7 +83,8 @@ public:
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, cfg->get_openGLMajorVerion());
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, cfg->get_openGLMinorVerion());
         SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, cfg->get_doubleBufferToggle());
-
+        
+        glewExperimental = GL_TRUE;
         GLenum glewError = glewInit();
         if (glewError != GLEW_OK)
         {
@@ -83,6 +108,27 @@ public:
         return Viewport(display);
     }
 
+    inline void enable_Blend(BlendFunc srcFactor, BlendFunc destFactor)
+    {
+        glBlendFunc(srcFactor, destFactor);
+        glEnable(GL_BLEND);
+    }
+
+    inline void disable_Blend()
+    {
+        glDisable(GL_BLEND);
+    }
+
+    inline void enable_CullFace()
+    {
+        glEnable(GL_CULL_FACE);
+    }
+
+    inline void disable_CullFace()
+    {
+        glDisable(GL_CULL_FACE);
+    }
+
     inline void swapBuffers()
     {
         SDL_GL_SwapWindow(this->_window);
@@ -91,5 +137,6 @@ public:
     READONLY_PROPERTY(bool, isInitialized)
 private:
     SDL_Window * _window;
+    bool _blending;
 };
 

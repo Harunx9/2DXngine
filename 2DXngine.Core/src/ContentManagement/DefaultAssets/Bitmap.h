@@ -7,7 +7,6 @@
 class Bitmap 
 {
 public:
-    
     Bitmap(unsigned char * data, GLuint width, GLuint height);
     Bitmap();
     ~Bitmap();

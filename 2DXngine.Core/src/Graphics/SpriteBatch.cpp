@@ -1,13 +1,13 @@
 #include "SpriteBatch.h"
 #include "../ContentManagement/DefaultAssets/ShaderProgram.h"
-#include "Shaders\StandartTextureShader.h"
+#include "Shaders\StandardTextureShader.h"
 
 SpriteBatch::SpriteBatch(GraphicDevice* device) :
     _device(device),
-    _customShader(nullptr)
-{
-
-}
+    _customShader(nullptr),
+    _isStarted(false),
+    _isInitialized(false)
+{}
 
 SpriteBatch::~SpriteBatch()
 {
@@ -71,7 +71,8 @@ void SpriteBatch::set_renderTarget(RenderTarget * target)
 
 void SpriteBatch::begin()
 {
-    if (this->_isInitialized == false && this->_isStarted) return;
+    if (this->_isInitialized == false &&
+        this->_isStarted) return;
 
     this->_isStarted = true;
     this->_viewport = glm::ortho(0.f,
@@ -83,7 +84,8 @@ void SpriteBatch::begin()
 
 void SpriteBatch::begin(TextureWrap wrap, TextureFilter filter)
 {
-    if (this->_isInitialized == false && this->_isStarted) return;
+    if (this->_isInitialized == false &&
+        this->_isStarted) return;
 
     this->_isStarted = true;
     this->_viewport = glm::ortho(0.f,
@@ -97,7 +99,8 @@ void SpriteBatch::begin(TextureWrap wrap, TextureFilter filter)
 
 void SpriteBatch::begin(ShaderProgram * shader, TextureWrap wrap, TextureFilter filter, glm::mat4 viewportTransform)
 {
-    if (this->_isInitialized == false && this->_isStarted) return;
+    if (this->_isInitialized == false &&
+        this->_isStarted) return;
 
     this->_customShader = shader;
     this->_viewport = glm::ortho(0.f,
@@ -134,6 +137,7 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, Color color, float
     batchItem->texture = texture->get_textureId();
     //set positions
     batchItem->postions[0] = position;
+
     batchItem->postions[1] = glm::vec2(
         position.x + texture->get_bitmap()->get_width(),
         position.y);
@@ -146,7 +150,6 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, Color color, float
         position.x + texture->get_bitmap()->get_width(),
         position.y + texture->get_bitmap()->get_height());
 
-    //set color
     batchItem->color.x = color.r;
     batchItem->color.y = color.g;
     batchItem->color.z = color.b;
@@ -591,11 +594,6 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
     this->draw(texture, position, sourceRectangle, color, rotation, origin, size, flip, drawOrder);
 }
 
-void SpriteBatch::drawText(std::string text, TTFont font, glm::vec2 position, float scale, Color color, float drawOrder)
-{
-
-}
-
 void SpriteBatch::drawBatch()
 {
 
@@ -630,8 +628,8 @@ void SpriteBatch::drawBatch()
         this->_defaultShader->use();
         currentProgram = this->_defaultShader->get_programId();
     }
-    
-    glm::mat4  full_viewProj =  this->_viewport * this->_viewportTransform;
+
+    glm::mat4  full_viewProj = this->_viewport * this->_viewportTransform;
     auto viewport = glm::value_ptr(full_viewProj);
     glUniformMatrix4fv(glGetUniformLocation(currentProgram, "projection"), 1, GL_FALSE, viewport);
 
@@ -674,7 +672,7 @@ void SpriteBatch::drawBatch()
             this->_vertexBuffer[newI + 13] = item->color.y;
             this->_vertexBuffer[newI + 14] = item->color.z;
             this->_vertexBuffer[newI + 15] = item->color.w;
-            //top left
+            //bottom left
             this->_vertexBuffer[newI + 16] = item->postions[2].x;
             this->_vertexBuffer[newI + 17] = item->postions[2].y;
             this->_vertexBuffer[newI + 18] = item->texcoords[2].x;
@@ -683,7 +681,7 @@ void SpriteBatch::drawBatch()
             this->_vertexBuffer[newI + 21] = item->color.y;
             this->_vertexBuffer[newI + 22] = item->color.z;
             this->_vertexBuffer[newI + 23] = item->color.w;
-            //top right
+            //bottom right
             this->_vertexBuffer[newI + 24] = item->postions[3].x;
             this->_vertexBuffer[newI + 25] = item->postions[3].y;
             this->_vertexBuffer[newI + 26] = item->texcoords[3].x;
@@ -732,6 +730,7 @@ void SpriteBatch::drawBatch()
     glUseProgram(0);
 
     this->_isStarted = false;
+    this->_customShader = nullptr;
     this->clearBatchItems();
 }
 

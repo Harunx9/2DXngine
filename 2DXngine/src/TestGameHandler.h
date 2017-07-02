@@ -6,6 +6,7 @@
 #include <ContentManagement\DefaultAssets\Mp3Sound.h>
 #include <Audio\MusicService.h>
 #include <Audio\SoundService.h>
+#include <ContentManagement\DefaultAssets\TTFont.h>
 
 class TestGameHandler : public GameHandler
 {
@@ -26,5 +27,6 @@ private:
     WavSound * _wav;
     MusicService * music;
     SoundService* sound;
+    TTFont* font;
 };
 
