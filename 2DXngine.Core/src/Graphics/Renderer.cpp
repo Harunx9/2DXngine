@@ -1,8 +1,10 @@
 #include "Renderer.h"
 
 
-Renderer::Renderer(SpriteBatch * batch)
+Renderer::Renderer(SpriteBatch * batch) :
+    _batch(batch)
 {
+    _graphics = batch->get_device();
     this->_registerdLayer = std::vector<SceneLayer*>();
     this->_currentTargets = std::map<std::string, RenderTarget*>();
 }
@@ -37,15 +39,14 @@ void Renderer::beginRendering()
     {
         for (auto& pair : this->_currentTargets)
         {
-           delete pair.second;
+            delete pair.second;
         }
         this->_currentTargets.clear();
     }
 
     for (auto& layer : this->_registerdLayer)
     {
-        Viewport viewport = this->_batch
-            ->get_device()
+        Viewport viewport = this->_graphics
             ->get_viewport();
 
         this->_currentTargets[layer->get_name()] = new RenderTarget(viewport.width, viewport.height);
@@ -62,9 +63,8 @@ void Renderer::drawAllTargets(glm::mat4 camera, TextureFilter filter, TextureWra
     for (auto& layer : this->_registerdLayer)
     {
         RenderTarget* target = this->_currentTargets[layer->get_name()];
-        
-        RectangleI viewportRect = this->_batch
-            ->get_device()
+
+        RectangleI viewportRect = this->_graphics
             ->get_viewport()
             .toRectangle();
 
@@ -81,7 +81,7 @@ void Renderer::drawAllTargets(glm::mat4 camera, TextureFilter filter, TextureWra
 void Renderer::applyEffectShader(ShaderProgram * program, SceneLayer * layer, TextureFilter filter, TextureWrap wrap, glm::mat4 camera)
 {
     RenderTarget* target = this->_currentTargets[layer->get_name()];
-    
+
     RenderTarget* newTarget = new RenderTarget(
         target
         ->get_bitmap()
@@ -90,8 +90,7 @@ void Renderer::applyEffectShader(ShaderProgram * program, SceneLayer * layer, Te
         ->get_bitmap()
         ->get_height());
 
-    RectangleI viewportRect = this->_batch
-        ->get_device()
+    RectangleI viewportRect = this->_graphics
         ->get_viewport()
         .toRectangle();
 
@@ -103,10 +102,10 @@ void Renderer::applyEffectShader(ShaderProgram * program, SceneLayer * layer, Te
         viewportRect,
         Colors::white,
         layer->get_order());
-    
+
     this->_batch->end();
     this->_batch->set_renderTarget(nullptr);
-    
+
     delete target;
     this->_currentTargets[layer->get_name()] = newTarget;
 }
