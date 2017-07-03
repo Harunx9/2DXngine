@@ -58,6 +58,7 @@ public:
 
     READONLY_PROPERTY(bool, isStarted)
     READONLY_PROPERTY(ShaderProgram *, customShader)
+    READONLY_PROPERTY(GraphicDevice*, device)
 private:
     struct SpriteBatchItem
     {
@@ -89,7 +90,6 @@ private:
     GLuint _vao;
     GLuint _vbo;
     GLuint _ebo;
-    GraphicDevice* _device;
     GLfloat _vertexBuffer[MAX_BATCH_ITEMS * 32];
 };
 

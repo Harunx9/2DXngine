@@ -13,13 +13,12 @@ public:
 
     void registerLayer(SceneLayer* layer);
     void beginRendering();
-    void drawAllTargets();
-    void applyEffectShader(ShaderProgram * program, SceneLayer* layer);
+    void drawAllTargets(glm::mat4 camera, TextureFilter filter, TextureWrap wrap);
+    void applyEffectShader(ShaderProgram * program, SceneLayer * layer, TextureFilter filter, TextureWrap wrap, glm::mat4 camera);
 
     READONLY_PROPERTY(SpriteBatch*, batch)
 private:
-
     std::vector<SceneLayer*> _registerdLayer;
-    std::map<std::string, RenderTarget*> currentTargets;
+    std::map<std::string, RenderTarget*> _currentTargets;
 };
 

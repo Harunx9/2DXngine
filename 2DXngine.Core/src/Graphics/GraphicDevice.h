@@ -4,7 +4,7 @@
 #include <SDL.h>
 #include "../Utils/Macros/PropertyMacro.h"
 #include "../Config/GraphicConfig.h"
-
+#include "../Utils/Math/RectangleI.h"
 struct Viewport
 {
     Viewport(GLint x, GLint y, GLint width, GLint height)
@@ -27,6 +27,11 @@ struct Viewport
     GLint y;
     GLint width;
     GLint height;
+
+    RectangleI toRectangle()
+    {
+        return RectangleI(x, y, width, height);
+    }
 };
 
 enum BlendFunc
@@ -83,7 +88,7 @@ public:
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, cfg->get_openGLMajorVerion());
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, cfg->get_openGLMinorVerion());
         SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, cfg->get_doubleBufferToggle());
-        
+
         glewExperimental = GL_TRUE;
         GLenum glewError = glewInit();
         if (glewError != GLEW_OK)

@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "../Utils/Macros/PropertyMacro.h"
 
 class SceneLayer
 {
@@ -10,9 +11,8 @@ public:
     bool eqals(SceneLayer sceneLayer);
     bool eqals(SceneLayer* sceneLayer);
 
-private:
-    int _order;
-    std::string _name;
+    READONLY_PROPERTY(int, order)
+    READONLY_PROPERTY(std::string, name)
 };
 
 struct DefaultLayers
