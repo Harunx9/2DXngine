@@ -18,7 +18,20 @@ Features in development:
 - [x] 2d renderer,
 - [x] True Type Font rendering,
 - [ ] common components such as transform2d or sprite animation,
+  - [x] Transform 2d
+  - [ ] Sprite 2d
+  - [ ] Sprite animation
+  - [ ] Font
+  - [ ] Sprite atlas 
 - [ ] game services for music, asset loading and so on,
+  - [x] Audio services
+  - [x] Asset management service
+  - [ ] Logging service
+- [ ] Utilities
+ - [x] Publisher - Subscriber events
+ - [x] CSV parser
+ - [ ] Timer
+ - [x] Simple math types like potnt and rectangle
 - [ ] Box2d integration,
 - [ ] Tiled maps integration,
 - [ ] Lua scripting,
