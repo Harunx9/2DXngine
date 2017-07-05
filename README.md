@@ -28,10 +28,10 @@ Features in development:
   - [x] Asset management service
   - [ ] Logging service
 - [ ] Utilities
- - [x] Publisher - Subscriber events
- - [x] CSV parser
- - [ ] Timer
- - [x] Simple math types like potnt and rectangle
+  - [x] Publisher - Subscriber events
+  - [x] CSV parser
+  - [ ] Timer
+  - [x] Simple math types like potnt and rectangle
 - [ ] Box2d integration,
 - [ ] Tiled maps integration,
 - [ ] Lua scripting,
