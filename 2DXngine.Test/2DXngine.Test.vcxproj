@@ -29,22 +29,24 @@
   <ItemGroup>
     <ClCompile Include="..\libs\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\libs\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="ConfigurationServiceTest.cc" />
     <ClCompile Include="EventHandlingTest.cc" />
     <ClCompile Include="GameObjectBaseFunctionsTest.cc" />
     <ClCompile Include="GameObjectComponentModelTest.cc" />
     <ClCompile Include="GameObjectLifetimeTest.cc" />
-    <ClCompile Include="GameObjectManagerTest.cpp" />
+    <ClCompile Include="GameObjectManagerTest.cc" />
     <ClCompile Include="GamObjectGraphTest.cc" />
     <ClCompile Include="PropertyMacroTest.cc" />
     <ClCompile Include="RectangleTest.cc" />
-    <ClCompile Include="RenderTargetTest.cpp" />
+    <ClCompile Include="RenderTargetTest.cc" />
     <ClCompile Include="ShaderProgramTest.cc" />
-    <ClCompile Include="ShaderTest.cpp" />
-    <ClCompile Include="SimpleCsvTest.cpp" />
-    <ClCompile Include="TestComponents.cpp" />
+    <ClCompile Include="ShaderTest.cc" />
+    <ClCompile Include="SimpleCsvTest.cc" />
+    <ClCompile Include="TestComponents.cc" />
     <ClCompile Include="TestTypes.cpp" />
-    <ClCompile Include="TestTypesHierarhy.cpp" />
+    <ClCompile Include="TestTypesHierarhy.cc" />
     <ClCompile Include="TextureTest.cc" />
+    <ClCompile Include="TranslationServiceTest.cc" />
     <ClCompile Include="TypeIdHelperTest.cc" />
   </ItemGroup>
   <ItemGroup>
@@ -61,7 +63,12 @@
     <ClInclude Include="TestTypesHierarhy.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="cfg.ini" />
+    <None Include="Content\test.csv" />
+    <None Include="Content\Translations\translation.pl-PL.csv" />
+    <None Include="Debug\cfg.ini" />
     <None Include="Debug\Content\test.csv" />
+    <None Include="Debug\Content\Translations\translation.pl-PL.csv" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FFC71365-F476-4E93-8FA8-C13732131366}</ProjectGuid>

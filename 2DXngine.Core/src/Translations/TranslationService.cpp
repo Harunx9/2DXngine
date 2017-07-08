@@ -15,7 +15,7 @@ TranslationService::~TranslationService()
 void TranslationService::initialize()
 {
     this->_parser = new SimpleCSV(';');
-    this->_cfg = ServiceLocator::get<ConfigurationService>("TranslationService")
+    this->_cfg = ServiceLocator::get<ConfigurationService>("ConfigurationService")
         ->get_language();
     this->_cfg->sectionUpdated += _binding;
     this->setupLanguage(this->_cfg->get_text());
@@ -23,7 +23,7 @@ void TranslationService::initialize()
 
 void TranslationService::terminate()
 {
-    this->_cfg->sectionUpdated += _binding;
+    this->_cfg->sectionUpdated -= _binding;
 }
 
 std::string TranslationService::getTranslation(std::string key)

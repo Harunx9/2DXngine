@@ -72,7 +72,7 @@ void Renderer::drawAllTargets(glm::mat4 camera, TextureFilter filter, TextureWra
             target,
             viewportRect,
             Colors::white,
-            layer->get_order());
+            (float)layer->get_order());
     }
 
     this->_batch->end();
@@ -101,7 +101,7 @@ void Renderer::applyEffectShader(ShaderProgram * program, SceneLayer * layer, Te
         target,
         viewportRect,
         Colors::white,
-        layer->get_order());
+        (float)layer->get_order());
 
     this->_batch->end();
     this->_batch->set_renderTarget(nullptr);

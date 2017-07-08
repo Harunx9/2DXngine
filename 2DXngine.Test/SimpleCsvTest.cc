@@ -49,3 +49,13 @@ TEST(SimpleCsv, parser_can_parse_file_properly)
     ASSERT_EQ("eee", result[1][2]);
     ASSERT_EQ("rrr", result[1][3]);
 }
+
+TEST(SimpleCsv, should_return_empty_content_if_no_file_exist)
+{
+    std::string filePath = "./Content/test2.csv";
+    SimpleCSV* parser = new SimpleCSV(';');
+    
+    auto result = parser->parseFile(filePath);
+
+    ASSERT_TRUE(result.empty());
+}

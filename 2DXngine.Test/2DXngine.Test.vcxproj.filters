@@ -15,28 +15,16 @@
     <ClCompile Include="TestTypes.cpp">
       <Filter>GameObjectTest</Filter>
     </ClCompile>
-    <ClCompile Include="TestTypesHierarhy.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="GamObjectGraphTest.cc">
       <Filter>GameObjectTest</Filter>
     </ClCompile>
     <ClCompile Include="GameObjectLifetimeTest.cc">
       <Filter>GameObjectTest</Filter>
     </ClCompile>
-    <ClCompile Include="GameObjectManagerTest.cpp">
-      <Filter>GameObjectManager</Filter>
-    </ClCompile>
-    <ClCompile Include="TestComponents.cpp">
-      <Filter>GameObjectManager</Filter>
-    </ClCompile>
     <ClCompile Include="RectangleTest.cc">
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="ShaderProgramTest.cc">
-      <Filter>AssetsTest</Filter>
-    </ClCompile>
-    <ClCompile Include="ShaderTest.cpp">
       <Filter>AssetsTest</Filter>
     </ClCompile>
     <ClCompile Include="PropertyMacroTest.cc">
@@ -45,15 +33,29 @@
     <ClCompile Include="TextureTest.cc">
       <Filter>AssetsTest</Filter>
     </ClCompile>
-    <ClCompile Include="RenderTargetTest.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="SimpleCsvTest.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="EventHandlingTest.cc">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="RenderTargetTest.cc">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderTest.cc">
+      <Filter>AssetsTest</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectManagerTest.cc">
+      <Filter>GameObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TestComponents.cc">
+      <Filter>GameObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TestTypesHierarhy.cc">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleCsvTest.cc">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="TranslationServiceTest.cc" />
+    <ClCompile Include="ConfigurationServiceTest.cc" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameObjectTest">
@@ -70,6 +72,9 @@
     </Filter>
     <Filter Include="Graphics">
       <UniqueIdentifier>{eb1dfbf6-ca36-4dd7-af55-a2a21695063c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services">
+      <UniqueIdentifier>{b9cd5e7f-b6cb-4f67-8992-ffcbc41d97f2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -94,5 +99,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Content\test.csv" />
+    <None Include="Debug\cfg.ini" />
+    <None Include="cfg.ini" />
+    <None Include="Content\test.csv" />
+    <None Include="Content\Translations\translation.pl-PL.csv" />
+    <None Include="Debug\Content\Translations\translation.pl-PL.csv" />
   </ItemGroup>
 </Project>
