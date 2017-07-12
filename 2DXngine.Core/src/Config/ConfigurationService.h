@@ -3,7 +3,7 @@
 #include "ConfigSection.h"
 #include <map>
 #include <string>
-#include "../../libs/simpleini/SimpleIni.h"
+#include "../Utils/ThirdParty/Ini/SimpleIni.h"
 #include "../Utils/Macros/PropertyMacro.h"
 #include "GraphicConfig.h"
 #include "AudioConfig.h"
