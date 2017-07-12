@@ -10,12 +10,12 @@
 #include <SDL_mixer.h>
 #include <iostream>
 #include <windows.h>
+#include "../Utils/BackgroundTask.h"
 
 WindowApp::WindowApp(GameHandler* handler,const char* companyName, const char* appName):
     App(handler, companyName, appName)
 {
 }
-
 
 WindowApp::~WindowApp()
 {
@@ -78,6 +78,11 @@ void WindowApp::run()
             
             this->_game->update(deltaTime);
             accumulator -= this->_timeStep;
+        }
+
+        if (TaskPool::get().anyTasksLeft())
+        {
+            TaskPool::get().update();
         }
 
         this->_game->draw(deltaTime);

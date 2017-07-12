@@ -288,6 +288,7 @@
     <ClInclude Include="src\Utils\StringUtils.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\TTFont.h" />
     <ClInclude Include="src\Graphics\Shaders\StandardTextureShader.h" />
+    <ClInclude Include="src\Utils\BackgroundTask.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -472,6 +473,7 @@
     <ClCompile Include="src\Utils\StringUtils.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\TTFont.cpp" />
     <ClCompile Include="src\Graphics\Shaders\StandardFontShader.h" />
+    <ClCompile Include="src\Utils\BackgroundTask.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
