@@ -2,6 +2,6 @@
     path = libs/googletest
     url = https://github.com/google/googletest.git
 
-[submodule "libs/googletest"]
+[submodule "libs/simpleini"]
     path = libs/simpleini
     url = https://github.com/brofield/simpleini.git
