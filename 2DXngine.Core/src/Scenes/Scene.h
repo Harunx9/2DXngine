@@ -24,6 +24,8 @@ public:
     void update(float deltaTime);
     void draw(float deltaTime);
 
+    READONLY_PROPERTY(bool, isInitialized)
+    READONLY_PROPERTY(bool, isTerminated)
     READONLY_PROPERTY(Renderer *, renderer)
     READONLY_PROPERTY(GameObjectManager *, gameObjectManager)
     READONLY_PROPERTY(SceneManager *, sceneManager)

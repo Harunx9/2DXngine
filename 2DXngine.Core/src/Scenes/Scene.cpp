@@ -7,7 +7,9 @@
 #include "../Services/ServiceLocator.h"
 
 Scene::Scene(SpriteBatch * batch, std::string name) :
-    _name(name)
+    _name(name),
+    _isInitialized(false),
+    _isTerminated(false)
 {
     this->_renderer = new Renderer(batch);
     this->_gameObjectManager = new GameObjectManager(this);
@@ -36,18 +38,26 @@ Scene::~Scene()
 
 void Scene::initialize()
 {
+    if (this->_isInitialized) return;
+
     this->_gameObjectManager->initialize();
     this->_renderSystem->initialize();
     this->_updateSystem->initialize();
     this->_sceneBehaviorManager.initialize();
+
+    this->_isInitialized = true;
 }
 
 void Scene::terminate()
 {
+    if (this->_isTerminated) return;
+
     this->_gameObjectManager->terminate();
     this->_renderSystem->terminate();
     this->_updateSystem->terminate();
     this->_sceneBehaviorManager.terminate();
+
+    this->_isTerminated = true;
 }
 
 void Scene::update(float deltaTime)

@@ -171,12 +171,6 @@
     <ClInclude Include="src\ContentManagement\DefaultAssets\Bitmap.h">
       <Filter>ContentManagement\DefaultAssets</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\simpleini\ConvertUTF.h">
-      <Filter>Utils\ThirdParty\Ini</Filter>
-    </ClInclude>
-    <ClInclude Include="..\libs\simpleini\SimpleIni.h">
-      <Filter>Utils\ThirdParty\Ini</Filter>
-    </ClInclude>
     <ClInclude Include="src\Graphics\Color.h">
       <Filter>Graphics</Filter>
     </ClInclude>
@@ -289,6 +283,8 @@
     <ClInclude Include="src\ContentManagement\DefaultAssets\TTFont.h" />
     <ClInclude Include="src\Graphics\Shaders\StandardTextureShader.h" />
     <ClInclude Include="src\Utils\BackgroundTask.h" />
+    <ClInclude Include="src\Utils\ThirdParty\Ini\ConvertUTF.h" />
+    <ClInclude Include="src\Utils\ThirdParty\Ini\SimpleIni.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ComponentModel\GameObject.cpp">
@@ -377,9 +373,6 @@
     </ClCompile>
     <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp">
       <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\libs\simpleini\ConvertUTF.c">
-      <Filter>Utils\ThirdParty\Ini</Filter>
     </ClCompile>
     <ClCompile Include="src\AppImplementations\SDLEvents\SDLEventsMapperService.cpp">
       <Filter>AppImplementations\SDLEvents</Filter>
@@ -474,6 +467,7 @@
     <ClCompile Include="src\ContentManagement\DefaultAssets\TTFont.cpp" />
     <ClCompile Include="src\Graphics\Shaders\StandardFontShader.h" />
     <ClCompile Include="src\Utils\BackgroundTask.cpp" />
+    <ClCompile Include="src\Utils\ThirdParty\Ini\ConvertUTF.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

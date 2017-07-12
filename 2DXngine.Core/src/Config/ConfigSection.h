@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include "../Utils/Macros/PropertyMacro.h"
-#include "../../libs/simpleini/SimpleIni.h"
+#include "../Utils/ThirdParty/Ini/SimpleIni.h"
 #include "../Utils/Events/EventHandler.h"
 
 typedef CSimpleIniA inifile;

@@ -1,5 +1,5 @@
 #include "SceneManager.h"
-
+#include "Scene.h"
 
 
 SceneManager::SceneManager(): Service("SceneManager")
@@ -21,4 +21,5 @@ void SceneManager::terminate()
 
 void SceneManager::To(Scene * nextScene)
 {
+    if (nextScene->get_isInitialized()) return;
 }

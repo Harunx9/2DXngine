@@ -27,8 +27,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
-    <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\TTFont.h" />
     <ClInclude Include="src\Graphics\Shaders\StandardTextureShader.h" />
     <ClInclude Include="src\Utils\BackgroundTask.h" />
@@ -107,11 +105,12 @@
     <ClInclude Include="src\Utils\Math\RectangleI.h" />
     <ClInclude Include="src\Utils\Math\RectangleF.h" />
     <ClInclude Include="src\Utils\StringUtils.h" />
+    <ClInclude Include="src\Utils\ThirdParty\Ini\ConvertUTF.h" />
+    <ClInclude Include="src\Utils\ThirdParty\Ini\SimpleIni.h" />
     <ClInclude Include="src\Utils\Timer.h" />
     <ClInclude Include="src\ContentManagement\DefaultAssets\Texture.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\TTFont.cpp" />
     <ClCompile Include="src\Graphics\Shaders\StandardFontShader.h" />
     <ClCompile Include="src\Utils\BackgroundTask.cpp" />
@@ -178,6 +177,7 @@
     <ClCompile Include="src\Utils\Math\RectangleI.cpp" />
     <ClCompile Include="src\Utils\Math\RectangleF.cpp" />
     <ClCompile Include="src\Utils\StringUtils.cpp" />
+    <ClCompile Include="src\Utils\ThirdParty\Ini\ConvertUTF.c" />
     <ClCompile Include="src\Utils\Timer.cpp" />
     <ClCompile Include="src\ContentManagement\DefaultAssets\Texture.cpp" />
   </ItemGroup>
