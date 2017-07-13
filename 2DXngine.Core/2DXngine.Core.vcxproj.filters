@@ -69,407 +69,161 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\ComponentModel\GameObject.h">
-      <Filter>ComponentModel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AppImplementations\App.h">
-      <Filter>AppImplementations</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AppImplementations\WindowApp.h">
-      <Filter>AppImplementations</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Timer.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\GameHandler.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Services\ServiceLocator.h">
-      <Filter>Services</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Services\Service.h">
-      <Filter>Services</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ComponentModel\Component.h">
-      <Filter>ComponentModel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ComponentModel\GameObjectManager.h">
-      <Filter>ComponentModel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\TypeInformation\TypeCache.h">
-      <Filter>TypeInformation</Filter>
-    </ClInclude>
-    <ClInclude Include="src\TypeInformation\TypeIdHelper.h">
-      <Filter>TypeInformation</Filter>
-    </ClInclude>
-    <ClInclude Include="src\TypeInformation\TypeInfo.h">
-      <Filter>TypeInformation</Filter>
-    </ClInclude>
-    <ClInclude Include="src\TypeInformation\BaseTypesDefinitions.h">
-      <Filter>TypeInformation</Filter>
-    </ClInclude>
-    <ClInclude Include="src\TypeInformation\TypeMetaInfo.h">
-      <Filter>TypeInformation</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ComponentModel\UpdateableComponent.h">
-      <Filter>ComponentModel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Graphics\Renderer.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ComponentModel\DrawableComponent.h">
-      <Filter>ComponentModel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scenes\Scene.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scenes\SceneManager.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ComponentModel\GameObjectFilterFunctions.h">
-      <Filter>ComponentModel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Events\EventHandler.h">
-      <Filter>Utils\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Events\EventArgs.h">
-      <Filter>Utils\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\Asset.h">
-      <Filter>ContentManagement</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\AssetPath.h">
-      <Filter>ContentManagement</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\AssetTypes.h">
-      <Filter>ContentManagement</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\ContentManagerService.h">
-      <Filter>ContentManagement</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\DefaultAssets\WavSound.h">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\DefaultAssets\Texture.h">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\DefaultAssets\Sound.h">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\DefaultAssets\ShaderProgram.h">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\DefaultAssets\Shader.h">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\DefaultAssets\Mp3Sound.h">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\DefaultAssets\OggSound.h">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ContentManagement\DefaultAssets\Bitmap.h">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Graphics\Color.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Graphics\GraphicDevice.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AppImplementations\SDLEvents\SDLEventsMapperService.h">
-      <Filter>AppImplementations\SDLEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AppImplementations\SDLEvents\SDLEventMapper.h">
-      <Filter>AppImplementations\SDLEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h">
-      <Filter>AppImplementations\SDLEvents\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.h">
-      <Filter>AppImplementations\SDLEvents\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\WindowEventsMapper.h">
-      <Filter>AppImplementations\SDLEvents\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Graphics\RenderTarget.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Graphics\SpriteBatch.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Graphics\SamplerState.h">
-      <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Input\MouseStateHandler.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Input\KeyboardStateHandler.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Input\InputService.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Input\InputDefines.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scenes\SceneRenderSystem.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scenes\SceneLayer.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scenes\SceneBehaviorManager.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scenes\SceneBehavior.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scenes\SceneUpdateSystem.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\File.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Log.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Math\MathTypes.h">
-      <Filter>Utils\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Math\RectangleF.h">
-      <Filter>Utils\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Macros\PropertyMacro.h">
-      <Filter>Utils\Macros</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Errors\Result.h">
-      <Filter>Utils\Errors</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Components\Graphics\Sprite.h">
-      <Filter>Components\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Components\Graphics\SpriteDrawable.h">
-      <Filter>Components\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Components\Graphics\Transform.h">
-      <Filter>Components\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Config\ConfigSection.h">
-      <Filter>Config</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Config\AudioConfig.h">
-      <Filter>Config</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Config\ActionsConfig.h">
-      <Filter>Config</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Audio\MusicService.h" />
-    <ClInclude Include="src\Audio\SoundService.h" />
-    <ClInclude Include="src\Config\GraphicConfig.h" />
-    <ClInclude Include="src\Config\ConfigurationService.h" />
-    <ClInclude Include="src\Utils\Math\RectangleI.h">
-      <Filter>Utils\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Math\PointI.h">
-      <Filter>Utils\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Graphics\Camera.h" />
-    <ClInclude Include="src\Translations\TFunction.h" />
-    <ClInclude Include="src\Translations\TranslationService.h" />
-    <ClInclude Include="src\Config\LanguageConfig.h" />
-    <ClInclude Include="src\Utils\SimpleCSV.h" />
-    <ClInclude Include="src\Utils\StringUtils.h" />
-    <ClInclude Include="src\ContentManagement\DefaultAssets\TTFont.h" />
-    <ClInclude Include="src\Graphics\Shaders\StandardTextureShader.h" />
-    <ClInclude Include="src\Utils\BackgroundTask.h" />
-    <ClInclude Include="src\Utils\ThirdParty\Ini\ConvertUTF.h" />
-    <ClInclude Include="src\Utils\ThirdParty\Ini\SimpleIni.h" />
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\ComponentModel\GameObject.cpp">
-      <Filter>ComponentModel</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AppImplementations\App.cpp">
-      <Filter>AppImplementations</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AppImplementations\WindowApp.cpp">
-      <Filter>AppImplementations</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utils\Timer.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utils\GameHandler.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Services\ServiceLocator.cpp">
-      <Filter>Services</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Services\Service.cpp">
-      <Filter>Services</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ComponentModel\Component.cpp">
-      <Filter>ComponentModel</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ComponentModel\GameObjectManager.cpp">
-      <Filter>ComponentModel</Filter>
-    </ClCompile>
-    <ClCompile Include="src\TypeInformation\TypeCache.cpp">
-      <Filter>TypeInformation</Filter>
-    </ClCompile>
-    <ClCompile Include="src\TypeInformation\TypeInfo.cpp">
-      <Filter>TypeInformation</Filter>
-    </ClCompile>
-    <ClCompile Include="src\TypeInformation\BaseTypesDeclarations.cpp">
-      <Filter>TypeInformation</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ComponentModel\UpdateableComponent.cpp">
-      <Filter>ComponentModel</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Graphics\Renderer.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ComponentModel\DrawableComponent.cpp">
-      <Filter>ComponentModel</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\Scene.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\SceneManager.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utils\Events\EventHandler.cpp">
-      <Filter>Utils\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ContentManagement\Asset.cpp">
-      <Filter>ContentManagement</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ContentManagement\AssetPath.cpp">
-      <Filter>ContentManagement</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ContentManagement\AssetTypes.cpp">
-      <Filter>ContentManagement</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ContentManagement\ContentManagerService.cpp">
-      <Filter>ContentManagement</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ContentManagement\DefaultAssets\WavSound.cpp">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ContentManagement\DefaultAssets\Texture.cpp">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ContentManagement\DefaultAssets\ShaderProgram.cpp">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ContentManagement\DefaultAssets\Shader.cpp">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ContentManagement\DefaultAssets\Mp3Sound.cpp">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ContentManagement\DefaultAssets\OggSound.cpp">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp">
-      <Filter>ContentManagement\DefaultAssets</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AppImplementations\SDLEvents\SDLEventsMapperService.cpp">
-      <Filter>AppImplementations\SDLEvents</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AppImplementations\SDLEvents\SDLEventMapper.cpp">
-      <Filter>AppImplementations\SDLEvents</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.cpp">
-      <Filter>AppImplementations\SDLEvents\Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.cpp">
-      <Filter>AppImplementations\SDLEvents\Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\WindowEventsMapper.cpp">
-      <Filter>AppImplementations\SDLEvents\Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Graphics\RenderTarget.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Graphics\SpriteBatch.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Graphics\SamplerState.cpp">
-      <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Input\MouseStateHandler.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Input\KeyboardStateHandler.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Input\InputService.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\SceneUpdateSystem.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\SceneRenderSystem.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\SceneLayer.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\SceneBehaviorManager.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scenes\SceneBehavior.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utils\File.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utils\Math\RectangleF.cpp">
-      <Filter>Utils\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utils\Errors\Result.cpp">
-      <Filter>Utils\Errors</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Components\Graphics\Sprite.cpp">
-      <Filter>Components\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Components\Graphics\SpriteDrawable.cpp">
-      <Filter>Components\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Components\Graphics\Transform.cpp">
-      <Filter>Components\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Config\ConfigSection.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Config\AudioConfig.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Config\ActionsConfig.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
+    <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.cpp" />
+    <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.cpp" />
+    <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\WindowEventsMapper.cpp" />
+    <ClCompile Include="src\AppImplementations\SDLEvents\SDLEventMapper.cpp" />
+    <ClCompile Include="src\AppImplementations\SDLEvents\SDLEventsMapperService.cpp" />
+    <ClCompile Include="src\AppImplementations\App.cpp" />
+    <ClCompile Include="src\AppImplementations\WindowApp.cpp" />
     <ClCompile Include="src\Audio\MusicService.cpp" />
     <ClCompile Include="src\Audio\SoundService.cpp" />
+    <ClCompile Include="src\ComponentModel\Component.cpp" />
+    <ClCompile Include="src\ComponentModel\DrawableComponent.cpp" />
+    <ClCompile Include="src\ComponentModel\GameObject.cpp" />
+    <ClCompile Include="src\ComponentModel\GameObjectManager.cpp" />
+    <ClCompile Include="src\ComponentModel\UpdateableComponent.cpp" />
+    <ClCompile Include="src\Components\Graphics\Sprite.cpp" />
+    <ClCompile Include="src\Components\Graphics\SpriteDrawable.cpp" />
+    <ClCompile Include="src\Components\Graphics\Transform.cpp" />
+    <ClCompile Include="src\Config\ActionsConfig.cpp" />
+    <ClCompile Include="src\Config\AudioConfig.cpp" />
+    <ClCompile Include="src\Config\ConfigSection.cpp" />
     <ClCompile Include="src\Config\ConfigurationService.cpp" />
     <ClCompile Include="src\Config\GraphicConfig.cpp" />
-    <ClCompile Include="src\Utils\Math\RectangleI.cpp">
-      <Filter>Utils\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utils\Math\PointI.cpp">
-      <Filter>Utils\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Graphics\Camera.cpp" />
     <ClCompile Include="src\Config\LanguageConfig.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\Bitmap.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\Mp3Sound.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\OggSound.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\Shader.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\ShaderProgram.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\Texture.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\TTFont.cpp" />
+    <ClCompile Include="src\ContentManagement\DefaultAssets\WavSound.cpp" />
+    <ClCompile Include="src\ContentManagement\Asset.cpp" />
+    <ClCompile Include="src\ContentManagement\AssetPath.cpp" />
+    <ClCompile Include="src\ContentManagement\AssetTypes.cpp" />
+    <ClCompile Include="src\ContentManagement\ContentManagerService.cpp" />
+    <ClCompile Include="src\Graphics\Camera.cpp" />
+    <ClCompile Include="src\Graphics\Renderer.cpp" />
+    <ClCompile Include="src\Graphics\RenderTarget.cpp" />
+    <ClCompile Include="src\Graphics\SamplerState.cpp" />
+    <ClCompile Include="src\Graphics\SpriteBatch.cpp" />
+    <ClCompile Include="src\Input\InputService.cpp" />
+    <ClCompile Include="src\Input\KeyboardStateHandler.cpp" />
+    <ClCompile Include="src\Input\MouseStateHandler.cpp" />
+    <ClCompile Include="src\Scenes\Scene.cpp" />
+    <ClCompile Include="src\Scenes\SceneBehavior.cpp" />
+    <ClCompile Include="src\Scenes\SceneBehaviorManager.cpp" />
+    <ClCompile Include="src\Scenes\SceneLayer.cpp" />
+    <ClCompile Include="src\Scenes\SceneManager.cpp" />
+    <ClCompile Include="src\Scenes\SceneRenderSystem.cpp" />
+    <ClCompile Include="src\Scenes\SceneUpdateSystem.cpp" />
+    <ClCompile Include="src\Services\Service.cpp" />
+    <ClCompile Include="src\Services\ServiceLocator.cpp" />
     <ClCompile Include="src\Translations\TranslationService.cpp" />
+    <ClCompile Include="src\TypeInformation\BaseTypesDeclarations.cpp" />
+    <ClCompile Include="src\TypeInformation\TypeCache.cpp" />
+    <ClCompile Include="src\TypeInformation\TypeInfo.cpp" />
+    <ClCompile Include="src\Utils\Errors\Result.cpp" />
+    <ClCompile Include="src\Utils\Events\EventHandler.cpp" />
+    <ClCompile Include="src\Utils\Math\PointI.cpp" />
+    <ClCompile Include="src\Utils\Math\RectangleF.cpp" />
+    <ClCompile Include="src\Utils\Math\RectangleI.cpp" />
+    <ClCompile Include="src\Utils\ThirdParty\Ini\ConvertUTF.c" />
+    <ClCompile Include="src\Utils\BackgroundTask.cpp" />
+    <ClCompile Include="src\Utils\File.cpp" />
+    <ClCompile Include="src\Utils\GameHandler.cpp" />
     <ClCompile Include="src\Utils\SimpleCSV.cpp" />
     <ClCompile Include="src\Utils\StringUtils.cpp" />
-    <ClCompile Include="src\ContentManagement\DefaultAssets\TTFont.cpp" />
-    <ClCompile Include="src\Graphics\Shaders\StandardFontShader.h" />
-    <ClCompile Include="src\Utils\BackgroundTask.cpp" />
-    <ClCompile Include="src\Utils\ThirdParty\Ini\ConvertUTF.c" />
+    <ClCompile Include="src\Utils\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
+    <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
+    <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.h" />
+    <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\WindowEventsMapper.h" />
+    <ClInclude Include="src\AppImplementations\SDLEvents\SDLEventMapper.h" />
+    <ClInclude Include="src\AppImplementations\SDLEvents\SDLEventsMapperService.h" />
+    <ClInclude Include="src\AppImplementations\App.h" />
+    <ClInclude Include="src\AppImplementations\WindowApp.h" />
+    <ClInclude Include="src\Audio\MusicService.h" />
+    <ClInclude Include="src\Audio\SoundService.h" />
+    <ClInclude Include="src\ComponentModel\Component.h" />
+    <ClInclude Include="src\ComponentModel\DrawableComponent.h" />
+    <ClInclude Include="src\ComponentModel\GameObject.h" />
+    <ClInclude Include="src\ComponentModel\GameObjectFilterFunctions.h" />
+    <ClInclude Include="src\ComponentModel\GameObjectManager.h" />
+    <ClInclude Include="src\ComponentModel\UpdateableComponent.h" />
+    <ClInclude Include="src\Components\Graphics\Sprite.h" />
+    <ClInclude Include="src\Components\Graphics\SpriteDrawable.h" />
+    <ClInclude Include="src\Components\Graphics\Transform.h" />
+    <ClInclude Include="src\Config\ActionsConfig.h" />
+    <ClInclude Include="src\Config\AudioConfig.h" />
+    <ClInclude Include="src\Config\ConfigSection.h" />
+    <ClInclude Include="src\Config\ConfigurationService.h" />
+    <ClInclude Include="src\Config\GraphicConfig.h" />
+    <ClInclude Include="src\Config\LanguageConfig.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\Bitmap.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\Mp3Sound.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\OggSound.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\Shader.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\ShaderProgram.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\Sound.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\Texture.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\TTFont.h" />
+    <ClInclude Include="src\ContentManagement\DefaultAssets\WavSound.h" />
+    <ClInclude Include="src\ContentManagement\Asset.h" />
+    <ClInclude Include="src\ContentManagement\AssetPath.h" />
+    <ClInclude Include="src\ContentManagement\AssetTypes.h" />
+    <ClInclude Include="src\ContentManagement\ContentManagerService.h" />
+    <ClInclude Include="src\Graphics\Shaders\StandardFontShader.h" />
+    <ClInclude Include="src\Graphics\Shaders\StandardTextureShader.h" />
+    <ClInclude Include="src\Graphics\Camera.h" />
+    <ClInclude Include="src\Graphics\Color.h" />
+    <ClInclude Include="src\Graphics\GraphicDevice.h" />
+    <ClInclude Include="src\Graphics\Renderer.h" />
+    <ClInclude Include="src\Graphics\RenderTarget.h" />
+    <ClInclude Include="src\Graphics\SamplerState.h" />
+    <ClInclude Include="src\Graphics\SpriteBatch.h" />
+    <ClInclude Include="src\Input\InputDefines.h" />
+    <ClInclude Include="src\Input\InputService.h" />
+    <ClInclude Include="src\Input\KeyboardStateHandler.h" />
+    <ClInclude Include="src\Input\MouseStateHandler.h" />
+    <ClInclude Include="src\Scenes\Scene.h" />
+    <ClInclude Include="src\Scenes\SceneBehavior.h" />
+    <ClInclude Include="src\Scenes\SceneBehaviorManager.h" />
+    <ClInclude Include="src\Scenes\SceneLayer.h" />
+    <ClInclude Include="src\Scenes\SceneManager.h" />
+    <ClInclude Include="src\Scenes\SceneRenderSystem.h" />
+    <ClInclude Include="src\Scenes\SceneUpdateSystem.h" />
+    <ClInclude Include="src\Services\Service.h" />
+    <ClInclude Include="src\Services\ServiceLocator.h" />
+    <ClInclude Include="src\Translations\TFunction.h" />
+    <ClInclude Include="src\Translations\TranslationService.h" />
+    <ClInclude Include="src\TypeInformation\BaseTypesDefinitions.h" />
+    <ClInclude Include="src\TypeInformation\TypeCache.h" />
+    <ClInclude Include="src\TypeInformation\TypeIdHelper.h" />
+    <ClInclude Include="src\TypeInformation\TypeInfo.h" />
+    <ClInclude Include="src\TypeInformation\TypeMetaInfo.h" />
+    <ClInclude Include="src\Utils\Errors\Result.h" />
+    <ClInclude Include="src\Utils\Events\EventArgs.h" />
+    <ClInclude Include="src\Utils\Events\EventHandler.h" />
+    <ClInclude Include="src\Utils\Macros\PropertyMacro.h" />
+    <ClInclude Include="src\Utils\Math\MathTypes.h" />
+    <ClInclude Include="src\Utils\Math\PointI.h" />
+    <ClInclude Include="src\Utils\Math\RectangleF.h" />
+    <ClInclude Include="src\Utils\Math\RectangleI.h" />
+    <ClInclude Include="src\Utils\ThirdParty\Ini\ConvertUTF.h" />
+    <ClInclude Include="src\Utils\ThirdParty\Ini\SimpleIni.h" />
+    <ClInclude Include="src\Utils\BackgroundTask.h" />
+    <ClInclude Include="src\Utils\File.h" />
+    <ClInclude Include="src\Utils\GameHandler.h" />
+    <ClInclude Include="src\Utils\Log.h" />
+    <ClInclude Include="src\Utils\SimpleCSV.h" />
+    <ClInclude Include="src\Utils\StringUtils.h" />
+    <ClInclude Include="src\Utils\Timer.h" />
   </ItemGroup>
 </Project>

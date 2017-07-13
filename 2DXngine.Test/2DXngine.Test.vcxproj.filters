@@ -3,24 +3,24 @@
   <ItemGroup>
     <ClCompile Include="..\libs\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="..\libs\googletest\googletest\src\gtest-all.cc" />
+    <ClCompile Include="src\Assets\ShaderProgramTest.cc" />
+    <ClCompile Include="src\Assets\ShaderTest.cc" />
+    <ClCompile Include="src\Assets\TextureTest.cc" />
+    <ClCompile Include="src\Graphics\RenderTargetTest.cc" />
+    <ClCompile Include="src\Services\ConfigurationServiceTest.cc" />
+    <ClCompile Include="src\Services\TranslationServiceTest.cc" />
     <ClCompile Include="src\TypeSystem\TestComponents.cc" />
     <ClCompile Include="src\TypeSystem\TestTypes.cpp" />
     <ClCompile Include="src\TypeSystem\TestTypesHierarhy.cc" />
     <ClCompile Include="src\TypeSystem\TypeIdHelperTest.cc" />
-    <ClCompile Include="src\Assets\ShaderProgramTest.cc" />
-    <ClCompile Include="src\Assets\ShaderTest.cc" />
-    <ClCompile Include="src\Assets\TextureTest.cc" />
+    <ClCompile Include="src\Utils\PropertyMacroTest.cc" />
+    <ClCompile Include="src\Utils\RectangleTest.cc" />
+    <ClCompile Include="src\Utils\EventHandlingTest.cc" />
     <ClCompile Include="src\GameObject\GameObjectBaseFunctionsTest.cc" />
     <ClCompile Include="src\GameObject\GameObjectComponentModelTest.cc" />
     <ClCompile Include="src\GameObject\GameObjectLifetimeTest.cc" />
     <ClCompile Include="src\GameObject\GameObjectManagerTest.cc" />
     <ClCompile Include="src\GameObject\GamObjectGraphTest.cc" />
-    <ClCompile Include="src\Graphics\RenderTargetTest.cc" />
-    <ClCompile Include="src\Services\ConfigurationServiceTest.cc" />
-    <ClCompile Include="src\Services\TranslationServiceTest.cc" />
-    <ClCompile Include="src\Utils\EventHandlingTest.cc" />
-    <ClCompile Include="src\Utils\PropertyMacroTest.cc" />
-    <ClCompile Include="src\Utils\RectangleTest.cc" />
     <ClCompile Include="src\Utils\SimpleCsvTest.cc" />
   </ItemGroup>
   <ItemGroup>
@@ -32,14 +32,14 @@
     <None Include="Debug\Content\Translations\translation.pl-PL.csv" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Content\dot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Scenes\TestScene.h" />
     <ClInclude Include="src\TypeSystem\TestComponents.h" />
     <ClInclude Include="src\TypeSystem\TestTypes.h" />
     <ClInclude Include="src\TypeSystem\TestTypesHierarhy.h" />
-    <ClInclude Include="src\Scenes\TestScene.h" />
-    <ClInclude Include="src\Utils\EventTestData.h" />
     <ClInclude Include="src\Utils\PropTestClass.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Content\dot.png" />
+    <ClInclude Include="src\Utils\EventTestData.h" />
   </ItemGroup>
 </Project>

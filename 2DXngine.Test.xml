@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="56" failures="0" disabled="0" errors="0" timestamp="2017-07-13T20:11:18" time="1.438" name="AllTests">
+  <testsuite name="ShaderProgramTestFixture" tests="2" failures="0" disabled="0" errors="0" time="1.105">
+    <testcase name="shader_can_be_load_from_inline_source" status="run" time="1.027" classname="ShaderProgramTestFixture" />
+    <testcase name="when_shader_have_error_in_source_program_dont_compile" status="run" time="0.077" classname="ShaderProgramTestFixture" />
+  </testsuite>
+  <testsuite name="ShaderTestFixture" tests="2" failures="0" disabled="0" errors="0" time="0.125">
+    <testcase name="when_shader_program_is_valid_should_compile_with_sucess" status="run" time="0.062" classname="ShaderTestFixture" />
+    <testcase name="when_shader_program_is_not_valid_should_compile_with_error" status="run" time="0.061" classname="ShaderTestFixture" />
+  </testsuite>
+  <testsuite name="TextureTestFixture" tests="1" failures="0" disabled="0" errors="0" time="0.06">
+    <testcase name="texutre_can_be_load_from_file" status="run" time="0.059" classname="TextureTestFixture" />
+  </testsuite>
+  <testsuite name="GameObject" tests="17" failures="0" disabled="0" errors="0" time="0.018">
+    <testcase name="afer_creation_GameObject_is_not_initialized_vislible_and_active" status="run" time="0" classname="GameObject" />
+    <testcase name="GameObject_can_be_deactivated" status="run" time="0" classname="GameObject" />
+    <testcase name="GameObject_can_be_activated" status="run" time="0" classname="GameObject" />
+    <testcase name="GameObjec_can_be_hide" status="run" time="0" classname="GameObject" />
+    <testcase name="GameObjec_can_be_shown" status="run" time="0" classname="GameObject" />
+    <testcase name="Component_can_be_added_to_GameObject" status="run" time="0" classname="GameObject" />
+    <testcase name="Component_can_be_found_in_GameObject_of_exact_type" status="run" time="0" classname="GameObject" />
+    <testcase name="Component_can_be_found_in_GameObject_of_base_type" status="run" time="0.001" classname="GameObject" />
+    <testcase name="all_Components_of_certin_type_can_be_found_in_GameObject" status="run" time="0" classname="GameObject" />
+    <testcase name="all_Components_of_certin_type_can_be_found_in_GameObject_when_GameObject_has_mixed_Components" status="run" time="0.001" classname="GameObject" />
+    <testcase name="all_components_can_be_found_by_getAllComponentFromGameObjectAndChildren_filter_function" status="run" time="0.001" classname="GameObject" />
+    <testcase name="when_GameObject_is_created_is_not_initialized_and_component_is_not_resolved" status="run" time="0.001" classname="GameObject" />
+    <testcase name="when_GameObject_is_created_and_initialized_components_and_childen_is_initialized_and_dependencies_resolved" status="run" time="0.001" classname="GameObject" />
+    <testcase name="GameObject_can_be_added_to_other_GameObject_as_child" status="run" time="0" classname="GameObject" />
+    <testcase name="child_object_can_be_found_in_parent_GameObject" status="run" time="0" classname="GameObject" />
+    <testcase name="child_object_can_be_removed_from_parent_GameObject" status="run" time="0" classname="GameObject" />
+    <testcase name="child_object_can_be_removed_from_parent_GameObject_when_partn_have_more_children" status="run" time="0" classname="GameObject" />
+  </testsuite>
+  <testsuite name="GameObjectMananagerTestFixture" tests="2" failures="0" disabled="0" errors="0" time="0.003">
+    <testcase name="GameObject_can_be_found_in_GameObjectMananager" status="run" time="0.001" classname="GameObjectMananagerTestFixture" />
+    <testcase name="GameObject_can_be_removed_from_GameObjectMananager" status="run" time="0.001" classname="GameObjectMananagerTestFixture" />
+  </testsuite>
+  <testsuite name="RenderTargetTestFixture" tests="1" failures="0" disabled="0" errors="0" time="0.061">
+    <testcase name="render_target_will_setup_corretct" status="run" time="0.06" classname="RenderTargetTestFixture" />
+  </testsuite>
+  <testsuite name="ConfigurationTestFixture" tests="3" failures="0" disabled="0" errors="0" time="0.005">
+    <testcase name="graphics_section_should_be_loaded" status="run" time="0.001" classname="ConfigurationTestFixture" />
+    <testcase name="audio_section_should_be_loaded" status="run" time="0.001" classname="ConfigurationTestFixture" />
+    <testcase name="language_section_should_be_loaded" status="run" time="0.001" classname="ConfigurationTestFixture" />
+  </testsuite>
+  <testsuite name="TranslationsTestFixture" tests="4" failures="0" disabled="0" errors="0" time="0.012">
+    <testcase name="proper_translations_should_be_find_from_config" status="run" time="0.001" classname="TranslationsTestFixture" />
+    <testcase name="key_should_be_returned_if_not_siutable_translations_exists" status="run" time="0.002" classname="TranslationsTestFixture" />
+    <testcase name="T_function_should_return_proper_translation_if_it_exist_in_file" status="run" time="0.002" classname="TranslationsTestFixture" />
+    <testcase name="T_function_should_return_key_if_it_not_exist_in_file" status="run" time="0.002" classname="TranslationsTestFixture" />
+  </testsuite>
+  <testsuite name="TypeSystem" tests="5" failures="0" disabled="0" errors="0" time="0.005">
+    <testcase name="base_type_has_no_base_type" status="run" time="0" classname="TypeSystem" />
+    <testcase name="first_derrive_type_has_only_one_base_type" status="run" time="0" classname="TypeSystem" />
+    <testcase name="second_derrive_type_has_two_base_types" status="run" time="0" classname="TypeSystem" />
+    <testcase name="third_derrive_type_has_three_base_types" status="run" time="0" classname="TypeSystem" />
+    <testcase name="other_first_derrive_has_only_one_base_type" status="run" time="0" classname="TypeSystem" />
+  </testsuite>
+  <testsuite name="ParameterlessEventHandler" tests="5" failures="0" disabled="0" errors="0" time="0.007">
+    <testcase name="subscriber_react_to_publisher_event_invoke" status="run" time="0" classname="ParameterlessEventHandler" />
+    <testcase name="when_subscriber_is_unsubscibed_publisher_trigger_has_no_effect" status="run" time="0" classname="ParameterlessEventHandler" />
+    <testcase name="multiple_publiser_can_affect_one_subscriber" status="run" time="0.001" classname="ParameterlessEventHandler" />
+    <testcase name="multiple_publiser_not_affect_one_subscriber_if_cleared" status="run" time="0" classname="ParameterlessEventHandler" />
+    <testcase name="all_subscribers_react_to_publisher_event_invoke" status="run" time="0.001" classname="ParameterlessEventHandler" />
+  </testsuite>
+  <testsuite name="ParameterEventHandler" tests="5" failures="0" disabled="0" errors="0" time="0.008">
+    <testcase name="subscriber_react_to_publisher_event_with_param_invoke" status="run" time="0" classname="ParameterEventHandler" />
+    <testcase name="when_subscriber_is_unsubscibed_publisher_trigger_with_param_has_no_effect" status="run" time="0" classname="ParameterEventHandler" />
+    <testcase name="all_subscribers_react_to_publisher_event_invoke" status="run" time="0.001" classname="ParameterEventHandler" />
+    <testcase name="multiple_publiser_can_affect_one_subscriber" status="run" time="0" classname="ParameterEventHandler" />
+    <testcase name="multiple_publiser_not_affect_one_subscriber_if_cleared" status="run" time="0" classname="ParameterEventHandler" />
+  </testsuite>
+  <testsuite name="PropertyMacroTest" tests="1" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="macro_generate_correct_properties_with_setters_and_getters" status="run" time="0" classname="PropertyMacroTest" />
+  </testsuite>
+  <testsuite name="Rectangle" tests="3" failures="0" disabled="0" errors="0" time="0.003">
+    <testcase name="rectangle_dimension_is_proper_when_new_rectangle_is_created" status="run" time="0" classname="Rectangle" />
+    <testcase name="rectnagle_can_intersect_with_other_rectangle" status="run" time="0" classname="Rectangle" />
+    <testcase name="rectnagle_can_intersect_with_other_rectangle_when_value_init" status="run" time="0" classname="Rectangle" />
+  </testsuite>
+  <testsuite name="RectangleF" tests="3" failures="0" disabled="0" errors="0" time="0.002">
+    <testcase name="rectangle_dimension_is_proper_when_new_rectangle_is_created" status="run" time="0" classname="RectangleF" />
+    <testcase name="rectnagle_can_intersect_with_other_rectangle" status="run" time="0" classname="RectangleF" />
+    <testcase name="rectnagle_can_intersect_with_other_rectangle_when_value_init" status="run" time="0" classname="RectangleF" />
+  </testsuite>
+  <testsuite name="SimpleCsv" tests="2" failures="0" disabled="0" errors="0" time="0.002">
+    <testcase name="parser_can_parse_one_line_properly" status="run" time="0" classname="SimpleCsv" />
+    <testcase name="parser_can_parse_raw_string_properly" status="run" time="0" classname="SimpleCsv" />
+  </testsuite>
+</testsuites>

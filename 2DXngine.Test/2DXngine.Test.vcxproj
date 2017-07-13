@@ -63,15 +63,15 @@
     <None Include="Debug\Content\Translations\translation.pl-PL.csv" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Content\dot.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="src\Scenes\TestScene.h" />
     <ClInclude Include="src\TypeSystem\TestComponents.h" />
     <ClInclude Include="src\TypeSystem\TestTypes.h" />
     <ClInclude Include="src\TypeSystem\TestTypesHierarhy.h" />
     <ClInclude Include="src\Utils\EventTestData.h" />
     <ClInclude Include="src\Utils\PropTestClass.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Content\dot.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FFC71365-F476-4E93-8FA8-C13732131366}</ProjectGuid>
@@ -159,12 +159,12 @@
       <AdditionalDependencies>freetype.lib;opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy $(SolutionDir)2DXngine.Test\cfg.ini  $(SolutionDir)\2DXngine.Test\Debug
-xcopy /s/e $(SolutionDir)2DXngine.Test\Content  $(SolutionDir)\2DXngine.Test\Debug\Content\
-xcopy $(SolutionDir)libs\SDL2-2.0.5\lib\x86\SDL2.dll  $(SolutionDir)\2DXngine.Test\Debug
-xcopy $(SolutionDir)libs\glew-2.0.0\bin\Release\Win32\glew32.dll  $(SolutionDir)\2DXngine.Test\Debug
-xcopy $(SolutionDir)libs\freetype-2.3.5-1\bin\zlib1.dll  $(SolutionDir)\2DXngine.Test\Debug
-xcopy $(SolutionDir)libs\freetype-2.3.5-1\bin\freetype6.dll  $(SolutionDir)\2DXngine.Test\Debug</Command>
+      <Command>xcopy /s /d $(SolutionDir)2DXngine.Test\cfg.ini  $(SolutionDir)\2DXngine.Test\Debug
+xcopy /s /d $(SolutionDir)2DXngine.Test\Content  $(SolutionDir)\2DXngine.Test\Debug\Content\
+xcopy /s /d $(SolutionDir)libs\SDL2-2.0.5\lib\x86\SDL2.dll  $(SolutionDir)\2DXngine.Test\Debug
+xcopy /s /d $(SolutionDir)libs\glew-2.0.0\bin\Release\Win32\glew32.dll  $(SolutionDir)\2DXngine.Test\Debug
+xcopy /s /d $(SolutionDir)libs\freetype-2.3.5-1\bin\zlib1.dll  $(SolutionDir)\2DXngine.Test\Debug
+xcopy /s /d $(SolutionDir)libs\freetype-2.3.5-1\bin\freetype6.dll  $(SolutionDir)\2DXngine.Test\Debug</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

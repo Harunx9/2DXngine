@@ -1,5 +1,6 @@
 #include "gtest\gtest.h"
 #include <Utils\SimpleCSV.h>
+#include <SDL.h>
 
 TEST(SimpleCsv, parser_can_parse_one_line_properly)
 {
@@ -31,26 +32,26 @@ TEST(SimpleCsv, parser_can_parse_raw_string_properly)
     ASSERT_EQ("sdsdsdsd", result[1][2]);
 }
 
-TEST(SimpleCsv, parser_can_parse_file_properly)
+TEST(SimpleCsvFile, parser_can_parse_file_properly)
 {
-    std::string filePath = "./Content/test.csv";
+    std::string filePath = "/Content/test.csv";
     SimpleCSV* parser = new SimpleCSV(';');
     auto result = parser->parseFile(filePath);
 
     //sss; ddd; fff; ggg
     //qqq; www; eee; rrr
 
-    ASSERT_EQ("sss", result[0][0]);
-    ASSERT_EQ("ddd", result[0][1]);
-    ASSERT_EQ("fff", result[0][2]);
-    ASSERT_EQ("ggg", result[0][3]);
-    ASSERT_EQ("qqq", result[1][0]);
-    ASSERT_EQ("www", result[1][1]);
-    ASSERT_EQ("eee", result[1][2]);
-    ASSERT_EQ("rrr", result[1][3]);
+    ASSERT_EQ("sss", result.at(0).at(0));
+    ASSERT_EQ("ddd", result.at(0).at(1));
+    ASSERT_EQ("fff", result.at(0).at(2));
+    ASSERT_EQ("ggg", result.at(0).at(3));
+    ASSERT_EQ("qqq", result.at(1).at(0));
+    ASSERT_EQ("www", result.at(1).at(1));
+    ASSERT_EQ("eee", result.at(1).at(2));
+    ASSERT_EQ("rrr", result.at(1).at(3));
 }
 
-TEST(SimpleCsv, should_return_empty_content_if_no_file_exist)
+TEST(SimpleCsvFile, should_return_empty_content_if_no_file_exist)
 {
     std::string filePath = "./Content/test2.csv";
     SimpleCSV* parser = new SimpleCSV(';');
