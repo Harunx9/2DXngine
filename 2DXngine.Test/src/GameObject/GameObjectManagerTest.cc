@@ -1,8 +1,8 @@
 #include <gtest\gtest.h>
 #include <ComponentModel\GameObject.h>
 #include <ComponentModel\GameObjectManager.h>
-#include "TestComponents.h"
-#include "TestScene.h"
+#include "../TypeSystem/TestComponents.h"
+#include "../Scenes/TestScene.h"
 #include <Services\ServiceLocator.h>
 #include <Scenes\SceneManager.h>
 

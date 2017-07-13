@@ -1,7 +1,7 @@
 #pragma once
 #include <gtest\gtest.h>
 #include <ComponentModel\GameObject.h>
-#include "TestTypes.h"
+#include "../TypeSystem/TestTypes.h"
 
 TEST(GameObject, when_GameObject_is_created_is_not_initialized_and_component_is_not_resolved)
 {

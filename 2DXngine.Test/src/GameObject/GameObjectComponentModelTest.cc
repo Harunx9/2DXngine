@@ -1,5 +1,5 @@
 #include <gtest\gtest.h>
-#include "TestTypes.h"
+#include "../TypeSystem/TestTypes.h"
 #include <ComponentModel\GameObjectFilterFunctions.h>
 
 TEST(GameObject, Component_can_be_added_to_GameObject)

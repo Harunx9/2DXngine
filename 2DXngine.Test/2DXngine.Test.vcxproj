@@ -29,38 +29,30 @@
   <ItemGroup>
     <ClCompile Include="..\libs\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\libs\googletest\googletest\src\gtest_main.cc" />
-    <ClCompile Include="ConfigurationServiceTest.cc" />
-    <ClCompile Include="EventHandlingTest.cc" />
-    <ClCompile Include="GameObjectBaseFunctionsTest.cc" />
-    <ClCompile Include="GameObjectComponentModelTest.cc" />
-    <ClCompile Include="GameObjectLifetimeTest.cc" />
-    <ClCompile Include="GameObjectManagerTest.cc" />
-    <ClCompile Include="GamObjectGraphTest.cc" />
-    <ClCompile Include="PropertyMacroTest.cc" />
-    <ClCompile Include="RectangleTest.cc" />
-    <ClCompile Include="RenderTargetTest.cc" />
-    <ClCompile Include="ShaderProgramTest.cc" />
-    <ClCompile Include="ShaderTest.cc" />
-    <ClCompile Include="SimpleCsvTest.cc" />
-    <ClCompile Include="TestComponents.cc" />
-    <ClCompile Include="TestTypes.cpp" />
-    <ClCompile Include="TestTypesHierarhy.cc" />
-    <ClCompile Include="TextureTest.cc" />
-    <ClCompile Include="TranslationServiceTest.cc" />
-    <ClCompile Include="TypeIdHelperTest.cc" />
+    <ClCompile Include="src\Assets\ShaderProgramTest.cc" />
+    <ClCompile Include="src\Assets\ShaderTest.cc" />
+    <ClCompile Include="src\Assets\TextureTest.cc" />
+    <ClCompile Include="src\GameObject\GameObjectBaseFunctionsTest.cc" />
+    <ClCompile Include="src\GameObject\GameObjectComponentModelTest.cc" />
+    <ClCompile Include="src\GameObject\GameObjectLifetimeTest.cc" />
+    <ClCompile Include="src\GameObject\GameObjectManagerTest.cc" />
+    <ClCompile Include="src\GameObject\GamObjectGraphTest.cc" />
+    <ClCompile Include="src\Graphics\RenderTargetTest.cc" />
+    <ClCompile Include="src\Services\ConfigurationServiceTest.cc" />
+    <ClCompile Include="src\Services\TranslationServiceTest.cc" />
+    <ClCompile Include="src\TypeSystem\TestComponents.cc" />
+    <ClCompile Include="src\TypeSystem\TestTypes.cpp" />
+    <ClCompile Include="src\TypeSystem\TestTypesHierarhy.cc" />
+    <ClCompile Include="src\TypeSystem\TypeIdHelperTest.cc" />
+    <ClCompile Include="src\Utils\EventHandlingTest.cc" />
+    <ClCompile Include="src\Utils\PropertyMacroTest.cc" />
+    <ClCompile Include="src\Utils\RectangleTest.cc" />
+    <ClCompile Include="src\Utils\SimpleCsvTest.cc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\2DXngine.Core\2DXngine.Core.vcxproj">
       <Project>{62278505-2a49-40a1-89df-867a011e0876}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="EventTestData.h" />
-    <ClInclude Include="PropTestClass.h" />
-    <ClInclude Include="TestComponents.h" />
-    <ClInclude Include="TestScene.h" />
-    <ClInclude Include="TestTypes.h" />
-    <ClInclude Include="TestTypesHierarhy.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cfg.ini" />
@@ -69,6 +61,17 @@
     <None Include="Debug\cfg.ini" />
     <None Include="Debug\Content\test.csv" />
     <None Include="Debug\Content\Translations\translation.pl-PL.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Scenes\TestScene.h" />
+    <ClInclude Include="src\TypeSystem\TestComponents.h" />
+    <ClInclude Include="src\TypeSystem\TestTypes.h" />
+    <ClInclude Include="src\TypeSystem\TestTypesHierarhy.h" />
+    <ClInclude Include="src\Utils\EventTestData.h" />
+    <ClInclude Include="src\Utils\PropTestClass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Content\dot.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FFC71365-F476-4E93-8FA8-C13732131366}</ProjectGuid>
@@ -155,6 +158,14 @@
       <AdditionalLibraryDirectories>$(SolutionDir)libs\freetype-2.3.5-1\lib;$(SolutionDir)libs\SDL2-2.0.5\lib\x86;$(SolutionDir)libs\glew-2.0.0\lib\Release\Win32;$(SolutionDir)libs\gllibs\soil\lib;$(SolutionDir)2DXngine.Core\Debug;$(SolutionDir)libs\googletest\googletest\msvc\gtest\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>freetype.lib;opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy $(SolutionDir)2DXngine.Test\cfg.ini  $(SolutionDir)\2DXngine.Test\Debug
+xcopy /s/e $(SolutionDir)2DXngine.Test\Content  $(SolutionDir)\2DXngine.Test\Debug\Content\
+xcopy $(SolutionDir)libs\SDL2-2.0.5\lib\x86\SDL2.dll  $(SolutionDir)\2DXngine.Test\Debug
+xcopy $(SolutionDir)libs\glew-2.0.0\bin\Release\Win32\glew32.dll  $(SolutionDir)\2DXngine.Test\Debug
+xcopy $(SolutionDir)libs\freetype-2.3.5-1\bin\zlib1.dll  $(SolutionDir)\2DXngine.Test\Debug
+xcopy $(SolutionDir)libs\freetype-2.3.5-1\bin\freetype6.dll  $(SolutionDir)\2DXngine.Test\Debug</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

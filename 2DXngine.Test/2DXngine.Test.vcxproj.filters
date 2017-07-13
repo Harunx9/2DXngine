@@ -3,99 +3,25 @@
   <ItemGroup>
     <ClCompile Include="..\libs\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="..\libs\googletest\googletest\src\gtest-all.cc" />
-    <ClCompile Include="GameObjectBaseFunctionsTest.cc">
-      <Filter>GameObjectTest</Filter>
-    </ClCompile>
-    <ClCompile Include="TypeIdHelperTest.cc">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObjectComponentModelTest.cc">
-      <Filter>GameObjectTest</Filter>
-    </ClCompile>
-    <ClCompile Include="TestTypes.cpp">
-      <Filter>GameObjectTest</Filter>
-    </ClCompile>
-    <ClCompile Include="GamObjectGraphTest.cc">
-      <Filter>GameObjectTest</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObjectLifetimeTest.cc">
-      <Filter>GameObjectTest</Filter>
-    </ClCompile>
-    <ClCompile Include="RectangleTest.cc">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="ShaderProgramTest.cc">
-      <Filter>AssetsTest</Filter>
-    </ClCompile>
-    <ClCompile Include="PropertyMacroTest.cc">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureTest.cc">
-      <Filter>AssetsTest</Filter>
-    </ClCompile>
-    <ClCompile Include="EventHandlingTest.cc">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="RenderTargetTest.cc">
-      <Filter>Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="ShaderTest.cc">
-      <Filter>AssetsTest</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObjectManagerTest.cc">
-      <Filter>GameObjectManager</Filter>
-    </ClCompile>
-    <ClCompile Include="TestComponents.cc">
-      <Filter>GameObjectManager</Filter>
-    </ClCompile>
-    <ClCompile Include="TestTypesHierarhy.cc">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="SimpleCsvTest.cc">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="TranslationServiceTest.cc" />
-    <ClCompile Include="ConfigurationServiceTest.cc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="GameObjectTest">
-      <UniqueIdentifier>{c2a18723-7170-438e-9d78-69317c990eea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Utils">
-      <UniqueIdentifier>{8df00269-1e0d-47b8-84b0-02356491b0ca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameObjectManager">
-      <UniqueIdentifier>{92f7097c-c9c3-4529-b15e-26acfa710df2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="AssetsTest">
-      <UniqueIdentifier>{caacaba1-ff0d-4dc9-ac64-bc441594b440}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Graphics">
-      <UniqueIdentifier>{eb1dfbf6-ca36-4dd7-af55-a2a21695063c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Services">
-      <UniqueIdentifier>{b9cd5e7f-b6cb-4f67-8992-ffcbc41d97f2}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="TestTypes.h">
-      <Filter>GameObjectTest</Filter>
-    </ClInclude>
-    <ClInclude Include="TestTypesHierarhy.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="TestComponents.h">
-      <Filter>GameObjectManager</Filter>
-    </ClInclude>
-    <ClInclude Include="TestScene.h">
-      <Filter>GameObjectManager</Filter>
-    </ClInclude>
-    <ClInclude Include="EventTestData.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="PropTestClass.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
+    <ClCompile Include="src\TypeSystem\TestComponents.cc" />
+    <ClCompile Include="src\TypeSystem\TestTypes.cpp" />
+    <ClCompile Include="src\TypeSystem\TestTypesHierarhy.cc" />
+    <ClCompile Include="src\TypeSystem\TypeIdHelperTest.cc" />
+    <ClCompile Include="src\Assets\ShaderProgramTest.cc" />
+    <ClCompile Include="src\Assets\ShaderTest.cc" />
+    <ClCompile Include="src\Assets\TextureTest.cc" />
+    <ClCompile Include="src\GameObject\GameObjectBaseFunctionsTest.cc" />
+    <ClCompile Include="src\GameObject\GameObjectComponentModelTest.cc" />
+    <ClCompile Include="src\GameObject\GameObjectLifetimeTest.cc" />
+    <ClCompile Include="src\GameObject\GameObjectManagerTest.cc" />
+    <ClCompile Include="src\GameObject\GamObjectGraphTest.cc" />
+    <ClCompile Include="src\Graphics\RenderTargetTest.cc" />
+    <ClCompile Include="src\Services\ConfigurationServiceTest.cc" />
+    <ClCompile Include="src\Services\TranslationServiceTest.cc" />
+    <ClCompile Include="src\Utils\EventHandlingTest.cc" />
+    <ClCompile Include="src\Utils\PropertyMacroTest.cc" />
+    <ClCompile Include="src\Utils\RectangleTest.cc" />
+    <ClCompile Include="src\Utils\SimpleCsvTest.cc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Content\test.csv" />
@@ -104,5 +30,16 @@
     <None Include="Content\test.csv" />
     <None Include="Content\Translations\translation.pl-PL.csv" />
     <None Include="Debug\Content\Translations\translation.pl-PL.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\TypeSystem\TestComponents.h" />
+    <ClInclude Include="src\TypeSystem\TestTypes.h" />
+    <ClInclude Include="src\TypeSystem\TestTypesHierarhy.h" />
+    <ClInclude Include="src\Scenes\TestScene.h" />
+    <ClInclude Include="src\Utils\EventTestData.h" />
+    <ClInclude Include="src\Utils\PropTestClass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Content\dot.png" />
   </ItemGroup>
 </Project>
