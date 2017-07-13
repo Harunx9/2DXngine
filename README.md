@@ -1,5 +1,5 @@
 # 2DXngine
-
+[![Build status](https://ci.appveyor.com/api/projects/status/us5jdp2343ygjuel?svg=true)](https://ci.appveyor.com/project/Harunx9/2dxngine)
 #### Hello friend stay a while and read this!
 
 This is my hobby project which I create for "Get Noticed!" competition. I hope in future this will be fully featured game engine, but for now it not suitable for any real development. 
