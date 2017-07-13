@@ -159,7 +159,7 @@
       <AdditionalDependencies>freetype.lib;opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /s /d $(SolutionDir)2DXngine.Test\cfg.ini  $(SolutionDir)\2DXngine.Test\Debug
+      <Command>xcopy $(SolutionDir)2DXngine.Test\cfg.ini  $(SolutionDir)\2DXngine.Test\Debug
 xcopy /s /d $(SolutionDir)2DXngine.Test\Content  $(SolutionDir)\2DXngine.Test\Debug\Content\
 xcopy /s /d $(SolutionDir)libs\SDL2-2.0.5\lib\x86\SDL2.dll  $(SolutionDir)\2DXngine.Test\Debug
 xcopy /s /d $(SolutionDir)libs\glew-2.0.0\bin\Release\Win32\glew32.dll  $(SolutionDir)\2DXngine.Test\Debug
