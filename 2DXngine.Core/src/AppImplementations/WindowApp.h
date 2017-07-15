@@ -1,6 +1,5 @@
 #pragma once
 #include "App.h"
-#include "App.h"
 #include <SDL.h>
 #include "../Graphics/GraphicDevice.h"
 class ConfigurationService;

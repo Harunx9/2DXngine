@@ -34,7 +34,7 @@ TEST(SimpleCsv, parser_can_parse_raw_string_properly)
 
 TEST(SimpleCsvFile, parser_can_parse_file_properly)
 {
-    std::string filePath = "/Content/test.csv";
+    std::string filePath = "./Content/test.csv";
     SimpleCSV* parser = new SimpleCSV(';');
     auto result = parser->parseFile(filePath);
 

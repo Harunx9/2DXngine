@@ -48,6 +48,7 @@
     <ClCompile Include="src\Utils\PropertyMacroTest.cc" />
     <ClCompile Include="src\Utils\RectangleTest.cc" />
     <ClCompile Include="src\Utils\SimpleCsvTest.cc" />
+    <ClCompile Include="src\Utils\StringUtilsTest.cc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\2DXngine.Core\2DXngine.Core.vcxproj">

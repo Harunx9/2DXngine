@@ -22,6 +22,7 @@
     <ClCompile Include="src\GameObject\GameObjectManagerTest.cc" />
     <ClCompile Include="src\GameObject\GamObjectGraphTest.cc" />
     <ClCompile Include="src\Utils\SimpleCsvTest.cc" />
+    <ClCompile Include="src\Utils\StringUtilsTest.cc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Content\test.csv" />

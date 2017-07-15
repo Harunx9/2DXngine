@@ -147,8 +147,6 @@
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\WindowEventsMapper.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\SDLEventMapper.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\SDLEventsMapperService.h" />
-    <ClInclude Include="src\AppImplementations\App.h" />
-    <ClInclude Include="src\AppImplementations\WindowApp.h" />
     <ClInclude Include="src\Audio\MusicService.h" />
     <ClInclude Include="src\Audio\SoundService.h" />
     <ClInclude Include="src\ComponentModel\Component.h" />
@@ -225,5 +223,7 @@
     <ClInclude Include="src\Utils\SimpleCSV.h" />
     <ClInclude Include="src\Utils\StringUtils.h" />
     <ClInclude Include="src\Utils\Timer.h" />
+    <ClInclude Include="src\AppImplementations\WindowApp.h" />
+    <ClInclude Include="src\AppImplementations\App.h" />
   </ItemGroup>
 </Project>
