@@ -17,7 +17,7 @@ public:
 
     inline bool isValid()
     {
-        return this->_errors.empty() == false;
+        return this->_errors.empty();
     }
 
     void  addError(Error error);

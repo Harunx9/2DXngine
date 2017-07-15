@@ -44,9 +44,11 @@
     <ClCompile Include="src\TypeSystem\TestTypes.cpp" />
     <ClCompile Include="src\TypeSystem\TestTypesHierarhy.cc" />
     <ClCompile Include="src\TypeSystem\TypeIdHelperTest.cc" />
+    <ClCompile Include="src\Utils\BackgroundTaskTest.cc" />
     <ClCompile Include="src\Utils\EventHandlingTest.cc" />
     <ClCompile Include="src\Utils\PropertyMacroTest.cc" />
     <ClCompile Include="src\Utils\RectangleTest.cc" />
+    <ClCompile Include="src\Utils\ResultTest.cpp" />
     <ClCompile Include="src\Utils\SimpleCsvTest.cc" />
     <ClCompile Include="src\Utils\StringUtilsTest.cc" />
   </ItemGroup>

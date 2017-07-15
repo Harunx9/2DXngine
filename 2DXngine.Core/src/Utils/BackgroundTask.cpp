@@ -17,7 +17,7 @@ BackgroundTask * BackgroundTask::create(std::function<void()> executor)
     return task;
 }
 
-void BackgroundTask::waitFor(BackgroundTask * t)
+void BackgroundTask::waitForAll()
 {
     bool wait = true;
     do

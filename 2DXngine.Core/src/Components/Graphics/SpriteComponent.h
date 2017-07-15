@@ -21,4 +21,3 @@ private:
     ContentManagerService * _manager;
     std::string _path;
 };
-

@@ -58,7 +58,7 @@ public:
     ~BackgroundTask();
 
     static BackgroundTask* create(std::function<void()> executor);
-    static void waitFor(BackgroundTask* t);
+    static void waitForAll();
     BackgroundTask* then(std::function<void(BackgroundTask*)> continuator);
     BackgroundTask* exec();
     
