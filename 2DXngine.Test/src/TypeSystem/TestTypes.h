@@ -37,14 +37,14 @@ class TestDrawableComponent1 : public DrawableComponent
 public:
     ADD_TYPE_META_INFO()
 
-        TestDrawableComponent1(const char* name) : DrawableComponent(DefaultLayers::GAMEPLAY_LAYER,name)
+        TestDrawableComponent1(const char* name) : DrawableComponent(DefaultLayers::GAMEPLAY_LAYER, name)
     {
 
     }
 
     virtual void initialize(bool force = false) override {  }
     virtual void terminate() override {}
-    virtual void draw(Renderer* renderer, float deltaTime) override {}
+    virtual void draw(Renderer* renderer, Camera* camera, float deltaTime) override {}
     virtual void resolveDependencies(bool force = false) override { }
 };
 
@@ -60,7 +60,7 @@ public:
 
     virtual void initialize(bool force = false) override {  }
     virtual void terminate() override {}
-    virtual void draw(Renderer* renderer, float deltaTime) override {}
+    virtual void draw(Renderer* renderer, Camera* camera, float deltaTime) override {}
     virtual void resolveDependencies(bool force = false) override {  }
 };
 

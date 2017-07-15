@@ -16,18 +16,21 @@ Component::~Component()
 void Component::baseInitialize(bool force)
 {
     this->initialize();
+
     this->_isInitialized = true;
 }
 
 void Component::baseTerminate()
 {
     this->terminate();
+    
     this->_isTerminated = true;
 }
 
 void Component::baseResolveDependencies(bool force)
 {
     this->resolveDependencies(force);
+
     this->_isDependenciesResovled = true;
 }
 

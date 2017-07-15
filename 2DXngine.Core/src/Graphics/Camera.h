@@ -2,6 +2,7 @@
 #include <limits>
 #include <glm/glm.hpp>
 #include "../Utils/Macros/PropertyMacro.h"
+#define NOMINMAX
 
 class Camera
 {
@@ -43,10 +44,10 @@ private:
     float _zoom;
     float _rotation;
 
-    const float MAX_ROT = std::numeric_limits<float>::max();
+    const float MAX_ROT = std::numeric_limits<float>::max NOMINMAX ();
     const float MIN_ROT = std::numeric_limits<float>::lowest();
 
-    const float MAX_ZOOM = std::numeric_limits<float>::max();
+    const float MAX_ZOOM = std::numeric_limits<float>::max NOMINMAX ();
     const float MIN_ZOOM = std::numeric_limits<float>::lowest();
 };
 

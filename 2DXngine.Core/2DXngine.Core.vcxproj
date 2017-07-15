@@ -44,8 +44,8 @@
     <ClCompile Include="src\ComponentModel\GameObject.cpp" />
     <ClCompile Include="src\ComponentModel\GameObjectManager.cpp" />
     <ClCompile Include="src\ComponentModel\UpdateableComponent.cpp" />
-    <ClCompile Include="src\Components\Graphics\Sprite.cpp" />
-    <ClCompile Include="src\Components\Graphics\SpriteDrawable.cpp" />
+    <ClCompile Include="src\Components\Graphics\SpriteComponent.cpp" />
+    <ClCompile Include="src\Components\Graphics\SpriteDrawableComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\Transform.cpp" />
     <ClCompile Include="src\Config\ActionsConfig.cpp" />
     <ClCompile Include="src\Config\AudioConfig.cpp" />
@@ -115,8 +115,8 @@
     <ClInclude Include="src\ComponentModel\GameObjectFilterFunctions.h" />
     <ClInclude Include="src\ComponentModel\GameObjectManager.h" />
     <ClInclude Include="src\ComponentModel\UpdateableComponent.h" />
-    <ClInclude Include="src\Components\Graphics\Sprite.h" />
-    <ClInclude Include="src\Components\Graphics\SpriteDrawable.h" />
+    <ClInclude Include="src\Components\Graphics\SpriteComponent.h" />
+    <ClInclude Include="src\Components\Graphics\SpriteDrawableComponent.h" />
     <ClInclude Include="src\Components\Graphics\Transform.h" />
     <ClInclude Include="src\Config\ActionsConfig.h" />
     <ClInclude Include="src\Config\AudioConfig.h" />

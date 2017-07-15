@@ -4,19 +4,20 @@
 #include "../../ContentManagement/ContentManagerService.h"
 #include "../../Services/ServiceLocator.h"
 #include <string>
+#include "../../Utils/Macros/PropertyMacro.h"
 
-class Sprite : public Component
+class SpriteComponent : public Component
 {
 public:
     ADD_TYPE_META_INFO()
-        Sprite(std::string path);
-    ~Sprite();
+        SpriteComponent(std::string path);
+    ~SpriteComponent();
 
-    // Inherited via Component
     virtual void initialize(bool force = false) override;
     virtual void terminate() override;
+
+    READONLY_PROPERTY(Texture*, texture)
 private:
-    Texture * _texture;
     ContentManagerService * _manager;
     std::string _path;
 };

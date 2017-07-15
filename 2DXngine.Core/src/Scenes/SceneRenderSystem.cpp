@@ -42,6 +42,6 @@ void SceneRenderSystem::drawGameObjects(float deltaTime)
     for (auto& drawable : this->_drawables)
     {
         if (drawable->get_isVisible())
-            drawable->draw(this->_scene->get_renderer(), deltaTime);
+            drawable->draw(this->_scene->get_renderer(), this->_scene->get_camera(), deltaTime);
     }
 }

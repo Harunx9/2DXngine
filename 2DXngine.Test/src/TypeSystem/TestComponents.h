@@ -8,7 +8,7 @@ class PlayerControllerComponentTest : public UpdateableComponent
 {
 public:
     ADD_TYPE_META_INFO()
-    PlayerControllerComponentTest() {}
+        PlayerControllerComponentTest() {}
     ~PlayerControllerComponentTest() {}
 
     // Inherited via UpdateableComponent
@@ -22,21 +22,21 @@ class PlayerDrawableComponentTest : public DrawableComponent
 {
 public:
     ADD_TYPE_META_INFO()
-    PlayerDrawableComponentTest() : DrawableComponent(DefaultLayers::GAMEPLAY_LAYER, "drawable_gameplay") {}
+        PlayerDrawableComponentTest() : DrawableComponent(DefaultLayers::GAMEPLAY_LAYER, "drawable_gameplay") {}
     ~PlayerDrawableComponentTest() {}
 
     // Inherited via DrawableComponent
     virtual void initialize(bool force = false) override {}
     virtual void terminate() override {}
     virtual void resolveDependencies(bool force = false) override {}
-    virtual void draw(Renderer * renderer, float deltaTime) override {}
+    virtual void draw(Renderer * renderer, Camera* camera, float deltaTime) override {}
 };
 
 class SwordControllerComponentTest : public UpdateableComponent
 {
 public:
     ADD_TYPE_META_INFO()
-    SwordControllerComponentTest() {}
+        SwordControllerComponentTest() {}
     ~SwordControllerComponentTest() {}
 
     // Inherited via UpdateableComponent
@@ -50,14 +50,14 @@ class SwordDrawableComponentTest : public DrawableComponent
 {
 public:
     ADD_TYPE_META_INFO()
-    SwordDrawableComponentTest() : DrawableComponent(DefaultLayers::GAMEPLAY_LAYER, "drawable_gameplay") {}
+        SwordDrawableComponentTest() : DrawableComponent(DefaultLayers::GAMEPLAY_LAYER, "drawable_gameplay") {}
     ~SwordDrawableComponentTest() {}
 
     // Inherited via DrawableComponent
     virtual void initialize(bool force = false) override {}
     virtual void terminate() override {}
     virtual void resolveDependencies(bool force = false) override {}
-    virtual void draw(Renderer * renderer, float deltaTime) override {}
+    virtual void draw(Renderer * renderer, Camera* camera, float deltaTime) override {}
 };
 
 DECLARE_TYPE_INFO_VARIANTS(Component, "")

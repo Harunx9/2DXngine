@@ -1,6 +1,5 @@
 #include "Renderer.h"
 
-
 Renderer::Renderer(SpriteBatch * batch) :
     _batch(batch)
 {

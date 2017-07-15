@@ -2,6 +2,7 @@
 #include <string>
 #include "SceneBehaviorManager.h"
 #include "../Utils/Macros/PropertyMacro.h"
+class Camera;
 class Renderer;
 class SpriteBatch;
 class GameObjectManager;
@@ -28,7 +29,7 @@ public:
     READONLY_PROPERTY(GameObjectManager *, gameObjectManager)
     READONLY_PROPERTY(SceneManagerService *, sceneManager)
     READONLY_PROPERTY(std::string, name)
-
+    READONLY_PROPERTY(Camera*, camera)
 protected:
     virtual void createScene() = 0;
     SceneRenderSystem * _renderSystem;

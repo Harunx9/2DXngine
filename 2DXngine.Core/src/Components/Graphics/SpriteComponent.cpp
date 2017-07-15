@@ -1,16 +1,16 @@
-#include "Sprite.h"
+#include "SpriteComponent.h"
 
-Sprite::Sprite(std::string path) :
+SpriteComponent::SpriteComponent(std::string path) :
     Component("SpriteComponent"),
     _path(path)
 {
 }
 
-Sprite::~Sprite()
+SpriteComponent::~SpriteComponent()
 {
 }
 
-void Sprite::initialize(bool force)
+void SpriteComponent::initialize(bool force)
 {
     this->_manager = ServiceLocator::get<ContentManagerService>("ContentManager");
     if (this->_manager)
@@ -19,7 +19,7 @@ void Sprite::initialize(bool force)
     }
 }
 
-void Sprite::terminate()
+void SpriteComponent::terminate()
 {
     auto path = this->_texture->get_path();
     this->_texture = nullptr;
