@@ -119,7 +119,6 @@
     <ClCompile Include="src\Scenes\SceneBehavior.cpp" />
     <ClCompile Include="src\Scenes\SceneBehaviorManager.cpp" />
     <ClCompile Include="src\Scenes\SceneLayer.cpp" />
-    <ClCompile Include="src\Scenes\SceneManager.cpp" />
     <ClCompile Include="src\Scenes\SceneRenderSystem.cpp" />
     <ClCompile Include="src\Scenes\SceneUpdateSystem.cpp" />
     <ClCompile Include="src\Services\Service.cpp" />
@@ -140,6 +139,7 @@
     <ClCompile Include="src\Utils\SimpleCSV.cpp" />
     <ClCompile Include="src\Utils\StringUtils.cpp" />
     <ClCompile Include="src\Utils\Timer.cpp" />
+    <ClCompile Include="src\Scenes\SceneManagerService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
@@ -194,7 +194,6 @@
     <ClInclude Include="src\Scenes\SceneBehavior.h" />
     <ClInclude Include="src\Scenes\SceneBehaviorManager.h" />
     <ClInclude Include="src\Scenes\SceneLayer.h" />
-    <ClInclude Include="src\Scenes\SceneManager.h" />
     <ClInclude Include="src\Scenes\SceneRenderSystem.h" />
     <ClInclude Include="src\Scenes\SceneUpdateSystem.h" />
     <ClInclude Include="src\Services\Service.h" />
@@ -225,5 +224,6 @@
     <ClInclude Include="src\Utils\Timer.h" />
     <ClInclude Include="src\AppImplementations\WindowApp.h" />
     <ClInclude Include="src\AppImplementations\App.h" />
+    <ClInclude Include="src\Scenes\SceneManagerService.h" />
   </ItemGroup>
 </Project>

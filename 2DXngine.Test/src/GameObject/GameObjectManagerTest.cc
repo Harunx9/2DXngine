@@ -4,9 +4,7 @@
 #include "../TypeSystem/TestComponents.h"
 #include "../Scenes/TestScene.h"
 #include <Services\ServiceLocator.h>
-#include <Scenes\SceneManager.h>
-
-
+#include <Scenes\SceneManagerService.h>
 
 class GameObjectMananagerTestFixture : public testing::Test
 {
@@ -27,7 +25,7 @@ protected:
         sword
             ->addComponent(swordController)
             ->addComponent(swordDrawable);
-        ServiceLocator::registerService(new SceneManager());
+        ServiceLocator::registerService(new SceneManagerService());
     }
 
     virtual void TearDown()
@@ -42,7 +40,6 @@ protected:
     SwordControllerComponentTest* swordController;
     SwordDrawableComponentTest* swordDrawable;
 };
-
 
 TEST_F(GameObjectMananagerTestFixture, GameObject_can_be_found_in_GameObjectMananager)
 {

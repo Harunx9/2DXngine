@@ -5,7 +5,7 @@
 class Renderer;
 class SpriteBatch;
 class GameObjectManager;
-class SceneManager;
+class SceneManagerService;
 class SceneRenderSystem;
 class SceneUpdateSystem;
 
@@ -15,8 +15,6 @@ public:
     Scene(SpriteBatch* batch, std::string name = "");
     Scene(const Scene* other);
     virtual ~Scene();
-
-    virtual void createScene() = 0;
 
     void initialize();
     void terminate();
@@ -28,10 +26,11 @@ public:
     READONLY_PROPERTY(bool, isTerminated)
     READONLY_PROPERTY(Renderer *, renderer)
     READONLY_PROPERTY(GameObjectManager *, gameObjectManager)
-    READONLY_PROPERTY(SceneManager *, sceneManager)
+    READONLY_PROPERTY(SceneManagerService *, sceneManager)
     READONLY_PROPERTY(std::string, name)
 
 protected:
+    virtual void createScene() = 0;
     SceneRenderSystem * _renderSystem;
     SceneUpdateSystem * _updateSystem;
     SceneBehaviorManager _sceneBehaviorManager;

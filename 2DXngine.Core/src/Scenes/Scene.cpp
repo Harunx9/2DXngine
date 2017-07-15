@@ -1,7 +1,7 @@
 #include "Scene.h"
 #include "../Graphics/Renderer.h"
 #include "../ComponentModel/GameObjectManager.h"
-#include "SceneManager.h"
+#include "SceneManagerService.h"
 #include "SceneRenderSystem.h"
 #include "SceneUpdateSystem.h"
 #include "../Services/ServiceLocator.h"
@@ -13,7 +13,7 @@ Scene::Scene(SpriteBatch * batch, std::string name) :
 {
     this->_renderer = new Renderer(batch);
     this->_gameObjectManager = new GameObjectManager(this);
-    this->_sceneManager = ServiceLocator::get<SceneManager>("SceneManager");
+    this->_sceneManager = ServiceLocator::get<SceneManagerService>("SceneManagerService");
     this->_renderSystem = new SceneRenderSystem(this);
     this->_updateSystem = new SceneUpdateSystem(this);
 }
@@ -44,6 +44,7 @@ void Scene::initialize()
     this->_renderSystem->initialize();
     this->_updateSystem->initialize();
     this->_sceneBehaviorManager.initialize();
+    this->createScene();
 
     this->_isInitialized = true;
 }
