@@ -24,6 +24,7 @@ void SceneManagerService::terminate()
 
 void SceneManagerService::updateCurrentScene(float deltaTime)
 {
+    if (this->_currentScene == nullptr);
     if (this->_currentScene->get_isInitialized() == false ||
         this->_currentScene->get_isTerminated()) return;
     

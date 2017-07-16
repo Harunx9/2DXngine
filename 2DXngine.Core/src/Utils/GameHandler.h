@@ -1,13 +1,15 @@
 #pragma once
 #include <SDL.h>
 #include "../Graphics/GraphicDevice.h"
+class SceneManagerService;
+class SpriteBatch;
 
 class GameHandler
 {
 public:
     GameHandler();
     GameHandler(const GameHandler * other) = delete;
-    ~GameHandler();
+    virtual ~GameHandler();
     virtual void initialize() = 0;
     virtual void update(float deltaTime) = 0;
     virtual void draw(float deltaTime) = 0;
@@ -20,6 +22,32 @@ public:
 
 protected:
     GraphicDevice* _device;
+};
+
+class GameHandlerWithScenes : public GameHandler
+{
+public:
+    GameHandlerWithScenes() : GameHandler() {};
+    virtual ~GameHandlerWithScenes();
+
+    virtual void initialize() override;
+    virtual void update(float deltaTime) override;
+    virtual void draw(float deltaTime) override;
+
+protected:
+    SceneManagerService * _sceneManager;
+};
+
+class Game2DWithScenesHandler : public GameHandlerWithScenes
+{
+public:
+    Game2DWithScenesHandler() : GameHandlerWithScenes() {};
+    virtual ~Game2DWithScenesHandler();
+
+    virtual void initialize() override;
+
+protected:
+    SpriteBatch * _batch;
 };
 
 class EmptyGameHandler : public GameHandler

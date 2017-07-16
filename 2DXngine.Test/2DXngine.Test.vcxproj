@@ -39,6 +39,7 @@
     <ClCompile Include="src\GameObject\GamObjectGraphTest.cc" />
     <ClCompile Include="src\Graphics\RenderTargetTest.cc" />
     <ClCompile Include="src\Services\ConfigurationServiceTest.cc" />
+    <ClCompile Include="src\Services\ContentManagerTest.cpp" />
     <ClCompile Include="src\Services\TranslationServiceTest.cc" />
     <ClCompile Include="src\TypeSystem\TestComponents.cc" />
     <ClCompile Include="src\TypeSystem\TestTypes.cpp" />
@@ -75,6 +76,10 @@
     <ClInclude Include="src\TypeSystem\TestTypesHierarhy.h" />
     <ClInclude Include="src\Utils\EventTestData.h" />
     <ClInclude Include="src\Utils\PropTestClass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\Debug\Content\babyblocks.ttf" />
+    <Font Include="Content\babyblocks.ttf" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FFC71365-F476-4E93-8FA8-C13732131366}</ProjectGuid>

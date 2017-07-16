@@ -7,6 +7,7 @@
 #include "../Audio/MusicService.h"
 #include "../Audio/SoundService.h"
 #include "../Config/ConfigurationService.h"
+#include "../Scenes/SceneManagerService.h"
 #include <SDL_mixer.h>
 #include <iostream>
 #include <windows.h>
@@ -110,6 +111,7 @@ void WindowApp::buildServiceContrainer()
     ServiceLocator::registerService(new InputService());
     ServiceLocator::registerService(new SoundService());
     ServiceLocator::registerService(new MusicService());
+    ServiceLocator::registerService(new SceneManagerService());
 }
 
 void WindowApp::initAndRegiserConfig()

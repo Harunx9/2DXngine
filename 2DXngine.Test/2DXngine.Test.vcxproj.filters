@@ -25,6 +25,7 @@
     <ClCompile Include="src\Utils\StringUtilsTest.cc" />
     <ClCompile Include="src\Utils\BackgroundTaskTest.cc" />
     <ClCompile Include="src\Utils\ResultTest.cpp" />
+    <ClCompile Include="src\Services\ContentManagerTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Content\test.csv" />
@@ -44,5 +45,9 @@
     <ClInclude Include="src\TypeSystem\TestTypesHierarhy.h" />
     <ClInclude Include="src\Utils\PropTestClass.h" />
     <ClInclude Include="src\Utils\EventTestData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\Debug\Content\babyblocks.ttf" />
+    <Font Include="Content\babyblocks.ttf" />
   </ItemGroup>
 </Project>

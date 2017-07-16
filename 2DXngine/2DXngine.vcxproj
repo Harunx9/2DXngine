@@ -28,7 +28,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\SceneTest.cpp" />
     <ClCompile Include="src\TestGameHandler.cpp" />
+    <ClCompile Include="src\TestGameHandlerWithScenes.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\2DXngine.Core\2DXngine.Core.vcxproj">
@@ -36,7 +38,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\SceneTest.h" />
     <ClInclude Include="src\TestGameHandler.h" />
+    <ClInclude Include="src\TestGameHandlerWithScenes.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cfg.ini" />
