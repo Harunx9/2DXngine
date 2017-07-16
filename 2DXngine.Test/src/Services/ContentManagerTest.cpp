@@ -51,12 +51,12 @@ TEST_F(ContentManagerTestFixture, texture_should_be_loaded_corectly_if_file_exis
     ASSERT_TRUE(tex->get_textureId() != 0);
 }
 
-TEST_F(ContentManagerTestFixture, font_should_be_loaded_corectly_if_file_exist)
-{
-    auto srv = ServiceLocator::get<ContentManagerService>("ContentManagerService");
-
-    auto fnt = srv->load<TTFont>(AssetPath::create("Content/babyblocks.ttf"));
-    
-    ASSERT_TRUE(fnt != nullptr);
-}
+//TEST_F(ContentManagerTestFixture, font_should_be_loaded_corectly_if_file_exist)
+//{
+//    auto srv = ServiceLocator::get<ContentManagerService>("ContentManagerService");
+//
+//    auto fnt = srv->load<TTFont>(AssetPath::create("Content/babyblocks.ttf"));
+//    
+//    ASSERT_TRUE(fnt != nullptr);
+//}
 
