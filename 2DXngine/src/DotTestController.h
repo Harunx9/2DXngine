@@ -6,7 +6,7 @@ class DotTestController : public UpdateableComponent
 {
 public:
     ADD_TYPE_META_INFO()
-    DotTestController();
+        DotTestController();
     ~DotTestController();
 
     virtual void initialize(bool force = false) override;

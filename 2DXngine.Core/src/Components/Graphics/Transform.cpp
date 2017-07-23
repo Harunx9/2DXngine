@@ -26,7 +26,6 @@ Transform::Transform(glm::vec2 position, float width, float height) :
 {
 }
 
-
 Transform::~Transform()
 {
 }
