@@ -27,6 +27,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\DeclaredTypes.cpp" />
+    <ClCompile Include="src\DotTestController.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\SceneTest.cpp" />
     <ClCompile Include="src\TestGameHandler.cpp" />
@@ -38,6 +40,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\DefinedTypes.h" />
+    <ClInclude Include="src\DotTestController.h" />
     <ClInclude Include="src\SceneTest.h" />
     <ClInclude Include="src\TestGameHandler.h" />
     <ClInclude Include="src\TestGameHandlerWithScenes.h" />

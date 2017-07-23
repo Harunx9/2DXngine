@@ -1,8 +1,10 @@
 #pragma once
-class SceneTest
+#include <Scenes\Scene.h>
+class SceneTest : public Scene
 {
 public:
-    SceneTest();
+    SceneTest(SpriteBatch* batch);
     ~SceneTest();
-};
 
+    virtual void createScene();
+};

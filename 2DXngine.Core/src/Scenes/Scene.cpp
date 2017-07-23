@@ -40,11 +40,11 @@ void Scene::initialize()
 {
     if (this->_isInitialized) return;
 
+    this->createScene();
     this->_gameObjectManager->initialize();
     this->_renderSystem->initialize();
     this->_updateSystem->initialize();
     this->_sceneBehaviorManager.initialize();
-    this->createScene();
 
     this->_isInitialized = true;
 }
@@ -72,6 +72,8 @@ void Scene::update(float deltaTime)
 
 void Scene::draw(float deltaTime)
 {
+    this->_renderer->get_graphics()->clear(Colors::black);
     this->_renderSystem->drawGameObjects(deltaTime);
+    this->_renderer->get_graphics()->swapBuffers();
 }
 

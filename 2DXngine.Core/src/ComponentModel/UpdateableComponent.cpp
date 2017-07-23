@@ -8,7 +8,6 @@ UpdateableComponent::UpdateableComponent(const char* name):
 {
 }
 
-
 UpdateableComponent::~UpdateableComponent()
 {
 }

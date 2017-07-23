@@ -18,6 +18,5 @@ public:
 
 protected:
     bool _isActive;
-
 };
 

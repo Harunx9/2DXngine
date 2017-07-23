@@ -14,8 +14,8 @@ public:
 
     void updateCurrentScene(float deltaTime);
     void drawCurrentScene(float deltaTime);
-    void StartWith(Scene* firstScene);
-    void To(Scene* nextScene);
+    void startWith(Scene* firstScene);
+    void to(Scene* nextScene);
 
     READONLY_PROPERTY(bool, isStarted)
 private:

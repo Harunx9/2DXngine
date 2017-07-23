@@ -4,7 +4,12 @@ Transform::Transform() :
     Component("TransformComponent"),
     _position(glm::vec2(0.f, 0.f)),
     _width(0.f),
-    _height(0.f)
+    _height(0.f),
+    _scale(1.f),
+    _worldScale(1.f),
+    _rotation(0.f),
+    _worldRotation(0.f),
+    _drawOrder(0)
 {
 }
 
@@ -12,7 +17,12 @@ Transform::Transform(glm::vec2 position, float width, float height) :
     Component("TransformComponent"),
     _position(position),
     _width(width),
-    _height(height)
+    _height(height),
+    _scale(1.f),
+    _worldScale(1.f),
+    _rotation(0.f),
+    _worldRotation(0.f),
+    _drawOrder(0)
 {
 }
 
@@ -23,6 +33,7 @@ Transform::~Transform()
 
 void Transform::initialize(bool force)
 {
+    _flag = DirtyFlag::All;
 }
 
 void Transform::terminate()

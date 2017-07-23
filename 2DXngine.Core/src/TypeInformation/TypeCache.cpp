@@ -51,7 +51,6 @@ TypeInfo TypeCache::get_typeByValue(const char * name)
 
 TypeInfo* TypeCache::get_typeByRef(int typeId)
 {
-
     return &this->_cache[typeId];
 }
 

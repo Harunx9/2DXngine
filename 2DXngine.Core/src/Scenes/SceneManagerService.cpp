@@ -24,7 +24,6 @@ void SceneManagerService::terminate()
 
 void SceneManagerService::updateCurrentScene(float deltaTime)
 {
-    if (this->_currentScene == nullptr);
     if (this->_currentScene->get_isInitialized() == false ||
         this->_currentScene->get_isTerminated()) return;
     
@@ -39,7 +38,7 @@ void SceneManagerService::drawCurrentScene(float deltaTime)
     this->_currentScene->draw(deltaTime);
 }
 
-void SceneManagerService::StartWith(Scene* firstScene)
+void SceneManagerService::startWith(Scene* firstScene)
 {
     if (this->_isStarted) return;
     if (firstScene->get_isInitialized()) return;
@@ -51,7 +50,7 @@ void SceneManagerService::StartWith(Scene* firstScene)
     this->_isStarted = true;
 }
 
-void SceneManagerService::To(Scene* nextScene)
+void SceneManagerService::to(Scene* nextScene)
 {
     if (this->_isStarted == false) return;
     if (nextScene->get_isInitialized()) return;

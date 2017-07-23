@@ -158,7 +158,6 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, Color color, float
     batchItem->drawOrder = drawOrder;
 
     batchItem->origin = glm::vec2(0.f, 0.f);
-    batchItem->rot = 0.f;
     //texCoord
     batchItem->texcoords[0] = glm::vec2(0.f, 0.f);
     batchItem->texcoords[1] = glm::vec2(1.f, 0.f);
@@ -200,9 +199,6 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Color
     //origin
     batchItem->origin = glm::vec2(0.f, 0.f);
 
-    //rotation
-    batchItem->rot = 0.f;
-
     batchItem->drawOrder = drawOrder;
 
     //texCoord
@@ -243,9 +239,6 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
 
     //origin
     batchItem->origin = glm::vec2(0.f, 0.f);
-
-    //rotation
-    batchItem->rot = 0.f;
 
     batchItem->drawOrder = drawOrder;
 
@@ -309,9 +302,6 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Recta
 
     //origin
     batchItem->origin = glm::vec2(0.f, 0.f);
-
-    //rotation
-    batchItem->rot = 0.f;
 
     batchItem->drawOrder = drawOrder;
 
@@ -413,21 +403,24 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Recta
         float cosRot = glm::cos(rotation);
         float sinRot = glm::sin(rotation);
 
+        origin = glm::vec2(origin.x * destinationRectangle.get_width(), origin.y * destinationRectangle.get_height());
+        origin = -origin;
+
         batchItem->postions[0] = glm::vec2(
-            destinationRectangle.get_x() + (-origin.x * cosRot) - (-origin.y * sinRot),
-            destinationRectangle.get_y() + (-origin.x * sinRot) - (-origin.y * cosRot));
+            destinationRectangle.get_x() + (origin.x * cosRot) - (-origin.y * sinRot),
+            destinationRectangle.get_y() + (origin.x * sinRot) + (-origin.y * cosRot));
 
         batchItem->postions[1] = glm::vec2(
-            destinationRectangle.get_x() + (-origin.x + destinationRectangle.get_width()) * cosRot - (-origin.y)* sinRot,
-            destinationRectangle.get_y() + (-origin.x + destinationRectangle.get_width()) * sinRot - (-origin.y)* cosRot);
+            destinationRectangle.get_x() + (origin.x + destinationRectangle.get_width()) * cosRot - (origin.y)* sinRot,
+            destinationRectangle.get_y() + (origin.x + destinationRectangle.get_width()) * sinRot + (origin.y)* cosRot);
 
         batchItem->postions[2] = glm::vec2(
-            destinationRectangle.get_x() + (-origin.x * cosRot) - (-origin.y + destinationRectangle.get_height())* sinRot,
-            destinationRectangle.get_y() + (-origin.x * sinRot) - (-origin.y + destinationRectangle.get_height())* cosRot);
+            destinationRectangle.get_x() + (origin.x * cosRot) - (origin.y + destinationRectangle.get_height())* sinRot,
+            destinationRectangle.get_y() + (origin.x * sinRot) + (origin.y + destinationRectangle.get_height())* cosRot);
 
         batchItem->postions[3] = glm::vec2(
-            destinationRectangle.get_x() + (-origin.x + destinationRectangle.get_width()) * cosRot - (-origin.y + destinationRectangle.get_height())* sinRot,
-            destinationRectangle.get_y() + (-origin.x + destinationRectangle.get_width()) * sinRot - (-origin.y + destinationRectangle.get_height())* cosRot);
+            destinationRectangle.get_x() + (origin.x + destinationRectangle.get_width()) * cosRot - (origin.y + destinationRectangle.get_height())* sinRot,
+            destinationRectangle.get_y() + (origin.x + destinationRectangle.get_width()) * sinRot + (origin.y + destinationRectangle.get_height())* cosRot);
     }
 
     //set color
@@ -438,9 +431,6 @@ void SpriteBatch::draw(Texture * texture, RectangleI destinationRectangle, Recta
 
     //origin
     batchItem->origin = glm::vec2(0.f, 0.f);
-
-    //rotation
-    batchItem->rot = 0.f;
 
     batchItem->drawOrder = drawOrder;
 
@@ -504,22 +494,25 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
     {
         float cosRot = glm::cos(rotation);
         float sinRot = glm::sin(rotation);
+        
+        origin = glm::vec2(origin.x * size.x, origin.y * size.y);
+        origin = -origin;
 
         batchItem->postions[0] = glm::vec2(
-            position.x + (-origin.x * cosRot) - (-origin.y * sinRot),
-            position.y + (-origin.x * sinRot) - (-origin.y * cosRot));
+            position.x + (origin.x * cosRot) - (origin.y * sinRot),
+            position.y + (origin.x * sinRot) + (origin.y * cosRot));
 
         batchItem->postions[1] = glm::vec2(
-            position.x + (-origin.x + size.x) * cosRot - (-origin.y)* sinRot,
-            position.y + (-origin.x + size.x) * sinRot - (-origin.y)* cosRot);
+            position.x + (origin.x + size.x) * cosRot - (origin.y* sinRot),
+            position.y + (origin.x + size.x) * sinRot + (origin.y* cosRot));
 
         batchItem->postions[2] = glm::vec2(
-            position.x + (-origin.x * cosRot) - (-origin.y + size.y)* sinRot,
-            position.y + (-origin.x * sinRot) - (-origin.y + size.y)* cosRot);
+            position.x + (origin.x * cosRot) - (origin.y + size.y)* sinRot,
+            position.y + (origin.x * sinRot) + (origin.y + size.y)* cosRot);
 
         batchItem->postions[3] = glm::vec2(
-            position.x + (-origin.x + size.x) * cosRot - (-origin.y + size.y)* sinRot,
-            position.y + (-origin.x + size.x) * sinRot - (-origin.y + size.y)* cosRot);
+            position.x + (origin.x + size.x) * cosRot - (origin.y + size.y)* sinRot,
+            position.y + (origin.x + size.x) * sinRot + (origin.y + size.y)* cosRot);
     }
 
     //set color
@@ -530,9 +523,6 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
 
     //origin
     batchItem->origin = glm::vec2(0.f, 0.f);
-
-    //rotation
-    batchItem->rot = 0.f;
 
     batchItem->drawOrder = drawOrder;
 

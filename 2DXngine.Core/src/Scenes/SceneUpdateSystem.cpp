@@ -3,12 +3,10 @@
 #include "../ComponentModel/UpdateableComponent.h"
 #include "../ComponentModel/GameObjectManager.h"
 
-
 SceneUpdateSystem::SceneUpdateSystem(Scene *const scene) :
     _scene(scene)
 {
 }
-
 
 SceneUpdateSystem::~SceneUpdateSystem()
 {

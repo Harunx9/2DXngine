@@ -5,7 +5,7 @@
 class SpriteComponent;
 class Transform;
 
-class SpriteDrawableComponent : DrawableComponent
+class SpriteDrawableComponent : public DrawableComponent
 {
 public:
     ADD_TYPE_META_INFO()

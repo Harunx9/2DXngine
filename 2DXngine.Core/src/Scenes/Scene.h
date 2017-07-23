@@ -29,8 +29,13 @@ public:
     READONLY_PROPERTY(GameObjectManager *, gameObjectManager)
     READONLY_PROPERTY(SceneManagerService *, sceneManager)
     READONLY_PROPERTY(std::string, name)
-    READONLY_PROPERTY(Camera*, camera)
+
+    Camera* get_camera()const
+    {
+        return this->_camera;
+    }
 protected:
+    Camera* _camera;
     virtual void createScene() = 0;
     SceneRenderSystem * _renderSystem;
     SceneUpdateSystem * _updateSystem;

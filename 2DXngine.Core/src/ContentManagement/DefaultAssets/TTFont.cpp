@@ -92,6 +92,7 @@ void TTFont::draw(SpriteBatch * batch, std::string text, glm::vec2 position, glm
     }
 
     batch->begin(this->_fontShader, TextureWrap::CLAMP_TO_EDGE, TextureFilter::LINEAR_FILTER, camera);
+
     for (auto c : text)
     {
         Glyph g = this->_characterMap[c];
@@ -112,6 +113,7 @@ void TTFont::draw(SpriteBatch * batch, std::string text, glm::vec2 position, glm
     }
 
     batch->end();
+    
     if (wasStarted)
     {
         batch->begin(latestShader, TextureWrap::REPEAT, TextureFilter::POINT_FILTER, camera);

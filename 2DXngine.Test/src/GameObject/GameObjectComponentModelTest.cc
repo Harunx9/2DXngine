@@ -1,4 +1,5 @@
 #include <gtest\gtest.h>
+#include <TypeInformation\BaseTypesDefinitions.h>
 #include "../TypeSystem/TestTypes.h"
 #include <ComponentModel\GameObjectFilterFunctions.h>
 

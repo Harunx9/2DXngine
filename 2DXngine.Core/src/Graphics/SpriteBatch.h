@@ -67,7 +67,6 @@ private:
         glm::vec2 texcoords[4];
         glm::vec4 color;
         glm::vec2 origin;
-        GLfloat rot;
         float drawOrder;
     };
 

@@ -122,7 +122,6 @@
     <ClCompile Include="src\Services\Service.cpp" />
     <ClCompile Include="src\Services\ServiceLocator.cpp" />
     <ClCompile Include="src\Translations\TranslationService.cpp" />
-    <ClCompile Include="src\TypeInformation\BaseTypesDeclarations.cpp" />
     <ClCompile Include="src\TypeInformation\TypeCache.cpp" />
     <ClCompile Include="src\TypeInformation\TypeInfo.cpp" />
     <ClCompile Include="src\Utils\Errors\Result.cpp" />
@@ -140,6 +139,7 @@
     <ClCompile Include="src\Scenes\SceneManagerService.cpp" />
     <ClCompile Include="src\Components\Graphics\SpriteComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\SpriteDrawableComponent.cpp" />
+    <ClCompile Include="src\TypeInformation\BaseTypesDeclarations.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
@@ -198,7 +198,6 @@
     <ClInclude Include="src\Services\ServiceLocator.h" />
     <ClInclude Include="src\Translations\TFunction.h" />
     <ClInclude Include="src\Translations\TranslationService.h" />
-    <ClInclude Include="src\TypeInformation\BaseTypesDefinitions.h" />
     <ClInclude Include="src\TypeInformation\TypeCache.h" />
     <ClInclude Include="src\TypeInformation\TypeIdHelper.h" />
     <ClInclude Include="src\TypeInformation\TypeInfo.h" />
@@ -225,5 +224,6 @@
     <ClInclude Include="src\Scenes\SceneManagerService.h" />
     <ClInclude Include="src\Components\Graphics\SpriteComponent.h" />
     <ClInclude Include="src\Components\Graphics\SpriteDrawableComponent.h" />
+    <ClInclude Include="src\TypeInformation\BaseTypesDefinitions.h" />
   </ItemGroup>
 </Project>

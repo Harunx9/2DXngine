@@ -61,4 +61,5 @@ void Game2DWithScenesHandler::initialize()
 {
     GameHandlerWithScenes::initialize();
     this->_batch = new SpriteBatch(this->_device);
+    this->_batch->initialize();
 }

@@ -47,7 +47,6 @@
     <ClInclude Include="src\Utils\EventTestData.h" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="..\Debug\Content\babyblocks.ttf" />
     <Font Include="Content\babyblocks.ttf" />
   </ItemGroup>
 </Project>

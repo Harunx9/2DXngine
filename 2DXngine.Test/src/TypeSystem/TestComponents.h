@@ -60,9 +60,8 @@ public:
     virtual void draw(Renderer * renderer, Camera* camera, float deltaTime) override {}
 };
 
-DECLARE_TYPE_INFO_VARIANTS(Component, "")
-DECLARE_TYPE_INFO_VARIANTS(DrawableComponent, Component)
-DECLARE_TYPE_INFO_VARIANTS(UpdateableComponent, Component)
+
+
 DECLARE_TYPE_INFO_VARIANTS(PlayerControllerComponentTest, UpdateableComponent)
 DECLARE_TYPE_INFO_VARIANTS(PlayerDrawableComponentTest, DrawableComponent)
 DECLARE_TYPE_INFO_VARIANTS(SwordControllerComponentTest, UpdateableComponent)
