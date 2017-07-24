@@ -129,7 +129,6 @@
     <ClCompile Include="src\Utils\Math\PointI.cpp" />
     <ClCompile Include="src\Utils\Math\RectangleF.cpp" />
     <ClCompile Include="src\Utils\Math\RectangleI.cpp" />
-    <ClCompile Include="src\Utils\ThirdParty\Ini\ConvertUTF.c" />
     <ClCompile Include="src\Utils\BackgroundTask.cpp" />
     <ClCompile Include="src\Utils\File.cpp" />
     <ClCompile Include="src\Utils\GameHandler.cpp" />
@@ -140,6 +139,12 @@
     <ClCompile Include="src\Components\Graphics\SpriteComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\SpriteDrawableComponent.cpp" />
     <ClCompile Include="src\TypeInformation\BaseTypesDeclarations.cpp" />
+    <ClCompile Include="..\libs\pugixml\src\pugixml.cpp" />
+    <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
+    <ClCompile Include="src\Components\Graphics\AnimationComponent.cpp" />
+    <ClCompile Include="src\Components\Graphics\AnimationDrawableComponent.cpp" />
+    <ClCompile Include="src\Components\Graphics\AnimationFactory\UnnamedAnimationFactory.cpp" />
+    <ClCompile Include="src\Components\Graphics\AnimationFactory\Animation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
@@ -210,8 +215,6 @@
     <ClInclude Include="src\Utils\Math\PointI.h" />
     <ClInclude Include="src\Utils\Math\RectangleF.h" />
     <ClInclude Include="src\Utils\Math\RectangleI.h" />
-    <ClInclude Include="src\Utils\ThirdParty\Ini\ConvertUTF.h" />
-    <ClInclude Include="src\Utils\ThirdParty\Ini\SimpleIni.h" />
     <ClInclude Include="src\Utils\BackgroundTask.h" />
     <ClInclude Include="src\Utils\File.h" />
     <ClInclude Include="src\Utils\GameHandler.h" />
@@ -225,5 +228,13 @@
     <ClInclude Include="src\Components\Graphics\SpriteComponent.h" />
     <ClInclude Include="src\Components\Graphics\SpriteDrawableComponent.h" />
     <ClInclude Include="src\TypeInformation\BaseTypesDefinitions.h" />
+    <ClInclude Include="..\libs\pugixml\src\pugiconfig.hpp" />
+    <ClInclude Include="..\libs\pugixml\src\pugixml.hpp" />
+    <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
+    <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
+    <ClInclude Include="src\Components\Graphics\AnimationComponent.h" />
+    <ClInclude Include="src\Components\Graphics\AnimationDrawableComponent.h" />
+    <ClInclude Include="src\Components\Graphics\AnimationFactory\UnnamedAnimationFactory.h" />
+    <ClInclude Include="src\Components\Graphics\AnimationFactory\Animation.h" />
   </ItemGroup>
 </Project>

@@ -30,6 +30,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\libs\pugixml\src\pugixml.cpp" />
+    <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
     <ClCompile Include="src\AppImplementations\App.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.cpp" />
@@ -44,6 +46,10 @@
     <ClCompile Include="src\ComponentModel\GameObject.cpp" />
     <ClCompile Include="src\ComponentModel\GameObjectManager.cpp" />
     <ClCompile Include="src\ComponentModel\UpdateableComponent.cpp" />
+    <ClCompile Include="src\Components\Graphics\AnimationComponent.cpp" />
+    <ClCompile Include="src\Components\Graphics\AnimationDrawableComponent.cpp" />
+    <ClCompile Include="src\Components\Graphics\AnimationFactory\Animation.cpp" />
+    <ClCompile Include="src\Components\Graphics\AnimationFactory\UnnamedAnimationFactory.cpp" />
     <ClCompile Include="src\Components\Graphics\SpriteComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\SpriteDrawableComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\Transform.cpp" />
@@ -96,10 +102,13 @@
     <ClCompile Include="src\Utils\Math\RectangleI.cpp" />
     <ClCompile Include="src\Utils\SimpleCSV.cpp" />
     <ClCompile Include="src\Utils\StringUtils.cpp" />
-    <ClCompile Include="src\Utils\ThirdParty\Ini\ConvertUTF.c" />
     <ClCompile Include="src\Utils\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\libs\pugixml\src\pugiconfig.hpp" />
+    <ClInclude Include="..\libs\pugixml\src\pugixml.hpp" />
+    <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
+    <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
     <ClInclude Include="src\AppImplementations\App.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.h" />
@@ -115,6 +124,10 @@
     <ClInclude Include="src\ComponentModel\GameObjectFilterFunctions.h" />
     <ClInclude Include="src\ComponentModel\GameObjectManager.h" />
     <ClInclude Include="src\ComponentModel\UpdateableComponent.h" />
+    <ClInclude Include="src\Components\Graphics\AnimationComponent.h" />
+    <ClInclude Include="src\Components\Graphics\AnimationDrawableComponent.h" />
+    <ClInclude Include="src\Components\Graphics\AnimationFactory\Animation.h" />
+    <ClInclude Include="src\Components\Graphics\AnimationFactory\UnnamedAnimationFactory.h" />
     <ClInclude Include="src\Components\Graphics\SpriteComponent.h" />
     <ClInclude Include="src\Components\Graphics\SpriteDrawableComponent.h" />
     <ClInclude Include="src\Components\Graphics\Transform.h" />
@@ -180,8 +193,6 @@
     <ClInclude Include="src\Utils\Math\RectangleI.h" />
     <ClInclude Include="src\Utils\SimpleCSV.h" />
     <ClInclude Include="src\Utils\StringUtils.h" />
-    <ClInclude Include="src\Utils\ThirdParty\Ini\ConvertUTF.h" />
-    <ClInclude Include="src\Utils\ThirdParty\Ini\SimpleIni.h" />
     <ClInclude Include="src\Utils\Timer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
