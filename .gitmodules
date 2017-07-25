@@ -5,3 +5,7 @@
 [submodule "libs/simpleini"]
     path = libs/simpleini
     url = https://github.com/brofield/simpleini.git
+
+[submodule "libs/pugixml"]
+    path = libs/pugixml
+    url = https://github.com/zeux/pugixml
