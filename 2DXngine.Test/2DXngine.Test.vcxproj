@@ -32,6 +32,8 @@
     <ClCompile Include="src\Assets\ShaderProgramTest.cc" />
     <ClCompile Include="src\Assets\ShaderTest.cc" />
     <ClCompile Include="src\Assets\TextureTest.cc" />
+    <ClCompile Include="src\Components\Animation\AnimationFactoryTest.cc" />
+    <ClCompile Include="src\Components\Animation\ParsersTest.cc" />
     <ClCompile Include="src\GameObject\GameObjectBaseFunctionsTest.cc" />
     <ClCompile Include="src\GameObject\GameObjectComponentModelTest.cc" />
     <ClCompile Include="src\GameObject\GameObjectLifetimeTest.cc" />
@@ -79,6 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Content\babyblocks.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Content\testanimationsheet.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="Content\testspritesheet.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FFC71365-F476-4E93-8FA8-C13732131366}</ProjectGuid>

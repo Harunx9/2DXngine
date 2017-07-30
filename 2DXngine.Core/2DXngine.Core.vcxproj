@@ -49,7 +49,7 @@
     <ClCompile Include="src\Components\Graphics\AnimationComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\AnimationDrawableComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\AnimationFactory\Animation.cpp" />
-    <ClCompile Include="src\Components\Graphics\AnimationFactory\UnnamedAnimationFactory.cpp" />
+    <ClCompile Include="src\Components\Graphics\AnimationFactory\XMLSpritesheetAnimationFactory.cpp" />
     <ClCompile Include="src\Components\Graphics\SpriteComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\SpriteDrawableComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\Transform.cpp" />
@@ -127,7 +127,7 @@
     <ClInclude Include="src\Components\Graphics\AnimationComponent.h" />
     <ClInclude Include="src\Components\Graphics\AnimationDrawableComponent.h" />
     <ClInclude Include="src\Components\Graphics\AnimationFactory\Animation.h" />
-    <ClInclude Include="src\Components\Graphics\AnimationFactory\UnnamedAnimationFactory.h" />
+    <ClInclude Include="src\Components\Graphics\AnimationFactory\XMLSpritesheetAnimationFactory.h" />
     <ClInclude Include="src\Components\Graphics\SpriteComponent.h" />
     <ClInclude Include="src\Components\Graphics\SpriteDrawableComponent.h" />
     <ClInclude Include="src\Components\Graphics\Transform.h" />

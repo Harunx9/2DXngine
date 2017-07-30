@@ -6,7 +6,7 @@
 class Animation
 {
 public:
-    Animation(std::string name, int framesPerSecond, int framesCount, RectangleI frames[]);
+    Animation(std::string name, int framesPerSecond, int framesCount, RectangleI* frames);
     ~Animation();
 
     void update(float deltaTime);
@@ -17,11 +17,17 @@ public:
         this->_isPlaying = true;
     }
 
+    void pause()
+    {
+        this->_isPlaying = false;
+        this->_isLooped = false;
+    }
+
     void stop()
     {
         this->_currentFrame = 0;
         this->_currentFrameTime = 0.f;
-        this->_isPlaying = true;
+        this->_isPlaying = false;
         this->_isLooped = false;
     }
 

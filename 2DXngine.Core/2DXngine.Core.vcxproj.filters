@@ -143,8 +143,8 @@
     <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
     <ClCompile Include="src\Components\Graphics\AnimationComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\AnimationDrawableComponent.cpp" />
-    <ClCompile Include="src\Components\Graphics\AnimationFactory\UnnamedAnimationFactory.cpp" />
     <ClCompile Include="src\Components\Graphics\AnimationFactory\Animation.cpp" />
+    <ClCompile Include="src\Components\Graphics\AnimationFactory\XMLSpritesheetAnimationFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
@@ -234,7 +234,7 @@
     <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
     <ClInclude Include="src\Components\Graphics\AnimationComponent.h" />
     <ClInclude Include="src\Components\Graphics\AnimationDrawableComponent.h" />
-    <ClInclude Include="src\Components\Graphics\AnimationFactory\UnnamedAnimationFactory.h" />
     <ClInclude Include="src\Components\Graphics\AnimationFactory\Animation.h" />
+    <ClInclude Include="src\Components\Graphics\AnimationFactory\XMLSpritesheetAnimationFactory.h" />
   </ItemGroup>
 </Project>

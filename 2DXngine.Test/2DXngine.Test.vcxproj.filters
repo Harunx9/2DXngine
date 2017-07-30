@@ -26,6 +26,8 @@
     <ClCompile Include="src\Utils\BackgroundTaskTest.cc" />
     <ClCompile Include="src\Utils\ResultTest.cpp" />
     <ClCompile Include="src\Services\ContentManagerTest.cpp" />
+    <ClCompile Include="src\Components\Animation\ParsersTest.cc" />
+    <ClCompile Include="src\Components\Animation\AnimationFactoryTest.cc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Content\test.csv" />
@@ -48,5 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Content\babyblocks.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Content\testanimationsheet.xml" />
+    <Xml Include="Content\testspritesheet.xml" />
   </ItemGroup>
 </Project>

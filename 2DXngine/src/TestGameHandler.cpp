@@ -44,18 +44,8 @@ void TestGameHandler::update(float deltaTime)
 
 void TestGameHandler::draw(float deltaTime)
 {
-    this->_device->clear(Colors::white);
-    batch->begin(nullptr, TextureWrap::REPEAT, TextureFilter::POINT_FILTER, cam->get_viewMatrix());
-    batch->draw(texture, glm::vec2(0.f, 0.f), Colors::white, 1);
-    batch->draw(texture, glm::vec2(100.f, 100.f), Colors::green, 1);
-    batch->draw(texture, glm::vec2(100.f, 300.f), Colors::white, 1);
-    batch->draw(texture, glm::vec2(200.f, 300.f), Colors::white, 1);
-    font->draw(this->batch, "Hello world", glm::vec2(100.f, 100.f), Colors::blue, cam->get_viewMatrix());
-    batch->draw(texture, glm::vec2(300.f, 300.f), Colors::white, 1);
-    batch->draw(texture, glm::vec2(200.f, 200.f), nullptr, Colors::white, 0, glm::vec2(0.f, 0.f), 2, FlipEffect::NONE_FLIP, 2);
-
-    batch->draw(texture, glm::vec2(300.f, 200.f), nullptr, Colors::white, 0, glm::vec2(0.f, 0.f), 3, FlipEffect::NONE_FLIP, 2);
-    batch->end();
+    this->_device->clear(Colors::black);
+    font->draw(this->batch, "Hello world 2DXngine !!!", glm::vec2(100.f, 100.f), Colors::blue, cam->get_viewMatrix());
     
 
     this->_device->swapBuffers();
