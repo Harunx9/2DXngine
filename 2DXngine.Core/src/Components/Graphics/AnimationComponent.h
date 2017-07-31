@@ -16,13 +16,27 @@ public:
 
     void play_animation(std::string animationName, bool loop = false)
     {
+        if (this->_currentAnimation != nullptr)
+        {
+            if (this->_currentAnimation->get_isPlaying() &&
+                this->_currentAnimation->get_name() != animationName)
+            {
+                this->_currentAnimation->stop();
+            }
+        }
+
         this->_currentAnimation = _animations[animationName];
         this->_currentAnimation->start(loop);
     }
 
-    void stop()
+    void stop_animation()
     {
         this->_currentAnimation->stop();
+    }
+
+    void pause_animation()
+    {
+        this->_currentAnimation->pause();
     }
 
     RectangleI get_currentFrame()

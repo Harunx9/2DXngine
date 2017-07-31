@@ -2,7 +2,8 @@
 
 AnimationComponent::AnimationComponent(animations_dict animations) :
      UpdateableComponent("AnimationComponent"),
-    _animations(animations)
+    _animations(animations),
+    _currentAnimation(nullptr)
 {
 }
 
@@ -19,6 +20,7 @@ AnimationComponent::~AnimationComponent()
 void AnimationComponent::initialize(bool force)
 {
     this->activate();
+
 }
 
 void AnimationComponent::terminate()

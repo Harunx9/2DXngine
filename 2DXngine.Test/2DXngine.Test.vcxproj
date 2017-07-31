@@ -32,6 +32,7 @@
     <ClCompile Include="src\Assets\ShaderProgramTest.cc" />
     <ClCompile Include="src\Assets\ShaderTest.cc" />
     <ClCompile Include="src\Assets\TextureTest.cc" />
+    <ClCompile Include="src\Components\Animation\AnimationComponentTest.cc" />
     <ClCompile Include="src\Components\Animation\AnimationFactoryTest.cc" />
     <ClCompile Include="src\Components\Animation\ParsersTest.cc" />
     <ClCompile Include="src\GameObject\GameObjectBaseFunctionsTest.cc" />

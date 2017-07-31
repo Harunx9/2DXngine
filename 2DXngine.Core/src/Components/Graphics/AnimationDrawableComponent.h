@@ -1,6 +1,7 @@
 #pragma once
 #include "../../ComponentModel/DrawableComponent.h"
 class AnimationComponent;
+class Transform;
 
 class AnimationDrawableComponent : public DrawableComponent
 {
@@ -16,7 +17,8 @@ public:
     virtual void draw(Renderer * renderer, Camera * camera, float deltaTime) override;
     virtual void resolveDependencies(bool force = false) override;
 private:
-    AnimationComponent* animation;
+    AnimationComponent* _animation;
+    Transform* _transform;
     TextureWrap _wrap;
     TextureFilter _filter;
 };

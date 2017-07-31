@@ -32,6 +32,7 @@
   <ItemGroup>
     <ClCompile Include="..\libs\pugixml\src\pugixml.cpp" />
     <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
+    <ClCompile Include="src\Components\Interactions\Collider.cpp" />
     <ClCompile Include="src\AppImplementations\App.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.cpp" />
@@ -53,6 +54,7 @@
     <ClCompile Include="src\Components\Graphics\SpriteComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\SpriteDrawableComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\Transform.cpp" />
+    <ClCompile Include="src\Components\Management\ObjectPoolComponent.cpp" />
     <ClCompile Include="src\Config\ActionsConfig.cpp" />
     <ClCompile Include="src\Config\AudioConfig.cpp" />
     <ClCompile Include="src\Config\ConfigSection.cpp" />
@@ -109,6 +111,7 @@
     <ClInclude Include="..\libs\pugixml\src\pugixml.hpp" />
     <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
     <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
+    <ClInclude Include="src\Components\Interactions\Collider.h" />
     <ClInclude Include="src\AppImplementations\App.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.h" />
@@ -131,6 +134,7 @@
     <ClInclude Include="src\Components\Graphics\SpriteComponent.h" />
     <ClInclude Include="src\Components\Graphics\SpriteDrawableComponent.h" />
     <ClInclude Include="src\Components\Graphics\Transform.h" />
+    <ClInclude Include="src\Components\Management\ObjectPoolComponent.h" />
     <ClInclude Include="src\Config\ActionsConfig.h" />
     <ClInclude Include="src\Config\AudioConfig.h" />
     <ClInclude Include="src\Config\ConfigSection.h" />
