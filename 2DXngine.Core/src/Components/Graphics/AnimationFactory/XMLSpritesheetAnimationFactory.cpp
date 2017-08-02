@@ -14,7 +14,7 @@ AnimationComponent * XMLSpritesheetAnimationFactory::createFromXml(AssetPath pat
     {
 
         RectangleI* tmpFrames = new RectangleI[definition.lenght];
-        
+
         for (size_t currentFrame = 0;
             currentFrame < definition.lenght;
             currentFrame++)
@@ -141,8 +141,8 @@ animations_dict XMLAnimationSpritesheetParser::load(AssetPath path)
         auto  root = doc.child("animations");
         for (auto& animation : root.children("animation"))
         {
-            Animation * animTmp = nullptr;
-            std::vector<RectangleI> frames;
+            Animation * animTmp;
+            std::vector<RectangleI> frames = std::vector<RectangleI>();
             for (auto& frame : animation.children("frame"))
             {
                 int x = frame.attribute("x").as_int();
@@ -152,13 +152,14 @@ animations_dict XMLAnimationSpritesheetParser::load(AssetPath path)
                 int offsetx = frame.attribute("offsetx").as_int();
                 int offsety = frame.attribute("offsety").as_int();
 
-                frames.push_back(RectangleI(x + offsetx, y + offsety, x + width + offsetx, y + height + offsety));
+                frames.push_back(RectangleI(x + offsetx, y + offsety, width, height));
             }
-
+            RectangleI* rectPtr = new RectangleI[frames.size()];
+            std::copy(frames.begin(), frames.end(), rectPtr);
             animTmp = new Animation(
                 animation.attribute("name").as_string(),
                 animation.attribute("framesPerSecond").as_int(),
-                frames.size(), frames.data());
+                frames.size(), rectPtr);
 
             animations[animation.attribute("name").as_string()] = animTmp;
         }

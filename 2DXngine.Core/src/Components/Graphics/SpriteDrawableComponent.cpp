@@ -55,7 +55,7 @@ void SpriteDrawableComponent::draw(Renderer * renderer, Camera* camera, float de
         this->_transform->get_rotation(),
         this->_transform->get_origin(),
         this->_transform->get_scale(),
-        FlipEffect::NONE_FLIP,
+        this->get_flip(),
         this->_transform->get_drawOrder());
 
     renderer->get_batch()->end();

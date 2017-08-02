@@ -55,3 +55,35 @@ TEST(AnimationComponentTest, when_animation_comonent_play_other_animation_curren
     ASSERT_FALSE(anim1->get_isPlaying());
     ASSERT_TRUE(anim2->get_isPlaying());
 }
+
+TEST(AnimationComponentTest, when_animation_started_it_should_return_first_frame)
+{
+    AssetPath path = AssetPath::create("Content\\testanimationsheet.xml");
+    animations_dict animations = XMLAnimationSpritesheetParser::load(path);
+    Animation* anim1 = animations["animationName1"];
+    AnimationComponent* cmp = new AnimationComponent(animations);
+    
+    cmp->play_animation("animationName1");
+
+    ASSERT_EQ(cmp->get_currentFrame().get_x(), 0);
+    ASSERT_EQ(cmp->get_currentFrame().get_y(), 0);
+    ASSERT_EQ(cmp->get_currentFrame().get_width(), 50);
+    ASSERT_EQ(cmp->get_currentFrame().get_height(), 50);
+}
+
+TEST(AnimationComponentTest, when_animation_started_and_updated_it_should_return_second_frame)
+{
+    AssetPath path = AssetPath::create("Content\\testanimationsheet.xml");
+    animations_dict animations = XMLAnimationSpritesheetParser::load(path);
+    Animation* anim1 = animations["animationName1"];
+    AnimationComponent* cmp = new AnimationComponent(animations);
+
+    cmp->play_animation("animationName1");
+    cmp->update(32.f);
+
+    ASSERT_EQ(cmp->get_currentFrame().get_x(), 50);
+    ASSERT_EQ(cmp->get_currentFrame().get_y(), 0);
+    ASSERT_EQ(cmp->get_currentFrame().get_width(), 50);
+    ASSERT_EQ(cmp->get_currentFrame().get_height(), 50);
+}
+

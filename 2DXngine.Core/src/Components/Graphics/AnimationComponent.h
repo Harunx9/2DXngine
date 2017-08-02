@@ -39,9 +39,9 @@ public:
         this->_currentAnimation->pause();
     }
 
-    RectangleI get_currentFrame()
+    RectangleI* get_currentFrame()
     {
-        return this->_currentAnimation->get_currentFrame();
+        return &this->_currentAnimation->get_currentFrame();
     }
 
     virtual void initialize(bool force = false) override;

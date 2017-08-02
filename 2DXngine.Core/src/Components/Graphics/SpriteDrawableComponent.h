@@ -19,6 +19,7 @@ public:
     virtual void resolveDependencies(bool force = false) override;
     virtual void draw(Renderer * renderer, Camera* camera, float deltaTime) override;
 
+    PROPERTY(FlipEffect, flip)
 private:
     SpriteComponent * _sprite;
     Transform * _transform;

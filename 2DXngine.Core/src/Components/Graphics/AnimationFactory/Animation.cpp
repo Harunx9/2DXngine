@@ -1,7 +1,12 @@
 #include "Animation.h"
 
 Animation::Animation(std::string name, int framesPerSecond, int framesCount, RectangleI* frames) :
-    _name(name), _framesPerSecond(framesPerSecond), _framesCount(framesCount), _frameTime(1.f / framesPerSecond)
+    _name(name),
+    _framesPerSecond(framesPerSecond),
+    _framesCount(framesCount),
+    _frameTime(1.f / framesPerSecond),
+    _currentFrame(0),
+    _currentFrameTime(0.f)
 {
     this->_frames = frames;
 }
