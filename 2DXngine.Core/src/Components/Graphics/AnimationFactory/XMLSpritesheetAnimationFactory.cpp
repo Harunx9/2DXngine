@@ -96,11 +96,12 @@ animations_dict XMLAnimationSpritesheetParser::loadWithSpecifiedNames(AssetPath 
 
                         frames.push_back(RectangleI(x + offsetx, y + offsety, x + width + offsetx, y + height + offsety));
                     }
-
+                    RectangleI* rectPtr = new RectangleI[frames.size()];
+                    std::copy(frames.begin(), frames.end(), rectPtr);
                     animTmp = new Animation(
                         animation.attribute("name").as_string(),
                         animation.attribute("framesPerSecond").as_int(),
-                        frames.size(), frames.data());
+                        frames.size(), rectPtr);
 
                     animations[animation.attribute("name").as_string()] = animTmp;
                 }
