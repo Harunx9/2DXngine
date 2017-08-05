@@ -32,7 +32,7 @@
   <ItemGroup>
     <ClCompile Include="..\libs\pugixml\src\pugixml.cpp" />
     <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
-    <ClCompile Include="src\Components\Interactions\Collider.cpp" />
+    <ClCompile Include="src\Components\Interactions\ColliderComponent.cpp" />
     <ClCompile Include="src\AppImplementations\App.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.cpp" />
     <ClCompile Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.cpp" />
@@ -111,7 +111,7 @@
     <ClInclude Include="..\libs\pugixml\src\pugixml.hpp" />
     <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
     <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
-    <ClInclude Include="src\Components\Interactions\Collider.h" />
+    <ClInclude Include="src\Components\Interactions\ColliderComponent.h" />
     <ClInclude Include="src\AppImplementations\App.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\MouseEventsMapper.h" />

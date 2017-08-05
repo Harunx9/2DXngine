@@ -35,6 +35,7 @@
     <ClCompile Include="src\Components\Animation\AnimationComponentTest.cc" />
     <ClCompile Include="src\Components\Animation\AnimationFactoryTest.cc" />
     <ClCompile Include="src\Components\Animation\ParsersTest.cc" />
+    <ClCompile Include="src\Components\ColliderComponenTest.cpp" />
     <ClCompile Include="src\GameObject\GameObjectBaseFunctionsTest.cc" />
     <ClCompile Include="src\GameObject\GameObjectComponentModelTest.cc" />
     <ClCompile Include="src\GameObject\GameObjectLifetimeTest.cc" />

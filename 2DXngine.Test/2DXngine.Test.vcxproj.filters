@@ -29,6 +29,7 @@
     <ClCompile Include="src\Components\Animation\ParsersTest.cc" />
     <ClCompile Include="src\Components\Animation\AnimationFactoryTest.cc" />
     <ClCompile Include="src\Components\Animation\AnimationComponentTest.cc" />
+    <ClCompile Include="src\Components\ColliderComponenTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Content\test.csv" />

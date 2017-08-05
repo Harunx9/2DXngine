@@ -8,7 +8,7 @@ struct AnimationDefinition
 {
     std::string name;
     int firstFrame;
-    int lenght;
+    size_t lenght;
     int framesPerSecond;
 };
 

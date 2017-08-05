@@ -79,16 +79,16 @@ float RectangleF::get_right() const
 
 bool RectangleF::intersect(const RectangleF & other)
 {
-    return (other.get_left() <= this->get_right()) ||
-        (other.get_right() >= this->get_right()) ||
-        (other.get_top() <= this->get_bottom()) ||
+    return (other.get_left() <= this->get_right()) &&
+        (other.get_right() >= this->get_left()) &&
+        (other.get_top() <= this->get_bottom()) &&
         (other.get_bottom() >= this->get_top());
 }
 
 bool RectangleF::insersect(const RectangleF * other)
 {
-    return (other->get_left() <= this->get_right()) ||
-        (other->get_right() >= this->get_right()) ||
-        (other->get_top() <= this->get_bottom()) ||
+    return (other->get_left() <= this->get_right()) &&
+        (other->get_right() >= this->get_left()) &&
+        (other->get_top() <= this->get_bottom()) &&
         (other->get_bottom() >= this->get_top());
 }
