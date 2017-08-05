@@ -94,10 +94,10 @@ animations_dict XMLAnimationSpritesheetParser::loadWithSpecifiedNames(AssetPath 
                         int offsetx = frame.attribute("offsetx").as_int();
                         int offsety = frame.attribute("offsety").as_int();
 
-                        frames.push_back(RectangleI(x + offsetx, y + offsety, x + width + offsetx, y + height + offsety));
+                        frames.push_back(RectangleI(x + offsetx, y + offsety, width, height));
                     }
                     RectangleI* rectPtr = new RectangleI[frames.size()];
-                    std::copy(frames.begin(), frames.end(), rectPtr);
+                    std::copy(frames.begin(), frames.end(), stdext::checked_array_iterator<RectangleI*>(rectPtr, frames.size()));
                     animTmp = new Animation(
                         animation.attribute("name").as_string(),
                         animation.attribute("framesPerSecond").as_int(),
@@ -155,8 +155,9 @@ animations_dict XMLAnimationSpritesheetParser::load(AssetPath path)
 
                 frames.push_back(RectangleI(x + offsetx, y + offsety, width, height));
             }
+            
             RectangleI* rectPtr = new RectangleI[frames.size()];
-            std::copy(frames.begin(), frames.end(), rectPtr);
+            std::copy(frames.begin(), frames.end(), stdext::checked_array_iterator<RectangleI*>(rectPtr, frames.size()));
             animTmp = new Animation(
                 animation.attribute("name").as_string(),
                 animation.attribute("framesPerSecond").as_int(),
@@ -200,7 +201,7 @@ std::vector<RectangleI> XMLSpritesheetParser::load(AssetPath path)
             int offsetx = item.attribute("offsetx").as_int();
             int offsety = item.attribute("offsety").as_int();
 
-            frames.push_back(RectangleI(x + offsetx, y + offsety, x + width + offsetx, y + height + offsety));
+            frames.push_back(RectangleI(x + offsetx, y + offsety, width, height));
         }
     }
 
