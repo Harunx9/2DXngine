@@ -92,3 +92,11 @@ bool RectangleF::insersect(const RectangleF * other)
         (other->get_top() <= this->get_bottom()) &&
         (other->get_bottom() >= this->get_top());
 }
+
+bool RectangleF::contains(float x, float y)
+{
+    return (x <= this->get_right()) &&
+        (x >= this->get_left()) &&
+        (y <= this->get_bottom()) &&
+        (y >= this->get_top());
+}

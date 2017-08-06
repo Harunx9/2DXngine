@@ -44,6 +44,17 @@ TEST(Rectangle, rectnagle_can_intersect_with_other_rectangle_when_value_init)
     ASSERT_TRUE(intersectResult);
 }
 
+TEST(Rectangle, rectnagle_can_contains_point)
+{
+    //Arrange
+    auto rect = new RectangleI(1, 2, 10, 20);
+    //Act
+    auto intersectResult = rect->contains(3, 4);
+
+    //Assert
+    ASSERT_TRUE(intersectResult);
+}
+
 TEST(RectangleF, rectangle_dimension_is_proper_when_new_rectangle_is_created)
 {
     //Arrange
@@ -81,6 +92,17 @@ TEST(RectangleF, rectnagle_can_intersect_with_other_rectangle_when_value_init)
     auto rect2 = RectangleF(5.5, 5.5, 10, 20);
     //Act
     auto intersectResult = rect1.insersect(&rect2);
+
+    //Assert
+    ASSERT_TRUE(intersectResult);
+}
+
+TEST(RectangleF, rectnagle_can_contains_point)
+{
+    //Arrange
+    auto rect = new RectangleF(1.5f, 2.5, 8.5, 20);
+    //Act
+    auto intersectResult = rect->contains(4.f, 4.f);
 
     //Assert
     ASSERT_TRUE(intersectResult);

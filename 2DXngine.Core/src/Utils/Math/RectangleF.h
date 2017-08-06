@@ -26,6 +26,7 @@ public:
 
     bool intersect(const RectangleF& other);
     bool insersect(const RectangleF* other);
+    bool contains(float x, float y);
 private:
     float _x, _y;
     float _width, _heihgt;

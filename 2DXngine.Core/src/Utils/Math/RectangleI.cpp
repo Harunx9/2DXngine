@@ -87,16 +87,24 @@ int RectangleI::get_right() const
 
 bool RectangleI::intersect(const RectangleI & other)
 {
-    return (other.get_left() <= this->get_right()) ||
-        (other.get_right() >= this->get_right()) ||
-        (other.get_top() <= this->get_bottom()) ||
+    return (other.get_left() <= this->get_right()) &&
+        (other.get_right() >= this->get_left()) &&
+        (other.get_top() <= this->get_bottom()) &&
         (other.get_bottom() >= this->get_top());
 }
 
 bool RectangleI::insersect(const RectangleI * other)
 {
-    return (other->get_left() <= this->get_right()) ||
-        (other->get_right() >= this->get_right()) ||
-        (other->get_top() <= this->get_bottom()) ||
+    return (other->get_left() <= this->get_right()) &&
+        (other->get_right() >= this->get_left()) &&
+        (other->get_top() <= this->get_bottom()) &&
         (other->get_bottom() >= this->get_top());
+}
+
+bool RectangleI::contains(int x, int y)
+{
+    return (x <= this->get_right()) &&
+        (x >= this->get_left()) &&
+        (y <= this->get_bottom()) &&
+        (y >= this->get_top());
 }
