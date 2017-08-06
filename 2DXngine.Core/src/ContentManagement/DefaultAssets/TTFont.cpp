@@ -51,7 +51,7 @@ TTFont::TTFont(AssetPath path) : Asset(path, DefaultAssetType::TTF_TYPE)
     this->_fontShader = new ShaderProgram(StdFontShader::vertexSource, StdFontShader::fragmentSource);
     auto compileResult = this->_fontShader->compile();
 
-    if(compileResult == ProgramCompilationResult::COMPILE_ERROR)
+    if (compileResult == ProgramCompilationResult::COMPILE_ERROR)
         std::exit(1);
 }
 
@@ -105,7 +105,7 @@ void TTFont::draw(SpriteBatch * batch, std::string text, glm::vec2 position, glm
             float width = g.tex->get_bitmap()->get_width() * scale.x;
             float height = g.tex->get_bitmap()->get_height() * scale.y;
 
-            batch->draw(g.tex, RectangleI(x, y, width, height), color, 0);
+            batch->draw(g.tex, RectangleI((int)x, (int)y, (int)width, (int)height), color, 0.f);
 
             position.x += (g.advance.x >> 6) * scale.x;
             position.y += (g.advance.y >> 6) * scale.y;
@@ -113,7 +113,7 @@ void TTFont::draw(SpriteBatch * batch, std::string text, glm::vec2 position, glm
     }
 
     batch->end();
-    
+
     if (wasStarted)
     {
         batch->begin(latestShader, TextureWrap::REPEAT, TextureFilter::POINT_FILTER, camera);

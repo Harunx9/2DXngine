@@ -52,8 +52,8 @@ TEST_F(GameObjectMananagerTestFixture, GameObject_can_be_found_in_GameObjectMana
     manager->initialize();
 
     //Assert
-    ASSERT_TRUE("Player", manager->findObject("Player")->get_name());
-    ASSERT_TRUE("Sword", manager->findObject("Sword")->get_name());
+    ASSERT_EQ("Player", manager->findObject("Player")->get_name());
+    ASSERT_EQ("Sword", manager->findObject("Sword")->get_name());
 }
 
 TEST_F(GameObjectMananagerTestFixture, GameObject_can_be_removed_from_GameObjectMananager)
@@ -68,6 +68,6 @@ TEST_F(GameObjectMananagerTestFixture, GameObject_can_be_removed_from_GameObject
     manager->removeGameObject("Sword");
 
     //Assert
-    ASSERT_TRUE("Player", manager->findObject("Player")->get_name());
+    ASSERT_EQ("Player", manager->findObject("Player")->get_name());
     ASSERT_EQ(nullptr, manager->findObject("Sword"));
 }

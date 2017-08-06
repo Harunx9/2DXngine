@@ -255,7 +255,7 @@ enum KeyboardButtons
 };
 
 /* Mouse defines */
-#define MAX_MOUSE_BUTTONS 6
+#define MAX_MOUSE_BUTTONS 5
 #define MOUSE_SERVICE_NAME "MOUSE_SERVICE"
 enum MouseButtons
 {

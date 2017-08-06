@@ -10,4 +10,5 @@ DEFINE_TYPE_INFO(Transform);
 DEFINE_TYPE_INFO(ColliderComponent);
 DEFINE_TYPE_INFO(AnimationComponent);
 DEFINE_TYPE_INFO(AnimationDrawableComponent);
+DEFINE_TYPE_INFO(ClickableComponent);
 #endif

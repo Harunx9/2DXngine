@@ -1,7 +1,8 @@
 #include "MouseStateHandler.h"
 #include <iostream>
 
-MouseStateHandler::MouseStateHandler(MouseEventsMapper * mapper)
+MouseStateHandler::MouseStateHandler(MouseEventsMapper * mapper):
+    _position(PointI(0,0))
 {
     this->_mapper = mapper;
 
@@ -11,7 +12,7 @@ MouseStateHandler::MouseStateHandler(MouseEventsMapper * mapper)
     this->_bindingPosition = CREATE_BINDING_WITH_PARAM(EventParameterHandler<MousePositionState>::get_nextID(), MouseStateHandler, updatePositionState, MousePositionState);
     this->_mapper->mousePositionStateChanged += _bindingPosition;
 
-    for (size_t btn = 0; btn < KEYBOARD_SIZE; btn++)
+    for (size_t btn = 0; btn < MAX_MOUSE_BUTTONS; btn++)
     {
         this->_mouseKeysStates[btn] = false;
     }
@@ -27,11 +28,11 @@ void MouseStateHandler::updateButtonsState(MouseButtonsState state)
     {
     case ButtonState::PRESSED:
         this->_mouseKeysStates[state.button] = true;
-        std::cout << state.button << " is pressed" << std::endl;
+        //std::cout << state.button << " is pressed" << std::endl;
         break;
     case ButtonState::RELEASED:
         this->_mouseKeysStates[state.button] = false;
-        std::cout << state.button << " is released" << std::endl;
+        //std::cout << state.button << " is released" << std::endl;
         break;
     }
 }
@@ -42,7 +43,7 @@ void MouseStateHandler::updatePositionState(MousePositionState state)
         this->_position.get_y() != state.position.get_y())
     {
         this->_position = state.position;
-        std::cout << "mouse x: " << this->_position.get_x() << " mouse y: " << this->_position.get_y() << std::endl;
+        //std::cout << "mouse x: " << this->_position.get_x() << " mouse y: " << this->_position.get_y() << std::endl;
     }
 }
 

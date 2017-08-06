@@ -1,8 +1,10 @@
 #include "Camera.h"
 #include <glm/gtc/matrix_transform.hpp>
+#include <gl/glew.h>
+#include <glm/glm.hpp>
 
 
-Camera::Camera(int viewportWidth, int viewportHeight):
+Camera::Camera(int viewportWidth, int viewportHeight) :
     _viewportWidth(viewportWidth),
     _viewportHeight(viewportHeight),
     _rotation(0.f),
@@ -13,6 +15,21 @@ Camera::Camera(int viewportWidth, int viewportHeight):
 
 Camera::~Camera()
 {
+}
+
+glm::vec2 Camera::unproject(glm::vec2 screenPosition)
+{
+    auto projection = glm::ortho(0.f,
+        static_cast<GLfloat>(this->_viewportWidth),
+        static_cast<GLfloat>(this->_viewportHeight),
+        0.f, -1.f, 1.f);
+    auto view = this->get_viewMatrix();
+    auto posvec3 = glm::vec3(screenPosition.x, this->_viewportHeight - screenPosition.y, 0.f);
+
+    auto wordCoords = glm::unProject(posvec3, view, projection,
+        glm::vec4(0.f, 0.f, this->_viewportWidth, this->_viewportHeight));
+
+    return glm::vec2(wordCoords);
 }
 
 glm::mat4 Camera::get_viewMatrix()

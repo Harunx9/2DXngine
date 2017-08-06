@@ -44,8 +44,8 @@ void WindowApp::initialize()
         this->_game->set_device(this->_device);
         buildServiceContrainer();
         this->_game->regiserUserServices();
-        this->_game->initialize();
         ServiceLocator::initialize();
+        this->_game->initialize();
         this->_isInitialized = true;
         this->_isRunning = true;
     }
@@ -60,7 +60,7 @@ void WindowApp::run()
     while (this->get_isRunning())
     {
         float deltaTime = this->_timer->getDeltaTime();
-        std::cout << deltaTime << std::endl;
+        //std::cout << deltaTime << std::endl;
         accumulator += deltaTime;
         while (SDL_PollEvent(&event))
         {

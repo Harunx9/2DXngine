@@ -10,6 +10,7 @@
 #include "../Components/Graphics/AnimationComponent.h"
 #include "../Components/Graphics/AnimationDrawableComponent.h"
 #include "../Components/Interactions/ColliderComponent.h"
+#include "../Components/Interactions/ClickableComponent.h"
 
 #ifdef main
 DECLARE_TYPE_INFO(Component, "")
@@ -21,6 +22,7 @@ DECLARE_TYPE_INFO(SpriteDrawableComponent, DrawableComponent)
 DECLARE_TYPE_INFO(ColliderComponent, Component)
 DECLARE_TYPE_INFO(AnimationComponent, UpdateableComponent)
 DECLARE_TYPE_INFO(AnimationDrawableComponent, DrawableComponent)
+DECLARE_TYPE_INFO(ClickableComponent, UpdateableComponent)
 
 
 DEFINE_TYPE_INFO(Component);
@@ -32,6 +34,7 @@ DEFINE_TYPE_INFO(SpriteDrawableComponent);
 DEFINE_TYPE_INFO(ColliderComponent);
 DEFINE_TYPE_INFO(AnimationComponent);
 DEFINE_TYPE_INFO(AnimationDrawableComponent);
+DEFINE_TYPE_INFO(ClickableComponent);
 #else
 DECLARE_TYPE_INFO(Component, "")
 DECLARE_TYPE_INFO(DrawableComponent, Component)
@@ -42,4 +45,5 @@ DECLARE_TYPE_INFO(Transform, Component)
 DECLARE_TYPE_INFO(ColliderComponent, Component)
 DECLARE_TYPE_INFO(AnimationComponent, UpdateableComponent)
 DECLARE_TYPE_INFO(AnimationDrawableComponent, DrawableComponent)
+DECLARE_TYPE_INFO(ClickableComponent, UpdateableComponent)
 #endif

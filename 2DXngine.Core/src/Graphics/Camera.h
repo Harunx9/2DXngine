@@ -32,7 +32,7 @@ public:
             this->_zoom = zoom;
     }
 
-
+    glm::vec2 unproject(glm::vec2 screenPosition);
     glm::mat4 get_viewMatrix();
 
     PROPERTY(int ,viewportWidth)

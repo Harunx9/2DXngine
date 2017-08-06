@@ -145,8 +145,8 @@
     <ClCompile Include="src\Components\Graphics\AnimationDrawableComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\AnimationFactory\Animation.cpp" />
     <ClCompile Include="src\Components\Graphics\AnimationFactory\XMLSpritesheetAnimationFactory.cpp" />
-    <ClCompile Include="src\Components\Management\ObjectPoolComponent.cpp" />
     <ClCompile Include="src\Components\Interactions\ColliderComponent.cpp" />
+    <ClCompile Include="src\Components\Interactions\ClickableComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
@@ -238,7 +238,7 @@
     <ClInclude Include="src\Components\Graphics\AnimationDrawableComponent.h" />
     <ClInclude Include="src\Components\Graphics\AnimationFactory\Animation.h" />
     <ClInclude Include="src\Components\Graphics\AnimationFactory\XMLSpritesheetAnimationFactory.h" />
-    <ClInclude Include="src\Components\Management\ObjectPoolComponent.h" />
     <ClInclude Include="src\Components\Interactions\ColliderComponent.h" />
+    <ClInclude Include="src\Components\Interactions\ClickableComponent.h" />
   </ItemGroup>
 </Project>

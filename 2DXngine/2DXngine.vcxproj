@@ -33,6 +33,7 @@
     <ClCompile Include="src\SceneTest.cpp" />
     <ClCompile Include="src\TestGameHandler.cpp" />
     <ClCompile Include="src\TestGameHandlerWithScenes.cpp" />
+    <ClCompile Include="src\TestMouseCoordsComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\2DXngine.Core\2DXngine.Core.vcxproj">
@@ -45,6 +46,7 @@
     <ClInclude Include="src\SceneTest.h" />
     <ClInclude Include="src\TestGameHandler.h" />
     <ClInclude Include="src\TestGameHandlerWithScenes.h" />
+    <ClInclude Include="src\TestMouseCoordsComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cfg.ini" />
