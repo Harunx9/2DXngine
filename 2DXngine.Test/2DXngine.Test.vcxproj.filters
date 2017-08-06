@@ -30,6 +30,7 @@
     <ClCompile Include="src\Components\Animation\AnimationFactoryTest.cc" />
     <ClCompile Include="src\Components\Animation\AnimationComponentTest.cc" />
     <ClCompile Include="src\Components\ColliderComponenTest.cpp" />
+    <ClCompile Include="src\Graphics\CameraUnprojectTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Content\test.csv" />
