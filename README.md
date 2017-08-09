@@ -14,24 +14,27 @@ Features in development:
 
 - [x] type information system,
 - [x] component model game objects,
-- [ ] scene system,
+- [x] scene system,
 - [x] 2d renderer,
+- [x] Camera 2d,
 - [x] True Type Font rendering,
 - [ ] common components such as transform2d or sprite animation,
-  - [x] Transform 2d
-  - [ ] Sprite 2d
-  - [ ] Sprite animation
-  - [ ] Font
-  - [ ] Sprite atlas 
+  - [x] Transform 2d,
+  - [x] Sprite 2d,
+  - [ ] Sprite animation,
+  - [x] Collider,
+  - [x] Clickable component,
+  - [ ] Font,
+  - [ ] Sprite atlas,
 - [ ] game services for music, asset loading and so on,
-  - [x] Audio services
-  - [x] Asset management service
-  - [ ] Logging service
+  - [x] Audio services,
+  - [x] Asset management service,
+  - [ ] Logging service,
 - [ ] Utilities
-  - [x] Publisher - Subscriber events
-  - [x] CSV parser
-  - [ ] Timer
-  - [x] Simple math types like potnt and rectangle
+  - [x] Publisher - Subscriber events,
+  - [x] CSV parser,
+  - [ ] Timer,
+  - [x] Simple math types like potnt and rectangle,
 - [ ] Box2d integration,
 - [ ] Tiled maps integration,
 - [ ] Lua scripting,
