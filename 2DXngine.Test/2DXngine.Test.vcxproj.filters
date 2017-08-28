@@ -31,6 +31,7 @@
     <ClCompile Include="src\Components\Animation\AnimationComponentTest.cc" />
     <ClCompile Include="src\Components\ColliderComponenTest.cpp" />
     <ClCompile Include="src\Graphics\CameraUnprojectTest.cpp" />
+    <ClCompile Include="src\Components\TextDataComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\Content\test.csv" />
