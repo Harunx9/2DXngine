@@ -32,6 +32,9 @@
   <ItemGroup>
     <ClCompile Include="..\libs\pugixml\src\pugixml.cpp" />
     <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
+    <ClCompile Include="src\Components\Data\FontComponent.cpp" />
+    <ClCompile Include="src\Components\Data\TextComponent.cpp" />
+    <ClCompile Include="src\Components\Graphics\FontDrawableComponent.cpp" />
     <ClCompile Include="src\Components\Interactions\ClickableComponent.cpp" />
     <ClCompile Include="src\Components\Interactions\ColliderComponent.cpp" />
     <ClCompile Include="src\AppImplementations\App.cpp" />
@@ -111,6 +114,9 @@
     <ClInclude Include="..\libs\pugixml\src\pugixml.hpp" />
     <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
     <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
+    <ClInclude Include="src\Components\Data\FontComponent.h" />
+    <ClInclude Include="src\Components\Data\TextComponent.h" />
+    <ClInclude Include="src\Components\Graphics\FontDrawableComponent.h" />
     <ClInclude Include="src\Components\Interactions\ClickableComponent.h" />
     <ClInclude Include="src\Components\Interactions\ColliderComponent.h" />
     <ClInclude Include="src\AppImplementations\App.h" />
