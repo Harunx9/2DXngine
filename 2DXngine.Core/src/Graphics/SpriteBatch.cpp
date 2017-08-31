@@ -6,7 +6,8 @@ SpriteBatch::SpriteBatch(GraphicDevice* device) :
     _device(device),
     _customShader(nullptr),
     _isStarted(false),
-    _isInitialized(false)
+    _isInitialized(false),
+    _currentTarget(nullptr)
 {}
 
 SpriteBatch::~SpriteBatch()
@@ -116,7 +117,7 @@ void SpriteBatch::begin(ShaderProgram * shader, TextureWrap wrap, TextureFilter 
 void SpriteBatch::end()
 {
     //draw to frame buffer
-    if (this->_currentTarget == nullptr)
+    if (this->_currentTarget != nullptr)
     {
         this->_currentTarget->begin();
         this->drawBatch();

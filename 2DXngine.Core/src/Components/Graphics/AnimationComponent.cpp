@@ -20,7 +20,6 @@ AnimationComponent::~AnimationComponent()
 void AnimationComponent::initialize(bool force)
 {
     this->activate();
-
 }
 
 void AnimationComponent::terminate()

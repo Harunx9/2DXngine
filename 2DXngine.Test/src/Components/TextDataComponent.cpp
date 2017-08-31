@@ -29,7 +29,7 @@ protected:
 TEST_F(FontComponentTestFixute, component_should_load_desired_font)
 {
     auto path = AssetPath::create("Content\\babyblocks.ttf");
-    auto component = new FontComponent(path);
+    auto component = new FontComponent(path, Colors::white);
 
     component->baseInitialize();
 

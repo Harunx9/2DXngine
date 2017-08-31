@@ -114,6 +114,7 @@
     <ClInclude Include="..\libs\pugixml\src\pugixml.hpp" />
     <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
     <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
+    <ClInclude Include="src\Components\Components.h" />
     <ClInclude Include="src\Components\Data\FontComponent.h" />
     <ClInclude Include="src\Components\Data\TextComponent.h" />
     <ClInclude Include="src\Components\Graphics\FontDrawableComponent.h" />

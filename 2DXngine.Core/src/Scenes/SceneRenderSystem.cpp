@@ -42,6 +42,12 @@ void SceneRenderSystem::drawGameObjects(float deltaTime)
     for (auto& drawable : this->_drawables)
     {
         if (drawable->get_isVisible())
+        {
+           // this->_scene->get_renderer()->set_batchTarget(&drawable->get_layer());
+
             drawable->draw(this->_scene->get_renderer(), this->_scene->get_camera(), deltaTime);
+            
+           // this->_scene->get_renderer()->reset_batchTarget();
+        }
     }
 }

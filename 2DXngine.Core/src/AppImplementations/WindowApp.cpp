@@ -76,7 +76,6 @@ void WindowApp::run()
 
         while (accumulator >= this->_timeStep)
         {
-            
             this->_game->update(deltaTime);
             accumulator -= this->_timeStep;
         }

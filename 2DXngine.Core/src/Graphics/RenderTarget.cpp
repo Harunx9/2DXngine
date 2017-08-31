@@ -4,6 +4,7 @@
 RenderTarget::RenderTarget(int width, int height) :
     Texture(AssetPath::empty(), &Bitmap::empty(width, height))
 {
+    this->generate();
 }
 
 RenderTarget::~RenderTarget()
@@ -14,7 +15,6 @@ RenderTarget::~RenderTarget()
 void RenderTarget::generate()
 {
     glBindFramebuffer(GL_FRAMEBUFFER, this->_fbo);
-    Texture::generate();
     this->bind();
     glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, this->get_textureId(), 0);
     GLenum drawBuffers[1] = { GL_COLOR_ATTACHMENT0 };

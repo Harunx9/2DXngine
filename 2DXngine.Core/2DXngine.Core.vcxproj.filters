@@ -246,5 +246,6 @@
     <ClInclude Include="src\Components\Graphics\FontDrawableComponent.h" />
     <ClInclude Include="src\Components\Data\TextComponent.h" />
     <ClInclude Include="src\Components\Data\FontComponent.h" />
+    <ClInclude Include="src\Components\Components.h" />
   </ItemGroup>
 </Project>

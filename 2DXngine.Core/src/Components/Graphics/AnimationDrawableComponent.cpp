@@ -36,10 +36,10 @@ void AnimationDrawableComponent::terminate()
 void AnimationDrawableComponent::draw(Renderer * renderer, Camera * camera, float deltaTime)
 {
     renderer->get_batch()->begin(nullptr, this->_wrap, this->_filter, camera->get_viewMatrix());
-
+    auto frame = this->_animation->get_currentFrame();
     renderer->get_batch()->draw(this->_sprite->get_texture(),
         this->_transform->get_position(),
-        this->_animation->get_currentFrame(),
+        &frame,
         Colors::white,
         this->_transform->get_rotation(),
         this->_transform->get_origin(),

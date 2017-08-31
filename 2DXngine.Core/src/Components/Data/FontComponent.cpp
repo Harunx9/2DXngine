@@ -3,9 +3,10 @@
 #include "../../ContentManagement/ContentManagerService.h"
 #include "../../ContentManagement/DefaultAssets/TTFont.h"
 
-FontComponent::FontComponent(AssetPath path)
+FontComponent::FontComponent(AssetPath path, Color color)
     : Component("FontComponent"),
-    _path(path)
+    _path(path),
+    _color(color)
 {
 }
 

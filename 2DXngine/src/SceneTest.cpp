@@ -7,8 +7,13 @@
 #include <Graphics\Camera.h>
 #include "DotTestController.h"
 #include "TestMouseCoordsComponent.h"
+#include <Components\Graphics\FontDrawableComponent.h>
+#include <Components\Data\FontComponent.h>
+#include <Components\Data\TextComponent.h>
+#include <Components\Graphics\AnimationFactory\XMLSpritesheetAnimationFactory.h>
+#include <Components\Graphics\AnimationDrawableComponent.h>
 
-SceneTest::SceneTest(SpriteBatch* batch): Scene(batch, "SceneTest")
+SceneTest::SceneTest(SpriteBatch* batch) : Scene(batch, "SceneTest")
 {
 }
 
@@ -20,9 +25,9 @@ SceneTest::~SceneTest()
 void SceneTest::createScene()
 {
     Viewport vp = this->get_renderer()->get_graphics()->get_viewport();
-    this->_camera = new Camera(vp.width, vp.height);
+    this->_camera = new Camera(vp.width, vp.height, Colors::white);
     this->_camera->set_position(glm::vec2(0.f, 0.f));
-    GameObject* go = new GameObject("Dot1");
+    /*GameObject* go = new GameObject("Dot1");
     Transform* t1 = new Transform();
     t1->set_position(glm::vec2(100.f, 100.f));
     t1->set_origin(glm::vec2(0.5f));
@@ -60,5 +65,28 @@ void SceneTest::createScene()
     GameObject* go4 = new GameObject("MouseRecalc");
     go4->addComponent(new TestMouseCoordsComponent(this->_camera));
     this->get_gameObjectManager()->addGameObject(go4);
+
+    GameObject* go5 = new GameObject("TextObject");
+    Transform* t5 = new Transform();
+    t5->set_position(glm::vec2(400.f, 400.f));
+    go5->addComponent(new TextComponent("Test text"))
+        ->addComponent(new FontComponent(AssetPath::create("Content\\babyblocks.ttf"), Colors::red))
+        ->addComponent(t5)
+        ->addComponent(new FontDrawableComponent());
+
+    this->get_gameObjectManager()->addGameObject(go5);*/
+
+    GameObject* go6 = new GameObject("AnimationTest");
+    auto  animation = XMLSpritesheetAnimationFactory::createFromXmlWithAllNames(AssetPath::create("Content/TestAnimation.xml"));
+    Transform* t6 = new Transform();
+    t6->set_position(glm::vec2(600.f, 100.f));
+    t6->set_origin(glm::vec2(0.5f));
+    go6->addComponent(t6)
+        ->addComponent(new SpriteComponent("Content/TestAnimation.png"))
+        ->addComponent(animation)
+        ->addComponent(new AnimationDrawableComponent());
+    animation->play_animation("Fall", true);
+
+    this->get_gameObjectManager()->addGameObject(go6);
 }
 

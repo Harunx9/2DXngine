@@ -2,12 +2,16 @@
 #include <limits>
 #include <glm/glm.hpp>
 #include "../Utils/Macros/PropertyMacro.h"
+#include "Color.h"
+#include "SamplerState.h"
 #define NOMINMAX
 
 class Camera
 {
 public:
     Camera(int viewportWidth, int viewportHeight);
+    Camera(int viewportWidth, int viewportHeight, Color clearColor);
+    Camera(int viewportWidth, int viewportHeight, Color clearColor, TextureWrap wrap, TextureFilter filter);
     ~Camera();
 
     inline float get_rotation() const
@@ -35,11 +39,13 @@ public:
     glm::vec2 unproject(glm::vec2 screenPosition);
     glm::mat4 get_viewMatrix();
 
-    PROPERTY(int ,viewportWidth)
-    PROPERTY(int ,viewportHeight)
+    PROPERTY(int, viewportWidth)
+    PROPERTY(int, viewportHeight)
     PROPERTY(glm::vec2, position)
     PROPERTY(glm::vec2, origin)
-
+    PROPERTY(TextureWrap, wrap)
+    PROPERTY(TextureFilter, filter);
+    READONLY_PROPERTY(Color, clearColor)
 private:
     float _zoom;
     float _rotation;

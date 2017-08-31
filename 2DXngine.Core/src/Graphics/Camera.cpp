@@ -5,10 +5,19 @@
 
 
 Camera::Camera(int viewportWidth, int viewportHeight) :
+    Camera(viewportWidth, viewportHeight, Colors::black){}
+
+Camera::Camera(int viewportWidth, int viewportHeight, Color clearColor) :
+    Camera(viewportWidth, viewportHeight, clearColor, TextureWrap::CLAMP_TO_EDGE, TextureFilter::LINEAR_FILTER) {}
+
+Camera::Camera(int viewportWidth, int viewportHeight, Color clearColor, TextureWrap wrap, TextureFilter filter):
     _viewportWidth(viewportWidth),
     _viewportHeight(viewportHeight),
     _rotation(0.f),
-    _zoom(1.0f)
+    _zoom(1.0f),
+    _clearColor(clearColor),
+    _filter(filter),
+    _wrap(wrap)
 {
     this->_origin = glm::vec2(_viewportWidth * 0.5f, _viewportHeight * 0.5f);
 }

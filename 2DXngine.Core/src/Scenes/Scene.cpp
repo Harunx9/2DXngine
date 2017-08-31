@@ -5,6 +5,7 @@
 #include "SceneRenderSystem.h"
 #include "SceneUpdateSystem.h"
 #include "../Services/ServiceLocator.h"
+#include "../Graphics/Camera.h"
 
 Scene::Scene(SpriteBatch * batch, std::string name) :
     _name(name),
@@ -40,6 +41,8 @@ void Scene::initialize()
 {
     if (this->_isInitialized) return;
 
+    this->_renderer->registerLayer(&DefaultLayers::GAMEPLAY_LAYER);
+    this->_renderer->registerLayer(&DefaultLayers::GUI_LAYER);
     this->createScene();
     this->_gameObjectManager->initialize();
     this->_renderSystem->initialize();
@@ -72,8 +75,10 @@ void Scene::update(float deltaTime)
 
 void Scene::draw(float deltaTime)
 {
-    this->_renderer->get_graphics()->clear(Colors::black);
+    this->_renderer->get_graphics()->clear(this->_camera->get_clearColor());
+    //this->_renderer->beginRendering();
     this->_renderSystem->drawGameObjects(deltaTime);
+    //this->_renderer->drawAllTargets(this->_camera->get_viewMatrix(), TextureFilter::LINEAR_FILTER, TextureWrap::CLAMP_TO_EDGE);
     this->_renderer->get_graphics()->swapBuffers();
 }
 

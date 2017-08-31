@@ -11,4 +11,7 @@ DEFINE_TYPE_INFO(ColliderComponent);
 DEFINE_TYPE_INFO(AnimationComponent);
 DEFINE_TYPE_INFO(AnimationDrawableComponent);
 DEFINE_TYPE_INFO(ClickableComponent);
+DEFINE_TYPE_INFO(TextComponent);
+DEFINE_TYPE_INFO(FontComponent);
+DEFINE_TYPE_INFO(FontDrawableComponent);
 #endif

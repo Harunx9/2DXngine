@@ -19,6 +19,16 @@ public:
 
     READONLY_PROPERTY(SpriteBatch*, batch)
     READONLY_PROPERTY(GraphicDevice*, graphics)
+
+    void set_batchTarget(SceneLayer* layer)
+    {
+        this->_batch->set_renderTarget(this->_currentTargets[layer->get_name()]);
+    }
+
+    void reset_batchTarget()
+    {
+        this->_batch->set_renderTarget(nullptr);
+    }
 private:
     std::vector<SceneLayer*> _registerdLayer;
     std::map<std::string, RenderTarget*> _currentTargets;
