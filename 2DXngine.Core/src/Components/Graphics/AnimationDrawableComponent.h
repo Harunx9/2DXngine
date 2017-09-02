@@ -9,6 +9,7 @@ class AnimationDrawableComponent : public DrawableComponent
 public:
     ADD_TYPE_META_INFO()
         AnimationDrawableComponent(TextureWrap wrap, TextureFilter filter, SceneLayer layer);
+    AnimationDrawableComponent(TextureWrap wrap, TextureFilter filter);
     AnimationDrawableComponent(SceneLayer layer);
     AnimationDrawableComponent();
     ~AnimationDrawableComponent();

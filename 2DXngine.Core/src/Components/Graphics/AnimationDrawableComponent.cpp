@@ -21,6 +21,11 @@ AnimationDrawableComponent::AnimationDrawableComponent(SceneLayer layer) : Anima
 {
 }
 
+AnimationDrawableComponent::AnimationDrawableComponent(TextureWrap wrap, TextureFilter filter) :
+    AnimationDrawableComponent(wrap, filter, DefaultLayers::GAMEPLAY_LAYER)
+{
+}
+
 AnimationDrawableComponent::~AnimationDrawableComponent()
 {
 }

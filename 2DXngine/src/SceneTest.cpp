@@ -27,7 +27,7 @@ void SceneTest::createScene()
     Viewport vp = this->get_renderer()->get_graphics()->get_viewport();
     this->_camera = new Camera(vp.width, vp.height, Colors::white);
     this->_camera->set_position(glm::vec2(0.f, 0.f));
-    /*GameObject* go = new GameObject("Dot1");
+    GameObject* go = new GameObject("Dot1");
     Transform* t1 = new Transform();
     t1->set_position(glm::vec2(100.f, 100.f));
     t1->set_origin(glm::vec2(0.5f));
@@ -74,18 +74,19 @@ void SceneTest::createScene()
         ->addComponent(t5)
         ->addComponent(new FontDrawableComponent());
 
-    this->get_gameObjectManager()->addGameObject(go5);*/
+    this->get_gameObjectManager()->addGameObject(go5);
 
     GameObject* go6 = new GameObject("AnimationTest");
-    auto  animation = XMLSpritesheetAnimationFactory::createFromXmlWithAllNames(AssetPath::create("Content/TestAnimation.xml"));
+    auto  animation = XMLSpritesheetAnimationFactory::createFromXmlWithAllNames(AssetPath::create("Content/TestAnim.xml"));
     Transform* t6 = new Transform();
     t6->set_position(glm::vec2(600.f, 100.f));
     t6->set_origin(glm::vec2(0.5f));
+    t6->set_scale(4.f);
     go6->addComponent(t6)
-        ->addComponent(new SpriteComponent("Content/TestAnimation.png"))
+        ->addComponent(new SpriteComponent("Content/TestAnim.png"))
         ->addComponent(animation)
-        ->addComponent(new AnimationDrawableComponent());
-    animation->play_animation("Fall", true);
+        ->addComponent(new AnimationDrawableComponent(TextureWrap::CLAMP_TO_EDGE, TextureFilter::POINT_FILTER));
+    animation->play_animation("ball", true);
 
     this->get_gameObjectManager()->addGameObject(go6);
 }

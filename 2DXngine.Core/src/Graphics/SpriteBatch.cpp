@@ -468,8 +468,16 @@ void SpriteBatch::draw(Texture * texture, glm::vec2 position, RectangleI * sourc
     auto batchItem = createNewItem();
     if (batchItem == nullptr)
         return;
+    glm::vec2 size;
 
-    auto size = glm::vec2(texture->get_bitmap()->get_width(), texture->get_bitmap()->get_height()) * scale;
+    if (sourceRectangle == nullptr)
+    {
+        size = glm::vec2(texture->get_bitmap()->get_width(), texture->get_bitmap()->get_height()) * scale;
+    }
+    else
+    {
+        size = glm::vec2(sourceRectangle->get_width(), sourceRectangle->get_height()) * scale;
+    }
 
     batchItem->texture = texture->get_textureId();
 
