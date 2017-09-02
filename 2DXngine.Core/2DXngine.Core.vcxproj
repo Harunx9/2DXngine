@@ -174,6 +174,12 @@
     <ClInclude Include="src\Input\InputService.h" />
     <ClInclude Include="src\Input\KeyboardStateHandler.h" />
     <ClInclude Include="src\Input\MouseStateHandler.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\Group.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\ImageLayer.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\ObjectLayer.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\Property.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\TileLayer.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\TiledMap.h" />
     <ClInclude Include="src\Scenes\Scene.h" />
     <ClInclude Include="src\Scenes\SceneBehavior.h" />
     <ClInclude Include="src\Scenes\SceneBehaviorManager.h" />

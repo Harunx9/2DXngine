@@ -247,5 +247,11 @@
     <ClInclude Include="src\Components\Data\TextComponent.h" />
     <ClInclude Include="src\Components\Data\FontComponent.h" />
     <ClInclude Include="src\Components\Components.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\Group.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\ImageLayer.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\ObjectLayer.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\Property.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\TiledMap.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\TileLayer.h" />
   </ItemGroup>
 </Project>

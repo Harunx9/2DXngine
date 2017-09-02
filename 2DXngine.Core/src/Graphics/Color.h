@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include <gl\glew.h>
 
 struct Color
@@ -17,6 +18,18 @@ struct Color
         this->g = g / (GLfloat)255;
         this->b = b / (GLfloat)255;
         this->a = a / (GLfloat)255;
+    }
+
+    //TODO impl
+    Color(std::string hash)
+    {
+
+    }
+
+    Color() : 
+        r(0), g(0), b(0), a(1)
+    {
+
     }
 
     GLfloat r, g, b, a;
