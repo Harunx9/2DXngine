@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <map>
 #include <functional>
 #include <algorithm>
 #include "../../../Utils/Macros/PropertyMacro.h"
@@ -41,6 +42,15 @@ public:
     {
     }
 
+    void addProperty(const Property prop)
+    {
+        this->_properties[prop.get_name()] = prop;
+    }
+
+    Property getProperty(const std::string name)
+    {
+        return _properties[name];
+    }
     
     PROPERTY(Data, data)
     READONLY_PROPERTY(std::string, name)
@@ -53,4 +63,7 @@ public:
     READONLY_PROPERTY(int, offsetx)
     READONLY_PROPERTY(int, offsety)
     READONLY_PROPERTY(int, order)
+
+private:
+    std::map<std::string, Property> _properties;
 };

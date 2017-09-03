@@ -3,6 +3,7 @@
 #include <vector>
 #include <functional>
 #include <algorithm>
+#include <map>
 #include "../../../Utils/Macros/PropertyMacro.h"
 #include "../../../Graphics/Color.h"
 #include "Property.h"
@@ -148,7 +149,7 @@ public:
         _offsety(offsety),
         _draworder(draworder)
     {
-            
+        this->_objects = std::vector<MapObject>();
     }
 
     ~ObjectGroup()
@@ -156,15 +157,14 @@ public:
 
     }
 
-    void addProperty(Property prop)
+    void addProperty(const Property prop)
     {
-        this->_properties.push_back(prop);
+        this->_properties[prop.get_name()] = prop;
     }
 
-    Property findProperty(std::function<bool(Property)> pred)
+    Property getProperty(const std::string name)
     {
-        auto  it = std::find_if(this->_properties.begin(), this->_properties.end(), pred);
-        return *it;
+        return _properties[name];
     }
 
     void addObject(MapObject object)
@@ -203,6 +203,8 @@ public:
     READONLY_PROPERTY(int, offsetx)
     READONLY_PROPERTY(int, offsety)
     READONLY_PROPERTY(DrawOrder, draworder)
-    READONLY_PROPERTY(std::vector<Property>, properties)
     READONLY_PROPERTY(std::vector<MapObject>, objects)
+
+private:
+    std::map<std::string, Property> _properties;
 };
