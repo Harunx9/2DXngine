@@ -32,6 +32,9 @@
   <ItemGroup>
     <ClCompile Include="..\libs\pugixml\src\pugixml.cpp" />
     <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\GroupParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\ImageLayerParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\PropertiesParser.cpp" />
     <ClCompile Include="src\Components\Data\FontComponent.cpp" />
     <ClCompile Include="src\Components\Data\TextComponent.cpp" />
     <ClCompile Include="src\Components\Graphics\FontDrawableComponent.cpp" />
@@ -84,6 +87,12 @@
     <ClCompile Include="src\Input\InputService.cpp" />
     <ClCompile Include="src\Input\KeyboardStateHandler.cpp" />
     <ClCompile Include="src\Input\MouseStateHandler.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\GameObjectFactories.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\ObjectGroupParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\TileLayerParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\TileMapParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\TiledMapLoader.cpp" />
+    <ClCompile Include="src\Scenes\LoadableScene.cpp" />
     <ClCompile Include="src\Scenes\Scene.cpp" />
     <ClCompile Include="src\Scenes\SceneBehavior.cpp" />
     <ClCompile Include="src\Scenes\SceneBehaviorManager.cpp" />
@@ -114,6 +123,9 @@
     <ClInclude Include="..\libs\pugixml\src\pugixml.hpp" />
     <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
     <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\GroupParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\ImageLayerParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\PropertiesParser.h" />
     <ClInclude Include="src\Components\Components.h" />
     <ClInclude Include="src\Components\Data\FontComponent.h" />
     <ClInclude Include="src\Components\Data\TextComponent.h" />
@@ -180,10 +192,17 @@
     <ClInclude Include="src\Integrations\Tiled\DataStructures\Property.h" />
     <ClInclude Include="src\Integrations\Tiled\DataStructures\TileLayer.h" />
     <ClInclude Include="src\Integrations\Tiled\DataStructures\TiledMap.h" />
+    <ClInclude Include="src\Integrations\Tiled\GameObjectFactories.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\ObjectGroupParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\TileLayerParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\TileMapParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\TiledMapLoader.h" />
+    <ClInclude Include="src\Scenes\LoadableScene.h" />
     <ClInclude Include="src\Scenes\Scene.h" />
     <ClInclude Include="src\Scenes\SceneBehavior.h" />
     <ClInclude Include="src\Scenes\SceneBehaviorManager.h" />
     <ClInclude Include="src\Scenes\SceneLayer.h" />
+    <ClInclude Include="src\Scenes\SceneLoader.h" />
     <ClInclude Include="src\Scenes\SceneManagerService.h" />
     <ClInclude Include="src\Scenes\SceneRenderSystem.h" />
     <ClInclude Include="src\Scenes\SceneUpdateSystem.h" />

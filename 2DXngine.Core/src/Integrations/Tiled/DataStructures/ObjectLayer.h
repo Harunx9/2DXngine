@@ -20,16 +20,16 @@ enum ObjectType
 
 enum VerticalAlign
 {
-    TOP,
-    CENTER,
-    BOTTOM
+    VA_TOP,
+    VA_CENTER,
+    VA_BOTTOM
 };
 
 enum HorizontalAling
 {
-    LEFT,
-    CENTER,
-    RIGHT
+    HA_LEFT,
+    HA_CENTER,
+    HA_RIGHT
 };
 
 enum DrawOrder
@@ -89,7 +89,7 @@ public:
         float rotation,
         bool visible,
         std::vector<TmxPoint> points,
-        ObjectType tmxtype) : 
+        ObjectType tmxtype) :
         MapObject(id, name, type, x, y, width, height, rotation, visible, tmxtype)
     {
         _points = points;
@@ -102,7 +102,7 @@ public:
         int width, int height,
         float rotation,
         bool visible,
-        TmxText text) : 
+        TmxText text) :
         MapObject(id, name, type, x, y, width, height, rotation, visible, ObjectType::TEXT)
     {
         _text = text;
@@ -113,17 +113,17 @@ public:
     }
 
     READONLY_PROPERTY(int, id)
-    READONLY_PROPERTY(std::string, name)
-    READONLY_PROPERTY(std::string, type)
-    READONLY_PROPERTY(int, x)
-    READONLY_PROPERTY(int, y)
-    READONLY_PROPERTY(int, width)
-    READONLY_PROPERTY(int, height)
-    READONLY_PROPERTY(float, rotation)
-    READONLY_PROPERTY(bool, visible)
-    READONLY_PROPERTY(std::vector<TmxPoint>, points)
-    READONLY_PROPERTY(ObjectType, tmxtype)
-    READONLY_PROPERTY(TmxText, text)
+        READONLY_PROPERTY(std::string, name)
+        READONLY_PROPERTY(std::string, type)
+        READONLY_PROPERTY(int, x)
+        READONLY_PROPERTY(int, y)
+        READONLY_PROPERTY(int, width)
+        READONLY_PROPERTY(int, height)
+        READONLY_PROPERTY(float, rotation)
+        READONLY_PROPERTY(bool, visible)
+        READONLY_PROPERTY(std::vector<TmxPoint>, points)
+        READONLY_PROPERTY(ObjectType, tmxtype)
+        READONLY_PROPERTY(TmxText, text)
 };
 
 
@@ -138,7 +138,7 @@ public:
         float opacity,
         bool visible,
         int offsetx, int offsety,
-        DrawOrder draworder):
+        DrawOrder draworder) :
         _name(name),
         _color(color),
         _x(x), _y(y),
@@ -155,6 +155,12 @@ public:
     ~ObjectGroup()
     {
 
+    }
+
+    void addProperties(const std::vector<Property> props)
+    {
+        for (auto& prop : props)
+            this->_properties[prop.get_name()] = prop;
     }
 
     void addProperty(const Property prop)
@@ -193,17 +199,17 @@ public:
     }
 
     READONLY_PROPERTY(std::string, name)
-    READONLY_PROPERTY(Color, color)
-    READONLY_PROPERTY(int, x)
-    READONLY_PROPERTY(int, y)
-    READONLY_PROPERTY(int, width)
-    READONLY_PROPERTY(int, height)
-    READONLY_PROPERTY(float, opacity)
-    READONLY_PROPERTY(bool, visible)
-    READONLY_PROPERTY(int, offsetx)
-    READONLY_PROPERTY(int, offsety)
-    READONLY_PROPERTY(DrawOrder, draworder)
-    READONLY_PROPERTY(std::vector<MapObject>, objects)
+        READONLY_PROPERTY(Color, color)
+        READONLY_PROPERTY(int, x)
+        READONLY_PROPERTY(int, y)
+        READONLY_PROPERTY(int, width)
+        READONLY_PROPERTY(int, height)
+        READONLY_PROPERTY(float, opacity)
+        READONLY_PROPERTY(bool, visible)
+        READONLY_PROPERTY(int, offsetx)
+        READONLY_PROPERTY(int, offsety)
+        READONLY_PROPERTY(DrawOrder, draworder)
+        READONLY_PROPERTY(std::vector<MapObject>, objects)
 
 private:
     std::map<std::string, Property> _properties;

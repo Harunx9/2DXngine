@@ -150,6 +150,15 @@
     <ClCompile Include="src\Components\Graphics\FontDrawableComponent.cpp" />
     <ClCompile Include="src\Components\Data\FontComponent.cpp" />
     <ClCompile Include="src\Components\Data\TextComponent.cpp" />
+    <ClCompile Include="src\Scenes\LoadableScene.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\ObjectGroupParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\TileLayerParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\TileMapParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\GameObjectFactories.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\TiledMapLoader.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\GroupParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\PropertiesParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\ImageLayerParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
@@ -253,5 +262,15 @@
     <ClInclude Include="src\Integrations\Tiled\DataStructures\Property.h" />
     <ClInclude Include="src\Integrations\Tiled\DataStructures\TiledMap.h" />
     <ClInclude Include="src\Integrations\Tiled\DataStructures\TileLayer.h" />
+    <ClInclude Include="src\Scenes\SceneLoader.h" />
+    <ClInclude Include="src\Scenes\LoadableScene.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\ObjectGroupParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\TileLayerParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\TileMapParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\GameObjectFactories.h" />
+    <ClInclude Include="src\Integrations\Tiled\TiledMapLoader.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\PropertiesParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\GroupParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\ImageLayerParser.h" />
   </ItemGroup>
 </Project>
