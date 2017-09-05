@@ -57,11 +57,13 @@ struct TmxText
     bool kerning;
     VerticalAlign valign;
     HorizontalAling halign;
+    std::string value;
 };
 
 class MapObject
 {
 public:
+    MapObject() {}
     MapObject(int id,
         std::string name,
         std::string type,
@@ -112,18 +114,37 @@ public:
     {
     }
 
+    void addProperties(const std::vector<Property> props)
+    {
+        for (auto& prop : props)
+            this->_properties[prop.get_name()] = prop;
+    }
+
+    void addProperty(const Property prop)
+    {
+        this->_properties[prop.get_name()] = prop;
+    }
+
+    Property getProperty(const std::string name)
+    {
+        return _properties[name];
+    }
+
     READONLY_PROPERTY(int, id)
-        READONLY_PROPERTY(std::string, name)
-        READONLY_PROPERTY(std::string, type)
-        READONLY_PROPERTY(int, x)
-        READONLY_PROPERTY(int, y)
-        READONLY_PROPERTY(int, width)
-        READONLY_PROPERTY(int, height)
-        READONLY_PROPERTY(float, rotation)
-        READONLY_PROPERTY(bool, visible)
-        READONLY_PROPERTY(std::vector<TmxPoint>, points)
-        READONLY_PROPERTY(ObjectType, tmxtype)
-        READONLY_PROPERTY(TmxText, text)
+    READONLY_PROPERTY(std::string, name)
+    READONLY_PROPERTY(std::string, type)
+    READONLY_PROPERTY(int, x)
+    READONLY_PROPERTY(int, y)
+    READONLY_PROPERTY(int, width)
+    READONLY_PROPERTY(int, height)
+    READONLY_PROPERTY(float, rotation)
+    READONLY_PROPERTY(bool, visible)
+    READONLY_PROPERTY(std::vector<TmxPoint>, points)
+    READONLY_PROPERTY(ObjectType, tmxtype)
+    READONLY_PROPERTY(TmxText, text)
+
+private:
+    std::map<std::string, Property> _properties;
 };
 
 
@@ -199,17 +220,17 @@ public:
     }
 
     READONLY_PROPERTY(std::string, name)
-        READONLY_PROPERTY(Color, color)
-        READONLY_PROPERTY(int, x)
-        READONLY_PROPERTY(int, y)
-        READONLY_PROPERTY(int, width)
-        READONLY_PROPERTY(int, height)
-        READONLY_PROPERTY(float, opacity)
-        READONLY_PROPERTY(bool, visible)
-        READONLY_PROPERTY(int, offsetx)
-        READONLY_PROPERTY(int, offsety)
-        READONLY_PROPERTY(DrawOrder, draworder)
-        READONLY_PROPERTY(std::vector<MapObject>, objects)
+    READONLY_PROPERTY(Color, color)
+    READONLY_PROPERTY(int, x)
+    READONLY_PROPERTY(int, y)
+    READONLY_PROPERTY(int, width)
+    READONLY_PROPERTY(int, height)
+    READONLY_PROPERTY(float, opacity)
+    READONLY_PROPERTY(bool, visible)
+    READONLY_PROPERTY(int, offsetx)
+    READONLY_PROPERTY(int, offsety)
+    READONLY_PROPERTY(DrawOrder, draworder)
+    READONLY_PROPERTY(std::vector<MapObject>, objects)
 
 private:
     std::map<std::string, Property> _properties;

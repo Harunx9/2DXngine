@@ -11,7 +11,10 @@ public:
 
     MapObject parse(pugi::xml_node& node);
 private:
-    MapObject paseMapObjectAttributes(pugi::xml_node& node);
+    MapObject parsePolylineObject(pugi::xml_node& node, pugi::xml_node& lastChild);
+    MapObject parseTextObject(pugi::xml_node& node, pugi::xml_node& lastChild);
+    MapObject parsePlainMapObject(pugi::xml_node& node);
+    PropertiesParser _propParser;
 };
 
 class ObjectGroupParser

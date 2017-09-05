@@ -66,3 +66,177 @@ ObjectGroup ObjectGroupParser::parse(pugi::xml_node& node)
 
     return group;
 }
+
+MapObjectParser::MapObjectParser()
+{
+}
+
+MapObjectParser::~MapObjectParser()
+{
+}
+
+MapObject MapObjectParser::parse(pugi::xml_node & node)
+{
+    auto lastChild = node.last_child();
+    MapObject obj;
+    auto name = std::string(lastChild.name());
+    if (name.compare("properties") != 0)
+    {
+        if (name.compare("text") != 0)
+        {
+            obj = this->parsePolylineObject(node, lastChild);
+        }
+        else
+        {
+            obj = this->parseTextObject(node, lastChild);
+        }
+    }
+    else
+    {
+        obj = this->parsePlainMapObject(node);
+    }
+
+    auto properties = node.child("properties");
+    if (properties.empty() == false)
+    {
+        auto parsedProps = this->_propParser.parse(node);
+        obj.addProperties(parsedProps);
+    }
+
+    return obj;
+}
+
+MapObject MapObjectParser::parsePolylineObject(pugi::xml_node & node, pugi::xml_node & lastChild)
+{
+    auto id = node.attribute("id");
+    auto name = node.attribute("name");
+    auto type = node.attribute("type");
+    auto x = node.attribute("x");
+    auto y = node.attribute("y");
+    auto width = node.attribute("width");
+    auto height = node.attribute("height");
+    auto rotation = node.attribute("rotation");
+    auto visible = node.attribute("visible");
+
+
+
+    return MapObject(
+        id.as_int(),
+        name.empty() ? "" : std::string(name.as_string()),
+        type.empty() ? "" : std::string(type.as_string()),
+        x.as_int(),
+        y.as_int(),
+        width.empty() ? 0 : width.as_int(),
+        height.empty() ? 0 : height.as_int(),
+        rotation.empty() ? 0.f : rotation.as_float(),
+        visible.empty() ? true : visible.as_bool()
+    );
+}
+
+MapObject MapObjectParser::parseTextObject(pugi::xml_node & node, pugi::xml_node & lastChild)
+{
+    auto id = node.attribute("id");
+    auto name = node.attribute("name");
+    auto type = node.attribute("type");
+    auto x = node.attribute("x");
+    auto y = node.attribute("y");
+    auto width = node.attribute("width");
+    auto height = node.attribute("height");
+    auto rotation = node.attribute("rotation");
+    auto visible = node.attribute("visible");
+
+    auto text_fontfamily = lastChild.attribute("fontfamily");
+    auto text_pixelsize = lastChild.attribute("pixelsize");
+    auto text_wrap = lastChild.attribute("wrap");
+    auto text_color = lastChild.attribute("color");
+    auto text_bold = lastChild.attribute("bold");
+    auto text_italic = lastChild.attribute("italic");
+    auto text_underline = lastChild.attribute("underline");
+    auto text_strikeout = lastChild.attribute("strikeout");
+    auto text_kerning = lastChild.attribute("kerning");
+    auto text_halign = lastChild.attribute("halign");
+    auto text_valign = lastChild.attribute("valign");
+    auto text_value = std::string(lastChild.value());
+    
+    VerticalAlign va = VA_TOP;
+    HorizontalAling ha = HA_LEFT;
+
+    if (text_halign.empty() == false)
+    {
+        auto val = std::string(text_halign.as_string());
+        if (val.compare("center"))
+        {
+            ha = HA_CENTER;
+        }
+        if (val.compare("right"))
+        {
+            ha = HA_RIGHT;
+        }
+    }
+
+    if (text_valign.empty() == false)
+    {
+        auto val = std::string(text_valign.as_string());
+        if (val.compare("center"))
+        {
+            va = VA_CENTER;
+        }
+        if (val.compare("bottom"))
+        {
+            va = VA_BOTTOM;
+        }
+    }
+
+    TmxText text = {
+        text_fontfamily.empty() ? "sans-serif" : std::string(text_fontfamily.value()),
+        text_pixelsize.empty() ? 16 : text_pixelsize.as_int(),
+        text_wrap.empty() ? false : text_wrap.as_bool(),
+        text_color.empty() ? Color("#000000") : Color(std::string(text_color.as_string())),
+        text_bold.empty() ? false : text_bold.as_bool(),
+        text_italic.empty() ? false : text_italic.as_bool(),
+        text_underline.empty() ? false : text_underline.as_bool(),
+        text_strikeout.empty() ? false : text_strikeout.as_bool(),
+        text_kerning.empty() ? true : text_kerning.as_bool(),
+        va,
+        ha,
+        text_value
+    };
+
+    return MapObject(
+        id.as_int(),
+        name.empty() ? "" : std::string(name.as_string()),
+        type.empty() ? "" : std::string(type.as_string()),
+        x.as_int(),
+        y.as_int(),
+        width.empty() ? 0 : width.as_int(),
+        height.empty() ? 0 : height.as_int(),
+        rotation.empty() ? 0.f : rotation.as_float(),
+        visible.empty() ? true : visible.as_bool(),
+        text
+    );
+}
+
+MapObject MapObjectParser::parsePlainMapObject(pugi::xml_node & node)
+{
+    auto id = node.attribute("id");
+    auto name = node.attribute("name");
+    auto type = node.attribute("type");
+    auto x = node.attribute("x");
+    auto y = node.attribute("y");
+    auto width = node.attribute("width");
+    auto height = node.attribute("height");
+    auto rotation = node.attribute("rotation");
+    auto visible = node.attribute("visible");
+
+    return MapObject(
+        id.as_int(),
+        name.empty() ? "" : std::string(name.as_string()),
+        type.empty() ? "" : std::string(type.as_string()),
+        x.as_int(),
+        y.as_int(),
+        width.empty() ? 0 : width.as_int(),
+        height.empty() ? 0 : height.as_int(),
+        rotation.empty() ? 0.f : rotation.as_float(),
+        visible.empty() ? true : visible.as_bool()
+    );
+}
