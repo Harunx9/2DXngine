@@ -145,19 +145,37 @@ MapObject MapObjectParser::parseTextObject(pugi::xml_node & node, pugi::xml_node
     auto rotation = node.attribute("rotation");
     auto visible = node.attribute("visible");
 
-    auto text_fontfamily = lastChild.attribute("fontfamily");
-    auto text_pixelsize = lastChild.attribute("pixelsize");
-    auto text_wrap = lastChild.attribute("wrap");
-    auto text_color = lastChild.attribute("color");
-    auto text_bold = lastChild.attribute("bold");
-    auto text_italic = lastChild.attribute("italic");
-    auto text_underline = lastChild.attribute("underline");
-    auto text_strikeout = lastChild.attribute("strikeout");
-    auto text_kerning = lastChild.attribute("kerning");
-    auto text_halign = lastChild.attribute("halign");
-    auto text_valign = lastChild.attribute("valign");
-    auto text_value = std::string(lastChild.value());
-    
+    TmxText text = this->parseTmxText(lastChild);
+
+    return MapObject(
+        id.as_int(),
+        name.empty() ? "" : std::string(name.as_string()),
+        type.empty() ? "" : std::string(type.as_string()),
+        x.as_int(),
+        y.as_int(),
+        width.empty() ? 0 : width.as_int(),
+        height.empty() ? 0 : height.as_int(),
+        rotation.empty() ? 0.f : rotation.as_float(),
+        visible.empty() ? true : visible.as_bool(),
+        text
+    );
+}
+
+TmxText MapObjectParser::parseTmxText(pugi::xml_node & node)
+{
+    auto text_fontfamily = node.attribute("fontfamily");
+    auto text_pixelsize = node.attribute("pixelsize");
+    auto text_wrap = node.attribute("wrap");
+    auto text_color = node.attribute("color");
+    auto text_bold = node.attribute("bold");
+    auto text_italic = node.attribute("italic");
+    auto text_underline = node.attribute("underline");
+    auto text_strikeout = node.attribute("strikeout");
+    auto text_kerning = node.attribute("kerning");
+    auto text_halign = node.attribute("halign");
+    auto text_valign = node.attribute("valign");
+    auto text_value = std::string(node.value());
+
     VerticalAlign va = VA_TOP;
     HorizontalAling ha = HA_LEFT;
 
@@ -187,7 +205,7 @@ MapObject MapObjectParser::parseTextObject(pugi::xml_node & node, pugi::xml_node
         }
     }
 
-    TmxText text = {
+    return {
         text_fontfamily.empty() ? "sans-serif" : std::string(text_fontfamily.value()),
         text_pixelsize.empty() ? 16 : text_pixelsize.as_int(),
         text_wrap.empty() ? false : text_wrap.as_bool(),
@@ -201,19 +219,11 @@ MapObject MapObjectParser::parseTextObject(pugi::xml_node & node, pugi::xml_node
         ha,
         text_value
     };
+}
 
-    return MapObject(
-        id.as_int(),
-        name.empty() ? "" : std::string(name.as_string()),
-        type.empty() ? "" : std::string(type.as_string()),
-        x.as_int(),
-        y.as_int(),
-        width.empty() ? 0 : width.as_int(),
-        height.empty() ? 0 : height.as_int(),
-        rotation.empty() ? 0.f : rotation.as_float(),
-        visible.empty() ? true : visible.as_bool(),
-        text
-    );
+MapObjectParser::PointObject MapObjectParser::parsePointObject(pugi::xml_node & node)
+{
+    return PointObject();
 }
 
 MapObject MapObjectParser::parsePlainMapObject(pugi::xml_node & node)

@@ -11,8 +11,16 @@ public:
 
     MapObject parse(pugi::xml_node& node);
 private:
+    struct PointObject
+    {
+        std::vector<TmxPoint> parsedPoints;
+        ObjectType type;
+    };
+    
     MapObject parsePolylineObject(pugi::xml_node& node, pugi::xml_node& lastChild);
     MapObject parseTextObject(pugi::xml_node& node, pugi::xml_node& lastChild);
+    TmxText parseTmxText(pugi::xml_node& node);
+    PointObject parsePointObject(pugi::xml_node& node);
     MapObject parsePlainMapObject(pugi::xml_node& node);
     PropertiesParser _propParser;
 };

@@ -58,11 +58,20 @@ TEST(StringUtilsTest, string_can_be_proper_splitted)
     ASSERT_EQ("5,6", result[2]);
 }
 
-TEST(StringUtilsTest, base64_string_can_be_decodec_properly)
+TEST(StringUtilsTest, base64_string_can_be_decoded_properly)
 {
     std::string testData = "YWJjZGU=";
 
     auto result = stringutils::Base64decode(testData);
 
     ASSERT_EQ("abcde", result);
+}
+
+TEST(StringUtilsTest, base64_string_can_be_encoded_properly)
+{
+    std::string testData = "abcde";
+
+    auto result = stringutils::Base64encode(testData);
+
+    ASSERT_EQ("YWJjZGU=", result);
 }
