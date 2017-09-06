@@ -20,7 +20,7 @@ csv_content SimpleCSV::parseFile(std::string filename)
 
     while (std::getline(infile, line))
     {
-        line = trim(line);
+        line = stringutils::trim(line);
         csv_line parsedLine = this->parseLine(line);
         content.push_back(parsedLine);
     }
@@ -34,7 +34,7 @@ csv_line SimpleCSV::parseLine(std::string line)
     csv_line parsedLine;
     while (std::getline(iss, str, this->_separator))
     {
-        str = trim(str);
+        str = stringutils::trim(str);
         parsedLine.push_back(str);
     }
     return parsedLine;
