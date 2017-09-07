@@ -1,4 +1,5 @@
 #include "ObjectGroupParser.h"
+#include "../../../Utils/StringUtils.h"
 
 ObjectGroupParser::ObjectGroupParser()
 {
@@ -80,7 +81,7 @@ MapObject MapObjectParser::parse(pugi::xml_node & node)
     auto lastChild = node.last_child();
     MapObject obj;
     auto name = std::string(lastChild.name());
-    if (name.compare("properties") != 0)
+    if (name.compare("properties") != 0 && name.compare("ellipse") != 1)
     {
         if (name.compare("text") != 0)
         {
@@ -118,7 +119,7 @@ MapObject MapObjectParser::parsePolylineObject(pugi::xml_node & node, pugi::xml_
     auto rotation = node.attribute("rotation");
     auto visible = node.attribute("visible");
 
-
+    PointObject obj = this->parsePointObject(lastChild);
 
     return MapObject(
         id.as_int(),
@@ -129,7 +130,9 @@ MapObject MapObjectParser::parsePolylineObject(pugi::xml_node & node, pugi::xml_
         width.empty() ? 0 : width.as_int(),
         height.empty() ? 0 : height.as_int(),
         rotation.empty() ? 0.f : rotation.as_float(),
-        visible.empty() ? true : visible.as_bool()
+        visible.empty() ? true : visible.as_bool(),
+        obj.parsedPoints,
+        obj.type
     );
 }
 
@@ -223,7 +226,33 @@ TmxText MapObjectParser::parseTmxText(pugi::xml_node & node)
 
 MapObjectParser::PointObject MapObjectParser::parsePointObject(pugi::xml_node & node)
 {
-    return PointObject();
+    ObjectType type = OBJECT;
+
+    std::string name = node.name();
+
+    if (name.compare("polyline"))
+    {
+        type = POLYLINE;
+    }
+    else
+    {
+        type = POLYGON;
+    }
+
+    std::vector<TmxPoint> points{};
+
+    std::string pointsAttr = node.attribute("points").value();
+    auto parsedPoints = stringutils::split(pointsAttr, ' ');
+    for (auto& pointstr : parsedPoints)
+    {
+        auto xy = stringutils::split(pointstr, ',');
+        if (xy.size() != 2)
+            continue;
+        int x = std::stoi(xy[0]);
+        int y = std::stoi(xy[1]);
+        points.push_back({ x, y });
+    }
+    return { points, type };
 }
 
 MapObject MapObjectParser::parsePlainMapObject(pugi::xml_node & node)
@@ -237,6 +266,13 @@ MapObject MapObjectParser::parsePlainMapObject(pugi::xml_node & node)
     auto height = node.attribute("height");
     auto rotation = node.attribute("rotation");
     auto visible = node.attribute("visible");
+    ObjectType objType = OBJECT;
+
+    auto last = node.last_child();
+    if (last.empty() == false && std::strcmp(last.name(), "ellipse") == 0)
+    {
+        objType = ELLIPSE;
+    }
 
     return MapObject(
         id.as_int(),
@@ -247,6 +283,7 @@ MapObject MapObjectParser::parsePlainMapObject(pugi::xml_node & node)
         width.empty() ? 0 : width.as_int(),
         height.empty() ? 0 : height.as_int(),
         rotation.empty() ? 0.f : rotation.as_float(),
-        visible.empty() ? true : visible.as_bool()
+        visible.empty() ? true : visible.as_bool(),
+        objType
     );
 }

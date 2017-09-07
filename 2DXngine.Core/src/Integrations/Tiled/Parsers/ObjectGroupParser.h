@@ -22,7 +22,7 @@ private:
     TmxText parseTmxText(pugi::xml_node& node);
     PointObject parsePointObject(pugi::xml_node& node);
     MapObject parsePlainMapObject(pugi::xml_node& node);
-    PropertiesParser _propParser;
+    PropertiesParser _propParser{};
 };
 
 class ObjectGroupParser
@@ -34,7 +34,7 @@ public:
     ObjectGroup parse(pugi::xml_node& node);
 private:
     ObjectGroup parseObjectGroup(pugi::xml_node& node);
-    PropertiesParser _propParser;
-    MapObjectParser _mapObjectParser;
+    PropertiesParser _propParser{};
+    MapObjectParser _mapObjectParser{};
 };
 
