@@ -151,6 +151,7 @@ private:
 class ObjectGroup
 {
 public:
+    ObjectGroup() {}
     ObjectGroup(
         std::string name,
         Color color,

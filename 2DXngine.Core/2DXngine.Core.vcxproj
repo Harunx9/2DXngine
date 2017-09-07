@@ -299,6 +299,8 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)libs\freetype-2.3.5-1\include\freetype2;$(SolutionDir)libs\freetype-2.3.5-1\include;$(SolutionDir)libs\gllibs;$(SolutionDir)libs\SDL2-2.0.5\include;$(SolutionDir)libs\SDL2_mixer-2.0.1\include;$(SolutionDir)libs\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

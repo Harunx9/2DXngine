@@ -20,6 +20,7 @@ struct TmxImage
 class ImageLayer
 {
 public:
+    ImageLayer() {}
     ImageLayer(std::string name,
         int offsetX, int offsetY,
         float opacity,

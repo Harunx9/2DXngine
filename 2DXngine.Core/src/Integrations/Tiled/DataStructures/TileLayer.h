@@ -20,6 +20,7 @@ struct Data
 class TileLayer
 {
 public:
+    TileLayer() {};
     TileLayer(
         std::string name,
         int x, int y,

@@ -11,6 +11,7 @@
 class Group
 {
 public:
+    Group() {}
     Group(std::string name,
         int offsetX,
         int offsetY,
