@@ -14,4 +14,10 @@ TEST_F(TiledFixture, map_attributes_should_be_parsed)
     ASSERT_EQ(32, _parsedMap->get_tileHeight());
 }
 
+TEST_F(TiledFixture, map_should_have_TestObject_parsed)
+{
+    auto group = _parsedMap->getObjectGroup("TestObject");
+
+    ASSERT_EQ(group.get_name(), "TestObject");
+}
 
