@@ -89,6 +89,7 @@
     <ClCompile Include="src\Input\MouseStateHandler.cpp" />
     <ClCompile Include="src\Integrations\Tiled\GameObjectFactories.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Parsers\ObjectGroupParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\TiledXMLDefines.h" />
     <ClCompile Include="src\Integrations\Tiled\Parsers\TileLayerParser.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Parsers\TileMapParser.cpp" />
     <ClCompile Include="src\Integrations\Tiled\TiledMapLoader.cpp" />

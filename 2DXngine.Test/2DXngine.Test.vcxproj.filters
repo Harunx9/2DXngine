@@ -32,14 +32,15 @@
     <ClCompile Include="src\Components\ColliderComponenTest.cpp" />
     <ClCompile Include="src\Graphics\CameraUnprojectTest.cpp" />
     <ClCompile Include="src\Components\TextDataComponent.cpp" />
+    <ClCompile Include="..\libs\pugixml\src\pugixml.cpp" />
+    <ClCompile Include="src\Integration_Tiled\ParseObjectGroupTest.cc" />
+    <ClCompile Include="src\Integration_Tiled\ParseMapTest.cc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Debug\Content\test.csv" />
     <None Include="Debug\cfg.ini" />
     <None Include="cfg.ini" />
     <None Include="Content\test.csv" />
     <None Include="Content\Translations\translation.pl-PL.csv" />
-    <None Include="Debug\Content\Translations\translation.pl-PL.csv" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Content\dot.png" />
@@ -51,6 +52,9 @@
     <ClInclude Include="src\TypeSystem\TestTypesHierarhy.h" />
     <ClInclude Include="src\Utils\PropTestClass.h" />
     <ClInclude Include="src\Utils\EventTestData.h" />
+    <ClInclude Include="..\libs\pugixml\src\pugiconfig.hpp" />
+    <ClInclude Include="..\libs\pugixml\src\pugixml.hpp" />
+    <ClInclude Include="src\Integration_Tiled\TiledFixture.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Content\babyblocks.ttf" />

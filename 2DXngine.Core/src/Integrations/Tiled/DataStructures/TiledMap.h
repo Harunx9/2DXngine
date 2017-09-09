@@ -53,7 +53,11 @@ public:
         this->_images = std::map<std::string, ImageLayer>();
         this->_properties = std::map<std::string, Property>();
     }
-    ~TiledMap() {}
+
+    ~TiledMap() 
+    {
+
+    }
 
     inline void addGroup(const Group group)
     {

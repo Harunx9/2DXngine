@@ -1,6 +1,23 @@
 #include "TileMapParser.h"
 #include "../DataStructures/TiledMap.h"
 
+namespace TiledMapConsts
+{
+    const char * element = "map";
+    const char * version = "version";
+    const char * tiledversion = "tiledversion";
+    const char * orientation = "orientation";
+    const char * renderorder = "renderorder";
+    const char * width = "width";
+    const char * height = "height";
+    const char * tilewidth = "tilewidth";
+    const char * tileheight = "tileheight";
+    const char * hexsidelength = "hexsidelength";
+    const char * staggeraxis = "staggeraxis";
+    const char * staggerindex = "staggerindex";
+    const char * backgroundcolor = "backgroundcolor";
+    const char * nextobjectid = "nextobjectid";
+};
 
 TileMapParser::TileMapParser()
 {
@@ -15,25 +32,29 @@ TiledMap* TileMapParser::parse(pugi::xml_node & node)
 {
     TiledMap* map = this->parseTiledMapAttributes(node);
 
-
+    auto objects = node.children("objectgroup");
+    for (auto& obj : objects)
+    {
+        map->addObjectGroup(this->_groupParser.parse(obj));
+    }
 
     return map;
 }
 
 TiledMap* TileMapParser::parseTiledMapAttributes(pugi::xml_node & node)
 {
-    auto version = node.attribute("version");
-    auto tiledVersion = node.attribute("tiledversion");
-    auto orientation = node.attribute("orientation");
-    auto renderOrder = node.attribute("renderorder");
-    auto width = node.attribute("width");
-    auto height = node.attribute("height");
-    auto tileWidth = node.attribute("tilewidth");
-    auto tileHeight = node.attribute("tileheight");
-    auto backgroundColor = node.attribute("backgroundcolor");
-    auto hexSideLength = node.attribute("hexsidelength");
-    auto staggerAxis = node.attribute("staggeraxis");
-    auto staggerIndex = node.attribute("staggerindex");
+    auto version = node.attribute(TiledMapConsts::version);
+    auto tiledVersion = node.attribute(TiledMapConsts::tiledversion);
+    auto orientation = node.attribute(TiledMapConsts::orientation);
+    auto renderOrder = node.attribute(TiledMapConsts::renderorder);
+    auto width = node.attribute(TiledMapConsts::width);
+    auto height = node.attribute(TiledMapConsts::height);
+    auto tileWidth = node.attribute(TiledMapConsts::tilewidth);
+    auto tileHeight = node.attribute(TiledMapConsts::tileheight);
+    auto backgroundColor = node.attribute(TiledMapConsts::backgroundcolor);
+    auto hexSideLength = node.attribute(TiledMapConsts::hexsidelength);
+    auto staggerAxis = node.attribute(TiledMapConsts::staggeraxis);
+    auto staggerIndex = node.attribute(TiledMapConsts::staggerindex);
 
     Orientation orientationVar = Orientation::ORTOGNAL;
     std::string orientationVal = orientation.as_string();
