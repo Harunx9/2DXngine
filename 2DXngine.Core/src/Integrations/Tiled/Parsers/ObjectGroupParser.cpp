@@ -179,19 +179,19 @@ TmxText MapObjectParser::parseTmxText(pugi::xml_node & node)
     auto text_valign = node.attribute("valign");
     auto text_value = std::string(node.value());
 
-    VerticalAlign va = VA_TOP;
-    HorizontalAling ha = HA_LEFT;
+    VerticalAlign va = VerticalAlign::TOP;
+    HorizontalAling ha = HorizontalAling::LEFT;
 
     if (text_halign.empty() == false)
     {
         auto val = std::string(text_halign.as_string());
         if (val.compare("center"))
         {
-            ha = HA_CENTER;
+            ha = HorizontalAling::CENTER;
         }
         if (val.compare("right"))
         {
-            ha = HA_RIGHT;
+            ha = HorizontalAling::RIGHT;
         }
     }
 
@@ -200,11 +200,11 @@ TmxText MapObjectParser::parseTmxText(pugi::xml_node & node)
         auto val = std::string(text_valign.as_string());
         if (val.compare("center"))
         {
-            va = VA_CENTER;
+            va = VerticalAlign::CENTER;
         }
         if (val.compare("bottom"))
         {
-            va = VA_BOTTOM;
+            va = VerticalAlign::BOTTOM;
         }
     }
 
@@ -226,17 +226,17 @@ TmxText MapObjectParser::parseTmxText(pugi::xml_node & node)
 
 MapObjectParser::PointObject MapObjectParser::parsePointObject(pugi::xml_node & node)
 {
-    ObjectType type = OBJECT;
+    ObjectType type = ObjectType::OBJECT;
 
     std::string name = node.name();
 
     if (name.compare("polyline"))
     {
-        type = POLYLINE;
+        type = ObjectType::POLYLINE;
     }
     else
     {
-        type = POLYGON;
+        type = ObjectType::POLYGON;
     }
 
     std::vector<TmxPoint> points{};
@@ -266,12 +266,12 @@ MapObject MapObjectParser::parsePlainMapObject(pugi::xml_node & node)
     auto height = node.attribute("height");
     auto rotation = node.attribute("rotation");
     auto visible = node.attribute("visible");
-    ObjectType objType = OBJECT;
+    ObjectType objType = ObjectType::OBJECT;
 
     auto last = node.last_child();
     if (last.empty() == false && std::strcmp(last.name(), "ellipse") == 0)
     {
-        objType = ELLIPSE;
+        objType = ObjectType::ELLIPSE;
     }
 
     return MapObject(

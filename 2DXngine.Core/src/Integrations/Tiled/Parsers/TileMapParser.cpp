@@ -15,6 +15,8 @@ TiledMap* TileMapParser::parse(pugi::xml_node & node)
 {
     TiledMap* map = this->parseTiledMapAttributes(node);
 
+
+
     return map;
 }
 
@@ -33,34 +35,34 @@ TiledMap* TileMapParser::parseTiledMapAttributes(pugi::xml_node & node)
     auto staggerAxis = node.attribute("staggeraxis");
     auto staggerIndex = node.attribute("staggerindex");
 
-    Orientation orientationVar = ORTOGNAL;
+    Orientation orientationVar = Orientation::ORTOGNAL;
     std::string orientationVal = orientation.as_string();
     if (orientationVal.compare("isometric") == 0)
     {
-        orientationVar = ISOMETRIC;
+        orientationVar = Orientation::ISOMETRIC;
     }
     else if (orientationVal.compare("staggered") == 0)
     {
-        orientationVar = STAGGERED;
+        orientationVar = Orientation::STAGGERED;
     }
     else if (orientationVal.compare("hexagonal") == 0)
     {
-        orientationVar = HEXAGONAL;
+        orientationVar = Orientation::HEXAGONAL;
     }
 
-    RenderOrder renderorder = RIGHT_DOWN;
+    RenderOrder renderorder = RenderOrder::RIGHT_DOWN;
     std::string renderorderVal = orientation.as_string();
     if (renderorderVal.compare("right-up") == 0)
     {
-        renderorder = RIGHT_UP;
+        renderorder = RenderOrder::RIGHT_UP;
     }
     else if (renderorderVal.compare("left-down") == 0)
     {
-        renderorder = LEFT_DOWN;
+        renderorder = RenderOrder::LEFT_DOWN;
     }
     else if (renderorderVal.compare("left-up") == 0)
     {
-        renderorder = LEFT_UP;
+        renderorder = RenderOrder::LEFT_UP;
     }
 
     return new TiledMap(
