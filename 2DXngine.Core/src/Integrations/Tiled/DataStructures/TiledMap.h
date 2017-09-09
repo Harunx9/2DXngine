@@ -5,7 +5,7 @@
 #include "ObjectLayer.h"
 #include "../../../Utils/Macros/PropertyMacro.h"
 
-enum Orientation
+enum class Orientation
 {
     ORTOGNAL,
     ISOMETRIC,
@@ -14,7 +14,7 @@ enum Orientation
 };
 
 
-enum RenderOrder
+enum class RenderOrder
 {
     RIGHT_DOWN,
     RIGHT_UP,

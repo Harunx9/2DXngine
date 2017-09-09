@@ -8,7 +8,7 @@
 #include "../../../Graphics/Color.h"
 #include "Property.h"
 
-enum ObjectType
+enum class ObjectType
 {
     OBJECT,
     TILE,
@@ -18,21 +18,21 @@ enum ObjectType
     TEXT
 };
 
-enum VerticalAlign
+enum class VerticalAlign
 {
-    VA_TOP,
-    VA_CENTER,
-    VA_BOTTOM
+    TOP,
+    CENTER,
+    BOTTOM
 };
 
-enum HorizontalAling
+enum class HorizontalAling
 {
-    HA_LEFT,
-    HA_CENTER,
-    HA_RIGHT
+    LEFT,
+    CENTER,
+    RIGHT
 };
 
-enum DrawOrder
+enum class DrawOrder
 {
     TOP_DOWN,
     INDEX
