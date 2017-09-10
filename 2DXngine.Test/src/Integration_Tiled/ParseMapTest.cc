@@ -28,3 +28,9 @@ TEST_F(TiledFixture, map_should_have_ImageLayer_parsed)
     ASSERT_EQ(img.get_name(), "Image Layer 1");
 }
 
+TEST_F(TiledFixture, map_should_have_TileLayer_parsed)
+{
+    auto tiles = _parsedMap->getTileLayer("TestTilles");
+
+    ASSERT_EQ(tiles.get_name(), "TestTilles");
+}

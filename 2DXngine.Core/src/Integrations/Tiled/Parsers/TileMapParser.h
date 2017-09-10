@@ -2,6 +2,7 @@
 #include "../../../../../libs/pugixml/src/pugixml.hpp"
 #include "ObjectGroupParser.h"
 #include "ImageLayerParser.h"
+#include "TileLayerParser.h"
 class TiledMap;
 
 class TileMapParser
@@ -14,5 +15,7 @@ private:
     TiledMap* parseTiledMapAttributes(pugi::xml_node& node);
     ObjectGroupParser _groupParser;
     ImageLayerParser _imageLayerParser;
+    TileLayerParser _tileLayerParser;
+    PropertiesParser _propParser;
 };
 

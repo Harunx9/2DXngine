@@ -69,9 +69,10 @@ public:
         return  this->_groups[name];
     }
 
-    inline void addProperty(const Property prop)
+    void addProperties(const std::vector<Property> props)
     {
-        this->_properties[prop.get_name()] = prop;
+        for (auto& prop : props)
+            this->_properties[prop.get_name()] = prop;
     }
 
     inline Property getProperty(const std::string name)

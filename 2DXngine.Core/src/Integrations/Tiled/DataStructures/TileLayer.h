@@ -27,15 +27,13 @@ public:
         int width, int height,
         float opacity,
         bool visible,
-        int offsetx, int offsety,
-        int order):
+        int offsetx, int offsety):
         _name(name),
         _x(x), _y(y),
         _width(width), _height(height),
         _opacity(opacity),
         _visible(visible),
-        _offsetx(offsetx), _offsety(offsety),
-        _order(order)
+        _offsetx(offsetx), _offsety(offsety)
     {
     }
 
@@ -43,10 +41,12 @@ public:
     {
     }
 
-    void addProperty(const Property prop)
+    void addProperties(const std::vector<Property> props)
     {
-        this->_properties[prop.get_name()] = prop;
+        for (auto& prop : props)
+            this->_properties[prop.get_name()] = prop;
     }
+
 
     Property getProperty(const std::string name)
     {
@@ -63,7 +63,6 @@ public:
     READONLY_PROPERTY(bool, visible)
     READONLY_PROPERTY(int, offsetx)
     READONLY_PROPERTY(int, offsety)
-    READONLY_PROPERTY(int, order)
 
 private:
     std::map<std::string, Property> _properties;

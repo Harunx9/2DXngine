@@ -11,6 +11,6 @@ public:
 private:
     ImageLayer parseAttributes(pugi::xml_node& node);
     TmxImage parseTmxImage(pugi::xml_node& node);
-    PropertiesParser _propParser{};
+    PropertiesParser _propParser;
 };
 

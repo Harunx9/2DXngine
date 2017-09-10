@@ -23,7 +23,6 @@ TileMapParser::TileMapParser()
 {
 }
 
-
 TileMapParser::~TileMapParser()
 {
 }
@@ -31,6 +30,14 @@ TileMapParser::~TileMapParser()
 TiledMap* TileMapParser::parse(pugi::xml_node & node)
 {
     TiledMap* map = this->parseTiledMapAttributes(node);
+
+
+    auto properties = node.child("properties");
+    if (properties.empty() == false)
+    {
+        auto parsedProps = this->_propParser.parse(node);
+        map->addProperties(parsedProps);
+    }
 
     auto objects = node.children("objectgroup");
     for (auto& obj : objects)
@@ -42,6 +49,12 @@ TiledMap* TileMapParser::parse(pugi::xml_node & node)
     for (auto& img : images)
     {
         map->addImageLayer(this->_imageLayerParser.parse(img));
+    }
+
+    auto layers = node.children("layer");
+    for (auto& layer : layers)
+    {
+        map->addTileLayer(this->_tileLayerParser.parse(layer));
     }
 
     return map;
@@ -103,7 +116,7 @@ TiledMap* TileMapParser::parseTiledMapAttributes(pugi::xml_node & node)
         tileHeight.as_int(),
         backgroundColor.empty() ? Color() : Color(std::string(backgroundColor.as_string())),
         hexSideLength.empty() ? -1 : hexSideLength.as_int(),
-        staggerAxis  .empty() ? "" : std::string(staggerAxis .as_string()),
-        staggerIndex .empty() ? "" : std::string(staggerIndex.as_string())
+        staggerAxis.empty() ? "" : std::string(staggerAxis.as_string()),
+        staggerIndex.empty() ? "" : std::string(staggerIndex.as_string())
     );
 }
