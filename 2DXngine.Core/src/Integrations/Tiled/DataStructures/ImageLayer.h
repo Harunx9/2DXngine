@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <map>
+#include <vector>
 #include "../../../Utils/Macros/PropertyMacro.h"
 #include "../../../Graphics/Color.h"
 #include "Property.h"
@@ -14,6 +15,16 @@ struct TmxImage
     int height = 0;
 
     TmxImage() : trans(Color("#FF00FF")) {}
+    TmxImage(std::string format,
+        std::string source,
+        Color trans,
+        int width, int height):
+        format(format),
+        source(source),
+        trans(trans),
+        width(width),
+        height(height)
+        {}
 }; 
 
 
@@ -36,9 +47,10 @@ public:
     {
     }
 
-    void addProperty(const Property prop)
+    void addProperties(const std::vector<Property> props)
     {
-        this->_properties[prop.get_name()] = prop;
+        for (auto& prop : props)
+            this->_properties[prop.get_name()] = prop;
     }
 
     Property getProperty(const std::string name)

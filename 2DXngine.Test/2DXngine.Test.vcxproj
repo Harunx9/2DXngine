@@ -45,6 +45,7 @@
     <ClCompile Include="src\GameObject\GamObjectGraphTest.cc" />
     <ClCompile Include="src\Graphics\CameraUnprojectTest.cpp" />
     <ClCompile Include="src\Graphics\RenderTargetTest.cc" />
+    <ClCompile Include="src\Integration_Tiled\ImageLayerTest.cc" />
     <ClCompile Include="src\Integration_Tiled\ParseMapTest.cc" />
     <ClCompile Include="src\Integration_Tiled\ParseObjectGroupTest.cc" />
     <ClCompile Include="src\Services\ConfigurationServiceTest.cc" />

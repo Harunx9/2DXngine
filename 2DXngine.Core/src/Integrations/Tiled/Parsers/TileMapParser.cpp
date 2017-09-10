@@ -38,6 +38,12 @@ TiledMap* TileMapParser::parse(pugi::xml_node & node)
         map->addObjectGroup(this->_groupParser.parse(obj));
     }
 
+    auto images = node.children("imagelayer");
+    for (auto& img : images)
+    {
+        map->addImageLayer(this->_imageLayerParser.parse(img));
+    }
+
     return map;
 }
 

@@ -35,6 +35,7 @@
     <ClCompile Include="..\libs\pugixml\src\pugixml.cpp" />
     <ClCompile Include="src\Integration_Tiled\ParseObjectGroupTest.cc" />
     <ClCompile Include="src\Integration_Tiled\ParseMapTest.cc" />
+    <ClCompile Include="src\Integration_Tiled\ImageLayerTest.cc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\cfg.ini" />

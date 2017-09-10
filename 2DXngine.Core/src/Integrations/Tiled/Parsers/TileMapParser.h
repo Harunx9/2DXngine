@@ -1,6 +1,7 @@
 #pragma once
 #include "../../../../../libs/pugixml/src/pugixml.hpp"
 #include "ObjectGroupParser.h"
+#include "ImageLayerParser.h"
 class TiledMap;
 
 class TileMapParser
@@ -12,5 +13,6 @@ public:
 private:
     TiledMap* parseTiledMapAttributes(pugi::xml_node& node);
     ObjectGroupParser _groupParser;
+    ImageLayerParser _imageLayerParser;
 };
 

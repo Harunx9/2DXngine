@@ -21,3 +21,10 @@ TEST_F(TiledFixture, map_should_have_TestObject_parsed)
     ASSERT_EQ(group.get_name(), "TestObject");
 }
 
+TEST_F(TiledFixture, map_should_have_ImageLayer_parsed)
+{
+    auto img = _parsedMap->getImageLayer("Image Layer 1");
+
+    ASSERT_EQ(img.get_name(), "Image Layer 1");
+}
+
