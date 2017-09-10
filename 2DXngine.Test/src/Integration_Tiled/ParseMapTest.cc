@@ -34,3 +34,10 @@ TEST_F(TiledFixture, map_should_have_TileLayer_parsed)
 
     ASSERT_EQ(tiles.get_name(), "TestTilles");
 }
+
+TEST_F(TiledFixture, map_should_have_Group_parsed)
+{
+    auto group = _parsedMap->getGroup("TestGroup");
+
+    ASSERT_EQ(group.get_name(), "TestGroup");
+}

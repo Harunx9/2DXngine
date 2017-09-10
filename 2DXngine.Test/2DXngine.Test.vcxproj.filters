@@ -37,6 +37,7 @@
     <ClCompile Include="src\Integration_Tiled\ParseMapTest.cc" />
     <ClCompile Include="src\Integration_Tiled\ImageLayerTest.cc" />
     <ClCompile Include="src\Integration_Tiled\TileLayerTest.cpp" />
+    <ClCompile Include="src\Integration_Tiled\MapGroupTest.cc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\cfg.ini" />

@@ -31,7 +31,6 @@ TiledMap* TileMapParser::parse(pugi::xml_node & node)
 {
     TiledMap* map = this->parseTiledMapAttributes(node);
 
-
     auto properties = node.child("properties");
     if (properties.empty() == false)
     {
@@ -42,7 +41,7 @@ TiledMap* TileMapParser::parse(pugi::xml_node & node)
     auto objects = node.children("objectgroup");
     for (auto& obj : objects)
     {
-        map->addObjectGroup(this->_groupParser.parse(obj));
+        map->addObjectGroup(this->_objectGroupParser.parse(obj));
     }
 
     auto images = node.children("imagelayer");
@@ -55,6 +54,12 @@ TiledMap* TileMapParser::parse(pugi::xml_node & node)
     for (auto& layer : layers)
     {
         map->addTileLayer(this->_tileLayerParser.parse(layer));
+    }
+
+    auto groups = node.children("group");
+    for (auto& group : groups)
+    {
+        map->addGroup(this->_groupParser.parse(group));
     }
 
     return map;
