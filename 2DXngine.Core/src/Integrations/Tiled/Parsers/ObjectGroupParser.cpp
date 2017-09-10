@@ -81,7 +81,9 @@ MapObject MapObjectParser::parse(pugi::xml_node & node)
     auto lastChild = node.last_child();
     MapObject obj;
     auto name = std::string(lastChild.name());
-    if (name.compare("properties") != 0 && name.compare("ellipse") != 1)
+    if (name.compare("") != 0 && 
+        name.compare("properties") != 0 &&
+        name.compare("ellipse") != 0)
     {
         if (name.compare("text") != 0)
         {
@@ -177,7 +179,7 @@ TmxText MapObjectParser::parseTmxText(pugi::xml_node & node)
     auto text_kerning = node.attribute("kerning");
     auto text_halign = node.attribute("halign");
     auto text_valign = node.attribute("valign");
-    auto text_value = std::string(node.value());
+    auto text_value = std::string(node.child_value());
 
     VerticalAlign va = VerticalAlign::TOP;
     HorizontalAling ha = HorizontalAling::LEFT;
@@ -230,7 +232,7 @@ MapObjectParser::PointObject MapObjectParser::parsePointObject(pugi::xml_node & 
 
     std::string name = node.name();
 
-    if (name.compare("polyline"))
+    if (name.compare("polyline") == 0)
     {
         type = ObjectType::POLYLINE;
     }
