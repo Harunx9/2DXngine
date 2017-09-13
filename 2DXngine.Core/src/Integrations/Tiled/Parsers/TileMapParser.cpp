@@ -62,6 +62,12 @@ TiledMap* TileMapParser::parse(pugi::xml_node & node)
         map->addGroup(this->_groupParser.parse(group));
     }
 
+    auto tilesets = node.children("tileset");
+    for (auto& tileset : tilesets)
+    {
+        map->addTileset(this->_tilesetParser.parse(tileset));
+    }
+
     return map;
 }
 

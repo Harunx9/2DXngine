@@ -4,6 +4,7 @@
 #include "ImageLayerParser.h"
 #include "TileLayerParser.h"
 #include "GroupParser.h"
+#include "TilesetParser.h"
 class TiledMap;
 
 class TileMapParser
@@ -18,6 +19,7 @@ private:
     ObjectGroupParser _objectGroupParser;
     ImageLayerParser _imageLayerParser;
     TileLayerParser _tileLayerParser;
+    TilesetParser _tilesetParser;
     PropertiesParser _propParser;
 };
 

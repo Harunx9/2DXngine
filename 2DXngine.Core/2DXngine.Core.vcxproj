@@ -92,6 +92,7 @@
     <ClCompile Include="src\Integrations\Tiled\Parsers\TiledXMLDefines.h" />
     <ClCompile Include="src\Integrations\Tiled\Parsers\TileLayerParser.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Parsers\TileMapParser.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\TilesetParser.cpp" />
     <ClCompile Include="src\Integrations\Tiled\TiledMapLoader.cpp" />
     <ClCompile Include="src\Scenes\LoadableScene.cpp" />
     <ClCompile Include="src\Scenes\Scene.cpp" />
@@ -124,6 +125,7 @@
     <ClInclude Include="..\libs\pugixml\src\pugixml.hpp" />
     <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
     <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\TileSet.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\GroupParser.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\ImageLayerParser.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\PropertiesParser.h" />
@@ -197,6 +199,7 @@
     <ClInclude Include="src\Integrations\Tiled\Parsers\ObjectGroupParser.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\TileLayerParser.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\TileMapParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\TilesetParser.h" />
     <ClInclude Include="src\Integrations\Tiled\TiledMapLoader.h" />
     <ClInclude Include="src\Scenes\LoadableScene.h" />
     <ClInclude Include="src\Scenes\Scene.h" />

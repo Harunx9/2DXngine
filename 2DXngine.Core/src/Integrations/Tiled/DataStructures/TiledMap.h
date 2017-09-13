@@ -110,6 +110,16 @@ public:
         return this->_images[name];
     }
 
+    inline void addTileset(const TileSet tileset)
+    {
+        this->_tilesets[tileset.get_firstGid()] = tileset;
+    }
+
+    inline TileSet getTileset(const int firstgGid)
+    {
+        return this->_tilesets[firstgGid];
+    }
+
     READONLY_PROPERTY(std::string, version)
     READONLY_PROPERTY(std::string, tiledVersion)
     READONLY_PROPERTY(Orientation, orientation)
@@ -128,5 +138,6 @@ private:
     std::map<std::string, ObjectGroup> _objects;
     std::map<std::string, ImageLayer> _images;
     std::map<std::string, Property> _properties;
+    std::map<int, TileSet> _tilesets;
 };
 

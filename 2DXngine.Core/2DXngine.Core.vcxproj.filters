@@ -160,6 +160,7 @@
     <ClCompile Include="src\Integrations\Tiled\Parsers\PropertiesParser.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Parsers\ImageLayerParser.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Parsers\TiledXMLDefines.h" />
+    <ClCompile Include="src\Integrations\Tiled\Parsers\TilesetParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
@@ -273,5 +274,7 @@
     <ClInclude Include="src\Integrations\Tiled\Parsers\PropertiesParser.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\GroupParser.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\ImageLayerParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\DataStructures\TileSet.h" />
+    <ClInclude Include="src\Integrations\Tiled\Parsers\TilesetParser.h" />
   </ItemGroup>
 </Project>

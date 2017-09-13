@@ -50,6 +50,7 @@
     <ClCompile Include="src\Integration_Tiled\ParseMapTest.cc" />
     <ClCompile Include="src\Integration_Tiled\ParseObjectGroupTest.cc" />
     <ClCompile Include="src\Integration_Tiled\TileLayerTest.cpp" />
+    <ClCompile Include="src\Integration_Tiled\TilesetTest.cpp" />
     <ClCompile Include="src\Services\ConfigurationServiceTest.cc" />
     <ClCompile Include="src\Services\ContentManagerTest.cpp" />
     <ClCompile Include="src\Services\TranslationServiceTest.cc" />
