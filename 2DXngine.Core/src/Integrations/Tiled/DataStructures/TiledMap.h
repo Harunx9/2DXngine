@@ -4,6 +4,7 @@
 #include "Group.h"
 #include "ObjectLayer.h"
 #include "../../../Utils/Macros/PropertyMacro.h"
+#include "TileSet.h"
 
 enum class Orientation
 {

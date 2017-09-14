@@ -126,6 +126,7 @@
     <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
     <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
     <ClInclude Include="src\Integrations\Tiled\DataStructures\TileSet.h" />
+    <ClInclude Include="src\Integrations\Tiled\GameObjectFactory.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\GroupParser.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\ImageLayerParser.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\PropertiesParser.h" />

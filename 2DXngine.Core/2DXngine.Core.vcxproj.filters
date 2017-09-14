@@ -276,5 +276,6 @@
     <ClInclude Include="src\Integrations\Tiled\Parsers\ImageLayerParser.h" />
     <ClInclude Include="src\Integrations\Tiled\DataStructures\TileSet.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\TilesetParser.h" />
+    <ClInclude Include="src\Integrations\Tiled\GameObjectFactory.h" />
   </ItemGroup>
 </Project>
