@@ -1,7 +1,7 @@
+#pragma once
 #include <vector>
 #include "../../ComponentModel/GameObject.h"
 #include "DataStructures/TiledMap.h"
-#pragma once
 
 class GameObjectFactory
 {

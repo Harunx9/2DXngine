@@ -29,4 +29,3 @@ public:
 private:
     std::vector<GameObjectFactory*> _factories;
 };
-
