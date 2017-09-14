@@ -36,7 +36,10 @@ Features in development:
   - [ ] Timer,
   - [x] Simple math types like potnt and rectangle,
 - [ ] Box2d integration,
-- [ ] Tiled maps integration,
+- [x] Tiled maps integration,
+  - [x] Data structures
+  - [x] Parsing
+  - [x] Scene creation mechanism
 - [ ] Lua scripting,
 - [ ] Visual Studio independent build system,
 - [ ] and so on.
