@@ -40,6 +40,8 @@ Features in development:
   - [x] Data structures
   - [x] Parsing
   - [x] Scene creation mechanism
+  - [ ] Tile layer component
+  - [ ] Tile layer renderer
 - [ ] Lua scripting,
 - [ ] Visual Studio independent build system,
 - [ ] and so on.
