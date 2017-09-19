@@ -12,6 +12,7 @@
 #include <iostream>
 #include <windows.h>
 #include "../Utils/BackgroundTask.h"
+#include "../Utils/Logger/LoggerService.h"
 
 WindowApp::WindowApp(GameHandler* handler,const char* companyName, const char* appName):
     App(handler, companyName, appName)
@@ -60,7 +61,6 @@ void WindowApp::run()
     while (this->get_isRunning())
     {
         float deltaTime = this->_timer->getDeltaTime();
-        //std::cout << deltaTime << std::endl;
         accumulator += deltaTime;
         while (SDL_PollEvent(&event))
         {
@@ -118,4 +118,5 @@ void WindowApp::initAndRegiserConfig()
     this->_cfgService = new ConfigurationService(this->_appName, this->_companyName);
     this->_cfgService->baseInitialize();
     ServiceLocator::registerService(this->_cfgService);
+    ServiceLocator::registerService(new LoggerService());
 }

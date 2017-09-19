@@ -1,5 +1,7 @@
 #include "KeyboardStateHandler.h"
 #include <iostream>
+#include "../Services/ServiceLocator.h"
+#include <string>
 
 KeyboardStateHandler::KeyboardStateHandler(KeyboardEventMapper * mapper)
 {
@@ -10,6 +12,7 @@ KeyboardStateHandler::KeyboardStateHandler(KeyboardEventMapper * mapper)
     {
         this->_keyboardKeysStates[btn] = false;
     }
+    this->_logger = ServiceLocator::get<LoggerService>("LoggerService");
 }
 
 KeyboardStateHandler::~KeyboardStateHandler()
@@ -19,15 +22,16 @@ KeyboardStateHandler::~KeyboardStateHandler()
 
 void KeyboardStateHandler::updateState(KeyState state)
 {
+    int keyNum = (int)state.button;
     switch (state.state)
     {
     case ButtonState::PRESSED:
-        this->_keyboardKeysStates[state.button] = true;
-        std::cout << state.button << " is pressed" << std::endl;
+        this->_keyboardKeysStates[keyNum] = true;
+        this->_logger->debug("%d is pressed", keyNum);
         break;
     case ButtonState::RELEASED:
-        this->_keyboardKeysStates[state.button] = false;
-        std::cout << state.button << " is released" << std::endl;
+        this->_keyboardKeysStates[keyNum] = false;
+        this->_logger->debug("%d is released", keyNum);
         break;
     }
 

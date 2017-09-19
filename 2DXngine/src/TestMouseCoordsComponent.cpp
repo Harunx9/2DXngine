@@ -19,6 +19,7 @@ TestMouseCoordsComponent::~TestMouseCoordsComponent()
 void TestMouseCoordsComponent::initialize(bool force)
 {
     auto input = ServiceLocator::get<InputService>("InputService");
+    this->_logger = ServiceLocator::get<LoggerService>("LoggerService");
     this->_mouse = input->get_mouse();
     this->activate();
 }
@@ -32,5 +33,5 @@ void TestMouseCoordsComponent::update(float deltaTime)
     auto mousePos = this->_mouse->get_position();
     auto worldPos = this->_camera->unproject(glm::vec2(mousePos.get_x(), mousePos.get_y()));
 
-    std::cout << "mouse x: " << worldPos.x << " mouse y: " << worldPos.y << std::endl;
+    this->_logger->info("x: %f y: %f", worldPos.x, worldPos.y);
 }

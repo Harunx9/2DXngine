@@ -1,5 +1,6 @@
 #pragma once
 #include <ComponentModel\UpdateableComponent.h>
+#include <Utils/Logger/LoggerService.h>
 class Camera;
 class MouseStateHandler;
 
@@ -16,5 +17,6 @@ public:
 private:
     Camera* _camera;
     MouseStateHandler* _mouse;
+    LoggerService* _logger;
 };
 

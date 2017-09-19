@@ -12,4 +12,3 @@ public:
     virtual std::vector<GameObject* > map(TiledMap* map) = 0;
     READONLY_PROPERTY(std::string, name)
 };
-

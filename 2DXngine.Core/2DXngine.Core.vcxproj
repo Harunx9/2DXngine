@@ -32,6 +32,10 @@
   <ItemGroup>
     <ClCompile Include="..\libs\pugixml\src\pugixml.cpp" />
     <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
+    <ClCompile Include="src\Config\LoggerConfig.cpp" />
+    <ClCompile Include="src\Utils\Logger\Enums.cpp" />
+    <ClCompile Include="src\Utils\Logger\LoggersImpl\ColorConsoleLogger.cpp" />
+    <ClCompile Include="src\Utils\Logger\LoggerService.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Parsers\GroupParser.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Parsers\ImageLayerParser.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Parsers\PropertiesParser.cpp" />
@@ -125,6 +129,11 @@
     <ClInclude Include="..\libs\pugixml\src\pugixml.hpp" />
     <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
     <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
+    <ClInclude Include="src\Config\LoggerConfig.h" />
+    <ClInclude Include="src\Utils\Logger\LoggersImpl\ColorConsoleLogger.h" />
+    <ClInclude Include="src\Utils\Logger\Enums.h" />
+    <ClInclude Include="src\Utils\Logger\LoggerService.h" />
+    <ClInclude Include="src\Utils\Logger\LoggersImpl\Logger.h" />
     <ClInclude Include="src\Integrations\Tiled\DataStructures\TileSet.h" />
     <ClInclude Include="src\Integrations\Tiled\GameObjectFactory.h" />
     <ClInclude Include="src\Integrations\Tiled\Parsers\GroupParser.h" />

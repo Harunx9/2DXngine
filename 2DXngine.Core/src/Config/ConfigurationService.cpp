@@ -39,15 +39,20 @@ void ConfigurationService::initialize()
 
     this->_language = LanguageConfig::load<LanguageConfig>(this->_file);
     this->_language->sectionUpdated += _binding;
+
+    this->_logger = LoggerConfig::load<LoggerConfig>(this->_file);
 }
 
 void ConfigurationService::terminate()
 {
     this->_graphics->sectionUpdated -= _binding;
     this->_audio->sectionUpdated -= _binding;
+    this->_language->sectionUpdated -= _binding;
+
     delete _graphics;
     delete _audio;
     delete _file;
+    delete _logger;
 }
 
 std::string ConfigurationService::getConfigFilePath(char * basePath, const char * fileName)

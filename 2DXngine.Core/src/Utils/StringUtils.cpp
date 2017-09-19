@@ -46,8 +46,8 @@ bool stringutils::is_base64(unsigned char c) {
 std::string stringutils::Base64decode(std::string& input)
 {
     int in_len = input.size();
-    int i = 0;
-    int j = 0;
+    size_t i = 0;
+    size_t j = 0;
     int in_ = 0;
     unsigned char char_array_4[4], char_array_3[3];
     std::string ret;

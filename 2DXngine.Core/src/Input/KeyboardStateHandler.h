@@ -2,6 +2,7 @@
 #include "InputDefines.h"
 #include "../AppImplementations/SDLEvents/Mappers/KeyboardEventMapper.h"
 #include "../Utils/Events/EventHandler.h"
+#include "../Utils/Logger/LoggerService.h"
 
 class KeyboardStateHandler
 {
@@ -23,6 +24,7 @@ public:
 private:
     KeyboardEventMapper* _mapper;
     Binding<KeyState> _binding;
+    LoggerService* _logger;
     bool _keyboardKeysStates[KEYBOARD_SIZE];
 };
 
