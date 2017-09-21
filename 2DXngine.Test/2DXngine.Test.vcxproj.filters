@@ -39,6 +39,7 @@
     <ClCompile Include="src\Integration_Tiled\TileLayerTest.cpp" />
     <ClCompile Include="src\Integration_Tiled\MapGroupTest.cc" />
     <ClCompile Include="src\Integration_Tiled\TilesetTest.cpp" />
+    <ClCompile Include="src\Graphics\ColorFromStringTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\cfg.ini" />

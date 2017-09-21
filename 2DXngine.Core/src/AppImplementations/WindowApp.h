@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include "../Graphics/GraphicDevice.h"
 class ConfigurationService;
+class LoggerService;
 
 class WindowApp :
     public App
@@ -23,5 +24,6 @@ private:
     GraphicDevice* _device;
     Timer * _timer;
     ConfigurationService* _cfgService;
+    LoggerService* _logger;
 };
 

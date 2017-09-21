@@ -20,13 +20,33 @@ struct Color
         this->a = a / (GLfloat)255;
     }
 
-    //TODO impl
     Color(std::string hash)
     {
-
+        if (hash.size() < 7)
+        {
+            r = 1.f;
+            g = 1.f;
+            b = 1.f;
+            a = 1.f;
+        }
+        else
+        {
+            std::string red = hash.substr(1, 2);
+            std::string green = hash.substr(3, 2);
+            std::string blue = hash.substr(5, 2);
+            std::string alpha = "";
+            if (hash.size() == 9)
+            {
+                alpha = hash.substr(7, 2);
+            }
+            r = std::stol(red, nullptr, 16) / (GLfloat)255;
+            g = std::stol(green, nullptr, 16) / (GLfloat)255;
+            b = std::stol(blue, nullptr, 16) / (GLfloat)255;
+            a = alpha.empty() ? 255 / (GLfloat)255 : std::stol(alpha, nullptr, 16) / (GLfloat)255;
+        }
     }
 
-    Color() : 
+    Color() :
         r(0), g(0), b(0), a(1)
     {
 

@@ -44,6 +44,7 @@
     <ClCompile Include="src\GameObject\GameObjectManagerTest.cc" />
     <ClCompile Include="src\GameObject\GamObjectGraphTest.cc" />
     <ClCompile Include="src\Graphics\CameraUnprojectTest.cpp" />
+    <ClCompile Include="src\Graphics\ColorFromStringTest.cpp" />
     <ClCompile Include="src\Graphics\RenderTargetTest.cc" />
     <ClCompile Include="src\Integration_Tiled\ImageLayerTest.cc" />
     <ClCompile Include="src\Integration_Tiled\MapGroupTest.cc" />
