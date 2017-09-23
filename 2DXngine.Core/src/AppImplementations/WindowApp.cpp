@@ -14,7 +14,7 @@
 #include "../Utils/BackgroundTask.h"
 #include "../Utils/Logger/LoggerService.h"
 
-WindowApp::WindowApp(GameHandler* handler,const char* companyName, const char* appName):
+WindowApp::WindowApp(GameHandler* handler, const char* companyName, const char* appName) :
     App(handler, companyName, appName)
 {
 }
@@ -27,10 +27,10 @@ void WindowApp::initialize()
 {
     this->initDirsIfNotExist();
     this->initAndRegiserConfig();
-    
+
     this->_device = new GraphicDevice();
     this->_isFixedTimeStep = true;
-    this->_timeStep = 1.f / 30.f;
+    this->_timeStep = 1.f / 60.f;
     this->_timer = new Timer();
 
     this->_device->initialize(
@@ -76,7 +76,8 @@ void WindowApp::run()
 
         while (accumulator >= this->_timeStep)
         {
-            this->_game->update(deltaTime);
+            this->_logger->info("Timestep: %f", this->_timeStep);
+            this->_game->update(this->_timeStep);
             accumulator -= this->_timeStep;
         }
 
@@ -98,7 +99,7 @@ void WindowApp::exit()
 void WindowApp::initDirsIfNotExist()
 {
 #if RELEASE
-    wchar_t* pref = (wchar_t*) SDL_GetPrefPath(this->_companyName, this->_appName);
+    wchar_t* pref = (wchar_t*)SDL_GetPrefPath(this->_companyName, this->_appName);
     CreateDirectory(pref, NULL);
 #endif
 }
@@ -118,5 +119,6 @@ void WindowApp::initAndRegiserConfig()
     this->_cfgService = new ConfigurationService(this->_appName, this->_companyName);
     this->_cfgService->baseInitialize();
     ServiceLocator::registerService(this->_cfgService);
-    ServiceLocator::registerService(new LoggerService());
+    this->_logger = new LoggerService();
+    ServiceLocator::registerService(this->_logger);
 }

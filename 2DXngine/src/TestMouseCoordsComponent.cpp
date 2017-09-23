@@ -33,5 +33,5 @@ void TestMouseCoordsComponent::update(float deltaTime)
     auto mousePos = this->_mouse->get_position();
     auto worldPos = this->_camera->unproject(glm::vec2(mousePos.get_x(), mousePos.get_y()));
 
-    this->_logger->info("x: %f y: %f", worldPos.x, worldPos.y);
+    //this->_logger->info("x: %f y: %f", worldPos.x, worldPos.y);
 }
