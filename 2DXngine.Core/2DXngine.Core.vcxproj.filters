@@ -165,6 +165,11 @@
     <ClCompile Include="src\Utils\Logger\LoggersImpl\ColorConsoleLogger.cpp" />
     <ClCompile Include="src\Config\LoggerConfig.cpp" />
     <ClCompile Include="src\Utils\Logger\Enums.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Components\TiledLayerComponent.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Components\TiledMapLayerOrtoDrawable.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Components\TileSetComponent.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Factories\TileLayersFactory.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Factories\TilesetsFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
@@ -286,5 +291,10 @@
     <ClInclude Include="src\Utils\Logger\Enums.h" />
     <ClInclude Include="src\Utils\Logger\LoggersImpl\ColorConsoleLogger.h" />
     <ClInclude Include="src\Config\LoggerConfig.h" />
+    <ClInclude Include="src\Integrations\Tiled\Components\TiledLayerComponent.h" />
+    <ClInclude Include="src\Integrations\Tiled\Components\TiledMapLayerOrtoDrawable.h" />
+    <ClInclude Include="src\Integrations\Tiled\Components\TileSetComponent.h" />
+    <ClInclude Include="src\Integrations\Tiled\Factories\TileLayersFactory.h" />
+    <ClInclude Include="src\Integrations\Tiled\Factories\TilesetsFactory.h" />
   </ItemGroup>
 </Project>

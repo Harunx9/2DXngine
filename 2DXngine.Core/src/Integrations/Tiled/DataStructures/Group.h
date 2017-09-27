@@ -85,6 +85,25 @@ public:
         return this->_images[name];
     }
 
+    std::vector<TileLayer> get_AllTileLayers()
+    {
+        std::vector<TileLayer> vec;
+
+        std::transform(
+            this->_tileLayers.begin(),
+            this->_tileLayers.end(),
+            std::back_inserter(vec),
+            [&](auto &x) {return x.second; });
+
+        for (auto& group : _groups)
+        {
+            auto g = group.second.get_AllTileLayers();
+            vec.insert(vec.end(), g.begin(), g.end());
+        }
+
+        return vec;
+    }
+
     READONLY_PROPERTY(std::string, name)
     READONLY_PROPERTY(int, offsetX)
     READONLY_PROPERTY(int, offsetY)

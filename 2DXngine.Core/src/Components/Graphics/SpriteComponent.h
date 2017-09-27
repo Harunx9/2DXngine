@@ -17,7 +17,8 @@ public:
     virtual void terminate() override;
 
     READONLY_PROPERTY(Texture*, texture)
+    READONLY_PROPERTY(std::string, path)
+    READONLY_PROPERTY(std::string, fileName)
 private:
     ContentManagerService * _manager;
-    std::string _path;
 };

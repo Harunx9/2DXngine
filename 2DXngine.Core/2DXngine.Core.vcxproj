@@ -33,6 +33,10 @@
     <ClCompile Include="..\libs\pugixml\src\pugixml.cpp" />
     <ClCompile Include="..\libs\simpleini\ConvertUTF.c" />
     <ClCompile Include="src\Config\LoggerConfig.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Components\TiledLayerComponent.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Components\TiledMapLayerOrtoDrawable.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Factories\TileLayersFactory.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Factories\TilesetsFactory.cpp" />
     <ClCompile Include="src\Utils\Logger\Enums.cpp" />
     <ClCompile Include="src\Utils\Logger\LoggersImpl\ColorConsoleLogger.cpp" />
     <ClCompile Include="src\Utils\Logger\LoggerService.cpp" />
@@ -123,6 +127,7 @@
     <ClCompile Include="src\Utils\SimpleCSV.cpp" />
     <ClCompile Include="src\Utils\StringUtils.cpp" />
     <ClCompile Include="src\Utils\Timer.cpp" />
+    <ClCompile Include="src\Integrations\Tiled\Components\TileSetComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\libs\pugixml\src\pugiconfig.hpp" />
@@ -130,6 +135,10 @@
     <ClInclude Include="..\libs\simpleini\ConvertUTF.h" />
     <ClInclude Include="..\libs\simpleini\SimpleIni.h" />
     <ClInclude Include="src\Config\LoggerConfig.h" />
+    <ClInclude Include="src\Integrations\Tiled\Components\TiledLayerComponent.h" />
+    <ClInclude Include="src\Integrations\Tiled\Components\TiledMapLayerOrtoDrawable.h" />
+    <ClInclude Include="src\Integrations\Tiled\Factories\TileLayersFactory.h" />
+    <ClInclude Include="src\Integrations\Tiled\Factories\TilesetsFactory.h" />
     <ClInclude Include="src\Utils\Logger\LoggersImpl\ColorConsoleLogger.h" />
     <ClInclude Include="src\Utils\Logger\Enums.h" />
     <ClInclude Include="src\Utils\Logger\LoggerService.h" />
@@ -244,6 +253,7 @@
     <ClInclude Include="src\Utils\SimpleCSV.h" />
     <ClInclude Include="src\Utils\StringUtils.h" />
     <ClInclude Include="src\Utils\Timer.h" />
+    <ClInclude Include="src\Integrations\Tiled\Components\TileSetComponent.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{62278505-2A49-40A1-89DF-867A011E0876}</ProjectGuid>

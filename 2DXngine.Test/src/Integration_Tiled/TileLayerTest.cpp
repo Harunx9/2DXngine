@@ -20,3 +20,10 @@ TEST_F(TiledFixture, tile_layer_data_should_be_parsed)
     ASSERT_EQ(data.tiles.size(), 100);
     ASSERT_FALSE(std::any_of(data.tiles.begin(), data.tiles.end(), [=](Tile tile) {return tile.id == 0; }));
 }
+
+TEST_F(TiledFixture, can_get_obtain_all_layers)
+{
+    auto tileLayers = _parsedMap->get_AllTileLayers();
+
+    ASSERT_EQ(tileLayers.size() , 2);
+}

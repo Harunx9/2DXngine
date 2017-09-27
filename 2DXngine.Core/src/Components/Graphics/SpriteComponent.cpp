@@ -1,5 +1,4 @@
 #include "SpriteComponent.h"
-
 SpriteComponent::SpriteComponent(std::string path) :
     Component("SpriteComponent"),
     _path(path)
@@ -16,6 +15,7 @@ void SpriteComponent::initialize(bool force)
     if (this->_manager)
     {
         this->_texture = this->_manager->load<Texture>(AssetPath::create(this->_path));
+        this->_fileName = AssetPath::get_fileName(this->_path);
     }
 }
 

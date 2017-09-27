@@ -53,6 +53,30 @@ public:
         return _properties[name];
     }
     
+    int ** to2DArray()
+    {
+        int ** arr = new int*[this->_height];
+        for (size_t r = 0; r <(size_t) this->_height; ++r)
+            arr[r] = new int[this->_width];
+
+        int row = 0; 
+        int col = 0;
+        for (auto& tileId : this->_data.tiles)
+        {
+            if (col >= this->_width)
+            {
+                ++row;
+                col = 0;
+            }
+
+            arr[row][col] = tileId.id;
+
+            ++col;
+        }
+
+        return arr;
+    }
+
     PROPERTY(Data, data)
     READONLY_PROPERTY(std::string, name)
     READONLY_PROPERTY(int, x)

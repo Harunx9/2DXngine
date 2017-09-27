@@ -1,10 +1,12 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <functional>
 #include "Component.h"
 #include "../TypeInformation/TypeInfo.h"
 #include "../Utils/Macros/PropertyMacro.h"
 class GameObject;
+class GameObjectManager;
 
 typedef std::vector<Component*> components_list;
 typedef std::vector<GameObject*> gameobject_list;
@@ -24,6 +26,12 @@ public:
 
     template<typename TComponent>
     std::vector<TComponent*> findAllComponentsOfType(bool exactType = true);
+
+    template<typename TComponent>
+    TComponent* findFirstComponentBy(std::function<bool(TComponent*)> pred);
+
+    template<typename TComponent>
+    std::vector<TComponent*> findComponentsBy(std::function<bool(TComponent*)> pred);
 
     GameObject* addChild(GameObject* child);
     void removeChild(const char* name);
@@ -50,6 +58,7 @@ public:
 
     READONLY_PROPERTY(std::string, name)
     READONLY_PROPERTY(GameObject*, parent)
+    READONLY_PROPERTY(GameObjectManager*, manager)
 
     PROPERTY(std::string, tag)
 
@@ -110,6 +119,36 @@ inline std::vector<TComponent*> GameObject::findAllComponentsOfType(bool exactTy
         {
             if (component->getType().get_hasBaseTypeOf(TypeInfo::get<TComponent>()))
                 matchedComponentList.push_back((TComponent *)component);
+        }
+    }
+
+    return matchedComponentList;
+}
+
+template<typename TComponent>
+inline TComponent * GameObject::findFirstComponentBy(std::function<bool(TComponent*)> pred)
+{
+    for (auto component : this->_components)
+    {
+        if (pred((TComponent *)component))
+        {
+            return (TComponent *)component;
+        }
+    }
+
+    return nullptr;
+}
+
+template<typename TComponent>
+inline std::vector<TComponent*> GameObject::findComponentsBy(std::function<bool(TComponent*)> pred)
+{
+    std::vector<TComponent*> matchedComponentList;
+
+    for (auto component : this->_components)
+    {
+        if (pred((TComponent *)component))
+        {
+            matchedComponentList.push_back((TComponent *)component);
         }
     }
 

@@ -1,5 +1,6 @@
 #pragma once
 #include <map>
+#include <vector>
 #include "TileLayer.h"
 #include "Group.h"
 #include "ObjectLayer.h"
@@ -55,7 +56,7 @@ public:
         this->_properties = std::map<std::string, Property>();
     }
 
-    ~TiledMap() 
+    ~TiledMap()
     {
 
     }
@@ -121,6 +122,38 @@ public:
         return this->_tilesets[firstgGid];
     }
 
+    std::vector<TileLayer> get_AllTileLayers()
+    {
+        std::vector<TileLayer> vec;
+
+        std::transform(
+            this->_tileLayers.begin(),
+            this->_tileLayers.end(),
+            std::back_inserter(vec),
+            [&](auto &x) {return x.second; });
+
+        for (auto& group : _groups)
+        {
+            auto g = group.second.get_AllTileLayers();
+            vec.insert(vec.end(), g.begin(), g.end());
+        }
+
+        return vec;
+    }
+
+    std::vector<TileSet> get_AllTileSets()
+    {
+        std::vector<TileSet> vec;
+
+        std::transform(
+            this->_tilesets.begin(),
+            this->_tilesets.end(),
+            std::back_inserter(vec),
+            [&](auto &x) {return x.second; });
+
+        return vec;
+    }
+
     READONLY_PROPERTY(std::string, version)
     READONLY_PROPERTY(std::string, tiledVersion)
     READONLY_PROPERTY(Orientation, orientation)
@@ -134,8 +167,8 @@ public:
     READONLY_PROPERTY(std::string, staggerAxis)
     READONLY_PROPERTY(std::string, staggerIndex)
 private:
-    std::map<std::string, Group> _groups;
     std::map<std::string, TileLayer> _tileLayers;
+    std::map<std::string, Group> _groups;
     std::map<std::string, ObjectGroup> _objects;
     std::map<std::string, ImageLayer> _images;
     std::map<std::string, Property> _properties;

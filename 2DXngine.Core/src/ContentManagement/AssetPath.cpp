@@ -1,6 +1,7 @@
 #include "AssetPath.h"
 #include <SDL.h>
 #include "../Utils/File.h"
+#include "../Utils/StringUtils.h"
 
 AssetPath::AssetPath(std::string containerPath, std::string fullPath, AssertLocation location) :
     _containerPath(containerPath),
@@ -22,6 +23,15 @@ AssetPath AssetPath::create(std::string path, AssertLocation location)
     }
 
     return AssetPath("", "", location);
+}
+
+std::string AssetPath::get_fileName(std::string path)
+{
+    auto splittedPath = stringutils::split(path, '/');
+    auto fileWithextension = splittedPath.back();
+    auto splittedFileName = stringutils::split(fileWithextension, '.');
+
+    return splittedFileName.front();
 }
 
 AssetPath::~AssetPath()

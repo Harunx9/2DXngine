@@ -56,6 +56,9 @@ GameObject* GameObject::addComponent(Component * component)
 {
     this->_components.push_back(component);
     component->add_owner(this);
+
+    if (this->_isInitialized)
+        component->initialize();
     return this;
 }
 

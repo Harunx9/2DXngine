@@ -15,6 +15,7 @@ class AssetPath
 public:
     static AssetPath create(std::string path, AssertLocation location = AssertLocation::CONTENT);
     static AssetPath empty() { return AssetPath("", "", AssertLocation::EMPTY); }
+    static std::string get_fileName(std::string path);
     ~AssetPath();
     inline bool isEmpty()
     {
