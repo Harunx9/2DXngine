@@ -28,6 +28,7 @@ std::vector<GameObject*> TileLayersFactory::map(TiledMap * map)
 
         go->addComponent(transform)
             ->addComponent(new TiledLayerComponent(
+                tileLayer.get_name(),
                 tileLayer.get_width(),
                 tileLayer.get_height(),
                 tileLayer.to2DArray(),

@@ -33,13 +33,15 @@
     <ClCompile Include="src\Graphics\CameraUnprojectTest.cpp" />
     <ClCompile Include="src\Components\TextDataComponent.cpp" />
     <ClCompile Include="..\libs\pugixml\src\pugixml.cpp" />
-    <ClCompile Include="src\Integration_Tiled\ParseObjectGroupTest.cc" />
-    <ClCompile Include="src\Integration_Tiled\ParseMapTest.cc" />
-    <ClCompile Include="src\Integration_Tiled\ImageLayerTest.cc" />
-    <ClCompile Include="src\Integration_Tiled\TileLayerTest.cpp" />
-    <ClCompile Include="src\Integration_Tiled\MapGroupTest.cc" />
-    <ClCompile Include="src\Integration_Tiled\TilesetTest.cpp" />
     <ClCompile Include="src\Graphics\ColorFromStringTest.cpp" />
+    <ClCompile Include="src\Integration_Tiled\ParserTest\ImageLayerTest.cc" />
+    <ClCompile Include="src\Integration_Tiled\ParserTest\MapGroupTest.cc" />
+    <ClCompile Include="src\Integration_Tiled\ParserTest\ParseMapTest.cc" />
+    <ClCompile Include="src\Integration_Tiled\ParserTest\ParseObjectGroupTest.cc" />
+    <ClCompile Include="src\Integration_Tiled\ParserTest\TileLayerTest.cpp" />
+    <ClCompile Include="src\Integration_Tiled\ParserTest\TilesetTest.cpp" />
+    <ClCompile Include="src\Integration_Tiled\Factory\CreateTilesetGameObjectTest.cc" />
+    <ClCompile Include="src\Integration_Tiled\Factory\CreateTileLayerObjectsTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\cfg.ini" />
@@ -59,7 +61,8 @@
     <ClInclude Include="src\Utils\EventTestData.h" />
     <ClInclude Include="..\libs\pugixml\src\pugiconfig.hpp" />
     <ClInclude Include="..\libs\pugixml\src\pugixml.hpp" />
-    <ClInclude Include="src\Integration_Tiled\TiledFixture.h" />
+    <ClInclude Include="src\Integration_Tiled\ParserTest\TiledFixture.h" />
+    <ClInclude Include="src\Integration_Tiled\Factory\FactoryTestFixture.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Content\babyblocks.ttf" />

@@ -1,8 +1,9 @@
 #include "TiledLayerComponent.h"
 
 
-TiledLayerComponent::TiledLayerComponent(int width, int height, int ** layerTiles, int layerOrder) :
+TiledLayerComponent::TiledLayerComponent(std::string nameLayer, int width, int height, int ** layerTiles, int layerOrder) :
     Component("TiledLayerComponent"),
+    _nameLayer(nameLayer),
     _width(width),
     _height(height),
     _layerTiles(layerTiles),

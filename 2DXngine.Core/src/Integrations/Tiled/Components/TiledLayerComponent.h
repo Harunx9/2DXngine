@@ -5,7 +5,7 @@ class TiledLayerComponent : public Component
 {
 public:
     ADD_TYPE_META_INFO()
-        TiledLayerComponent(int width, int height, int ** layerTiles, int layerOrder);
+        TiledLayerComponent(std::string nameLayer, int width, int height, int ** layerTiles, int layerOrder);
     ~TiledLayerComponent();
 
     virtual void initialize(bool force = false) override;
@@ -19,6 +19,7 @@ public:
     READONLY_PROPERTY(int, width)
     READONLY_PROPERTY(int, height)
     READONLY_PROPERTY(int, layerOrder)
+    READONLY_PROPERTY(std::string, nameLayer)
 protected:
     int ** _layerTiles;
 };
