@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "SceneBehaviorManager.h"
+#include "PostProcessHandler.h"
 #include "../Utils/Macros/PropertyMacro.h"
 class Camera;
 class Renderer;
@@ -9,6 +10,7 @@ class GameObjectManager;
 class SceneManagerService;
 class SceneRenderSystem;
 class SceneUpdateSystem;
+class PostProcessHandler;
 
 class Scene
 {
@@ -40,5 +42,6 @@ protected:
     SceneRenderSystem * _renderSystem;
     SceneUpdateSystem * _updateSystem;
     SceneBehaviorManager _sceneBehaviorManager;
+    PostProcessHandler _postProcessHandler;
 };
 

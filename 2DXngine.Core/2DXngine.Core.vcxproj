@@ -38,6 +38,8 @@
     <ClCompile Include="src\Integrations\Tiled\Components\TiledMapLayerOrtoDrawable.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Factories\TileLayersFactory.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Factories\TilesetsFactory.cpp" />
+    <ClCompile Include="src\Scenes\PostProcessHandler.cpp" />
+    <ClCompile Include="src\Scenes\PostProcessing\PostProcessTask.cpp" />
     <ClCompile Include="src\Utils\Logger\Enums.cpp" />
     <ClCompile Include="src\Utils\Logger\LoggersImpl\ColorConsoleLogger.cpp" />
     <ClCompile Include="src\Utils\Logger\LoggerService.cpp" />
@@ -142,6 +144,8 @@
     <ClInclude Include="src\Integrations\Tiled\Components\TiledMapLayerOrtoDrawable.h" />
     <ClInclude Include="src\Integrations\Tiled\Factories\TileLayersFactory.h" />
     <ClInclude Include="src\Integrations\Tiled\Factories\TilesetsFactory.h" />
+    <ClInclude Include="src\Scenes\PostProcessHandler.h" />
+    <ClInclude Include="src\Scenes\PostProcessing\PostProcessTask.h" />
     <ClInclude Include="src\Utils\Logger\LoggersImpl\ColorConsoleLogger.h" />
     <ClInclude Include="src\Utils\Logger\Enums.h" />
     <ClInclude Include="src\Utils\Logger\LoggerService.h" />

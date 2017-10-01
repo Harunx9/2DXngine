@@ -43,11 +43,13 @@ void SceneRenderSystem::drawGameObjects(float deltaTime)
     {
         if (drawable->get_isVisible())
         {
-           // this->_scene->get_renderer()->set_batchTarget(&drawable->get_layer());
+            if (this->_scene->get_renderer()->has_layer(&drawable->get_layer()) == false) continue;
+
+            this->_scene->get_renderer()->set_batchTarget(&drawable->get_layer());
 
             drawable->draw(this->_scene->get_renderer(), this->_scene->get_camera(), deltaTime);
             
-           // this->_scene->get_renderer()->reset_batchTarget();
+            this->_scene->get_renderer()->reset_batchTarget();
         }
     }
 }

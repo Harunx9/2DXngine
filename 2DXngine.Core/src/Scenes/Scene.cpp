@@ -76,9 +76,10 @@ void Scene::update(float deltaTime)
 void Scene::draw(float deltaTime)
 {
     this->_renderer->get_graphics()->clear(this->_camera->get_clearColor());
-    //this->_renderer->beginRendering();
+    this->_renderer->beginRendering();
     this->_renderSystem->drawGameObjects(deltaTime);
-    //this->_renderer->drawAllTargets(this->_camera->get_viewMatrix(), TextureFilter::LINEAR_FILTER, TextureWrap::CLAMP_TO_EDGE);
+    this->_renderer->drawAllTargets(this->_camera->get_viewMatrix(), TextureFilter::LINEAR_FILTER, TextureWrap::CLAMP_TO_EDGE);
+    this->_postProcessHandler.applyAllTasks(deltaTime, this->_renderer, this->_camera);
     this->_renderer->get_graphics()->swapBuffers();
 }
 

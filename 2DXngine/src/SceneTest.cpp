@@ -27,7 +27,7 @@ void SceneTest::createScene()
     Viewport vp = this->get_renderer()->get_graphics()->get_viewport();
     this->_camera = new Camera(vp.width, vp.height, Colors::white);
     this->_camera->set_position(glm::vec2(0.f, 0.f));
-    GameObject* go = new GameObject("Dot1");
+   /* GameObject* go = new GameObject("Dot1");
     Transform* t1 = new Transform();
     t1->set_position(glm::vec2(100.f, 100.f));
     t1->set_origin(glm::vec2(0.5f));
@@ -58,9 +58,9 @@ void SceneTest::createScene()
     go3->addComponent(t3);
     go3->addComponent(new SpriteComponent("Content/dot.png"))
         ->addComponent(new SpriteDrawableComponent())
-        ->addComponent(new DotTestController());
+        ->addComponent(new DotTestController());*/
 
-    this->get_gameObjectManager()->addGameObject(go3);
+    //this->get_gameObjectManager()->addGameObject(go3);
 
     GameObject* go4 = new GameObject("MouseRecalc");
     go4->addComponent(new TestMouseCoordsComponent(this->_camera));
