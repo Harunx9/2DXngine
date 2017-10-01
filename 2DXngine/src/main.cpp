@@ -1,22 +1,12 @@
-#include <AppImplementations\WindowApp.h>
 #include "TestGameHandlerWithScenes.h"
 #include "TestGameHandler.h"
 #include "DefinedTypes.h"
+#include <AppImplementations\Builder\AppBuilder.h>
 
 int main(int argc, char* argv[])
 {
-    // TODO replace EmptyGameHandler with concrete game implementation
-    App* app = new WindowApp(new TestGameHandlerWithScenes(), "DD", "DDD");
-    //App* app = new WindowApp(new TestGameHandler(), "DD", "DDD");
-    app->initialize();
-    if (app->get_isInitialized())
-    {
-        app->run();
-        if (app->get_isRunning() == false)
-        {
-            app->exit();
-        }
-    }
-    delete app;
+    AppBuilder::createForPlatrorm(AppPlatform::WINDOWS)
+        ->withHandler(new TestGameHandlerWithScenes())
+        ->buildAndRun();
     return 0;
 }

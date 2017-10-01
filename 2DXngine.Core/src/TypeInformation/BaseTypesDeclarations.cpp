@@ -14,4 +14,7 @@ DEFINE_TYPE_INFO(ClickableComponent);
 DEFINE_TYPE_INFO(TextComponent);
 DEFINE_TYPE_INFO(FontComponent);
 DEFINE_TYPE_INFO(FontDrawableComponent);
+DEFINE_TYPE_INFO(TiledMapLayerOrtoDrawable);
+DEFINE_TYPE_INFO(TileSetComponent);
+DEFINE_TYPE_INFO(TiledLayerComponent);
 #endif

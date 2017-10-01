@@ -170,6 +170,7 @@
     <ClCompile Include="src\Integrations\Tiled\Components\TileSetComponent.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Factories\TileLayersFactory.cpp" />
     <ClCompile Include="src\Integrations\Tiled\Factories\TilesetsFactory.cpp" />
+    <ClCompile Include="src\AppImplementations\Builder\AppBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AppImplementations\SDLEvents\Mappers\KeyboardEventMapper.h" />
@@ -296,5 +297,7 @@
     <ClInclude Include="src\Integrations\Tiled\Components\TileSetComponent.h" />
     <ClInclude Include="src\Integrations\Tiled\Factories\TileLayersFactory.h" />
     <ClInclude Include="src\Integrations\Tiled\Factories\TilesetsFactory.h" />
+    <ClInclude Include="src\AppImplementations\Builder\AppBuilder.h" />
+    <ClInclude Include="src\Integrations\Tiled\Components\Components.h" />
   </ItemGroup>
 </Project>

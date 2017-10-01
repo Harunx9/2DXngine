@@ -2,6 +2,7 @@
 
 #include "TypeInfo.h"
 #include "../Components/Components.h"
+#include "../Integrations/Tiled/Components/Components.h"
 
 DECLARE_TYPE_INFO(Component, "")
 DECLARE_TYPE_INFO(DrawableComponent, Component)
@@ -16,6 +17,9 @@ DECLARE_TYPE_INFO(ClickableComponent, UpdateableComponent)
 DECLARE_TYPE_INFO(TextComponent, Component)
 DECLARE_TYPE_INFO(FontComponent, Component)
 DECLARE_TYPE_INFO(FontDrawableComponent, DrawableComponent)
+DECLARE_TYPE_INFO(TiledMapLayerOrtoDrawable, DrawableComponent)
+DECLARE_TYPE_INFO(TileSetComponent, Component)
+DECLARE_TYPE_INFO(TiledLayerComponent, Component)
 
 #ifdef main
 DEFINE_TYPE_INFO(Component);
@@ -31,4 +35,7 @@ DEFINE_TYPE_INFO(ClickableComponent);
 DEFINE_TYPE_INFO(TextComponent);
 DEFINE_TYPE_INFO(FontComponent);
 DEFINE_TYPE_INFO(FontDrawableComponent);
+DEFINE_TYPE_INFO(TiledMapLayerOrtoDrawable);
+DEFINE_TYPE_INFO(TileSetComponent);
+DEFINE_TYPE_INFO(TiledLayerComponent);
 #endif

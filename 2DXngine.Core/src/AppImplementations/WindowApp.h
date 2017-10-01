@@ -11,7 +11,9 @@ class WindowApp :
 public:
     WindowApp(GameHandler * handler,
         const char* companyName,
-        const char* appName);
+        const char* appName,
+        const char* configPath, 
+        const char* userCfgName);
     WindowApp(const WindowApp * other) = delete;
     ~WindowApp();
     virtual void initialize() override;
@@ -25,5 +27,7 @@ private:
     Timer * _timer;
     ConfigurationService* _cfgService;
     LoggerService* _logger;
+    const char* _configPath;
+    const char* _userCfgName;
 };
 

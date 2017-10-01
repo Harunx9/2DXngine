@@ -14,8 +14,14 @@
 #include "../Utils/BackgroundTask.h"
 #include "../Utils/Logger/LoggerService.h"
 
-WindowApp::WindowApp(GameHandler* handler, const char* companyName, const char* appName) :
-    App(handler, companyName, appName)
+WindowApp::WindowApp(GameHandler* handler,
+    const char* companyName,
+    const char* appName,
+    const char* configPath,
+    const char* userCfgName) :
+    App(handler, companyName, appName),
+    _configPath(configPath),
+    _userCfgName(userCfgName)
 {
 }
 
