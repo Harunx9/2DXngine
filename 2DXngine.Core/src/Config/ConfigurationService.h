@@ -11,14 +11,11 @@
 #include "LanguageConfig.h"
 #include "../Utils/Events/EventHandler.h"
 
-#define BASE_CONFIG_FILE_NAME "cfg.ini"
-#define USER_CONFIG_FILE_NAME "user_cfg.ini"
-
 class ConfigurationService :
     public Service
 {
 public:
-    ConfigurationService(const char* appName, const char* companyName);
+    ConfigurationService(const char* appName, const char* companyName, const char* cfgName, const char* userCfgName);
     ~ConfigurationService();
     virtual void initialize() override;
     virtual void terminate() override;
@@ -36,4 +33,6 @@ private:
     std::string _userConfigPath;
     const char* _appName;
     const char* _companyName;
+    const char* _cfgName;
+    const char* _userCfgName;
 };

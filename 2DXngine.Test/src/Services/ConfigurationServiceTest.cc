@@ -8,7 +8,7 @@ class ConfigurationTestFixture : public ::testing::Test
 protected:
     virtual void SetUp()
     {
-        auto cfg = new ConfigurationService("Test", "Testing");
+        auto cfg = new ConfigurationService("Test", "Testing", "cfg.ini", "usercfg.ini");
         cfg->baseInitialize();
         ServiceLocator::registerService<ConfigurationService>(cfg);
         ServiceLocator::initialize();

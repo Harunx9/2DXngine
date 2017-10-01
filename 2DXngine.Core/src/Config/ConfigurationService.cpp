@@ -2,9 +2,12 @@
 #include "../Utils/File.h"
 #include <SDL.h>
 
-ConfigurationService::ConfigurationService(const char* appName, const char* companyName) : Service("ConfigurationService"),
+ConfigurationService::ConfigurationService(const char* appName, const char* companyName,
+    const char* cfgName, const char* userCfgName) : Service("ConfigurationService"),
 _appName(appName),
-_companyName(companyName)
+_companyName(companyName),
+_cfgName(cfgName),
+_userCfgName(userCfgName)
 {
     this->_binding = CREATE_BINDING(EventHandler::get_nextID(), ConfigurationService, onSave);
 }
@@ -17,12 +20,12 @@ ConfigurationService::~ConfigurationService()
 
 void ConfigurationService::initialize()
 {
-    this->_baseConfigPath = getConfigFilePath(SDL_GetBasePath(), BASE_CONFIG_FILE_NAME);
+    this->_baseConfigPath = getConfigFilePath(SDL_GetBasePath(), this->_cfgName);
     if (File::exist(std::string(this->_baseConfigPath)) == false)
         return;
 
 #if RELEASE
-    this->_userConfigPath = getConfigFilePath(SDL_GetPrefPath(this->_companyName, this->_appName), USER_CONFIG_FILE_NAME);
+    this->_userConfigPath = getConfigFilePath(SDL_GetPrefPath(this->_companyName, this->_appName), this->_userCfgName);
 #else
     this->_userConfigPath = this->_baseConfigPath;
 #endif
