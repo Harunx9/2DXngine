@@ -29,19 +29,19 @@ Features in development (if you want more recent feature list please took on [tr
 - [ ] game services for music, asset loading and so on,
   - [x] Audio services,
   - [x] Asset management service,
-  - [ ] Logging service,
+  - [x] Logging service,
 - [ ] Utilities
   - [x] Publisher - Subscriber events,
   - [x] CSV parser,
-  - [ ] Timer,
+  - [x] Timer,
   - [x] Simple math types like potnt and rectangle,
 - [ ] Box2d integration,
 - [x] Tiled maps integration,
   - [x] Data structures
   - [x] Parsing
   - [x] Scene creation mechanism
-  - [ ] Tile layer component
-  - [ ] Tile layer renderer
+  - [x] Tile layer component
+  - [x] Tile layer renderer
 - [ ] Lua scripting,
 - [ ] Visual Studio independent build system,
 - [ ] and so on.
