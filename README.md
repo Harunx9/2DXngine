@@ -10,7 +10,7 @@ If you want to run this you need Visual Studio 2015. All dependencies are in the
 git clone --recursive
 ```
 
-Features in development:
+Features in development (if you want more recent feature list please took on ![trello board](https://trello.com/b/wJGa7Jm5)):
 
 - [x] type information system,
 - [x] component model game objects,
