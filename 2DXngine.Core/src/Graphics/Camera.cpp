@@ -44,10 +44,11 @@ glm::vec2 Camera::unproject(glm::vec2 screenPosition)
 glm::mat4 Camera::get_viewMatrix()
 {
     glm::mat4 vm = glm::mat4();
+    vm = glm::translate(vm, glm::vec3(-this->_position, 0.f));
     vm = glm::translate(vm, glm::vec3(this->_origin, 0.f));
     vm = glm::rotate(vm, -this->_rotation, glm::vec3(0.f, 0.f, 1.f));
-    vm = glm::scale(vm, glm::vec3(this->_zoom, this->_zoom, 1.f));
     vm = glm::translate(vm, glm::vec3(-this->_origin, 0.f));
-    vm = glm::translate(vm, glm::vec3(-this->_position, 0.f));
-    return vm;
+    auto scale = glm::scale(glm::mat4(), glm::vec3(this->_zoom, this->_zoom, 1.f));
+    auto result = vm * scale;
+    return result;
 }

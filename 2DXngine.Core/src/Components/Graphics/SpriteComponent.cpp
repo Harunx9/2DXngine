@@ -3,6 +3,7 @@ SpriteComponent::SpriteComponent(std::string path) :
     Component("SpriteComponent"),
     _path(path)
 {
+    this->_fileName = AssetPath::get_fileName(this->_path);
 }
 
 SpriteComponent::~SpriteComponent()
@@ -15,7 +16,6 @@ void SpriteComponent::initialize(bool force)
     if (this->_manager)
     {
         this->_texture = this->_manager->load<Texture>(AssetPath::create(this->_path));
-        this->_fileName = AssetPath::get_fileName(this->_path);
     }
 }
 

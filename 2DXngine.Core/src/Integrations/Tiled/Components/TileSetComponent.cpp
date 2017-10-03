@@ -18,6 +18,7 @@ TileSetComponent::TileSetComponent(
     _imageHeight(imageHeight),
     _spritePath(spritePath)
 {
+    this->_fileName = AssetPath::get_fileName(this->_spritePath);
 }
 
 TileSetComponent::~TileSetComponent()
@@ -32,6 +33,7 @@ RectangleI TileSetComponent::get_tileCoords(int tileId)
 
 bool TileSetComponent::get_isTileInTileset(int tileId)
 {
+
     return this->_firtsId <= tileId &&
         tileId <= this->_firtsId + this->_tileCount;
 }
@@ -39,7 +41,6 @@ bool TileSetComponent::get_isTileInTileset(int tileId)
 void TileSetComponent::initialize(bool force)
 {
     this->cacheRects();
-    this->_fileName = AssetPath::get_fileName(this->_spritePath);
 }
 
 void TileSetComponent::terminate()

@@ -36,7 +36,7 @@ void GameObjectManager::terminate()
 void GameObjectManager::addGameObject(GameObject * gameObject)
 {
     assert(this->gameObjectExist(gameObject->get_name()) == false);
-
+    gameObject->addManager(this);
     this->_gameObjects.push_back(gameObject);
 }
 

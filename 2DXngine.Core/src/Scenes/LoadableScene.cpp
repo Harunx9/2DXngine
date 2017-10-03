@@ -9,6 +9,7 @@ LoadableScene::LoadableScene(SpriteBatch* batch, SceneLoader* loader) :
 
 LoadableScene::~LoadableScene()
 {
+    delete this->_loader;
 }
 
 void LoadableScene::createScene()
@@ -18,4 +19,10 @@ void LoadableScene::createScene()
     {
         this->get_gameObjectManager()->addGameObject(obj);
     }
+
+    setup();
+}
+
+void LoadableScene::setup()
+{
 }

@@ -9,19 +9,27 @@ class TiledMapLayerOrtoDrawable : public DrawableComponent
 {
 public:
     ADD_TYPE_META_INFO()
-    TiledMapLayerOrtoDrawable();
+        TiledMapLayerOrtoDrawable();
+    TiledMapLayerOrtoDrawable(TextureWrap wrap, TextureFilter filter);
     ~TiledMapLayerOrtoDrawable();
 
+    void clearCache();
     virtual void resolveDependencies(bool force = false) override;
     virtual void initialize(bool force = false) override;
     virtual void terminate() override;
     virtual void draw(Renderer * renderer, Camera * camera, float deltaTime) override;
-public:
+private:
+    enum class TileToDrawState
+    {
+        EMPTY,
+        FILLED
+    };
+
     struct TileToDraw {
-        glm::vec2 pos;
-        glm::vec2 size;
+        glm::ivec2 pos;
         RectangleI rect;
-        Texture* tex;
+        SpriteComponent* tex;
+        TileToDrawState state = TileToDrawState::EMPTY;
     };
 
     void cacheTilesToDraw();
@@ -31,5 +39,8 @@ public:
     std::vector<TileSetComponent*> _tilesets;
     TileToDraw* _tilesToDraw;
     int _tilesCount;
+    bool _isCached;
+    TextureWrap _wrap;
+    TextureFilter _filter;
 };
 

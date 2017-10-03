@@ -59,7 +59,18 @@ public:
     READONLY_PROPERTY(std::string, name)
     READONLY_PROPERTY(GameObject*, parent)
     READONLY_PROPERTY(GameObjectManager*, manager)
+    
+    inline void addManager(GameObjectManager* manager)
+    {
+        this->_manager = manager;
+    }
 
+    inline void removeManager()
+    {
+        this->_manager = nullptr;
+    }
+
+        
     PROPERTY(std::string, tag)
 
     components_list& get_components();
@@ -130,9 +141,12 @@ inline TComponent * GameObject::findFirstComponentBy(std::function<bool(TCompone
 {
     for (auto component : this->_components)
     {
-        if (pred((TComponent *)component))
+        if (TypeInfo::get<TComponent>() == component->getType())
         {
-            return (TComponent *)component;
+            if (pred((TComponent *)component))
+            {
+                return (TComponent *)component;
+            }
         }
     }
 
@@ -146,9 +160,12 @@ inline std::vector<TComponent*> GameObject::findComponentsBy(std::function<bool(
 
     for (auto component : this->_components)
     {
-        if (pred((TComponent *)component))
+        if (TypeInfo::get<TComponent>() == component->getType())
         {
-            matchedComponentList.push_back((TComponent *)component);
+            if (pred((TComponent *)component))
+            {
+                matchedComponentList.push_back((TComponent *)component);
+            }
         }
     }
 

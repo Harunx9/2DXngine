@@ -23,9 +23,9 @@ public:
 
     RectangleI get_tileCoords(int tileId);
     bool get_isTileInTileset(int tileId);
-    Texture* get_tilesetTexture()
+    SpriteComponent* get_sprite()
     {
-        return this->_sprite->get_texture();
+        return this->_sprite;
     }
 
     READONLY_PROPERTY(std::string, spritePath)

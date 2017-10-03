@@ -10,6 +10,7 @@ public:
 
     // Inherited via Scene
     virtual void createScene() override;
+    virtual void setup();
 protected:
     SceneLoader* _loader;
 };

@@ -8,6 +8,7 @@
     <ClCompile Include="src\DotTestController.cpp" />
     <ClCompile Include="src\DeclaredTypes.cpp" />
     <ClCompile Include="src\TestMouseCoordsComponent.cpp" />
+    <ClCompile Include="src\TestTiledScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\TestGameHandler.h" />
@@ -16,6 +17,7 @@
     <ClInclude Include="src\DotTestController.h" />
     <ClInclude Include="src\DefinedTypes.h" />
     <ClInclude Include="src\TestMouseCoordsComponent.h" />
+    <ClInclude Include="src\TestTiledScene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cfg.ini" />
