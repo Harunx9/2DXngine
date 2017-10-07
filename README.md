@@ -43,7 +43,7 @@ Features in development (if you want more recent feature list please took on [tr
   - [x] Tile layer component
   - [x] Tile layer renderer
 - [ ] Lua scripting,
-- [ ] Visual Studio independent build system,
+- [x] Visual Studio independent build system,
 - [ ] and so on.
 
 I will update this readme in future so stay tuned!
