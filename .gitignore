@@ -8,10 +8,12 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 
-*.sln
-*.vcproj
-src/**/*.vcproj
-src/**/*.vcproj.filters
+_build/x86-Debug/
+_build/x86-Release/
+_build/x64-Debug/
+_build/x64-Release/
+
+.vs/
 
 /test_build
 /build
