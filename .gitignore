@@ -15,6 +15,3 @@ _build/x64-Release/
 _build/appveyorbuild/
 
 .vs/
-
-/test_build
-/build

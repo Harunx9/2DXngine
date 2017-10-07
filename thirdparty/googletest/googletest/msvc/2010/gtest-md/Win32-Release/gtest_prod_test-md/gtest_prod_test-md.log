@@ -1,0 +1,5 @@
+﻿  gtest_prod_test.cc
+  production.cc
+  Generating Code...
+  gtest_prod_test-md.vcxproj -> C:\Users\szwan\Documents\Projects\2DXngine\thirdparty\googletest\googletest\msvc\2010\gtest-md\Win32-Release\gtest_prod_test.exe
+  gtest_prod_test-md.vcxproj -> C:\Users\szwan\Documents\Projects\2DXngine\thirdparty\googletest\googletest\msvc\2010\gtest-md\Win32-Release\gtest_prod_test.pdb (Full PDB)
