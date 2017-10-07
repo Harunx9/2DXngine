@@ -1,11 +1,7 @@
-[submodule "libs/googletest"]
-    path = libs/googletest
-    url = https://github.com/google/googletest.git
-
-[submodule "libs/simpleini"]
-    path = libs/simpleini
+[submodule "thirdparty/simpleini"]
+    path = thirdparty/simpleini
     url = https://github.com/brofield/simpleini.git
 
-[submodule "libs/pugixml"]
-    path = libs/pugixml
+[submodule "thirdparty/pugixml"]
+    path = thirdparty/pugixml
     url = https://github.com/zeux/pugixml.git
