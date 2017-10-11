@@ -47,6 +47,8 @@ set(ENGINE_SOURCE_FILES
         Components/Graphics/AnimationFactory/Animation.cpp
         Components/Graphics/AnimationFactory/XMLSpritesheetAnimationFactory.h
         Components/Graphics/AnimationFactory/XMLSpritesheetAnimationFactory.cpp
+        Components/Graphics/SpritesheetFactory/XMLSpritesheetParserFactory.h
+        Components/Graphics/SpritesheetFactory/XMLSpritesheetParserFactory.cpp
         Components/Graphics/AnimationComponent.h
         Components/Graphics/AnimationComponent.cpp
         Components/Graphics/AnimationDrawableComponent.h
@@ -59,6 +61,8 @@ set(ENGINE_SOURCE_FILES
         Components/Graphics/SpriteDrawableComponent.cpp
         Components/Graphics/Transform.h
         Components/Graphics/Transform.cpp
+        Components/Graphics/SpriteSheetComponent.h
+        Components/Graphics/SpriteSheetComponent.cpp
 
         Components/Interactions/ClickableComponent.h
         Components/Interactions/ClickableComponent.cpp

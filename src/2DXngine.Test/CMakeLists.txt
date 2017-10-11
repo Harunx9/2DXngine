@@ -8,6 +8,7 @@ set(ENGINE_TEST_SOURCE
     Components/Animation/ParsersTest.cc
     Components/ColliderComponentTest.cc
     Components/TextDataComponent.cc
+    Components/SpriteSheetComponentTest.cc
     
     GameObject/GameObjectBaseFunctionsTest.cc
     GameObject/GameObjectComponentModelTest.cc
