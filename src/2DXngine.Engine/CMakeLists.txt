@@ -40,8 +40,13 @@ set(ENGINE_SOURCE_FILES
 
         Components/Behaviors/ParticleSystem/BaseTypes.h
         Components/Behaviors/ParticleSystem/BaseTypes.cpp
+        Components/Behaviors/ParticleSystem/ParticleUpdaters.h
+        Components/Behaviors/ParticleSystem/ParticleUpdaters.cpp
+        Components/Behaviors/ParticleSystem/ParticleGenerators.h
+        Components/Behaviors/ParticleSystem/ParticleGenerators.cpp
         Components/Behaviors/ParticleSystemBehavior.h
         Components/Behaviors/ParticleSystemBehavior.cpp
+
         Components/Data/FontComponent.h
         Components/Data/FontComponent.cpp
         Components/Data/TextComponent.h
