@@ -1,6 +1,8 @@
 #pragma once
 #include <map>
+#include <vector>
 #include <string>
+#include <functional>
 #include "../../ComponentModel/Component.h"
 #include "../../Utils/Math/RectangleI.h"
 
@@ -28,6 +30,19 @@ public:
         {
             rects[index] = pair.second;
             ++index;
+        }
+
+        return rects;
+    }
+
+    std::vector<RectangleI> filterFrames(std::function<bool(std::pair<std::string, RectangleI>)> predicate)
+    {
+        std::vector<RectangleI> rects;
+
+        for (auto& pair : this->_sheet)
+        {
+            if (predicate(pair))
+                rects.push_back(pair.second);
         }
 
         return rects;

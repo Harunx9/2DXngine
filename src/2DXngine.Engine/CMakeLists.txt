@@ -38,6 +38,10 @@ set(ENGINE_SOURCE_FILES
         ComponentModel/GameObjectFilterFunctions.h
         Components/Components.h
 
+        Components/Behaviors/ParticleSystem/BaseTypes.h
+        Components/Behaviors/ParticleSystem/BaseTypes.cpp
+        Components/Behaviors/ParticleSystemBehavior.h
+        Components/Behaviors/ParticleSystemBehavior.cpp
         Components/Data/FontComponent.h
         Components/Data/FontComponent.cpp
         Components/Data/TextComponent.h
@@ -63,6 +67,8 @@ set(ENGINE_SOURCE_FILES
         Components/Graphics/Transform.cpp
         Components/Graphics/SpriteSheetComponent.h
         Components/Graphics/SpriteSheetComponent.cpp
+        Components/Graphics/ParticleSystemDrawable.h
+        Components/Graphics/ParticleSystemDrawable.cpp
 
         Components/Interactions/ClickableComponent.h
         Components/Interactions/ClickableComponent.cpp
