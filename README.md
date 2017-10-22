@@ -25,7 +25,9 @@ Features in development (if you want more recent feature list please took on [tr
   - [x] Collider,
   - [x] Clickable component,
   - [x] Font,
-  - [ ] Sprite atlas,
+  - [x] Sprite atlas,
+  - [ ] Particle system
+  - [ ] Pathfing system
 - [ ] game services for music, asset loading and so on,
   - [x] Audio services,
   - [x] Asset management service,
