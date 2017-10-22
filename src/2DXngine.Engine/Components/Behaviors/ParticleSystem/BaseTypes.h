@@ -4,7 +4,7 @@
 #include "../../../Graphics/Color.h"
 #include "../../../Utils/Math/RectangleI.h"
 class ParticleSystemBehavior;
-
+class LoggerService;
 class ParticlesData
 {
 public:
@@ -84,5 +84,6 @@ protected:
 
 private:
     std::vector<ParticleGenerator*> _generators;
+    LoggerService* _logger;
     float _emitRate;
 };

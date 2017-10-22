@@ -1,6 +1,7 @@
 #include "BaseTypes.h"
 #include <algorithm>
-
+#include "../../../Services/ServiceLocator.h"
+#include "../../../Utils/Logger/LoggerService.h"
 void ParticlesData::generate(size_t maxSize)
 {
     this->count = maxSize;
@@ -66,13 +67,19 @@ void ParticleEmiter::initialize(ParticleSystemBehavior * component)
         gen->initialize(component);
 
     this->_isInitialized = true;
+    this->_logger = ServiceLocator::get<LoggerService>("LoggerService");
 }
 
 void ParticleEmiter::emit(float dt, ParticlesData * data)
 {
     const size_t maxNewParticles = static_cast<size_t>(dt* this->_emitRate);
     const size_t startId = data->countActive;
-    const size_t endId = std::min(startId + maxNewParticles, data->count - 1);
+    const size_t endId = (std::min)(startId + maxNewParticles, data->count - 1);
+
+    if (endId != 0)
+    {
+        this->_logger->info("EndId : %l", endId);
+    }
 
     for (auto & gen : this->_generators)
         gen->generate(dt, data, startId, endId);

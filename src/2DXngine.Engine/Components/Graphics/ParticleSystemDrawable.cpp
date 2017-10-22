@@ -49,7 +49,7 @@ void ParticleSystemDrawableComponent::draw(Renderer * renderer, Camera* camera, 
         batch->draw(this->_spriteComponent->get_texture(),
             data->positions[particle],
             &data->textureFrames[particle],
-            data->colors[particle],
+            Colors::white,
             0.f);
     }
     batch->end();

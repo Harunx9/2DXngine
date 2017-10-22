@@ -12,3 +12,6 @@
 #include "Data/FontComponent.h"
 #include "Data/TextComponent.h"
 #include "Graphics/FontDrawableComponent.h"
+#include "Graphics/ParticleSystemDrawable.h"
+#include "Graphics/SpriteSheetComponent.h"
+#include "Behaviors/ParticleSystemBehavior.h"

@@ -17,6 +17,7 @@ public:
     virtual void initialize(bool force = false) override;
     virtual void terminate() override;
     virtual void update(float deltaTime) override;
+    virtual void resolveDependencies(bool force = false) override;
     
     inline ParticlesData* get_particles()
     {

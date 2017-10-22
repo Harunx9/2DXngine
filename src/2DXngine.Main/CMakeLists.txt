@@ -33,6 +33,9 @@ include_directories(
     ${PUGI_XML_SRC}
 )
 
+set (CONTENT ${PROJECT_SOURCE_DIR}/src/2DXngine.Main/Content)
+set (CFG_INI ${PROJECT_SOURCE_DIR}/src/2DXngine.Main/cfg.ini)
+
 add_executable(2DXngine ${ENGINE_MAIN_SOURCE})
 
 target_link_libraries(
@@ -44,6 +47,18 @@ target_link_libraries(
     ${SDL2_MIXER_LIBRARIES}
     ${FREETYPE_LIBRARIES}
     ${SOIL_LIBRARY}
+)
+
+add_custom_command(TARGET 2DXngine POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CONTENT}
+    "${CMAKE_BINARY_DIR}/src/2DXngine.Main/Debug/Content"
+)
+
+add_custom_command(TARGET 2DXngine POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+    ${CFG_INI}
+    "${CMAKE_BINARY_DIR}/src/2DXngine.Main/Debug"
 )
 
 if(WIN32)

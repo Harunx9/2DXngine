@@ -116,6 +116,9 @@ void SpriteBatch::begin(ShaderProgram * shader, TextureWrap wrap, TextureFilter 
 
 void SpriteBatch::end()
 {
+    if (this->_items.size() == 0)
+        return;
+
     //draw to frame buffer
     if (this->_currentTarget != nullptr)
     {

@@ -20,6 +20,9 @@ DECLARE_TYPE_INFO(FontDrawableComponent, DrawableComponent)
 DECLARE_TYPE_INFO(TiledMapLayerOrtoDrawable, DrawableComponent)
 DECLARE_TYPE_INFO(TileSetComponent, Component)
 DECLARE_TYPE_INFO(TiledLayerComponent, Component)
+DECLARE_TYPE_INFO(ParticleSystemBehavior, UpdateableComponent)
+DECLARE_TYPE_INFO(ParticleSystemDrawableComponent, DrawableComponent)
+DECLARE_TYPE_INFO(SpriteSheetComponent, Component)
 
 #ifdef main
 DEFINE_TYPE_INFO(Component);
@@ -38,4 +41,7 @@ DEFINE_TYPE_INFO(FontDrawableComponent);
 DEFINE_TYPE_INFO(TiledMapLayerOrtoDrawable);
 DEFINE_TYPE_INFO(TileSetComponent);
 DEFINE_TYPE_INFO(TiledLayerComponent);
+DEFINE_TYPE_INFO(ParticleSystemBehavior);
+DEFINE_TYPE_INFO(ParticleSystemDrawableComponent);
+DEFINE_TYPE_INFO(SpriteSheetComponent);
 #endif

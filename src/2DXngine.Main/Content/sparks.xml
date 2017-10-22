@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-16"?>
+<spritesheet>
+  <item name="spark1" x="0" y="0" width="10" height="10" offsetx="0" offsety="0" />
+  <item name="spark2" x="10" y="0" width="10" height="10" offsetx="0" offsety="0" />
+  <item name="spark3" x="20" y="0" width="10" height="10" offsetx="0" offsety="0" />
+  <item name="spark4" x="30" y="0" width="10" height="10" offsetx="0" offsety="0" />
+</spritesheet>

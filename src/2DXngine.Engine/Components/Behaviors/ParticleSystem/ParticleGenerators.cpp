@@ -34,9 +34,9 @@ void AreaParticleGenerator::generate(float dt, ParticlesData *data, size_t start
 
 //AllFrameRectsGenerator
 
-AllFrameRectsGenerator::AllFrameRectsGenerator(int maxRects) 
+AllFrameRectsGenerator::AllFrameRectsGenerator() 
     : ParticleGenerator(),
-    _maxRects(maxRects)
+    _maxRects(0)
 {
 }
 
@@ -84,7 +84,7 @@ void FilteredFrameRectsGenerator::generate(float dt, ParticlesData *data, size_t
 {
     for (size_t particle = startId; particle < endId; particle++)
     {
-        int rect = glm::linearRand(0, this->_rectCount);
+        int rect = (glm::linearRand)(0, this->_rectCount);
         data->textureFrames[particle] = this->_rects[rect];
     }
 }

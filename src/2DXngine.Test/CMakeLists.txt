@@ -110,7 +110,7 @@ add_custom_command(
     TARGET EngineTests POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy 
     ${ALL_WIN64_DLLS} 
-    "${CMAKE_BINARY_DIR}/src/2DXngine.Main/Debug"
+    "${CMAKE_BINARY_DIR}/src/2DXngine.Test/Debug"
 )
 endif()
 

@@ -19,7 +19,7 @@ private:
 class AllFrameRectsGenerator : public ParticleGenerator
 {
 public:
-    AllFrameRectsGenerator(int maxRects);
+    AllFrameRectsGenerator();
     ~AllFrameRectsGenerator();
     virtual void initialize(ParticleSystemBehavior * component) override;
     virtual void generate(float dt, ParticlesData *data, size_t startId, size_t endId) override;

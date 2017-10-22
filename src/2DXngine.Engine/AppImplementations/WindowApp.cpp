@@ -82,7 +82,7 @@ void WindowApp::run()
 
         while (accumulator >= this->_timeStep)
         {
-            this->_logger->info("Timestep: %f", this->_timeStep);
+            //this->_logger->info("Timestep: %f", this->_timeStep);
             this->_game->update(this->_timeStep);
             accumulator -= this->_timeStep;
         }

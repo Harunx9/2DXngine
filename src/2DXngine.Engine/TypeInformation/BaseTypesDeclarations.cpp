@@ -17,4 +17,7 @@ DEFINE_TYPE_INFO(FontDrawableComponent);
 DEFINE_TYPE_INFO(TiledMapLayerOrtoDrawable);
 DEFINE_TYPE_INFO(TileSetComponent);
 DEFINE_TYPE_INFO(TiledLayerComponent);
+DEFINE_TYPE_INFO(ParticleSystemBehavior);
+DEFINE_TYPE_INFO(ParticleSystemDrawableComponent);
+DEFINE_TYPE_INFO(SpriteSheetComponent);
 #endif
