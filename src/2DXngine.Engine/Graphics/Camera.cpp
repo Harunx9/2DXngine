@@ -52,3 +52,14 @@ glm::mat4 Camera::get_viewMatrix()
     auto result = vm * scale;
     return result;
 }
+
+bool Camera::isInCamera(const RectangleI & rect)
+{
+    RectangleI camRect = { 
+       (int) this->_position.x,
+       (int) this->_position.y,
+        this->_viewportWidth,
+        this->_viewportHeight };
+
+   return camRect.intersect(rect);
+}

@@ -152,3 +152,21 @@ void AliveTimeGenerator::generate(float dt, ParticlesData *data, size_t startId,
         data->aliveTimes[particle] = time;
     }
 }
+
+// ColorGenerator
+
+ColorGenerator::ColorGenerator(Color color)
+    : ParticleGenerator(),
+    _color(color)
+{
+}
+
+ColorGenerator::~ColorGenerator() {}
+
+void ColorGenerator::generate(float dt, ParticlesData *data, size_t startId, size_t endId)
+{
+    for (size_t particle = startId; particle < endId; particle++)
+    {
+        data->colors[particle] = this->_color;
+    }
+}

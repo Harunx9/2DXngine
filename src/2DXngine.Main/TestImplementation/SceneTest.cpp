@@ -43,15 +43,13 @@ void SceneTest::createScene()
     {
         new AreaParticleGenerator(),
             new AllFrameRectsGenerator(),
-            new AliveTimeGenerator(1.f, 3.f)
-
-    }, 200.f);
+    }, 300.f);
 
     auto updater = new ParticleSystemBehavior(emiter, 
         std::vector<ParticleUpdater*>{
-        new ConstAccelerationUpdater({ 0, 200.f }),
-            new TimeUpdater(),
-    }, 300);
+        new ConstAccelerationUpdater({ 200.f, 200.f }),
+            new OnScreenUpdater(this->_camera),
+    }, 400);
 
     go6->addComponent(t6)
         ->addComponent(new SpriteComponent("Content/sparks.png"))

@@ -1,6 +1,8 @@
 #include "BaseTypes.h"
 #include <glm/glm.hpp>
 
+class Camera;
+
 class ConstAccelerationUpdater : public ParticleUpdater
 {
 public:
@@ -30,4 +32,29 @@ public:
     ~AccelerationUpdater();
 
     virtual void update(float dt, ParticlesData *data) override;
+};
+
+class OnScreenUpdater: public ParticleUpdater
+{
+public:
+    OnScreenUpdater(Camera* camera);
+    ~OnScreenUpdater();
+
+    virtual void update(float dt, ParticlesData *data) override;
+private:
+    Camera* _camera;
+};
+
+
+class DistanceUpdater: public ParticleUpdater
+{
+public:
+    DistanceUpdater(float maxDist, int maxParticleCount);
+    ~DistanceUpdater();
+
+    virtual void update(float dt, ParticlesData *data) override;
+private:
+    float* _distances;
+    float _maxDist;
+    int _maxParticleCount;
 };

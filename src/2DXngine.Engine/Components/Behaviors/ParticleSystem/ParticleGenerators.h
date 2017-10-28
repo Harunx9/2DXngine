@@ -72,3 +72,13 @@ private:
     float _maxAliveTime;
     float _minAliveTime;
 };
+
+class ColorGenerator : public ParticleGenerator
+{
+public:
+    ColorGenerator(Color color);
+    ~ColorGenerator();
+    virtual void generate(float dt, ParticlesData *data, size_t startId, size_t endId) override;
+private:
+    Color _color;
+};

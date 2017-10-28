@@ -4,6 +4,7 @@
 #include "../Utils/Macros/PropertyMacro.h"
 #include "Color.h"
 #include "SamplerState.h"
+#include "../Utils/Math/RectangleI.h"
 #define NOMINMAX
 
 class Camera
@@ -38,6 +39,8 @@ public:
 
     glm::vec2 unproject(glm::vec2 screenPosition);
     glm::mat4 get_viewMatrix();
+
+    bool isInCamera(const RectangleI & rect);
 
     PROPERTY(int, viewportWidth)
     PROPERTY(int, viewportHeight)
