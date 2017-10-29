@@ -20,4 +20,6 @@ DEFINE_TYPE_INFO(TiledLayerComponent);
 DEFINE_TYPE_INFO(ParticleSystemBehavior);
 DEFINE_TYPE_INFO(ParticleSystemDrawableComponent);
 DEFINE_TYPE_INFO(SpriteSheetComponent);
+DEFINE_TYPE_INFO(NavMeshComponent);
+DEFINE_TYPE_INFO(NavMeshLayerComponent);
 #endif
