@@ -1,7 +1,7 @@
 #pragma once
 #include "../../ComponentModel/DrawableComponent.h"
 #include "SpriteComponent.h"
-#include "../Behaviors/ParticleSystemBehavior.h"
+#include "../Behaviors/ParticleSystem/ParticleSystemBehavior.h"
 
 class ParticleSystemDrawableComponent : public DrawableComponent
 {

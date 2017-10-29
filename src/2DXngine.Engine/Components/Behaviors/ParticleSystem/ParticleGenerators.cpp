@@ -1,7 +1,7 @@
 #include "ParticleGenerators.h"
 #include "../../Graphics/Transform.h"
 #include <glm/gtc/random.hpp>
-#include "../ParticleSystemBehavior.h"
+#include "ParticleSystemBehavior.h"
 
 // AreaParticleGenerator
 
