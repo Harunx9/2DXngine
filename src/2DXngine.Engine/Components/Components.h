@@ -15,3 +15,4 @@
 #include "Graphics/ParticleSystemDrawable.h"
 #include "Graphics/SpriteSheetComponent.h"
 #include "Behaviors/ParticleSystem/ParticleSystemBehavior.h"
+#include "Data/NavMeshComponent.h"

@@ -51,6 +51,8 @@ set(ENGINE_SOURCE_FILES
         Components/Data/FontComponent.cpp
         Components/Data/TextComponent.h
         Components/Data/TextComponent.cpp
+        Components/Data/NavMeshComponent.h
+        Components/Data/NavMeshComponent.cpp
 
         Components/Graphics/AnimationFactory/Animation.h
         Components/Graphics/AnimationFactory/Animation.cpp
