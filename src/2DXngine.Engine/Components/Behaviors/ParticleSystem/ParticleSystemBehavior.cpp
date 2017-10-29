@@ -1,5 +1,5 @@
 #include "ParticleSystemBehavior.h"
-#include "../../ComponentModel/GameObject.h"
+#include "../../../ComponentModel/GameObject.h"
 ParticleSystemBehavior::ParticleSystemBehavior(
     ParticleEmiter * emiter,
     std::vector<ParticleUpdater *> updaters,

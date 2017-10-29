@@ -1,8 +1,8 @@
 #pragma once
-#include "../../ComponentModel/UpdateableComponent.h"
-#include "../Graphics/SpriteSheetComponent.h"
-#include "../Graphics/Transform.h"
-#include "ParticleSystem\BaseTypes.h"
+#include "../../../ComponentModel/UpdateableComponent.h"
+#include "../../Graphics/SpriteSheetComponent.h"
+#include "../../Graphics/Transform.h"
+#include "BaseTypes.h"
 #include <vector>
 
 class ParticleSystemBehavior : public UpdateableComponent

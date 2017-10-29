@@ -13,7 +13,7 @@
 #include <Components\Graphics\SpritesheetFactory\XMLSpritesheetParserFactory.h>
 #include <Components\Graphics\SpriteSheetComponent.h>
 #include <Components\Graphics\ParticleSystemDrawable.h>
-#include <Components\Behaviors\ParticleSystemBehavior.h>
+#include <Components\Behaviors\ParticleSystem\ParticleSystemBehavior.h>
 #include <Components\Behaviors\ParticleSystem\ParticleGenerators.h>
 #include <Components\Behaviors\ParticleSystem\ParticleUpdaters.h>
 

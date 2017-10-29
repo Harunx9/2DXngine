@@ -14,4 +14,4 @@
 #include "Graphics/FontDrawableComponent.h"
 #include "Graphics/ParticleSystemDrawable.h"
 #include "Graphics/SpriteSheetComponent.h"
-#include "Behaviors/ParticleSystemBehavior.h"
+#include "Behaviors/ParticleSystem/ParticleSystemBehavior.h"

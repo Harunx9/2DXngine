@@ -44,8 +44,8 @@ set(ENGINE_SOURCE_FILES
         Components/Behaviors/ParticleSystem/ParticleUpdaters.cpp
         Components/Behaviors/ParticleSystem/ParticleGenerators.h
         Components/Behaviors/ParticleSystem/ParticleGenerators.cpp
-        Components/Behaviors/ParticleSystemBehavior.h
-        Components/Behaviors/ParticleSystemBehavior.cpp
+        Components/Behaviors/ParticleSystem/ParticleSystemBehavior.h
+        Components/Behaviors/ParticleSystem/ParticleSystemBehavior.cpp
 
         Components/Data/FontComponent.h
         Components/Data/FontComponent.cpp
