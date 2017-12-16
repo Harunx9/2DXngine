@@ -6,6 +6,7 @@ set(ENGINE_TEST_SOURCE
     Components/Animation/AnimationComponentTest.cc
     Components/Animation/AnimationFactoryTest.cc
     Components/Animation/ParsersTest.cc
+    Components/AI/AiTreeTest.cc
     Components/ColliderComponentTest.cc
     Components/TextDataComponent.cc
     Components/SpriteSheetComponentTest.cc
