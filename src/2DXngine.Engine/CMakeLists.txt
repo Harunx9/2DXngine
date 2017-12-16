@@ -47,12 +47,22 @@ set(ENGINE_SOURCE_FILES
         Components/Behaviors/ParticleSystem/ParticleSystemBehavior.h
         Components/Behaviors/ParticleSystem/ParticleSystemBehavior.cpp
 
+        Components/Behaviors/AI/AITreeExecutorBehavior.h
+        Components/Behaviors/AI/AITreeExecutorBehavior.cpp
+
         Components/Data/FontComponent.h
         Components/Data/FontComponent.cpp
         Components/Data/TextComponent.h
         Components/Data/TextComponent.cpp
         Components/Data/NavMeshComponent.h
         Components/Data/NavMeshComponent.cpp
+
+        Components/Data/AI/AINode.h
+        Components/Data/AI/AINode.cpp
+        Components/Data/AI/BehaviorTreeValidator.h
+        Components/Data/AI/BehaviorTreeValidator.cpp
+        Components/Data/AI/BehaviorTreeEvaluator.h
+        Components/Data/AI/BehaviorTreeEvaluator.cpp
 
         Components/Graphics/AnimationFactory/Animation.h
         Components/Graphics/AnimationFactory/Animation.cpp

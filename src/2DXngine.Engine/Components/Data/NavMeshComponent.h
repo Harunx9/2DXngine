@@ -9,6 +9,8 @@ struct NavMeshConfig
     size_t navMeshHeight;
     float navGridTileWidth;
     float navGridTileHeight;
+    int minWeight;
+    int impasibleWeight;
 };
 
 class NavMeshLayerComponent : public Component
@@ -27,13 +29,18 @@ public:
         return this->_cfg.layerNumber;
     }
 
-    READONLY_PROPERTY(bool **, mesh)
-    READONLY_PROPERTY(NavMeshConfig, cfg)
-   
-    bool isBlocked(int x, int y)
+    bool is_blocked(int x, int y)
     {
-        return this->_mesh[y][x];
+        return this->_mesh[y][x] == this->_cfg.impasibleWeight;
     }
+
+    bool is_outOfBounds(int x, int y)
+    {
+        return x < 0 || y < 0 || x > this->_cfg.navMeshWidth - 1 || y > this->_cfg.navMeshHeight - 1;
+    }
+
+    READONLY_PROPERTY(int **, mesh)
+    READONLY_PROPERTY(NavMeshConfig, cfg)
 };
 
 
@@ -47,11 +54,6 @@ public:
     virtual void initialize(bool force = false) override;
     virtual void terminate() override;
     virtual void resolveDependencies(bool force = false) override;
-
-    bool isBlocked(int layer, int x, int y) const
-    {
-        return this->_layers[layer]->isBlocked(x, y);
-    }
 
     NavMeshLayerComponent* get_layer(int layer) const
     {
