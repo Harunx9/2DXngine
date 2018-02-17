@@ -1,4 +1,4 @@
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
 #include "TiledFixture.h"
 
 TEST_F(TiledFixture, tileset_should_be_parsed)

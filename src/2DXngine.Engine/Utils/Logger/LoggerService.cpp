@@ -1,7 +1,7 @@
 #include "LoggerService.h"
 #include "../../Services/ServiceLocator.h"
 #include "../../Config/ConfigurationService.h"
-#include "LoggersImpl\ColorConsoleLogger.h"
+#include "LoggersImpl/ColorConsoleLogger.h"
 
 LoggerService::LoggerService() : Service("LoggerService")
 {

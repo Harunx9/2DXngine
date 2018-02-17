@@ -1,6 +1,6 @@
 #pragma once
 #include "Color.h"
-#include <gl\glew.h>
+#include <GL/glew.h>
 #include <SDL.h>
 #include "../Utils/Macros/PropertyMacro.h"
 #include "../Config/GraphicConfig.h"

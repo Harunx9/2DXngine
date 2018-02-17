@@ -1,8 +1,8 @@
-#include "gtest\gtest.h"
-#include <TypeInformation\BaseTypesDefinitions.h>
-#include <Components\Graphics\Transform.h>
-#include <Components\Interactions\ColliderComponent.h>
-#include <ComponentModel\GameObject.h>
+#include "gtest/gtest.h"
+#include <TypeInformation/BaseTypesDefinitions.h>
+#include <Components/Graphics/Transform.h>
+#include <Components/Interactions/ColliderComponent.h>
+#include <ComponentModel/GameObject.h>
 
 TEST(ColliderComponentTest, when_colliders_not_intersected)
 {

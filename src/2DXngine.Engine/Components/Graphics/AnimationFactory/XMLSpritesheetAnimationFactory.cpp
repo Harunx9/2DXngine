@@ -1,5 +1,6 @@
 #include "XMLSpritesheetAnimationFactory.h"
 #include <vector>
+#include <algorithm>
 #include "../pugixml/src/pugixml.hpp"
 
 AnimationComponent * XMLSpritesheetAnimationFactory::createFromXml(AssetPath path, std::vector<AnimationDefinition> animationsDefinitions)
@@ -97,7 +98,13 @@ animations_dict XMLAnimationSpritesheetParser::loadWithSpecifiedNames(AssetPath 
                         frames.push_back(RectangleI(x + offsetx, y + offsety, width, height));
                     }
                     RectangleI* rectPtr = new RectangleI[frames.size()];
-                    std::copy(frames.begin(), frames.end(), stdext::checked_array_iterator<RectangleI*>(rectPtr, frames.size()));
+                    
+                    #if WIN32
+                        std::copy(frames.begin(), frames.end(), stdext::checked_array_iterator<RectangleI*>(rectPtr, frames.size()));
+                    #else
+                        std::copy(frames.begin(), frames.end(), rectPtr);
+                    #endif
+                    
                     animTmp = new Animation(
                         animation.attribute("name").as_string(),
                         animation.attribute("framesPerSecond").as_int(),
@@ -157,7 +164,13 @@ animations_dict XMLAnimationSpritesheetParser::load(AssetPath path)
             }
             
             RectangleI* rectPtr = new RectangleI[frames.size()];
+            
+            #if WIN32
             std::copy(frames.begin(), frames.end(), stdext::checked_array_iterator<RectangleI*>(rectPtr, frames.size()));
+            #else
+            std::copy(frames.begin(), frames.end(), rectPtr);
+            #endif
+            
             animTmp = new Animation(
                 animation.attribute("name").as_string(),
                 animation.attribute("framesPerSecond").as_int(),

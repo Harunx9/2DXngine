@@ -270,6 +270,8 @@ set(ENGINE_SOURCE_FILES
 
         Utils/File.h
         Utils/File.cpp
+        Utils/Path.h
+        Utils/Path.cpp
         Utils/BackgroundTask.h
         Utils/BackgroundTask.cpp
         Utils/GameHandler.h
@@ -293,5 +295,23 @@ include_directories(
     ${SIMPLE_INI_SRC}
     ${PUGI_XML_SRC}
 )
+
+foreach(FILE ${ENGINE_SOURCE_FILES}) 
+    get_filename_component(ABSOLUTE_PATH "${FILE}" ABSOLUTE)
+    get_filename_component(PARENT_DIR "${ABSOLUTE_PATH}" DIRECTORY)
+    string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}" "" GROUP "${PARENT_DIR}")
+
+    string(REPLACE "/" "\\" GROUP "${GROUP}")
+    if ("${FILE}" MATCHES ".*\\.cpp")
+        set(GROUP "${GROUP}")
+    elseif("${FILE}" MATCHES ".*\\.h")
+        set(GROUP "${GROUP}")
+    endif()
+        
+    source_group("${GROUP}" FILES "${FILE}")
+endforeach()
+
+source_group("simpleini" FILES ${SIMPLE_INI_SRC})
+source_group("pugixml" FILES ${PUGI_XML_SRC})
 
 add_library(Engine STATIC ${ENGINE_SOURCE_FILES} ${SIMPLE_INI_SRC} ${PUGI_XML_SRC})

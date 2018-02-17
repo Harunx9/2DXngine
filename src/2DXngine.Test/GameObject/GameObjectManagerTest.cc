@@ -1,10 +1,10 @@
-#include <gtest\gtest.h>
-#include <ComponentModel\GameObject.h>
-#include <ComponentModel\GameObjectManager.h>
+#include <gtest/gtest.h>
+#include <ComponentModel/GameObject.h>
+#include <ComponentModel/GameObjectManager.h>
 #include "../TypeSystem/TestComponents.h"
 #include "../Scenes/TestScene.h"
-#include <Services\ServiceLocator.h>
-#include <Scenes\SceneManagerService.h>
+#include <Services/ServiceLocator.h>
+#include <Scenes/SceneManagerService.h>
 
 class GameObjectMananagerTestFixture : public testing::Test
 {

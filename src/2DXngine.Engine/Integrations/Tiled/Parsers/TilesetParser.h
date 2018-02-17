@@ -1,5 +1,5 @@
 #pragma once
-#include "../../thirdparty/pugixml/src/pugixml.hpp"
+#include "../../../../../thirdparty/pugixml/src/pugixml.hpp"
 #include "../DataStructures/TileSet.h"
 class TilesetParser
 {
@@ -7,9 +7,9 @@ public:
     TilesetParser();
     ~TilesetParser();
 
-    TileSet parse(pugi::xml_node& node);
+    TileSet parse(const pugi::xml_node& node);
 private:
-    TileSet parseAttributes(pugi::xml_node& node);
-    TmxImage parseImage(pugi::xml_node& node);
-    TileOffset parseOffset(pugi::xml_node& node);
+    TileSet parseAttributes(const pugi::xml_node& node);
+    TmxImage parseImage(const pugi::xml_node& node);
+    TileOffset parseOffset(const pugi::xml_node& node);
 };

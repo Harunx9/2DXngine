@@ -1,9 +1,9 @@
 #include "TestGameHandlerWithScenes.h"
-#include <Scenes\SceneManagerService.h>
-#include <Integrations\Tiled\GameObjectFactories.h>
-#include <Integrations\Tiled\TiledMapLoader.h>
-#include <Integrations\Tiled\Factories\TileLayersFactory.h>
-#include <Integrations\Tiled\Factories\TilesetsFactory.h>
+#include <Scenes/SceneManagerService.h>
+#include <Integrations/Tiled/GameObjectFactories.h>
+#include <Integrations/Tiled/TiledMapLoader.h>
+#include <Integrations/Tiled/Factories/TileLayersFactory.h>
+#include <Integrations/Tiled/Factories/TilesetsFactory.h>
 #include "SceneTest.h"
 #include "TestTiledScene.h"
 

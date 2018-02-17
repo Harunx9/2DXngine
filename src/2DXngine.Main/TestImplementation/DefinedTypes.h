@@ -1,6 +1,6 @@
 #pragma once
 #include "DotTestController.h"
-#include <TypeInformation\BaseTypesDefinitions.h>
+#include <TypeInformation/BaseTypesDefinitions.h>
 #include "TestMouseCoordsComponent.h"
 
 #ifdef main

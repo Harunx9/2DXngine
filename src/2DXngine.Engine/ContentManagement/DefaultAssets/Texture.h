@@ -1,7 +1,12 @@
 #pragma once
 #include "../Asset.h"
-#include <soil\src\SOIL.h>
-#include <GL\glew.h>
+#if WIN32
+    #include <soil/src/SOIL.h>
+    #include <gl/glew.h>
+#else
+    #include <GL/glew.h>
+    #include <SOIL.h>
+#endif
 #include "../AssetPath.h"
 #include "Bitmap.h"
 #include "../../Utils/Macros/PropertyMacro.h"

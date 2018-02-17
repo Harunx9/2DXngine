@@ -1,6 +1,6 @@
 #include "SpriteBatch.h"
 #include "../ContentManagement/DefaultAssets/ShaderProgram.h"
-#include "Shaders\StandardTextureShader.h"
+#include "Shaders/StandardTextureShader.h"
 
 SpriteBatch::SpriteBatch(GraphicDevice* device) :
     _device(device),

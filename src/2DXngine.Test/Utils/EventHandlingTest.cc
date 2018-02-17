@@ -1,4 +1,4 @@
-#include <gtest\gtest.h>
+#include <gtest/gtest.h>
 #include "EventTestData.h"
 
 TEST(ParameterlessEventHandler, subscriber_react_to_publisher_event_invoke)

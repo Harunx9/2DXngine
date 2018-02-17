@@ -1,5 +1,5 @@
-#include <gtest\gtest.h>
-#include <Utils\Errors\Result.h>
+#include <gtest/gtest.h>
+#include <Utils/Errors/Result.h>
 
 class A{};
 

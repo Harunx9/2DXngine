@@ -1,4 +1,4 @@
-#include <gtest\gtest.h>
+#include <gtest/gtest.h>
 #include "TestTypesHierarhy.h"
 
 TEST(TypeSystem, base_type_has_no_base_type)

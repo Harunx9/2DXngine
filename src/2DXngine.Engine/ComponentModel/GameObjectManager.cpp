@@ -36,6 +36,7 @@ void GameObjectManager::terminate()
 void GameObjectManager::addGameObject(GameObject * gameObject)
 {
     assert(this->gameObjectExist(gameObject->get_name()) == false);
+ 
     gameObject->addManager(this);
     this->_gameObjects.push_back(gameObject);
 }
@@ -83,7 +84,7 @@ gameobject_list GameObjectManager::get_gameObjects() const
     return this->_gameObjects;
 }
 
-bool GameObjectManager::gameObjectExist(std::string& name)
+bool GameObjectManager::gameObjectExist(const std::string& name)
 {
     for (auto& gameObject : this->_gameObjects)
     {

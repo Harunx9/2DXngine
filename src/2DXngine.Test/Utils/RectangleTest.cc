@@ -1,6 +1,6 @@
-#include "gtest\gtest.h"
-#include <Utils\Math\RectangleI.h>
-#include <Utils\Math\RectangleF.h>
+#include "gtest/gtest.h"
+#include <Utils/Math/RectangleI.h>
+#include <Utils/Math/RectangleF.h>
 
 TEST(Rectangle, rectangle_dimension_is_proper_when_new_rectangle_is_created)
 {

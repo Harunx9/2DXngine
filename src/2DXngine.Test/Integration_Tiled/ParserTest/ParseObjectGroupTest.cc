@@ -1,4 +1,4 @@
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
 #include "TiledFixture.h"
 
 TEST_F(TiledFixture, map_object_group_shoudl_have_5_objects)

@@ -1,5 +1,5 @@
-#include "gtest\gtest.h"
-#include <Graphics\Color.h>
+#include "gtest/gtest.h"
+#include <Graphics/Color.h>
 
 TEST(ColorFromString, can_create_rgb_white_from_hex_string)
 {

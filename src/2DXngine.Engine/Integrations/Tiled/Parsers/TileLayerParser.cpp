@@ -23,7 +23,7 @@ TileLayerParser::~TileLayerParser()
 {
 }
 
-TileLayer TileLayerParser::parse(pugi::xml_node & node)
+TileLayer TileLayerParser::parse(const pugi::xml_node & node)
 {
     TileLayer layer = this->parseAttributes(node);
 
@@ -44,7 +44,7 @@ TileLayer TileLayerParser::parse(pugi::xml_node & node)
     return layer;
 }
 
-TileLayer TileLayerParser::parseAttributes(pugi::xml_node & node)
+TileLayer TileLayerParser::parseAttributes(const pugi::xml_node & node)
 {
     auto  name = node.attribute(TileLayerConst::name);
     auto  x = node.attribute(TileLayerConst::x);
@@ -69,7 +69,7 @@ TileLayer TileLayerParser::parseAttributes(pugi::xml_node & node)
     };
 }
 
-Data TileLayerParser::parseData(pugi::xml_node & node)
+Data TileLayerParser::parseData(const pugi::xml_node & node)
 {
     Data data;
     auto encoding = node.attribute("encoding");
@@ -88,7 +88,7 @@ Data TileLayerParser::parseData(pugi::xml_node & node)
     return data;
 }
 
-Data TileLayerParser::parseBase64(pugi::xml_node & node)
+Data TileLayerParser::parseBase64(const pugi::xml_node & node)
 {
     std::string dataVal = node.child_value();
     dataVal = stringutils::trim(dataVal);
@@ -108,7 +108,7 @@ Data TileLayerParser::parseBase64(pugi::xml_node & node)
     };
 }
 
-Data TileLayerParser::parseCSV(pugi::xml_node & node)
+Data TileLayerParser::parseCSV(const pugi::xml_node & node)
 {
     std::string dataVal = node.child_value();
     auto splitted = stringutils::split(dataVal, ',');

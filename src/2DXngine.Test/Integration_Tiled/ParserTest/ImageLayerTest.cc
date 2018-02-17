@@ -1,4 +1,4 @@
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
 #include "TiledFixture.h"
 
 TEST_F(TiledFixture, ImageLayer_should_have_parsed_properly)

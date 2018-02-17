@@ -1,5 +1,5 @@
 #pragma once
-#include "..\Services\Service.h"
+#include "../Services/Service.h"
 #include "ConfigSection.h"
 #include <map>
 #include <string>

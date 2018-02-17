@@ -1,5 +1,5 @@
 #pragma once
-#include <ComponentModel\UpdateableComponent.h>
+#include <ComponentModel/UpdateableComponent.h>
 class Transform;
 
 class DotTestController : public UpdateableComponent

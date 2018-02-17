@@ -9,7 +9,7 @@ ObjectGroupParser::~ObjectGroupParser()
 {
 }
 
-ObjectGroup ObjectGroupParser::parseObjectGroup(pugi::xml_node& node)
+ObjectGroup ObjectGroupParser::parseObjectGroup(const pugi::xml_node& node)
 {
     auto name = node.attribute("name");
     auto color = node.attribute("color");
@@ -47,7 +47,7 @@ ObjectGroup ObjectGroupParser::parseObjectGroup(pugi::xml_node& node)
         order);
 }
 
-ObjectGroup ObjectGroupParser::parse(pugi::xml_node& node)
+ObjectGroup ObjectGroupParser::parse(const pugi::xml_node& node)
 {
     auto group = parseObjectGroup(node);
 
@@ -76,7 +76,7 @@ MapObjectParser::~MapObjectParser()
 {
 }
 
-MapObject MapObjectParser::parse(pugi::xml_node & node)
+MapObject MapObjectParser::parse(const pugi::xml_node & node)
 {
     auto lastChild = node.last_child();
     MapObject obj;
@@ -109,7 +109,7 @@ MapObject MapObjectParser::parse(pugi::xml_node & node)
     return obj;
 }
 
-MapObject MapObjectParser::parsePolylineObject(pugi::xml_node & node, pugi::xml_node & lastChild)
+MapObject MapObjectParser::parsePolylineObject(const pugi::xml_node & node, const pugi::xml_node & lastChild)
 {
     auto id = node.attribute("id");
     auto name = node.attribute("name");
@@ -138,7 +138,7 @@ MapObject MapObjectParser::parsePolylineObject(pugi::xml_node & node, pugi::xml_
     );
 }
 
-MapObject MapObjectParser::parseTextObject(pugi::xml_node & node, pugi::xml_node & lastChild)
+MapObject MapObjectParser::parseTextObject(const pugi::xml_node & node, const pugi::xml_node & lastChild)
 {
     auto id = node.attribute("id");
     auto name = node.attribute("name");
@@ -166,7 +166,7 @@ MapObject MapObjectParser::parseTextObject(pugi::xml_node & node, pugi::xml_node
     );
 }
 
-TmxText MapObjectParser::parseTmxText(pugi::xml_node & node)
+TmxText MapObjectParser::parseTmxText(const pugi::xml_node & node)
 {
     auto text_fontfamily = node.attribute("fontfamily");
     auto text_pixelsize = node.attribute("pixelsize");
@@ -226,7 +226,7 @@ TmxText MapObjectParser::parseTmxText(pugi::xml_node & node)
     };
 }
 
-MapObjectParser::PointObject MapObjectParser::parsePointObject(pugi::xml_node & node)
+MapObjectParser::PointObject MapObjectParser::parsePointObject(const pugi::xml_node & node)
 {
     ObjectType type = ObjectType::OBJECT;
 
@@ -257,7 +257,7 @@ MapObjectParser::PointObject MapObjectParser::parsePointObject(pugi::xml_node & 
     return { points, type };
 }
 
-MapObject MapObjectParser::parsePlainMapObject(pugi::xml_node & node)
+MapObject MapObjectParser::parsePlainMapObject(const pugi::xml_node & node)
 {
     auto id = node.attribute("id");
     auto name = node.attribute("name");

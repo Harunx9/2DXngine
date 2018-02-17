@@ -18,7 +18,7 @@ GroupParser::~GroupParser()
 {
 }
 
-Group GroupParser::parse(pugi::xml_node & node)
+Group GroupParser::parse(const pugi::xml_node & node)
 {
     Group group = this->parseAttributes(node);
 
@@ -56,7 +56,7 @@ Group GroupParser::parse(pugi::xml_node & node)
     return group;
 }
 
-Group GroupParser::parseAttributes(pugi::xml_node & node)
+Group GroupParser::parseAttributes(const pugi::xml_node & node)
 {
     auto name = node.attribute(GroupConsts::name);
     auto offsetX = node.attribute(GroupConsts::offset_x);

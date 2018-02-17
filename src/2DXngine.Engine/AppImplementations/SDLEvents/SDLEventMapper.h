@@ -22,4 +22,3 @@ public:
 
     READONLY_PROPERTY(MapperType, type)
 };
-

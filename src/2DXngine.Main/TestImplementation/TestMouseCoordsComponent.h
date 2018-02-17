@@ -1,5 +1,5 @@
 #pragma once
-#include <ComponentModel\UpdateableComponent.h>
+#include <ComponentModel/UpdateableComponent.h>
 #include <Utils/Logger/LoggerService.h>
 class Camera;
 class MouseStateHandler;

@@ -2,7 +2,7 @@
 
 
 RenderTarget::RenderTarget(int width, int height) :
-    Texture(AssetPath::empty(), &Bitmap::empty(width, height))
+    Texture(AssetPath::empty(), Bitmap::empty(width, height))
 {
     this->generate();
 }

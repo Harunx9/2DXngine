@@ -74,18 +74,46 @@ include_directories(
 set (TEST_CONTENT ${PROJECT_SOURCE_DIR}/src/2DXngine.Test/Content)
 set (TEST_CFG_INI ${PROJECT_SOURCE_DIR}/src/2DXngine.Test/cfg.ini)
 
+foreach(FILE ${ENGINE_TEST_SOURCE}) 
+    get_filename_component(ABSOLUTE_PATH "${FILE}" ABSOLUTE)
+    get_filename_component(PARENT_DIR "${ABSOLUTE_PATH}" DIRECTORY)
+    string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}" "" GROUP "${PARENT_DIR}")
+
+    string(REPLACE "/" "\\" GROUP "${GROUP}")
+    if ("${FILE}" MATCHES ".*\\.cpp")
+        set(GROUP "${GROUP}")
+    elseif("${FILE}" MATCHES ".*\\.h")
+        set(GROUP "${GROUP}")
+    endif()
+        
+    source_group("${GROUP}" FILES "${FILE}")
+endforeach()
+
 add_executable(EngineTests ${ENGINE_TEST_SOURCE})
 
-target_link_libraries(EngineTests 
-    ${GTEST_BOTH_LIBRARIES}
-    Engine
-    opengl32.lib
-    ${GLEW_LIBRARIES}
-    ${SDL2_LIBRARY}
-    ${SDL2_MIXER_LIBRARIES}
-    ${FREETYPE_LIBRARIES}
-    ${SOIL_LIBRARY}
-)
+if(WIN32)
+    target_link_libraries(EngineTests 
+        ${GTEST_BOTH_LIBRARIES}
+        Engine
+        opengl32.lib
+        ${GLEW_LIBRARIES}
+        ${SDL2_LIBRARY}
+        ${SDL2_MIXER_LIBRARIES}
+        ${FREETYPE_LIBRARIES}
+        ${SOIL_LIBRARY}
+    )
+elseif(APPLE)
+    target_link_libraries(EngineTests 
+        ${GTEST_BOTH_LIBRARIES}
+        Engine
+        ${OPENGL_LIBRARY}
+        ${GLEW_LIBRARIES}
+        ${SDL2_LIBRARY}
+        ${SDL2_MIXER_LIBRARIES}
+        ${FREETYPE_LIBRARIES}
+        ${SOIL_LIBRARY}
+    )
+endif()
 
 add_custom_command(TARGET EngineTests POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
@@ -100,19 +128,19 @@ add_custom_command(TARGET EngineTests POST_BUILD
 )
 
 if(WIN32)
-add_custom_command(
-    TARGET EngineTests POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy 
-    ${ALL_WIN32_DLLS} 
-    "${CMAKE_BINARY_DIR}/src/2DXngine.Test/Debug"
-)
-else()
-add_custom_command(
-    TARGET EngineTests POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy 
-    ${ALL_WIN64_DLLS} 
-    "${CMAKE_BINARY_DIR}/src/2DXngine.Test/Debug"
-)
+    add_custom_command(
+        TARGET EngineTests POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy 
+        ${ALL_WIN32_DLLS} 
+        "${CMAKE_BINARY_DIR}/src/2DXngine.Test/Debug"
+    )
+elseif(WIN64)
+    add_custom_command(
+        TARGET EngineTests POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy 
+        ${ALL_WIN64_DLLS} 
+        "${CMAKE_BINARY_DIR}/src/2DXngine.Test/Debug"
+    )
 endif()
 
 if(Environ STREQUAL "VS")

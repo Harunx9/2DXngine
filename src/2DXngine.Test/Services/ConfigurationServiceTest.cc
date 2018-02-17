@@ -1,7 +1,7 @@
 #pragma once
-#include "gtest\gtest.h"
-#include <Services\ServiceLocator.h>
-#include <Config\ConfigurationService.h>
+#include "gtest/gtest.h"
+#include <Services/ServiceLocator.h>
+#include <Config/ConfigurationService.h>
 
 class ConfigurationTestFixture : public ::testing::Test
 {

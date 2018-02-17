@@ -8,13 +8,13 @@ class TileLayerParser
 public:
     TileLayerParser();
     ~TileLayerParser();
-    TileLayer parse(pugi::xml_node& node);
+    TileLayer parse(const pugi::xml_node& node);
 
 private:
-    TileLayer parseAttributes(pugi::xml_node& node);
-    Data parseData(pugi::xml_node& node);
-    Data parseBase64(pugi::xml_node& node);
-    Data parseCSV(pugi::xml_node& node);
+    TileLayer parseAttributes(const pugi::xml_node& node);
+    Data parseData(const pugi::xml_node& node);
+    Data parseBase64(const pugi::xml_node& node);
+    Data parseCSV(const pugi::xml_node& node);
     PropertiesParser _propParser;
 };
 

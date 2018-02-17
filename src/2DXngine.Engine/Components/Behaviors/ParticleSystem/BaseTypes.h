@@ -1,5 +1,5 @@
 #pragma once
-#include <glm\glm.hpp>
+#include <glm/glm.hpp>
 #include <vector>
 #include "../../../Graphics/Color.h"
 #include "../../../Utils/Math/RectangleI.h"

@@ -26,7 +26,6 @@ DECLARE_TYPE_INFO(SpriteSheetComponent, Component)
 DECLARE_TYPE_INFO(NavMeshComponent, Component)
 DECLARE_TYPE_INFO(NavMeshLayerComponent, Component)
 
-#ifdef main
 DEFINE_TYPE_INFO(Component);
 DEFINE_TYPE_INFO(DrawableComponent);
 DEFINE_TYPE_INFO(UpdateableComponent);
@@ -48,4 +47,3 @@ DEFINE_TYPE_INFO(ParticleSystemDrawableComponent);
 DEFINE_TYPE_INFO(SpriteSheetComponent);
 DEFINE_TYPE_INFO(NavMeshComponent);
 DEFINE_TYPE_INFO(NavMeshLayerComponent);
-#endif

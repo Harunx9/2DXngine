@@ -1,5 +1,5 @@
-#include "gtest\gtest.h"
-#include <Graphics\Camera.h>
+#include "gtest/gtest.h"
+#include <Graphics/Camera.h>
 
 TEST(CameraUnproject, camera_can_recalculate_zero_zero_window_coords_to_world_coords)
 {

@@ -39,6 +39,26 @@ std::vector<std::string> stringutils::split(std::string& input, char delimiter)
     return tokens;
 }
 
+std::string stringutils::replaceAll(std::string& input, std::string& from, std::string& to)
+{
+    std::string newStr;
+    newStr.reserve(input.length());
+    
+    std::string::size_type lastPos = 0;
+    std::string::size_type findPos;
+    
+    while(std::string::npos != (findPos = input.find(from, lastPos)))
+    {
+        newStr.append(input, lastPos, findPos - lastPos);
+        newStr += to;
+        lastPos = findPos + from.length();
+    }
+    
+    newStr += input.substr(lastPos);
+    
+    return newStr;
+}
+
 bool stringutils::is_base64(unsigned char c) {
     return (isalnum(c) || (c == '+') || (c == '/'));
 }

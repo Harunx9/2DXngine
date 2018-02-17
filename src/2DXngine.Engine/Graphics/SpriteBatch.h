@@ -1,9 +1,13 @@
 #pragma once
-#include <GL\glew.h>
+#if WIN32
+    #include <gl/glew.h>
+#else
+    #include <GL/glew.h>
+#endif
 #include "../ContentManagement/DefaultAssets/Texture.h"
 #include "RenderTarget.h"
 #include "SamplerState.h"
-#include <glm\glm.hpp>
+#include <glm/glm.hpp>
 #include <algorithm>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>

@@ -1,6 +1,6 @@
-#include "gtest\gtest.h"
-#include <Components\Data\AI\AINode.h>
-#include <Components\Data\AI\BehaviorTreeValidator.h>
+#include "gtest/gtest.h"
+#include <Components/Data/AI/AINode.h>
+#include <Components/Data/AI/BehaviorTreeValidator.h>
 
 TEST(TreeBuildTest, when_one_node_is_added_as_child_parent_should_be_assigned)
 {

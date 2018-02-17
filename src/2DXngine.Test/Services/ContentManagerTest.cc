@@ -1,11 +1,11 @@
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
 #include <SDL.h>
-#include <GL\glew.h>
-#include <Services\ServiceLocator.h>
-#include <ContentManagement\ContentManagerService.h>
-#include <ContentManagement\DefaultAssets\Bitmap.h>
-#include <ContentManagement\DefaultAssets\Texture.h>
-#include <ContentManagement\DefaultAssets\TTFont.h>
+#include <GL/glew.h>
+#include <Services/ServiceLocator.h>
+#include <ContentManagement/ContentManagerService.h>
+#include <ContentManagement/DefaultAssets/Bitmap.h>
+#include <ContentManagement/DefaultAssets/Texture.h>
+#include <ContentManagement/DefaultAssets/TTFont.h>
 
 class ContentManagerTestFixture : public ::testing::Test
 {

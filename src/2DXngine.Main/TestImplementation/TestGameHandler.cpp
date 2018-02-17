@@ -1,7 +1,7 @@
 #include "TestGameHandler.h"
-#include <ContentManagement\DefaultAssets\Texture.h>
-#include <Graphics\Color.h>
-#include <Services\ServiceLocator.h>
+#include <ContentManagement/DefaultAssets/Texture.h>
+#include <Graphics/Color.h>
+#include <Services/ServiceLocator.h>
 
 TestGameHandler::TestGameHandler()
 {

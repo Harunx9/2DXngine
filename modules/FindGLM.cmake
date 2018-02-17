@@ -30,6 +30,7 @@ if (WIN32)
 		DOC "The directory where glm/glm.hpp resides")
 else()
 	# Find include files
+	message(${GLM_ROOT_DIR})
 	find_path(
 		GLM_INCLUDE_DIR
 		NAMES glm/glm.hpp
@@ -38,6 +39,7 @@ else()
 		/usr/local/include
 		/sw/include
 		/opt/local/include
+		${GLM_ROOT_DIR}
 		${GLM_ROOT_DIR}/include
 		DOC "The directory where glm/glm.hpp resides")
 endif()

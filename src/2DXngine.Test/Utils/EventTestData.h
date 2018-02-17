@@ -1,7 +1,7 @@
 #pragma once
 
 #include "EventTestData.h"
-#include <Utils\Events\EventHandler.h>
+#include <Utils/Events/EventHandler.h>
 
 class TestParameterlessPublisher
 {

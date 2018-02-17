@@ -1,6 +1,6 @@
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
 #include <SDL.h>
-#include <ContentManagement\DefaultAssets\Texture.h>
+#include <ContentManagement/DefaultAssets/Texture.h>
 
 class TextureTestFixture : public ::testing::Test
 {

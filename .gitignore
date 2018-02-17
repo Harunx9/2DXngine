@@ -13,5 +13,8 @@ _build/x86-Release/
 _build/x64-Debug/
 _build/x64-Release/
 _build/appveyorbuild/
+_build/vscode/
+_build/xcode/
 
 .vs/
+.vscode/

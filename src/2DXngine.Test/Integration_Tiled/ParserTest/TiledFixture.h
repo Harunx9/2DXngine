@@ -1,8 +1,8 @@
 #pragma once
-#include "gtest\gtest.h"
-#include "../pugixml/src/pugixml.hpp"
-#include <Integrations\Tiled\Parsers\TileMapParser.h>
-#include <Integrations\Tiled\DataStructures\TiledMap.h>
+#include "gtest/gtest.h"
+#include "../../../../thirdparty/pugixml/src/pugixml.hpp"
+#include <Integrations/Tiled/Parsers/TileMapParser.h>
+#include <Integrations/Tiled/DataStructures/TiledMap.h>
 #include <ContentManagement/AssetPath.h>
 
 class TiledFixture : public ::testing::Test

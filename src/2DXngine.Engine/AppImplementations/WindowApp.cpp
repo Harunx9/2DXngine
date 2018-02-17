@@ -1,5 +1,5 @@
 #include "WindowApp.h"
-#include <gl\glew.h>
+#include <GL/glew.h>
 #include "../Services/ServiceLocator.h"
 #include "SDLEvents/SDLEventsMapperService.h"
 #include "../ContentManagement/ContentManagerService.h"
@@ -10,7 +10,9 @@
 #include "../Scenes/SceneManagerService.h"
 #include <SDL_mixer.h>
 #include <iostream>
-#include <windows.h>
+#if WIN32
+    #include <windows.h>
+#endif
 #include "../Utils/BackgroundTask.h"
 #include "../Utils/Logger/LoggerService.h"
 

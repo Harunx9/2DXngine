@@ -1,5 +1,5 @@
-#include "gtest\gtest.h"
-#include <ContentManagement\DefaultAssets\Shader.h>
+#include "gtest/gtest.h"
+#include <ContentManagement/DefaultAssets/Shader.h>
 #include <SDL.h>
 
 class ShaderTestFixture : public ::testing::Test

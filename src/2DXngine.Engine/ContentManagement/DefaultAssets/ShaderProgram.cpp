@@ -1,6 +1,6 @@
 #include "ShaderProgram.h"
 #include <glm/gtc/type_ptr.hpp>
-
+#include <iostream>
 void ShaderProgram::loadShadersFromFile()
 {
     this->_vertexShader = new Shader(this->_vertexPath.c_str(), ShaderType::VERTEX_SHADER);
@@ -62,12 +62,18 @@ ProgramCompilationResult ShaderProgram::compile()
     GLint success;
     glGetProgramiv(this->_programId, GL_LINK_STATUS, &success);
 
+    
     delete this->_vertexShader;
     delete this->_fragmentShader;
     delete this->_geometryShader;
 
     if (success == GL_FALSE)
+    {
+        char infoLog[512];
+        glGetProgramInfoLog(this->_programId, 512, nullptr, infoLog);
+        std::cout << infoLog << std::endl;
         return ProgramCompilationResult::COMPILE_ERROR;
+    }
 
     return ProgramCompilationResult::COMPILE_SUCCESS;
 }
@@ -137,7 +143,7 @@ ShaderProgram::ShaderProgram(AssetPath assetPath) :
 }
 
 ShaderProgram::ShaderProgram(std::string vertexProgram, std::string fragmentProgram, std::string geometryProgram) :
-    Asset(AssetPath::create("", AssertLocation::INTERNAL), DefaultAssetType::SHADER_PROGRAM_TYPE)
+    Asset(AssetPath::create("", AssetLocation::INTERNAL), DefaultAssetType::SHADER_PROGRAM_TYPE)
 {
     loadShadersFromSource(vertexProgram, fragmentProgram, geometryProgram);
 }

@@ -1,6 +1,6 @@
-#include "gtest\gtest.h"
-#include <Components\Graphics\AnimationFactory\XMLSpritesheetAnimationFactory.h>
-#include <Components\Graphics\AnimationComponent.h>
+#include "gtest/gtest.h"
+#include <Components/Graphics/AnimationFactory/XMLSpritesheetAnimationFactory.h>
+#include <Components/Graphics/AnimationComponent.h>
 
 TEST(AnimationFactory, animation_can_be_created_from_all_animations_in_xml_file)
 {

@@ -10,9 +10,9 @@ class GroupParser
 public:
     GroupParser();
     ~GroupParser();
-    Group parse(pugi::xml_node& node);
+    Group parse(const pugi::xml_node& node);
 private:
-    Group parseAttributes(pugi::xml_node& node);
+    Group parseAttributes(const pugi::xml_node& node);
     ObjectGroupParser _groupParser;
     ImageLayerParser _imageLayerParser;
     TileLayerParser _tileLayerParser;

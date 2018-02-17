@@ -27,7 +27,7 @@ TileMapParser::~TileMapParser()
 {
 }
 
-TiledMap* TileMapParser::parse(pugi::xml_node & node)
+TiledMap* TileMapParser::parse(const pugi::xml_node & node)
 {
     TiledMap* map = this->parseTiledMapAttributes(node);
 
@@ -71,7 +71,7 @@ TiledMap* TileMapParser::parse(pugi::xml_node & node)
     return map;
 }
 
-TiledMap* TileMapParser::parseTiledMapAttributes(pugi::xml_node & node)
+TiledMap* TileMapParser::parseTiledMapAttributes(const pugi::xml_node & node)
 {
     auto version = node.attribute(TiledMapConsts::version);
     auto tiledVersion = node.attribute(TiledMapConsts::tiledversion);

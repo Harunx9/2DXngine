@@ -2,7 +2,7 @@
 #include <string>
 #include "../Utils/Macros/PropertyMacro.h"
 
-enum AssertLocation
+enum AssetLocation
 {
     EMPTY = 0,
     INTERNAL = 1,
@@ -13,8 +13,8 @@ enum AssertLocation
 class AssetPath
 {
 public:
-    static AssetPath create(std::string path, AssertLocation location = AssertLocation::CONTENT);
-    static AssetPath empty() { return AssetPath("", "", AssertLocation::EMPTY); }
+    static AssetPath create(std::string path, AssetLocation location = AssetLocation::CONTENT);
+    static AssetPath empty() { return AssetPath("", "", AssetLocation::EMPTY); }
     static std::string get_fileName(std::string path);
     ~AssetPath();
     inline bool isEmpty()
@@ -33,10 +33,10 @@ public:
             this->_fullPath == other.get_fullPath();
     }
 
-    READONLY_PROPERTY(AssertLocation, location)
+    READONLY_PROPERTY(AssetLocation, location)
     PROPERTY(std::string, containerPath)
-    PROPERTY(std::string, fullPath)
+    READONLY_PROPERTY(std::string, fullPath)
 private:
-    AssetPath(std::string fileName, std::string fullPath, AssertLocation location);
+    AssetPath(std::string fileName, std::string fullPath, AssetLocation location);
 };
 

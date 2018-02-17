@@ -1,6 +1,6 @@
 #pragma once
-#include <ComponentModel\GameObject.h>
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
+#include <ComponentModel/GameObject.h>
 
 TEST(GameObject, afer_creation_GameObject_is_not_initialized_vislible_and_active)
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include "../DataStructures/ObjectLayer.h"
-#include "../../pugixml/src/pugixml.hpp"
+#include "../../../../../thirdparty/pugixml/src/pugixml.hpp"
 #include "PropertiesParser.h"
 
 class MapObjectParser
@@ -9,7 +9,7 @@ public:
     MapObjectParser();
     ~MapObjectParser();
 
-    MapObject parse(pugi::xml_node& node);
+    MapObject parse(const pugi::xml_node& node);
 private:
     struct PointObject
     {
@@ -17,11 +17,11 @@ private:
         ObjectType type;
     };
     
-    MapObject parsePolylineObject(pugi::xml_node& node, pugi::xml_node& lastChild);
-    MapObject parseTextObject(pugi::xml_node& node, pugi::xml_node& lastChild);
-    TmxText parseTmxText(pugi::xml_node& node);
-    PointObject parsePointObject(pugi::xml_node& node);
-    MapObject parsePlainMapObject(pugi::xml_node& node);
+    MapObject parsePolylineObject(const pugi::xml_node& node, const pugi::xml_node& lastChild);
+    MapObject parseTextObject(const pugi::xml_node& node, const pugi::xml_node& lastChild);
+    TmxText parseTmxText(const pugi::xml_node& node);
+    PointObject parsePointObject(const pugi::xml_node& node);
+    MapObject parsePlainMapObject(const pugi::xml_node& node);
     PropertiesParser _propParser;
 };
 
@@ -31,9 +31,9 @@ public:
     ObjectGroupParser();
     ~ObjectGroupParser();
 
-    ObjectGroup parse(pugi::xml_node& node);
+    ObjectGroup parse(const pugi::xml_node& node);
 private:
-    ObjectGroup parseObjectGroup(pugi::xml_node& node);
+    ObjectGroup parseObjectGroup(const pugi::xml_node& node);
     PropertiesParser _propParser;
     MapObjectParser _mapObjectParser;
 };

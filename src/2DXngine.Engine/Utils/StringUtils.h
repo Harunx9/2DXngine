@@ -12,7 +12,7 @@ namespace stringutils {
     std::string trimR(std::string& in);
     std::string trim(std::string& in);
     std::vector<std::string> split(std::string& input, char delimiter);
-
+    std::string replaceAll(std::string& input, std::string& from, std::string& to);
     //Implemenatation from 
     //http://renenyffenegger.ch/notes/development/Base64/Encoding-and-decoding-base-64-with-cpp
     bool is_base64(unsigned char c);

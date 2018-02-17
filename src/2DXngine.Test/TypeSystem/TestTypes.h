@@ -1,7 +1,7 @@
 #pragma once
-#include <ComponentModel\GameObject.h>
-#include <ComponentModel\DrawableComponent.h>
-#include <TypeInformation\TypeMetaInfo.h>
+#include <ComponentModel/GameObject.h>
+#include <ComponentModel/DrawableComponent.h>
+#include <TypeInformation/TypeMetaInfo.h>
 class TestComponent : public Component
 {
 public:

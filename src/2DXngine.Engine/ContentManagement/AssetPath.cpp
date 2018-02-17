@@ -2,24 +2,25 @@
 #include <SDL.h>
 #include "../Utils/File.h"
 #include "../Utils/StringUtils.h"
-
-AssetPath::AssetPath(std::string containerPath, std::string fullPath, AssertLocation location) :
+#include "../Utils/Path.h"
+AssetPath::AssetPath(std::string containerPath, std::string fullPath, AssetLocation location) :
     _containerPath(containerPath),
     _fullPath(fullPath)
 {
 }
 
-AssetPath AssetPath::create(std::string path, AssertLocation location)
+AssetPath AssetPath::create(std::string path, AssetLocation location)
 {
-    if (location == AssertLocation::CONTENT || location == AssertLocation::CONTENT_PACKED)
+    if (location == AssetLocation::CONTENT || location == AssetLocation::CONTENT_PACKED)
     {
-        auto basePath = std::string(SDL_GetBasePath());
-        auto fullPath = basePath.append(path);
-
-        if (File::exist(fullPath) == false)
-            return AssetPath("", "", AssertLocation::EMPTY);
+        std::string basePath = std::string(SDL_GetBasePath());
+        std::string fullPath = basePath.append(path);
+        std::string normalizedPath = Path::normalize(fullPath);
+        
+        if (File::exist(normalizedPath) == false)
+            return AssetPath("", "", AssetLocation::EMPTY);
      
-        return AssetPath(path, fullPath, location);
+        return AssetPath(path, normalizedPath, location);
     }
 
     return AssetPath("", "", location);

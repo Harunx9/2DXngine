@@ -1,6 +1,6 @@
 #pragma once
-#include "..\Services\Service.h"
-#include "..\ContentManagement\DefaultAssets\Sound.h"
+#include "../Services/Service.h"
+#include "../ContentManagement/DefaultAssets/Sound.h"
 class AudioConfig;
 
 class MusicService :

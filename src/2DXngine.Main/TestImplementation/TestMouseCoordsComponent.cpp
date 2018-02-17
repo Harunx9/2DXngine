@@ -1,8 +1,8 @@
 #include "TestMouseCoordsComponent.h"
-#include <Graphics\Camera.h>
-#include <Input\InputService.h>
-#include <Services\ServiceLocator.h>
-#include <Input\MouseStateHandler.h>
+#include <Graphics/Camera.h>
+#include <Input/InputService.h>
+#include <Services/ServiceLocator.h>
+#include <Input/MouseStateHandler.h>
 #include <iostream>
 
 TestMouseCoordsComponent::TestMouseCoordsComponent(Camera* camera) :

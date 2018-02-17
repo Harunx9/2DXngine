@@ -1,8 +1,8 @@
 #pragma once
 #include "FactoryTestFixture.h"
-#include <ComponentModel\GameObject.h>
-#include <Integrations\Tiled\Components\TiledLayerComponent.h>
-#include <Integrations\Tiled\Factories\TileLayersFactory.h>
+#include <ComponentModel/GameObject.h>
+#include <Integrations/Tiled/Components/TiledLayerComponent.h>
+#include <Integrations/Tiled/Factories/TileLayersFactory.h>
 
 TEST_F(FactoryTestFixture, should_parse_3_tilelayers)
 {

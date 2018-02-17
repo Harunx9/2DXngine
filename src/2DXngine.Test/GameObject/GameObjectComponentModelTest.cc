@@ -1,7 +1,7 @@
-#include <gtest\gtest.h>
-#include <TypeInformation\BaseTypesDefinitions.h>
+#include <gtest/gtest.h>
+#include <TypeInformation/BaseTypesDefinitions.h>
 #include "../TypeSystem/TestTypes.h"
-#include <ComponentModel\GameObjectFilterFunctions.h>
+#include <ComponentModel/GameObjectFilterFunctions.h>
 
 TEST(GameObject, Component_can_be_added_to_GameObject)
 {

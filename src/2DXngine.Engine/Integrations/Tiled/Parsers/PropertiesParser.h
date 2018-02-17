@@ -6,6 +6,6 @@
 class PropertiesParser
 {
 public:
-    std::vector<Property> parse(pugi::xml_node& node);
+    std::vector<Property> parse(const pugi::xml_node& node);
 };
 

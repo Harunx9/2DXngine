@@ -1,5 +1,5 @@
 #include "DotTestController.h"
-#include <Components\Graphics\Transform.h>
+#include <Components/Graphics/Transform.h>
 
 DotTestController::DotTestController()
 {

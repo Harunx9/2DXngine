@@ -145,7 +145,7 @@ void AliveTimeGenerator::generate(float dt, ParticlesData *data, size_t startId,
 {
     float time = this->_maxAliveTime;
     if (this->_minAliveTime > 0.f)
-        float time = glm::linearRand(this->_minAliveTime, this->_maxAliveTime);
+         time = glm::linearRand(this->_minAliveTime, this->_maxAliveTime);
 
     for (size_t particle = startId; particle < endId; particle++)
     {

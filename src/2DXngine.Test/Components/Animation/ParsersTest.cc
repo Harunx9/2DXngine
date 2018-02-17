@@ -1,5 +1,5 @@
-#include "gtest\gtest.h"
-#include <Components\Graphics\AnimationFactory\XMLSpritesheetAnimationFactory.h>
+#include "gtest/gtest.h"
+#include <Components/Graphics/AnimationFactory/XMLSpritesheetAnimationFactory.h>
 
 TEST(AnimationParser, all_animations_can_be_parsed_from_xml_file)
 {

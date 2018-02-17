@@ -1,7 +1,7 @@
-#include "gtest\gtest.h"
-#include <Components\Graphics\SpriteSheetComponent.h>
-#include <Components\Graphics\SpritesheetFactory\XMLSpritesheetParserFactory.h>
-#include <ContentManagement\AssetPath.h>
+#include "gtest/gtest.h"
+#include <Components/Graphics/SpriteSheetComponent.h>
+#include <Components/Graphics/SpritesheetFactory/XMLSpritesheetParserFactory.h>
+#include <ContentManagement/AssetPath.h>
 
 TEST(SpriteSheetComponentTest, spritesheet_should_be_parsed_properly)
 {

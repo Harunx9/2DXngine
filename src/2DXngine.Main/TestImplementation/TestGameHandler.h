@@ -1,12 +1,12 @@
 #pragma once
-#include <Utils\GameHandler.h>
-#include <Graphics\SpriteBatch.h>
-#include <Graphics\Camera.h>
-#include <ContentManagement\DefaultAssets\WavSound.h>
-#include <ContentManagement\DefaultAssets\Mp3Sound.h>
-#include <Audio\MusicService.h>
-#include <Audio\SoundService.h>
-#include <ContentManagement\DefaultAssets\TTFont.h>
+#include <Utils/GameHandler.h>
+#include <Graphics/SpriteBatch.h>
+#include <Graphics/Camera.h>
+#include <ContentManagement/DefaultAssets/WavSound.h>
+#include <ContentManagement/DefaultAssets/Mp3Sound.h>
+#include <Audio/MusicService.h>
+#include <Audio/SoundService.h>
+#include <ContentManagement/DefaultAssets/TTFont.h>
 class TestGameHandler : public GameHandler
 {
 public:

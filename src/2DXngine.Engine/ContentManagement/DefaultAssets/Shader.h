@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include <GL\glew.h>
+#include <GL/glew.h>
 #include "../../Utils/Macros/PropertyMacro.h"
 
 enum ShaderType

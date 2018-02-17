@@ -2,8 +2,8 @@
 #include <chrono>
 
 BackgroundTask::BackgroundTask(std::function<void()> executor) :
-    _state(TaskState::CREATED),
-    _executor(executor)
+    _executor(executor),
+    _state(TaskState::CREATED)
 {
 }
 

@@ -1,5 +1,5 @@
 #pragma once
-#include <Utils\GameHandler.h>
+#include <Utils/GameHandler.h>
 
 class TestGameHandlerWithScenes : public Game2DWithScenesHandler
 {

@@ -1,5 +1,5 @@
 #pragma once
-#include <Utils\Macros\PropertyMacro.h>
+#include <Utils/Macros/PropertyMacro.h>
 
 class PropTestClass
 {

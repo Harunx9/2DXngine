@@ -1,8 +1,8 @@
 #pragma once
-#include <ComponentModel\UpdateableComponent.h>
-#include <ComponentModel\DrawableComponent.h>
-#include <TypeInformation\TypeMetaInfo.h>
-#include <Scenes\SceneLayer.h>
+#include <ComponentModel/UpdateableComponent.h>
+#include <ComponentModel/DrawableComponent.h>
+#include <TypeInformation/TypeMetaInfo.h>
+#include <Scenes/SceneLayer.h>
 
 class PlayerControllerComponentTest : public UpdateableComponent
 {

@@ -1,7 +1,10 @@
 #pragma once
 #include <string>
-#include <gl\glew.h>
-
+#if WIN32
+    #include <gl\glew.h>
+#else
+    #include <GL/glew.h>
+#endif
 struct Color
 {
     Color(GLfloat r, GLfloat g, GLfloat b, GLfloat a)

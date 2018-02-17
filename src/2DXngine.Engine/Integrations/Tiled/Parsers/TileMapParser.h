@@ -1,5 +1,5 @@
 #pragma once
-#include "../../thirdparty/pugixml/src/pugixml.hpp"
+#include "../../../../../thirdparty/pugixml/src/pugixml.hpp"
 #include "ObjectGroupParser.h"
 #include "ImageLayerParser.h"
 #include "TileLayerParser.h"
@@ -12,9 +12,9 @@ class TileMapParser
 public:
     TileMapParser();
     ~TileMapParser();
-    TiledMap* parse(pugi::xml_node& node);
+    TiledMap* parse(const pugi::xml_node& node);
 private:
-    TiledMap* parseTiledMapAttributes(pugi::xml_node& node);
+    TiledMap* parseTiledMapAttributes(const pugi::xml_node& node);
     GroupParser _groupParser;
     ObjectGroupParser _objectGroupParser;
     ImageLayerParser _imageLayerParser;

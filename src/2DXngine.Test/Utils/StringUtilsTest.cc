@@ -1,5 +1,5 @@
-#include "gtest\gtest.h"
-#include <Utils\StringUtils.h>
+#include "gtest/gtest.h"
+#include <Utils/StringUtils.h>
 
 TEST(StringUtilsTest, string_can_be_trimmed_from_left)
 {

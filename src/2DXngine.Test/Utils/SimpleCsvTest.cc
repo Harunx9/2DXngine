@@ -1,5 +1,6 @@
-#include "gtest\gtest.h"
-#include <Utils\SimpleCSV.h>
+#include "gtest/gtest.h"
+#include <Utils/SimpleCSV.h>
+#include <Utils/Path.h>
 #include <SDL.h>
 
 TEST(SimpleCsv, parser_can_parse_one_line_properly)
@@ -35,6 +36,7 @@ TEST(SimpleCsv, parser_can_parse_raw_string_properly)
 TEST(SimpleCsvFile, parser_can_parse_file_properly)
 {
     std::string filePath = std::string(SDL_GetBasePath()) + "\\Content\\test.csv";
+    filePath = Path::normalize(filePath);
     SimpleCSV* parser = new SimpleCSV(';');
     auto result = parser->parseFile(filePath);
 
@@ -54,6 +56,7 @@ TEST(SimpleCsvFile, parser_can_parse_file_properly)
 TEST(SimpleCsvFile, should_return_empty_content_if_no_file_exist)
 {
     std::string filePath = std::string(SDL_GetBasePath()) + "Content\\test2.csv";
+    filePath = Path::normalize(filePath);
     SimpleCSV* parser = new SimpleCSV(';');
     
     auto result = parser->parseFile(filePath);

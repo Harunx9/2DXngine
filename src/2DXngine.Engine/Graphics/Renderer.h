@@ -20,14 +20,14 @@ public:
     READONLY_PROPERTY(SpriteBatch*, batch)
     READONLY_PROPERTY(GraphicDevice*, graphics)
 
-    bool has_layer(SceneLayer* layer)
+    bool has_layer(SceneLayer layer)
     {
-        return this->_currentTargets.find(layer->get_name()) != this->_currentTargets.end();
+        return this->_currentTargets.find(layer.get_name()) != this->_currentTargets.end();
     }
 
-    void set_batchTarget(SceneLayer* layer)
+    void set_batchTarget(SceneLayer layer)
     {
-        this->_batch->set_renderTarget(this->_currentTargets[layer->get_name()]);
+        this->_batch->set_renderTarget(this->_currentTargets[layer.get_name()]);
     }
 
     void reset_batchTarget()

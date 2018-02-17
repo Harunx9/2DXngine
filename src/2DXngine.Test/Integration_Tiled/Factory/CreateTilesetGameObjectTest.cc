@@ -1,8 +1,8 @@
 #pragma once
 #include "FactoryTestFixture.h"
-#include <ComponentModel\GameObject.h>
-#include <Integrations\Tiled\Components\TileSetComponent.h>
-#include <Integrations\Tiled\Factories\TilesetsFactory.h>
+#include <ComponentModel/GameObject.h>
+#include <Integrations/Tiled/Components/TileSetComponent.h>
+#include <Integrations/Tiled/Factories/TilesetsFactory.h>
 
 TEST_F(FactoryTestFixture, should_parse_1_tileset)
 {

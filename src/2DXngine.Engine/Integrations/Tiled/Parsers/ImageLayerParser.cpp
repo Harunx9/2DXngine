@@ -24,7 +24,7 @@ ImageLayerParser::~ImageLayerParser()
 {
 }
 
-ImageLayer ImageLayerParser::parse(pugi::xml_node & node)
+ImageLayer ImageLayerParser::parse(const pugi::xml_node & node)
 {
     ImageLayer layer = this->parseAttributes(node);
 
@@ -46,7 +46,7 @@ ImageLayer ImageLayerParser::parse(pugi::xml_node & node)
     return layer;
 }
 
-ImageLayer ImageLayerParser::parseAttributes(pugi::xml_node & node)
+ImageLayer ImageLayerParser::parseAttributes(const pugi::xml_node & node)
 {
     auto name = node.attribute(ImageLayerConsts::name);
     auto offsetX = node.attribute(ImageLayerConsts::offset_x);
@@ -63,7 +63,7 @@ ImageLayer ImageLayerParser::parseAttributes(pugi::xml_node & node)
     };
 }
 
-TmxImage ImageLayerParser::parseTmxImage(pugi::xml_node & node)
+TmxImage ImageLayerParser::parseTmxImage(const pugi::xml_node & node)
 {
     auto format = node.attribute(TmxImageConsts::format);
     auto source = node.attribute(TmxImageConsts::source);

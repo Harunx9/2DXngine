@@ -1,9 +1,9 @@
 #pragma once
-#include <gl\glew.h>
-#include <glm\glm.hpp>
+#include <GL/glew.h>
+#include <glm/glm.hpp>
 #include <map>
 #include "Texture.h"
-#include "..\Asset.h"
+#include "../Asset.h"
 
 // implementation inspiration
 //https://learnopengl.com/#!In-Practice/Text-Rendering
@@ -43,7 +43,7 @@ public:
 
     static TTFont* load(AssetPath path);
 
-    Glyph& operator[](GLchar index)
+    const Glyph& operator[](GLchar index)
     {
         if (this->_characterMap.find(index) ==
             this->_characterMap.end())

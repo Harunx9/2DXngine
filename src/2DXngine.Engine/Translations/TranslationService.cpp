@@ -1,5 +1,6 @@
 #include "TranslationService.h"
 #include "../Services/ServiceLocator.h"
+#include "../Utils/Path.h"
 #include "SDL.h"
 
 TranslationService::TranslationService() :Service("TranslationService")
@@ -47,7 +48,8 @@ void TranslationService::setupLanguage(std::string lang)
     path.append("translation.");
     path.append(lang);
     path.append(".csv");
-
+    path = Path::normalize(path);
+    
     csv_content content = this->_parser->parseFile(path);
 
     if (content.empty()) return;

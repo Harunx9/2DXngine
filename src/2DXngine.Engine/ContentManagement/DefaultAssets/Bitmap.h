@@ -1,6 +1,10 @@
 #pragma once
-#include <soil\src\SOIL.h>
-#include <GL\glew.h>
+#if WIN32
+    #include <soil/src/SOIL.h>
+#else
+    #include <SOIL.h>
+#endif
+#include <GL/glew.h>
 #include "../AssetPath.h"
 #include "../../Utils/Macros/PropertyMacro.h"
 
@@ -12,9 +16,9 @@ public:
     ~Bitmap();
     
     static Bitmap* load(AssetPath assetPath);
-    static Bitmap empty(GLuint width, GLuint height)
+    static Bitmap* empty(GLuint width, GLuint height)
     {
-        return Bitmap(0, width, height);
+        return new Bitmap(0, width, height);
     }
 
     void remove();

@@ -1,6 +1,6 @@
 #include "PropertiesParser.h"
 
-std::vector<Property> PropertiesParser::parse(pugi::xml_node& node)
+std::vector<Property> PropertiesParser::parse(const pugi::xml_node& node)
 {
     auto vec = std::vector<Property>();
 

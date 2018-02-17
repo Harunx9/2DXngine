@@ -1,5 +1,5 @@
 #pragma once
-#include <Scenes\Scene.h>
+#include <Scenes/Scene.h>
 class SceneTest : public Scene
 {
 public:

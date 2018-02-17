@@ -1,9 +1,9 @@
-#include "gtest\gtest.h"
-#include <Components\Data\TextComponent.h>
-#include <Services\ServiceLocator.h>
-#include <ContentManagement\ContentManagerService.h>
-#include <Components\Data\FontComponent.h>
-#include <ContentManagement\DefaultAssets\TTFont.h>
+#include "gtest/gtest.h"
+#include <Components/Data/TextComponent.h>
+#include <Services/ServiceLocator.h>
+#include <ContentManagement/ContentManagerService.h>
+#include <Components/Data/FontComponent.h>
+#include <ContentManagement/DefaultAssets/TTFont.h>
 
 
 TEST(TextComponentTest, component_should_return_desired_text)

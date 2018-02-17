@@ -34,8 +34,9 @@ Texture * Texture::load(AssetPath assetPath)
 }
 
 Texture::~Texture()
-{
+{ 
     glDeleteTextures(1, &this->_textureId);
+    delete this->_bitmap;
 }
 
 void Texture::generate()

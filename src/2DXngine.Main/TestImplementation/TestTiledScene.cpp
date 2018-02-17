@@ -1,7 +1,7 @@
 #include "TestTiledScene.h"
-#include <Graphics\Renderer.h>
-#include <Graphics\GraphicDevice.h>
-#include <Graphics\Camera.h>
+#include <Graphics/Renderer.h>
+#include <Graphics/GraphicDevice.h>
+#include <Graphics/Camera.h>
 
 
 

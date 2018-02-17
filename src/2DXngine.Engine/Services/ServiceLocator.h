@@ -24,14 +24,14 @@ private:
 };
 
 template<class TService>
-static inline TService* ServiceLocator::get(const char * name)
+inline TService* ServiceLocator::get(const char * name)
 {
     auto srv = _services[name];
     return (TService *)srv;
 }
 
 template<class TService>
-static inline void ServiceLocator::registerService(const TService * service)
+inline void ServiceLocator::registerService(const TService * service)
 {
     Service* tmp = (Service*)service;
     _services[tmp->get_name()] = tmp;

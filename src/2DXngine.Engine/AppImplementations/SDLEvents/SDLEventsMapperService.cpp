@@ -1,7 +1,7 @@
 #include "SDLEventsMapperService.h"
-#include "Mappers\KeyboardEventMapper.h"
-#include "Mappers\MouseEventsMapper.h"
-#include "Mappers\WindowEventsMapper.h"
+#include "Mappers/KeyboardEventMapper.h"
+#include "Mappers/MouseEventsMapper.h"
+#include "Mappers/WindowEventsMapper.h"
 
 
 SDLEventsMapperService::SDLEventsMapperService() : Service("SDLEventsMapperService")

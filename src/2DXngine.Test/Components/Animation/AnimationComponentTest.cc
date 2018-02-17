@@ -1,6 +1,6 @@
-#include "gtest\gtest.h"
-#include <Components\Graphics\AnimationFactory\XMLSpritesheetAnimationFactory.h>
-#include <Components\Graphics\AnimationComponent.h>
+#include "gtest/gtest.h"
+#include <Components/Graphics/AnimationFactory/XMLSpritesheetAnimationFactory.h>
+#include <Components/Graphics/AnimationComponent.h>
 
 TEST(AnimationComponentTest, when_animation_coponent_is_started_proper_animation_will_start)
 {

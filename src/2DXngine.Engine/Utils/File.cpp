@@ -3,13 +3,13 @@
 #include <sstream>
 #include <fstream>
 
-bool File::exist(const std::string& path)
+bool File::exist(const std::string &path)
 {
     std::ifstream file(path);
     return file.good();
 }
 
-std::string File::readFileToEnd(const std::string& path)
+std::string File::readFileToEnd(const std::string &path)
 {
     std::string fileContent = "";
 

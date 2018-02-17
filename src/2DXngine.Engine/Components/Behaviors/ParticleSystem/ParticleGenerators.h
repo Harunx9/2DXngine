@@ -2,7 +2,7 @@
 #include <functional>
 #include <vector>
 #include "BaseTypes.h"
-#include <glm\glm.hpp>
+#include <glm/glm.hpp>
 class Transform;
 
 class AreaParticleGenerator : public ParticleGenerator

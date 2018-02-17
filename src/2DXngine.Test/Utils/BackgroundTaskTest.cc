@@ -1,5 +1,5 @@
-#include <gtest\gtest.h>
-#include <Utils\BackgroundTask.h>
+#include <gtest/gtest.h>
+#include <Utils/BackgroundTask.h>
 
 TEST(BackgroundTaskTest, task_will_be_executed_correctly)
 {

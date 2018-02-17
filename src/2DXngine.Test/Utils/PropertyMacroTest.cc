@@ -1,4 +1,4 @@
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
 #include "PropTestClass.h"
 
 TEST(PropertyMacroTest, macro_generate_correct_properties_with_setters_and_getters)

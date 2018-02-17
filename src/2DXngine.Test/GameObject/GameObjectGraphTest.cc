@@ -1,6 +1,6 @@
 #pragma once
-#include <ComponentModel\GameObject.h>
-#include "gtest\gtest.h"
+#include "gtest/gtest.h"
+#include <ComponentModel/GameObject.h>
 
 TEST(GameObject, GameObject_can_be_added_to_other_GameObject_as_child)
 {

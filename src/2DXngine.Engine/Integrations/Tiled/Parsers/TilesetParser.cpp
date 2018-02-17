@@ -8,7 +8,7 @@ TilesetParser::~TilesetParser()
 {
 }
 
-TileSet TilesetParser::parse(pugi::xml_node & node)
+TileSet TilesetParser::parse(const pugi::xml_node & node)
 {
     TileSet tileset = this->parseAttributes(node);
 
@@ -27,7 +27,7 @@ TileSet TilesetParser::parse(pugi::xml_node & node)
     return tileset;
 }
 
-TileSet TilesetParser::parseAttributes(pugi::xml_node & node)
+TileSet TilesetParser::parseAttributes(const pugi::xml_node & node)
 {
     auto firstgid = node.attribute("firstgid");
     auto source = node.attribute("source");
@@ -62,7 +62,7 @@ TileSet TilesetParser::parseAttributes(pugi::xml_node & node)
     }
 }
 
-TmxImage TilesetParser::parseImage(pugi::xml_node & node)
+TmxImage TilesetParser::parseImage(const pugi::xml_node & node)
 {
     auto format = node.attribute("format");
     auto source = node.attribute("source");
@@ -79,7 +79,7 @@ TmxImage TilesetParser::parseImage(pugi::xml_node & node)
     };
 }
 
-TileOffset TilesetParser::parseOffset(pugi::xml_node & node)
+TileOffset TilesetParser::parseOffset(const pugi::xml_node & node)
 {
     auto x = node.attribute("x");
     auto y = node.attribute("y");

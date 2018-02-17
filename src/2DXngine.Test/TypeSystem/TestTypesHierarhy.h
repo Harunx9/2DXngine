@@ -1,5 +1,5 @@
 #pragma once
-#include <TypeInformation\TypeMetaInfo.h>
+#include <TypeInformation/TypeMetaInfo.h>
 
 class BaseType
 {

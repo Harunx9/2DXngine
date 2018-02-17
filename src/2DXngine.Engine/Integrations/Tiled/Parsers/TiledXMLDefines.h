@@ -1,7 +1,5 @@
 #pragma once
 
-
-
 namespace ObjectGroupConsts
 {
     const char * element = "objectgroup";
@@ -17,6 +15,3 @@ namespace ObjectGroupConsts
     const char * offsety = "offsety";
     const char * draworder = "draworder";
 };
-
-
-

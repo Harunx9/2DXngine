@@ -1,11 +1,11 @@
 #pragma once
 #include "../Asset.h"
 #include <string>
-#include <GL\glew.h>
-#include <glm\vec2.hpp>
-#include <glm\vec3.hpp>
-#include <glm\vec4.hpp>
-#include <glm\mat4x4.hpp>
+#include <GL/glew.h>
+#include <glm/vec2.hpp>
+#include <glm/vec3.hpp>
+#include <glm/vec4.hpp>
+#include <glm/mat4x4.hpp>
 #include "Shader.h"
 #include "../../Utils/Macros/PropertyMacro.h"
 

@@ -4,8 +4,8 @@
 
 
 GameObject::GameObject(const char * name, bool isPersistant) :
-    _name(name),
     _isPersistant(isPersistant),
+    _name(name),
     _isActive(true),
     _isVisible(true),
     _isInitialized(false),

@@ -24,7 +24,8 @@ FIND_PATH( SOIL_INCLUDE_PATH
     ${SOIL_ROOT_DIR}/projects/VC9/Release
     DOC "The SOIL library")
 ELSE(WIN32)
-FIND_PATH( SOIL_INCLUDE_PATH SOIL/SOIL.h
+FIND_PATH( SOIL_INCLUDE_PATH 
+    NAMES SOIL/SOIL.h SOIL.h
     /usr/include
     /usr/local/include
     /sw/include

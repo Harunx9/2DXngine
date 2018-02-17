@@ -1,9 +1,9 @@
 #pragma once
-#include "gtest\gtest.h"
-#include <Services\ServiceLocator.h>
-#include <Translations\TranslationService.h>
-#include <Translations\TFunction.h>
-#include <Config\ConfigurationService.h>
+#include "gtest/gtest.h"
+#include <Services/ServiceLocator.h>
+#include <Translations/TranslationService.h>
+#include <Translations/TFunction.h>
+#include <Config/ConfigurationService.h>
 
 class TranslationsTestFixture : public ::testing::Test
 {

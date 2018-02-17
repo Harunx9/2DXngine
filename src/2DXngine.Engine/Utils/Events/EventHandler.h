@@ -33,7 +33,7 @@ class EventHandler
 public:
     EventHandler& operator+=(Binding<EventArgs> &binding)
     {
-        _subscribers[binding.get_code()] = binding.get_func();
+        this->_subscribers[binding.get_code()] = binding.get_func();
         return *this;
     }
 
